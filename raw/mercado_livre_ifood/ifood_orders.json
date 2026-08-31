@@ -1,0 +1,93 @@
+[
+  {
+    "date": "2026-05-30",
+    "restaurant": "Pipa Sushi & Temakeria",
+    "order": "1x Monte Seu Poke",
+    "amount": 90.29,
+    "category": "Delivery/Sushi"
+  },
+  {
+    "date": "2026-05-18",
+    "restaurant": "Pipa Sushi & Temakeria",
+    "order": "1x Monte Seu Poke",
+    "amount": 67.31,
+    "category": "Delivery/Sushi"
+  },
+  {
+    "date": "2026-05-16",
+    "restaurant": "Maria Baunilha Confeitaria",
+    "order": "1x Trio Maria Baunilha",
+    "amount": 73.03,
+    "category": "Delivery/Confeitaria"
+  },
+  {
+    "date": "2026-05-02",
+    "restaurant": "Bianca Tolêdo Confeitaria",
+    "order": "1x Cake Moça e Morango + 1x Cake Cenoura",
+    "amount": 0.0,
+    "category": "Delivery/Confeitaria"
+  },
+  {
+    "date": "2026-04-27",
+    "restaurant": "Bianca Tolêdo Confeitaria",
+    "order": "1x Promoção: 2 Cake in box",
+    "amount": 0.0,
+    "category": "Delivery/Confeitaria"
+  },
+  {
+    "date": "2026-04-20",
+    "restaurant": "Jurassic Pizza - Bessa",
+    "order": "1x Combo 1 - Pizza G + Refri 1l",
+    "amount": 74.88,
+    "category": "Delivery/Pizza"
+  },
+  {
+    "date": "2026-04-03",
+    "restaurant": "Matterello Pizza",
+    "order": "2x M (8 FATIAS) 2 SABORES",
+    "amount": 0.0,
+    "category": "Delivery/Pizza"
+  },
+  {
+    "date": "2026-03-03",
+    "restaurant": "Dona Branca",
+    "order": "1x Pizza grande 8 fatias + Guaraná 1l",
+    "amount": 57.0,
+    "category": "Delivery/Pizza"
+  },
+  {
+    "date": "2026-01-28",
+    "restaurant": "Maria Baunilha Confeitaria",
+    "order": "2x Copo da Felicidade",
+    "amount": 0.0,
+    "category": "Delivery/Confeitaria"
+  },
+  {
+    "date": "2026-01-16",
+    "restaurant": "Formaggio 43 - Forneria",
+    "order": "2x Pizza grande - até 02 sabores",
+    "amount": 191.8,
+    "category": "Delivery/Pizza"
+  },
+  {
+    "date": "2026-01-10",
+    "restaurant": "Maria Baunilha Confeitaria",
+    "order": "4x Copo da Felicidade",
+    "amount": 111.6,
+    "category": "Delivery/Confeitaria"
+  },
+  {
+    "date": "2026-01-06",
+    "restaurant": "Pizza Now Intermares",
+    "order": "Pizza",
+    "amount": 173.79,
+    "category": "Delivery/Pizza"
+  },
+  {
+    "date": "2026-05-11",
+    "restaurant": "iFood (taxa/pedido)",
+    "order": "-",
+    "amount": 7.95,
+    "category": "Delivery/Taxa"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "chave": "25260712778252000125650020012095841012677627",
+  "merchant_guess": "MERCADINHO LACANTO LTDA",
+  "cnpj": "12.778.252/0001-25",
+  "status": "NOT_INGESTED",
+  "reason": "SEFAZ PB consulta blocked (reCAPTCHA Enterprise free quota exceeded); no DANFE photos provided for this chave",
+  "sefaz_url": "https://www4.sefaz.pb.gov.br/atf/seg/SEGf_AcessarFuncao.jsp?cdFuncao=FIS_1410&p=25260712778252000125650020012095841012677627%7C3%7C1"
+}

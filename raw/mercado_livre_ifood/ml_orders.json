@@ -1,0 +1,394 @@
+[
+  {
+    "date": "2026-06-16",
+    "product": "Suporte Monitor Articulado Portátil Dobrável",
+    "amount": 144.0,
+    "category": "Home Office",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-06-08",
+    "product": "Filtro De Ar Descartável Cpap Airmini Resmed",
+    "amount": 41.65,
+    "category": "Saúde/CPAP",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-06-03",
+    "product": "Máscara Nasal Resmed Airfit N30i Apneia",
+    "amount": 480.0,
+    "category": "Saúde/CPAP",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-06-01",
+    "product": "Macaco Hidráulico Tipo Jacaré 2ton Portátil",
+    "amount": 249.99,
+    "category": "Ferramentas",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-05-11",
+    "product": "Câmera Inteligente Im7 3mp De Resolução",
+    "amount": 429.9,
+    "category": "Eletrônicos",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-05-09",
+    "product": "Sensor Presença Humana Radar Inteligente",
+    "amount": 379.98,
+    "category": "Eletrônicos",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-05-03",
+    "product": "Prateleira Estilo Industrial Suporte Em Madeira",
+    "amount": 132.0,
+    "category": "Casa",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-04-29",
+    "product": "Relógio Parede Digital Grande Calendário",
+    "amount": 105.99,
+    "category": "Casa",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-04-27",
+    "product": "Álcool Isopropílico Quimivida 1l 99,8%",
+    "amount": 71.94,
+    "category": "Higiene",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-04-22",
+    "product": "Organizador De Fios E Cabos Baixo Mesa",
+    "amount": 36.9,
+    "category": "Home Office",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-04-17",
+    "product": "Kit Teste Ouro Pedra De Toque + Ácido 22k",
+    "amount": 69.9,
+    "category": "Outros",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-04-16",
+    "product": "For I 2 Dispositivo De Ronco Elétrico",
+    "amount": 62.25,
+    "category": "Saúde/CPAP",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-04-12",
+    "product": "Bravecto 4,5 A 10 Kg Antipulgas",
+    "amount": 162.9,
+    "category": "Pet",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-04-05",
+    "product": "Antipulgas Bravecto Original De 20 A 40 Kg",
+    "amount": 440.0,
+    "category": "Pet",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-30",
+    "product": "Vittak Defletor Ar Condicionado Split",
+    "amount": 27.9,
+    "category": "Casa",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-30",
+    "product": "Traqueia Cpap Pvc Cinza 22mm X 1,80m",
+    "amount": 49.9,
+    "category": "Saúde/CPAP",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-29",
+    "product": "Lavadora De Alta Pressão Wap Premier 2600",
+    "amount": 919.0,
+    "category": "Casa",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-28",
+    "product": "Water Cooler Argb 240mm Pwm Para Cpu",
+    "amount": 399.99,
+    "category": "Eletrônicos",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-27",
+    "product": "Tapete Protetor De Piso Cadeira Gamer",
+    "amount": 151.8,
+    "category": "Home Office",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-25",
+    "product": "Electrolux Filtro/refil De Água Acqua Pure",
+    "amount": 69.9,
+    "category": "Casa",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-25",
+    "product": "Luminária Led 3d De Mesa Logo Personalizada",
+    "amount": 137.86,
+    "category": "Home Office",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-24",
+    "product": "Filtro De Café 51mm Não Pressurizado Inox",
+    "amount": 54.9,
+    "category": "Casa",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-23",
+    "product": "Máquina De Gelo Turbo Ice Premium Mondial",
+    "amount": 699.9,
+    "category": "Eletrodomésticos",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-22",
+    "product": "Relógio Digital Mesa Led Wooden Clock",
+    "amount": 49.83,
+    "category": "Casa",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-22",
+    "product": "Desk Pad Mouse Pad 90x40 Extra Grande",
+    "amount": 41.24,
+    "category": "Home Office",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-20",
+    "product": "Traqueia Para Air Mini Tubing Resmed 38822",
+    "amount": 285.95,
+    "category": "Saúde/CPAP",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-18",
+    "product": "Umidificador Resmed Humidx Plus Para Cpap",
+    "amount": 86.33,
+    "category": "Saúde/CPAP",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-16",
+    "product": "Capa Tv Televisão 32–75 Polegadas",
+    "amount": 110.38,
+    "category": "Casa",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-16",
+    "product": "Melhor Pegboard Setup Gamer Home Office",
+    "amount": 63.9,
+    "category": "Home Office",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-16",
+    "product": "Organizador De Cabos E Fios 5 Metros",
+    "amount": 22.7,
+    "category": "Home Office",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-16",
+    "product": "Luminária Barra Led Mesa Duas Cabeças",
+    "amount": 127.4,
+    "category": "Home Office",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-16",
+    "product": "Bolsa Organizadora De Cabo Fio Eletrônico",
+    "amount": 20.67,
+    "category": "Home Office",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-16",
+    "product": "Organizador De Gavetas Escritório Maxcril",
+    "amount": 36.9,
+    "category": "Home Office",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-13",
+    "product": "Mousepad Grande Programação AtalhosPhy",
+    "amount": 59.9,
+    "category": "Home Office",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-12",
+    "product": "Teclas Avulsas Teclado Magic Keyboard Apple",
+    "amount": 79.0,
+    "category": "Eletrônicos",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-12",
+    "product": "Chinelo Hoka One One Ora Athletic Slide",
+    "amount": 599.9,
+    "category": "Vestuário",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-12",
+    "product": "Tênis Hoka Mach 6 Masculino Azul Jeans",
+    "amount": 1009.78,
+    "category": "Vestuário",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-16",
+    "product": "Cpap Portátil Resmed Airmini Automático",
+    "amount": 4980.91,
+    "category": "Saúde/CPAP",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-10",
+    "product": "Lanterna De Mergulho F9 Inton Alto Desempenho",
+    "amount": 558.72,
+    "category": "Esportes",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-10",
+    "product": "Filtro De Café De Aço Inoxidável 1 Copo 51mm",
+    "amount": 72.67,
+    "category": "Casa",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-09",
+    "product": "Kit 4 Dilatador Nasal Espiral Anti Ronco",
+    "amount": 21.89,
+    "category": "Saúde/CPAP",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-09",
+    "product": "Dilatador Nasal Magnético Reduza O Ronco",
+    "amount": 53.99,
+    "category": "Saúde/CPAP",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-06",
+    "product": "Cápsula Nespresso Inox Reutilizável + Tampe",
+    "amount": 152.91,
+    "category": "Casa",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-02-27",
+    "product": "Monitor Gamer Aoc Agon 49 Curvo 144hz",
+    "amount": 5999.0,
+    "category": "Eletrônicos",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-02-25",
+    "product": "Teclado Programável De 8 Teclas Multifuncio",
+    "amount": 128.83,
+    "category": "Eletrônicos",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-02-21",
+    "product": "Escova De Dente Elétrica Oral B Io Series 6",
+    "amount": 1200.05,
+    "category": "Saúde/Higiene",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-02-19",
+    "product": "Processador De Vídeo Novastar Vc2 Painel D",
+    "amount": 1798.0,
+    "category": "Eletrônicos",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-02-18",
+    "product": "Mouse Sem Fio Logitech Mx Master 4 Haptic",
+    "amount": 1590.0,
+    "category": "Eletrônicos",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-02-17",
+    "product": "Aspirador De Pó Portátil Bateria 18v",
+    "amount": 236.97,
+    "category": "Casa",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-02-17",
+    "product": "Hoto Mini Aspirador De Pó Portátil Sem Fio",
+    "amount": 496.29,
+    "category": "Casa",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-02-12",
+    "product": "Máscara Nasal Airfit P30i P M G Resmed",
+    "amount": 482.55,
+    "category": "Saúde/CPAP",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-01-03",
+    "product": "Kit Odontológico Inox De Limpeza Removedor",
+    "amount": 26.29,
+    "category": "Saúde/Higiene",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-01-03",
+    "product": "Kit Cabo+espelho Odontológico Inox",
+    "amount": 21.85,
+    "category": "Saúde/Higiene",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-09",
+    "product": "Vermelho Gradiente Pbt Duas Cores Teclado",
+    "amount": 60.08,
+    "category": "Eletrônicos",
+    "status": "delivered"
+  },
+  {
+    "date": "2026-03-XX",
+    "product": "4 produtos Mercado Livre",
+    "amount": 824.5,
+    "category": "Cancelado",
+    "status": "cancelled"
+  },
+  {
+    "date": "2026-02-XX",
+    "product": "Cpap Portátil Resmed Airmini (não entregue)",
+    "amount": 4952.52,
+    "category": "Saúde/CPAP",
+    "status": "failed"
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "source_of_truth": "XML under notas_litoral/ (20XX/ or NFCE_XML_*) plus optional NFCE_*.txt SEFAZ exports",
+  "track": "litoral_store",
+  "validation": {
+    "notes_dir": "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral",
+    "xml_directories": [
+      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/2020",
+      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/2021",
+      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/2022",
+      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/2023",
+      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/2024",
+      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/2025",
+      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/2026"
+    ],
+    "xml_note_files": 13983,
+    "unique_xml_keys": 13983,
+    "duplicate_xml_key_instances": 0,
+    "cancelled_unique_keys": 4,
+    "parsed_receipts": 58453,
+    "parsed_items": 784398,
+    "duplicate_xml_keys": [],
+    "cancelled_files": 4,
+    "cancelled_keys_without_note": [
+      "25251208189400000107651060005325991000774173",
+      "25251208189400000107651090005881761001810783",
+      "25251208189400000107651120007159431002646316",
+      "25251208189400000107651130004342171005147119"
+    ],
+    "malformed_numeric_fields": 0,
+    "missing_numeric_fields": 0,
+    "notes_skipped_parse_errors": 0,
+    "missing_product_nodes": 0,
+    "duplicate_receipts_skipped": 0,
+    "cancelled_receipts_skipped": 0,
+    "items_with_nonpositive_qty_or_price": 0,
+    "xml_layout": "year_folders",
+    "txt_files": [
+      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/NFCE_20260720032329.txt",
+      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/NFCE_20260720032352.txt",
+      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/NFCE_20260720032405.txt",
+      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/NFCE_20260720032441.txt"
+    ],
+    "txt_file_count": 4,
+    "txt_rows": 599394,
+    "txt_malformed_rows": 0,
+    "txt_skipped_nonpositive": 1,
+    "txt_synthetic_receipts": 44470,
+    "txt_missing_numeric_fields": 0,
+    "txt_malformed_numeric_fields": 8,
+    "xml_receipts": 13983,
+    "txt_receipts": 44470,
+    "expected_cnpj": "08189400000107",
+    "receipts_kept": 58453,
+    "receipts_skipped_other_cnpj": 0,
+    "merchants_seen": {
+      "SUPERMERCADO LITORAL LTDA.": 56568,
+      "Supermercado Litoral": 1885
+    }
+  }
+}

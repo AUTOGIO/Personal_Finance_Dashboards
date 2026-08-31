@@ -1,0 +1,659 @@
+{
+  "chave": "25260708189400000107652060000068851220143101",
+  "numero": 6885,
+  "serie": 206,
+  "emissao": "2026-07-16 20:40:05",
+  "merchant": "Supermercado Litoral",
+  "cnpj": "08.189.400/0001-07",
+  "total": 1104.98,
+  "descontos": 0.0,
+  "tributos_aprox": 363.22,
+  "pagamento": "17-Pagamento Instantâneo (PIX)",
+  "cpf": "215.965.638-00",
+  "qtd_itens": 80,
+  "source": "DANFE photos + SEFAZ chave (portal blocked by reCAPTCHA quota)",
+  "sefaz_url": "https://www4.sefaz.pb.gov.br/atf/seg/SEGf_AcessarFuncao.jsp?cdFuncao=FIS_1410&p=25260708189400000107652060000068851220143101%7C2%7C1%7C1%7C122E4F317FF862178CD6FEC4E959F3084536E87A",
+  "xml": "/Users/eduardofgiovannini/.financas-notas/personal/NFCE_XML_INGEST_20260729/NFCE_25260708189400000107652060000068851220143101_20260729154733.xml",
+  "items": [
+    {
+      "cProd": "724012",
+      "desc": "Espumante Freixenet",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 89.99,
+      "total": 89.99
+    },
+    {
+      "cProd": "1107340",
+      "desc": "Cerveja Blue Moon Gf",
+      "qty": 6,
+      "uom": "UN",
+      "unit": 9.89,
+      "total": 59.34
+    },
+    {
+      "cProd": "1053081",
+      "desc": "Ovos Avine Ext C 30",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 17.99,
+      "total": 17.99
+    },
+    {
+      "cProd": "1119480",
+      "desc": "Cerveja Blue Moon Lt",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 7.99,
+      "total": 7.99
+    },
+    {
+      "cProd": "1119480",
+      "desc": "Cerveja Blue Moon Lt",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 7.99,
+      "total": 7.99
+    },
+    {
+      "cProd": "395540",
+      "desc": "Couve Folha Organico",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 4.99,
+      "total": 4.99
+    },
+    {
+      "cProd": "1261215",
+      "desc": "Mini Tomate Italiano",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 13.99,
+      "total": 13.99
+    },
+    {
+      "cProd": "641937",
+      "desc": "Copa Sadia Suina Fatiado",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 13.99,
+      "total": 13.99
+    },
+    {
+      "cProd": "643344",
+      "desc": "Mortadela Sadia 200G",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 8.99,
+      "total": 8.99
+    },
+    {
+      "cProd": "827751",
+      "desc": "Salame Sadia Pepperoni",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 12.49,
+      "total": 12.49
+    },
+    {
+      "cProd": "827751",
+      "desc": "Salame Sadia Pepperoni",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 12.49,
+      "total": 12.49
+    },
+    {
+      "cProd": "1035001",
+      "desc": "Salame Milano Vito",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 23.99,
+      "total": 23.99
+    },
+    {
+      "cProd": "1195026",
+      "desc": "Presunto Cru Rar Fatiado",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 29.5,
+      "total": 29.5
+    },
+    {
+      "cProd": "770132",
+      "desc": "Queijo Coalho Itpla Kg",
+      "qty": 0.352,
+      "uom": "KG",
+      "unit": 43.99,
+      "total": 15.48
+    },
+    {
+      "cProd": "675628",
+      "desc": "Queijo Petit Suisse 320G",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 11.89,
+      "total": 11.89
+    },
+    {
+      "cProd": "860307",
+      "desc": "Queijo Parmesao President",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 19.99,
+      "total": 19.99
+    },
+    {
+      "cProd": "706339",
+      "desc": "Requeijao Catupiry 250G",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 18.99,
+      "total": 18.99
+    },
+    {
+      "cProd": "1135473",
+      "desc": "Leite Fermentado Danone",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 16.59,
+      "total": 16.59
+    },
+    {
+      "cProd": "300889",
+      "desc": "Manteiga Aviacao Com Sal",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 17.29,
+      "total": 17.29
+    },
+    {
+      "cProd": "65122",
+      "desc": "Leite Fermentado Yakult",
+      "qty": 2,
+      "uom": "UN",
+      "unit": 16.99,
+      "total": 33.98
+    },
+    {
+      "cProd": "849456",
+      "desc": "Requeijao Catupiry",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 10.49,
+      "total": 10.49
+    },
+    {
+      "cProd": "1147070",
+      "desc": "Aveia Sao Braz Flocos Cx",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 3.99,
+      "total": 3.99
+    },
+    {
+      "cProd": "1147087",
+      "desc": "Aveia Sao Braz Flocos Fino",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 3.99,
+      "total": 3.99
+    },
+    {
+      "cProd": "720663",
+      "desc": "Salgadinho Equilibri Panetini",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 4.49,
+      "total": 4.49
+    },
+    {
+      "cProd": "720663",
+      "desc": "Salgadinho Equilibri Panetini",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 4.49,
+      "total": 4.49
+    },
+    {
+      "cProd": "1098433",
+      "desc": "Biscoito Vitarella Cream",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 5.29,
+      "total": 5.29
+    },
+    {
+      "cProd": "1147087",
+      "desc": "Aveia Sao Braz Flocos Fino",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 3.99,
+      "total": 3.99
+    },
+    {
+      "cProd": "1147087",
+      "desc": "Aveia Sao Braz Flocos Fino",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 3.99,
+      "total": 3.99
+    },
+    {
+      "cProd": "1176735",
+      "desc": "Torrada Marilan Magic",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 8.29,
+      "total": 8.29
+    },
+    {
+      "cProd": "1176735",
+      "desc": "Torrada Marilan Magic",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 8.29,
+      "total": 8.29
+    },
+    {
+      "cProd": "1176735",
+      "desc": "Torrada Marilan Magic",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 8.29,
+      "total": 8.29
+    },
+    {
+      "cProd": "423458",
+      "desc": "Refrigerante Coca Cola",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 2.59,
+      "total": 2.59
+    },
+    {
+      "cProd": "974489",
+      "desc": "Biscoito Piraque Roladinho",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 4.99,
+      "total": 4.99
+    },
+    {
+      "cProd": "974489",
+      "desc": "Biscoito Piraque Roladinho",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 4.99,
+      "total": 4.99
+    },
+    {
+      "cProd": "92494",
+      "desc": "Achocolatado Liquido",
+      "qty": 8,
+      "uom": "UN",
+      "unit": 2.89,
+      "total": 23.12
+    },
+    {
+      "cProd": "806671",
+      "desc": "Pepino Rodelas Hemmer",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 23.49,
+      "total": 23.49
+    },
+    {
+      "cProd": "380164",
+      "desc": "Palmito Golden Palm Extra",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 21.69,
+      "total": 21.69
+    },
+    {
+      "cProd": "1076714",
+      "desc": "Agua Tonica Schweppes",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 3.29,
+      "total": 3.29
+    },
+    {
+      "cProd": "1076714",
+      "desc": "Agua Tonica Schweppes",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 3.29,
+      "total": 3.29
+    },
+    {
+      "cProd": "423458",
+      "desc": "Refrigerante Coca Cola",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 2.59,
+      "total": 2.59
+    },
+    {
+      "cProd": "440974",
+      "desc": "Cafe 3 Coracoes 250G",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 12.99,
+      "total": 12.99
+    },
+    {
+      "cProd": "986208",
+      "desc": "Capsula Tres C.Cappuccino",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 23.99,
+      "total": 23.99
+    },
+    {
+      "cProd": "772815",
+      "desc": "Capsula Tres Reg. Mundo",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 23.99,
+      "total": 23.99
+    },
+    {
+      "cProd": "772815",
+      "desc": "Capsula Tres Reg. Mundo",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 23.99,
+      "total": 23.99
+    },
+    {
+      "cProd": "561037",
+      "desc": "Capsula Tres C.Espresso",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 23.99,
+      "total": 23.99
+    },
+    {
+      "cProd": "1194432",
+      "desc": "Capsula Tres C.Cappuccino",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 23.99,
+      "total": 23.99
+    },
+    {
+      "cProd": "693868",
+      "desc": "Capsula Tres C.Espresso",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 23.99,
+      "total": 23.99
+    },
+    {
+      "cProd": "693868",
+      "desc": "Capsula Tres C.Espresso",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 23.99,
+      "total": 23.99
+    },
+    {
+      "cProd": "561037",
+      "desc": "Capsula Tres C.Espresso",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 23.99,
+      "total": 23.99
+    },
+    {
+      "cProd": "552837",
+      "desc": "Pacoquita Mini 216gr",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 11.99,
+      "total": 11.99
+    },
+    {
+      "cProd": "727730",
+      "desc": "Chocolate Nestle Kitkat",
+      "qty": 3,
+      "uom": "UN",
+      "unit": 4.79,
+      "total": 14.37
+    },
+    {
+      "cProd": "727730",
+      "desc": "Chocolate Nestle Kitkat",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 4.79,
+      "total": 4.79
+    },
+    {
+      "cProd": "806350",
+      "desc": "Chocolate Snickers 45G",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 3.99,
+      "total": 3.99
+    },
+    {
+      "cProd": "806350",
+      "desc": "Chocolate Snickers 45G",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 3.99,
+      "total": 3.99
+    },
+    {
+      "cProd": "128919",
+      "desc": "Arroz Urbano Parboilizado",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 5.49,
+      "total": 5.49
+    },
+    {
+      "cProd": "128919",
+      "desc": "Arroz Urbano Parboilizado",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 5.49,
+      "total": 5.49
+    },
+    {
+      "cProd": "13611",
+      "desc": "Cenoura Kg",
+      "qty": 1.025,
+      "uom": "KG",
+      "unit": 9.99,
+      "total": 10.24
+    },
+    {
+      "cProd": "12898",
+      "desc": "Manga Rosa Kg",
+      "qty": 0.97,
+      "uom": "KG",
+      "unit": 13.99,
+      "total": 13.57
+    },
+    {
+      "cProd": "1192872",
+      "desc": "Copo Silver Festas Papel",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 11.79,
+      "total": 11.79
+    },
+    {
+      "cProd": "1146202",
+      "desc": "Macarrao Vitarella Speciale",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 3.99,
+      "total": 3.99
+    },
+    {
+      "cProd": "817776",
+      "desc": "Grao De Bico Kicaldo 500G",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 9.59,
+      "total": 9.59
+    },
+    {
+      "cProd": "1157505",
+      "desc": "Milho Pipoca Yoki Premium",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 5.99,
+      "total": 5.99
+    },
+    {
+      "cProd": "122887",
+      "desc": "Bucha Marcoboni Vegetal",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 11.99,
+      "total": 11.99
+    },
+    {
+      "cProd": "13734",
+      "desc": "Beterraba Kg",
+      "qty": 1.55,
+      "uom": "KG",
+      "unit": 7.99,
+      "total": 12.38
+    },
+    {
+      "cProd": "1243956",
+      "desc": "Cocada Docelicia Coco",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 10.99,
+      "total": 10.99
+    },
+    {
+      "cProd": "11440",
+      "desc": "Limao Taiti Kg",
+      "qty": 0.57,
+      "uom": "KG",
+      "unit": 4.39,
+      "total": 2.5
+    },
+    {
+      "cProd": "578387",
+      "desc": "Esponja Bombril Multi Uso",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 5.39,
+      "total": 5.39
+    },
+    {
+      "cProd": "778152",
+      "desc": "Toalha De Papel Absoluto",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 4.29,
+      "total": 4.29
+    },
+    {
+      "cProd": "446792",
+      "desc": "Oleo Peroba 500Ml Jasmim",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 35.99,
+      "total": 35.99
+    },
+    {
+      "cProd": "1109108",
+      "desc": "Inseticida Sbp Aero.",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 16.99,
+      "total": 16.99
+    },
+    {
+      "cProd": "1109108",
+      "desc": "Inseticida Sbp Aero.",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 16.99,
+      "total": 16.99
+    },
+    {
+      "cProd": "159074",
+      "desc": "Agua Mineral Indaia 330Ml",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 2.39,
+      "total": 2.39
+    },
+    {
+      "cProd": "159074",
+      "desc": "Agua Mineral Indaia 330Ml",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 2.39,
+      "total": 2.39
+    },
+    {
+      "cProd": "159074",
+      "desc": "Agua Mineral Indaia 330Ml",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 2.39,
+      "total": 2.39
+    },
+    {
+      "cProd": "159074",
+      "desc": "Agua Mineral Indaia 330Ml",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 2.39,
+      "total": 2.39
+    },
+    {
+      "cProd": "5258",
+      "desc": "Talco P Pes Barla 140G",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 7.39,
+      "total": 7.39
+    },
+    {
+      "cProd": "1065732",
+      "desc": "Desodorante Aero. Rexona",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 25.99,
+      "total": 25.99
+    },
+    {
+      "cProd": "1224597",
+      "desc": "Tic Tac 49G Laranja",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 11.39,
+      "total": 11.39
+    },
+    {
+      "cProd": "1224603",
+      "desc": "Tic Tac 49G Frutas Como",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 11.39,
+      "total": 11.39
+    },
+    {
+      "cProd": "769020",
+      "desc": "Queijo Reino Piracanjuba",
+      "qty": 1,
+      "uom": "UN",
+      "unit": 17.99,
+      "total": 17.99
+    }
+  ]
+}

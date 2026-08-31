@@ -1,0 +1,1782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLOOMBERG — WEALTHCMD | [REDACTED]</title>
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg2: #111111;
+    --bg3: #181818;
+    --bg4: #1e1e1e;
+    --border: #2a2a2a;
+    --border2: #333;
+    --orange: #ff6600;
+    --orange2: #ff8800;
+    --yellow: #ffcc00;
+    --green: #00cc44;
+    --green2: #00ff55;
+    --red: #ff2222;
+    --red2: #ff4444;
+    --blue: #3399ff;
+    --blue2: #66bbff;
+    --cyan: #00cccc;
+    --white: #e8e8e8;
+    --gray: #888;
+    --gray2: #555;
+    --fs: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html {
+    min-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: var(--fs);
+    min-height: 100%;
+  }
+
+  /* ── TOP BAR ── */
+  #topbar {
+    background: #000;
+    border-bottom: 2px solid var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    height: 32px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  .tb-left { display: flex; align-items: center; gap: 12px; }
+  .tb-logo { color: var(--orange); font-weight: bold; font-size: 14px; letter-spacing: 2px; }
+  .tb-title { color: var(--yellow); font-size: 11px; }
+  .tb-right { display: flex; align-items: center; gap: 8px; }
+  #clock { color: var(--green); font-size: 11px; min-width: 140px; text-align: right; }
+  .fs-btn {
+    background: var(--bg3);
+    border: 1px solid var(--border2);
+    color: var(--white);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 11px;
+    padding: 2px 7px;
+    line-height: 1;
+  }
+  .fs-btn:hover { background: var(--orange); color: #000; border-color: var(--orange); }
+  .fs-label { color: var(--gray); font-size: 10px; }
+
+  /* ── NAV TABS ── */
+  #navtabs {
+    background: #0d0d0d;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-shrink: 0;
+    position: sticky;
+    top: 32px;
+    z-index: 19;
+    overflow-x: auto;
+  }
+  .tab {
+    padding: 5px 16px;
+    cursor: pointer;
+    font-size: 10px;
+    letter-spacing: 1px;
+    border-right: 1px solid var(--border);
+    color: var(--gray);
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+  .tab:hover { color: var(--orange); background: var(--bg2); }
+  .tab.active { color: var(--orange); border-bottom: 2px solid var(--orange); background: var(--bg2); margin-bottom: -1px; }
+
+  /* ── LAYOUT ── */
+  #shell {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  #content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 6px;
+  }
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ── GRID ── */
+  .row { display: flex; gap: 6px; margin-bottom: 6px; flex-wrap: wrap; }
+  .col { flex: 1; min-width: 0; }
+  .col-2 { flex: 2; }
+  .col-3 { flex: 3; }
+  .col-half { flex: 0 0 50%; }
+
+  /* ── PANELS ── */
+  .panel {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 0;
+  }
+  .ph {
+    background: var(--bg3);
+    border-bottom: 1px solid var(--border);
+    padding: 3px 7px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: var(--orange);
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ph-sub { color: var(--gray); font-size: 8px; text-transform: none; letter-spacing: 0; }
+  .pb { padding: 6px 8px; }
+
+  /* ── KPI BLOCKS ── */
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 4px; padding: 5px; }
+  .kpi {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    padding: 5px 8px;
+  }
+  .kpi-lbl { color: var(--gray); font-size: 8px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2px; }
+  .kpi-val { font-size: 14px; font-weight: bold; color: var(--orange); line-height: 1.1; }
+  .kpi-val.green { color: var(--green); }
+  .kpi-val.red { color: var(--red); }
+  .kpi-val.yellow { color: var(--yellow); }
+  .kpi-val.blue { color: var(--blue); }
+  .kpi-val.cyan { color: var(--cyan); }
+  .kpi-sub { color: var(--gray2); font-size: 8px; margin-top: 1px; }
+
+  /* ── TABLES ── */
+  .bt {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10px;
+  }
+  .bt th {
+    background: var(--bg4);
+    color: var(--orange);
+    padding: 3px 6px;
+    text-align: left;
+    border-bottom: 1px solid var(--border2);
+    font-size: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .bt td {
+    padding: 3px 6px;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+    color: var(--white);
+  }
+  .bt tr:hover td { background: rgba(255,102,0,0.06); }
+  .bt .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .bt .green { color: var(--green); }
+  .bt .red { color: var(--red2); }
+  .bt .yellow { color: var(--yellow); }
+  .bt .blue { color: var(--blue2); }
+  .bt .cyan { color: var(--cyan); }
+  .bt .orange { color: var(--orange); }
+  .bt .gray { color: var(--gray); }
+
+  /* ── BADGES ── */
+  .badge {
+    display: inline-block;
+    padding: 1px 5px;
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border: 1px solid;
+  }
+  .badge-keep { color: var(--green); border-color: var(--green); }
+  .badge-cancel { color: var(--red); border-color: var(--red); }
+  .badge-review { color: var(--yellow); border-color: var(--yellow); }
+  .badge-pause { color: var(--blue); border-color: var(--blue); }
+  .badge-crit { color: var(--red); border-color: var(--red); background: rgba(255,34,34,.1); }
+  .badge-high { color: var(--yellow); border-color: var(--yellow); }
+  .badge-med { color: var(--blue); border-color: var(--blue); }
+  .badge-low { color: var(--gray); border-color: var(--gray); }
+  .badge-ok { color: var(--green); border-color: var(--green); }
+  .badge-pend { color: var(--gray); border-color: var(--gray); }
+
+  /* ── SVG CHARTS ── */
+  .chart-wrap { padding: 6px 8px; }
+  svg text { font-family: 'Courier New', monospace; }
+
+  /* ── TICKER TAPE ── */
+  #ticker {
+    background: #000;
+    border-top: 1px solid var(--orange);
+    height: 22px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  #ticker-inner {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    height: 22px;
+    align-items: center;
+    white-space: nowrap;
+  }
+  @keyframes scroll {
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(-200%); }
+  }
+  .tick-item { padding: 0 18px; font-size: 10px; color: var(--gray); }
+  .tick-item span { margin-left: 4px; }
+  .tick-up { color: var(--green); }
+  .tick-dn { color: var(--red); }
+  .tick-sep { color: var(--border2); }
+
+  /* scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border2); }
+
+  /* sparkline */
+  .spark { vertical-align: middle; }
+
+  /* mini bar */
+  .bar-bg { background: var(--bg4); height: 6px; width: 100%; }
+  .bar-fill { height: 6px; }
+
+  /* flash animation for alerts */
+  @keyframes flash { 0%,100%{opacity:1} 50%{opacity:.4} }
+  .flash { animation: flash 1.8s infinite; }
+
+  /* color legend dots */
+  .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 3px; vertical-align: middle; }
+
+  /* section divider */
+  .sdiv { border-top: 1px solid var(--border2); margin: 4px 0; }
+
+  /* small chip */
+  .chip { display: inline-block; padding: 0 4px; font-size: 8px; background: var(--bg4); border: 1px solid var(--border2); margin-right: 2px; }
+</style>
+</head>
+<body>
+<div id="shell">
+
+<!-- TOP BAR -->
+<div id="topbar">
+  <div class="tb-left">
+    <span class="tb-logo">◆ BLOOMBERG</span>
+    <span class="tb-title">WEALTHCMD · [REDACTED] · CPF [REDACTED] · Jul 2026</span>
+  </div>
+  <div class="tb-right">
+    <span class="fs-label">FONT</span>
+    <button class="fs-btn" onclick="adjustFS(-1)">A−</button>
+    <span id="fs-pct" style="color:var(--gray);font-size:10px;min-width:32px;display:inline-block;text-align:center;">100%</span>
+    <button class="fs-btn" onclick="adjustFS(+1)">A+</button>
+    <span id="clock">—</span>
+  </div>
+</div>
+
+<!-- NAV TABS -->
+<div id="navtabs">
+  <div class="tab active" onclick="showPage('cmd')">00 CMD CTR</div>
+  <div class="tab" onclick="showPage('nw')">01 NET WORTH</div>
+  <div class="tab" onclick="showPage('flows')">02 CAPITAL FLOWS</div>
+  <div class="tab" onclick="showPage('intl')">03 INTERNATIONAL</div>
+  <div class="tab" onclick="showPage('port')">04 PORTFOLIO</div>
+  <div class="tab" onclick="showPage('life')">05 LIFESTYLE</div>
+  <div class="tab" onclick="showPage('subs')">06 SUBSCRIPTIONS</div>
+  <div class="tab" onclick="showPage('pix')">07 PIX BRIDGE</div>
+  <div class="tab" onclick="showPage('alerts')">08 ALERTS</div>
+  <div class="tab" onclick="showPage('txlog')">09 TX LOG</div>
+  <div class="tab" onclick="showPage('datamap')">10 DATA MAP</div>
+  <div class="tab" onclick="showPage('nfce')">11 NFC-E</div>
+</div>
+
+<!-- CONTENT -->
+<div id="content">
+
+<!-- ══════════════════════════════════════════════════════ PAGE 00: COMMAND CENTER -->
+<div class="page active" id="p-cmd">
+  <!-- KPI STRIP -->
+  <div class="panel" style="margin-bottom:6px;">
+    <div class="ph">WEALTH COMMAND CENTER <span class="ph-sub">Generated 31 Aug 2026 · Source: data/wealthcommand.xlsx (CALC)</span></div>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="kpi-lbl">Est. Net Worth</div><div class="kpi-val orange">R$ 358,277</div><div class="kpi-sub">Liquid + Investments</div></div>
+      <div class="kpi"><div class="kpi-lbl">Total Liquidity</div><div class="kpi-val yellow">R$ 23,197</div><div class="kpi-sub">Inter + MP + BB</div></div>
+      <div class="kpi"><div class="kpi-lbl">IB Deployed</div><div class="kpi-val green">USD 42,636</div><div class="kpi-sub">R$ 197,707</div></div>
+      <div class="kpi"><div class="kpi-lbl">Fundos BRL</div><div class="kpi-val green">R$ 175,766</div><div class="kpi-sub">3 Topázio deposits</div></div>
+      <div class="kpi"><div class="kpi-lbl">FX Outbound H1</div><div class="kpi-val red">R$ 652,789</div><div class="kpi-sub">USD 126,279 · 19 ops</div></div>
+      <div class="kpi"><div class="kpi-lbl">Inbound H1</div><div class="kpi-val cyan">R$ 98,857</div><div class="kpi-sub">2 operations</div></div>
+      <div class="kpi"><div class="kpi-lbl">Card Spend H1</div><div class="kpi-val red">R$ 37,246</div><div class="kpi-sub">Avg R$6,208/mo</div></div>
+      <div class="kpi"><div class="kpi-lbl">ML + iFood</div><div class="kpi-val yellow">R$ 27,489</div><div class="kpi-sub">H1 2026</div></div>
+      <div class="kpi"><div class="kpi-lbl">Sub Stack/mo</div><div class="kpi-val red">R$ 1,345</div><div class="kpi-sub">15 services tracked</div></div>
+      <div class="kpi"><div class="kpi-lbl">Cancel Savings</div><div class="kpi-val green">R$ 365.80</div><div class="kpi-sub">4 services · /mo</div></div>
+      <div class="kpi"><div class="kpi-lbl">Avg FX Rate</div><div class="kpi-val blue">5.180</div><div class="kpi-sub">BRL/USD H1</div></div>
+      <div class="kpi"><div class="kpi-lbl">PIX Net Flow</div><div class="kpi-val cyan">R$ 144,848</div><div class="kpi-sub">In − Out · Inter</div></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- PRIORITY ACTIONS -->
+    <div class="col-2">
+      <div class="panel">
+        <div class="ph">PRIORITY ACTIONS <span class="ph-sub">8 items · Jul 2026</span></div>
+        <table class="bt">
+          <tr><th>#</th><th>SEV</th><th>CATEGORY</th><th>FINDING</th><th class="num">EXPOSURE</th><th>STATUS</th></tr>
+          <tr>
+            <td>1</td>
+            <td><span class="badge badge-crit flash">CRITICAL</span></td>
+            <td>Subscriptions</td>
+            <td>CANCEL queue: Claude×2 + Grok + TuneIn = R$365.80/mo</td>
+            <td class="num red">4,389/yr</td>
+            <td><span class="badge badge-pend">PENDING</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><span class="badge badge-crit flash">CRITICAL</span></td>
+            <td>FX Reconciliation</td>
+            <td>R$652,789 sent to USA Own Account · 19 ops Jan–Jun</td>
+            <td class="num red">652,789</td>
+            <td><span class="badge badge-pend">PENDING</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><span class="badge badge-crit flash">CRITICAL</span></td>
+            <td>Sub Stack Bloat</td>
+            <td>7 services in REVIEW status · undecided</td>
+            <td class="num yellow">~7,763/yr</td>
+            <td><span class="badge badge-pend">PENDING</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><span class="badge badge-high">HIGH</span></td>
+            <td>Liquidity Conc.</td>
+            <td>100% liquid in Inter+MP · BB balance R$0</td>
+            <td class="num yellow">23,197</td>
+            <td><span class="badge badge-pend">PENDING</span></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><span class="badge badge-high">HIGH</span></td>
+            <td>IB Withdrawal</td>
+            <td>R$19,196 IB withdrawal via Wise Jun/2026 · destination unconfirmed</td>
+            <td class="num yellow">19,196</td>
+            <td><span class="badge badge-pend">PENDING</span></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><span class="badge badge-high">HIGH</span></td>
+            <td>Lottery/Gambling</td>
+            <td>R$6,455 Loteria on MP card 2026 · no budget cap set</td>
+            <td class="num yellow">6,455</td>
+            <td><span class="badge badge-pend">PENDING</span></td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td><span class="badge badge-med">MEDIUM</span></td>
+            <td>AI/Tech Overlap</td>
+            <td>R$6,624 card IA/Tech vs subscription stack</td>
+            <td class="num blue">6,624</td>
+            <td><span class="badge badge-pend">PENDING</span></td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td><span class="badge badge-med">MEDIUM</span></td>
+            <td>ML Compras Vol.</td>
+            <td>R$31,570 ML purchases · tag CAPEX/HEALTH/CONSUMABLE</td>
+            <td class="num blue">31,570</td>
+            <td><span class="badge badge-pend">PENDING</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- BANK BALANCES + WEALTH SPLIT -->
+    <div class="col">
+      <div class="panel" style="margin-bottom:6px;">
+        <div class="ph">BANK BALANCES <span class="ph-sub">Jul 2026</span></div>
+        <table class="bt">
+          <tr><th>INSTITUTION</th><th class="num">BALANCE</th><th>UPDATED</th><th>STATUS</th></tr>
+          <tr><td>Banco Inter</td><td class="num green">R$ 18,934.67</td><td>13/Jul</td><td><span class="badge badge-ok">✅ CONFIRMED</span></td></tr>
+          <tr><td>Mercado Pago</td><td class="num yellow">R$ 4,262.23</td><td>12/Jul</td><td><span class="badge badge-ok">✅ CONFIRMED</span></td></tr>
+          <tr><td>BB Brasil</td><td class="num gray">R$ 0.00</td><td>13/Jul</td><td><span class="badge badge-ok">✅ RENDE FÁCIL</span></td></tr>
+          <tr style="background:rgba(255,102,0,.05)"><td><strong>TOTAL LIQUID</strong></td><td class="num orange"><strong>R$ 23,196.90</strong></td><td>—</td><td>—</td></tr>
+        </table>
+      </div>
+      <div class="panel">
+        <div class="ph">WEALTH ALLOCATION</div>
+        <div class="chart-wrap">
+          <svg width="100%" height="140" id="svg-alloc"></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONTHLY CARD SPEND CHART -->
+  <div class="row">
+    <div class="col-2">
+      <div class="panel">
+        <div class="ph">MONTHLY CARD SPEND — H1 2026 <span class="ph-sub">MP Faturas (146 tx) + Subscription subset</span></div>
+        <div class="chart-wrap">
+          <svg width="100%" height="140" id="svg-monthly"></svg>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="panel">
+        <div class="ph">SPEND BY CATEGORY <span class="ph-sub">MP Card H1</span></div>
+        <table class="bt">
+          <tr><th>CATEGORY</th><th class="num">TOTAL</th><th class="num">%</th></tr>
+          <tr><td>Viagem ✈</td><td class="num">R$ 9,037</td><td class="num orange">24.3%</td></tr>
+          <tr><td>Compras/ML 🛒</td><td class="num">R$ 8,745</td><td class="num yellow">23.5%</td></tr>
+          <tr><td>IA/Tecnologia 🤖</td><td class="num red">R$ 6,624</td><td class="num red">17.8%</td></tr>
+          <tr><td>Loteria 🎰</td><td class="num red">R$ 6,455</td><td class="num red">17.3%</td></tr>
+          <tr><td>Internet 📡</td><td class="num">R$ 1,413</td><td class="num">3.8%</td></tr>
+          <tr><td>Assinatura 📱</td><td class="num">R$ 1,228</td><td class="num">3.3%</td></tr>
+          <tr><td>Delivery 🍕</td><td class="num">R$ 1,218</td><td class="num">3.3%</td></tr>
+          <tr><td>Outros</td><td class="num gray">R$ 3,528</td><td class="num gray">6.7%</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ PAGE 01: NET WORTH -->
+<div class="page" id="p-nw">
+  <div class="panel" style="margin-bottom:6px;">
+    <div class="ph">BALANCE SHEET · [REDACTED] · Jul 2026</div>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="kpi-lbl">Est. Net Worth</div><div class="kpi-val orange">R$ 358,277</div></div>
+      <div class="kpi"><div class="kpi-lbl">Liquid Assets</div><div class="kpi-val yellow">R$ 23,197</div></div>
+      <div class="kpi"><div class="kpi-lbl">IB Net Deposits</div><div class="kpi-val green">R$ 197,707</div></div>
+      <div class="kpi"><div class="kpi-lbl">Fundos BRL</div><div class="kpi-val green">R$ 175,766</div></div>
+      <div class="kpi"><div class="kpi-lbl">IB Withdrawal</div><div class="kpi-val red">−R$ 19,196</div><div class="kpi-sub">⚠ Verify destination</div></div>
+      <div class="kpi"><div class="kpi-lbl">Total Investments</div><div class="kpi-val cyan">R$ 335,081</div><div class="kpi-sub">IB + Funds (net)</div></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="panel">
+        <div class="ph">LIQUID ASSETS</div>
+        <table class="bt">
+          <tr><th>INSTITUTION</th><th>TYPE</th><th class="num">BALANCE (R$)</th><th>CONFIRMED</th><th>NOTES</th></tr>
+          <tr><td>Banco Inter</td><td>Digital</td><td class="num green">18,934.67</td><td>13/Jul/2026</td><td class="gray">Conta 6627102 · R$18,922 disp + R$12.60 bloq</td></tr>
+          <tr><td>Mercado Pago</td><td>Digital</td><td class="num yellow">4,262.23</td><td>12/Jul/2026</td><td class="gray">Extrato MP PDF 01–12/Jul</td></tr>
+          <tr><td>BB Brasil</td><td>Checking</td><td class="num gray">0.00</td><td>13/Jul/2026</td><td class="gray">Rende Fácil not in export</td></tr>
+          <tr style="background:rgba(255,102,0,.07)"><td><strong>TOTAL LIQUID</strong></td><td></td><td class="num orange"><strong>23,196.90</strong></td><td></td><td></td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="col">
+      <div class="panel">
+        <div class="ph">INVESTMENT ASSETS</div>
+        <table class="bt">
+          <tr><th>INSTRUMENT</th><th>CCY</th><th class="num">BRL EQUIV</th><th>PERIOD</th><th>STATUS</th></tr>
+          <tr><td>IB — Net Deposits</td><td>USD</td><td class="num green">197,706.57</td><td>Jan–Jun 2026</td><td><span class="badge badge-ok">DEPLOYED</span></td></tr>
+          <tr><td>IB Withdrawal</td><td>USD</td><td class="num red">−19,195.81</td><td>Jun 2026</td><td><span class="badge badge-review">VERIFY</span></td></tr>
+          <tr><td>Fundos BRL · Topázio</td><td>BRL</td><td class="num green">175,765.83</td><td>May–Jun 2026</td><td><span class="badge badge-ok">DEPLOYED</span></td></tr>
+          <tr style="background:rgba(255,102,0,.07)"><td><strong>TOTAL INVESTMENTS</strong></td><td></td><td class="num cyan"><strong>354,276.59</strong></td><td></td><td></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- FX Transfers table -->
+  <div class="panel" style="margin-top:6px;">
+    <div class="ph">FX OUTFLOWS — Self-Transfers to USA (Own Account) <span class="ph-sub">Nature 67995 · 19 operations</span></div>
+    <div style="max-height:260px;overflow-y:auto;">
+    <table class="bt">
+      <tr><th>DATE</th><th>INSTITUTION</th><th class="num">USD</th><th class="num">BRL COST</th><th class="num">RATE</th><th>NOTES</th></tr>
+      <tr><td>2026-01-27</td><td>BB Brasil</td><td class="num">3,000</td><td class="num">15,886.01</td><td class="num blue">5.2953</td><td class="gray">Self-transfer</td></tr>
+      <tr><td>2026-01-30</td><td>BB Brasil</td><td class="num">3,000</td><td class="num">16,063.89</td><td class="num blue">5.3546</td><td class="gray">Self-transfer</td></tr>
+      <tr><td>2026-02-09</td><td>BB Brasil</td><td class="num">3,000</td><td class="num">15,868.79</td><td class="num blue">5.2896</td><td class="gray">Self-transfer</td></tr>
+      <tr><td>2026-02-11</td><td>BB Brasil</td><td class="num">3,000</td><td class="num">15,789.96</td><td class="num blue">5.2633</td><td class="gray">Self-transfer</td></tr>
+      <tr><td>2026-03-03</td><td>BB Brasil</td><td class="num">3,000</td><td class="num">16,024.35</td><td class="num blue">5.3414</td><td class="gray">Self-transfer</td></tr>
+      <tr><td>2026-03-13</td><td>BB Brasil</td><td class="num">3,000</td><td class="num">15,877.18</td><td class="num blue">5.2924</td><td class="gray">Self-transfer</td></tr>
+      <tr><td>2026-03-18</td><td>BB Brasil</td><td class="num">3,000</td><td class="num">15,963.15</td><td class="num blue">5.3211</td><td class="gray">Self-transfer</td></tr>
+      <tr><td>2026-04-22</td><td>BB Brasil</td><td class="num">3,000</td><td class="num">15,878.08</td><td class="num blue">5.2927</td><td class="gray">Self-transfer</td></tr>
+      <tr><td>2026-05-07</td><td>BB Brasil</td><td class="num">3,000</td><td class="num">15,132.89</td><td class="num blue">5.0443</td><td class="gray">Self-transfer</td></tr>
+      <tr><td>2026-05-07</td><td>Banco Inter</td><td class="num">5,000</td><td class="num">24,939.84</td><td class="num blue">4.9880</td><td class="gray">via Inter</td></tr>
+      <tr><td>2026-05-11</td><td>Banco Inter</td><td class="num">15,000</td><td class="num">74,340.40</td><td class="num blue">4.9560</td><td class="gray">via Inter</td></tr>
+      <tr><td>2026-05-15</td><td>BB Brasil</td><td class="num">500</td><td class="num">2,577.87</td><td class="num blue">5.1558</td><td class="gray">Self-transfer</td></tr>
+      <tr><td>2026-05-15</td><td>Wise Brasil</td><td class="num">250</td><td class="num">1,246.27</td><td class="num blue">4.9851</td><td class="gray">UK · Wise</td></tr>
+      <tr><td>2026-05-18</td><td>BB Brasil</td><td class="num">200</td><td class="num">1,019.15</td><td class="num blue">5.0958</td><td class="gray">Self-transfer</td></tr>
+      <tr><td>2026-05-26</td><td>BB Brasil</td><td class="num">10,000</td><td class="num">51,027.68</td><td class="num blue">5.1028</td><td class="gray">Self-transfer</td></tr>
+      <tr><td>2026-05-28</td><td>BB Brasil</td><td class="num">5,000</td><td class="num">25,650.76</td><td class="num blue">5.1302</td><td class="gray">Self-transfer</td></tr>
+      <tr><td>2026-06-05</td><td>Wise Brasil</td><td class="num">100</td><td class="num">514.21</td><td class="num blue">5.1421</td><td class="gray">UK · Wise</td></tr>
+      <tr><td>2026-06-22</td><td>BB Brasil</td><td class="num orange">46,229</td><td class="num orange">241,546</td><td class="num blue">5.2245</td><td class="orange">LARGE</td></tr>
+      <tr><td>2026-06-22</td><td>Wise Brasil</td><td class="num">17,000</td><td class="num">87,442.26</td><td class="num blue">5.1436</td><td class="gray">UK · Wise</td></tr>
+      <tr style="background:rgba(255,102,0,.07)"><td><strong>TOTAL</strong></td><td></td><td class="num orange"><strong>126,279</strong></td><td class="num orange"><strong>652,789</strong></td><td class="num blue">5.180 avg</td><td></td></tr>
+    </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ PAGE 02: CAPITAL FLOWS -->
+<div class="page" id="p-flows">
+  <div class="panel" style="margin-bottom:6px;">
+    <div class="ph">CAPITAL FLOWS — Monthly Summary · Jan–Jun 2026</div>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="kpi-lbl">Card Spend H1</div><div class="kpi-val red">R$ 37,246</div></div>
+      <div class="kpi"><div class="kpi-lbl">PIX In (Inter)</div><div class="kpi-val green">R$ 237,010</div></div>
+      <div class="kpi"><div class="kpi-lbl">PIX Out (Inter)</div><div class="kpi-val red">R$ 92,162</div></div>
+      <div class="kpi"><div class="kpi-lbl">PIX Net Flow</div><div class="kpi-val cyan">R$ 144,848</div></div>
+      <div class="kpi"><div class="kpi-lbl">FX Out H1</div><div class="kpi-val red">R$ 652,789</div></div>
+      <div class="kpi"><div class="kpi-lbl">FX In H1</div><div class="kpi-val green">R$ 98,857</div></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <div class="panel">
+        <div class="ph">MONTHLY CASH FLOW BREAKDOWN</div>
+        <table class="bt">
+          <tr><th>MONTH</th><th class="num">CARD SPEND</th><th class="num">PIX IN</th><th class="num">PIX OUT</th><th class="num">FX IN</th><th class="num">NET FLOW</th><th>TXS</th></tr>
+          <tr><td>2026-01</td><td class="num red">−3,745</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num red">−3,745</td><td>18</td></tr>
+          <tr><td>2026-02</td><td class="num red">−9,516</td><td class="num green">40,000</td><td class="num">0</td><td class="num">0</td><td class="num green">+30,484</td><td>21</td></tr>
+          <tr><td>2026-03</td><td class="num red">−14,231</td><td class="num">0</td><td class="num red">−11,432</td><td class="num">0</td><td class="num red">−25,664</td><td>32</td></tr>
+          <tr><td>2026-04</td><td class="num red">−5,330</td><td class="num green">40,000</td><td class="num red">−10,330</td><td class="num">0</td><td class="num green">+24,340</td><td>33</td></tr>
+          <tr><td>2026-05</td><td class="num red">−3,308</td><td class="num green">115,000</td><td class="num red">−69,920</td><td class="num">0</td><td class="num green">+41,772</td><td>29</td></tr>
+          <tr><td>2026-06</td><td class="num red">−1,114</td><td class="num green">42,010</td><td class="num red">−480</td><td class="num cyan">+98,857</td><td class="num green">+139,273</td><td>13</td></tr>
+        </table>
+        <div class="chart-wrap" style="padding-top:4px;">
+          <svg width="100%" height="110" id="svg-flows"></svg>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="panel">
+        <div class="ph">FLOW COMPOSITION H1</div>
+        <div class="chart-wrap">
+          <svg width="100%" height="230" id="svg-flow-pie"></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ PAGE 03: INTERNATIONAL -->
+<div class="page" id="p-intl">
+  <div class="panel" style="margin-bottom:6px;">
+    <div class="ph">INTERNATIONAL CAPITAL OPERATIONS · BCB Câmbio Register · Jan–Jun 2026 <span class="ph-sub">32 operations</span></div>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="kpi-lbl">FX Outbound</div><div class="kpi-val red">R$ 652,789</div><div class="kpi-sub">19 ops</div></div>
+      <div class="kpi"><div class="kpi-lbl">IB Deposits</div><div class="kpi-val green">R$ 197,707</div><div class="kpi-sub">7 ops · USD 38,801</div></div>
+      <div class="kpi"><div class="kpi-lbl">Fund Capital</div><div class="kpi-val green">R$ 175,766</div><div class="kpi-sub">3 ops · Topázio</div></div>
+      <div class="kpi"><div class="kpi-lbl">Inbound</div><div class="kpi-val cyan">R$ 98,857</div><div class="kpi-sub">2 ops</div></div>
+      <div class="kpi"><div class="kpi-lbl">IB Withdrawal</div><div class="kpi-val red">R$ 19,196</div><div class="kpi-sub">⚠ Verify</div></div>
+      <div class="kpi"><div class="kpi-lbl">Avg FX Rate</div><div class="kpi-val blue">5.180</div><div class="kpi-sub">BRL/USD outbound</div></div>
+      <div class="kpi"><div class="kpi-lbl">USD Sent</div><div class="kpi-val orange">126,279</div><div class="kpi-sub">Self-transfers</div></div>
+      <div class="kpi"><div class="kpi-lbl">Travel FX</div><div class="kpi-val gray">R$ 27,626</div><div class="kpi-sub">2024 · CHF + USD</div></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="panel">
+        <div class="ph">BY DIRECTION</div>
+        <table class="bt">
+          <tr><th>DIRECTION</th><th class="num">COUNT</th><th class="num">BRL TOTAL</th><th class="num">USD</th><th class="num">AVG RATE</th><th class="num">% OUTFLOW</th></tr>
+          <tr><td class="red">Outbound</td><td class="num">19</td><td class="num red">652,789</td><td class="num red">126,279</td><td class="num blue">5.180</td><td class="num">60.8%</td></tr>
+          <tr><td class="green">IB Deposit</td><td class="num">7</td><td class="num green">197,707</td><td class="num green">38,801</td><td class="num blue">5.121</td><td class="num">18.4%</td></tr>
+          <tr><td class="cyan">Fund Deposit</td><td class="num">3</td><td class="num cyan">175,766</td><td class="num gray">BRL only</td><td class="num gray">—</td><td class="num">16.4%</td></tr>
+          <tr><td class="cyan">Inbound</td><td class="num">2</td><td class="num cyan">98,857</td><td class="num gray">BRL only</td><td class="num gray">—</td><td class="num gray">—</td></tr>
+          <tr><td class="red">IB Withdraw</td><td class="num">1</td><td class="num red">19,196</td><td class="num red">3,835</td><td class="num blue">5.178</td><td class="num">1.8%</td></tr>
+          <tr><td class="gray">Travel FX</td><td class="num">3</td><td class="num gray">27,626</td><td class="num gray">4,300+CHF</td><td class="num gray">6.594</td><td class="num gray">2.6%</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="col">
+      <div class="panel">
+        <div class="ph">FX RATE TIMELINE</div>
+        <div class="chart-wrap">
+          <svg width="100%" height="160" id="svg-fxrate"></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel" style="margin-top:6px;">
+    <div class="ph">FULL OPERATIONS LOG · 32 Operations</div>
+    <div style="max-height:280px;overflow-y:auto;">
+    <table class="bt">
+      <tr><th>DATE</th><th>INSTITUTION</th><th>DESTINATION</th><th class="num">FCY</th><th class="num">BRL</th><th>CCY</th><th>DIRECTION</th><th class="num">RATE</th></tr>
+      <tr><td>2026-01-26</td><td>Banco Topázio</td><td>Interactive Brokers</td><td class="num green">200</td><td class="num green">1,071</td><td>USD</td><td><span class="badge badge-ok">IB DEP</span></td><td class="num blue">5.3561</td></tr>
+      <tr><td>2026-01-27</td><td>BB Brasil</td><td>USA Own Account</td><td class="num red">3,000</td><td class="num red">15,886</td><td>USD</td><td><span class="badge badge-crit">OUTBOUND</span></td><td class="num blue">5.2953</td></tr>
+      <tr><td>2026-01-30</td><td>BB Brasil</td><td>USA Own Account</td><td class="num red">3,000</td><td class="num red">16,064</td><td>USD</td><td><span class="badge badge-crit">OUTBOUND</span></td><td class="num blue">5.3546</td></tr>
+      <tr><td>2026-02-09</td><td>BB Brasil</td><td>USA Own Account</td><td class="num red">3,000</td><td class="num red">15,869</td><td>USD</td><td><span class="badge badge-crit">OUTBOUND</span></td><td class="num blue">5.2896</td></tr>
+      <tr><td>2026-02-11</td><td>BB Brasil</td><td>USA Own Account</td><td class="num red">3,000</td><td class="num red">15,790</td><td>USD</td><td><span class="badge badge-crit">OUTBOUND</span></td><td class="num blue">5.2633</td></tr>
+      <tr><td>2026-03-03</td><td>BB Brasil</td><td>USA Own Account</td><td class="num red">3,000</td><td class="num red">16,024</td><td>USD</td><td><span class="badge badge-crit">OUTBOUND</span></td><td class="num blue">5.3414</td></tr>
+      <tr><td>2026-03-13</td><td>BB Brasil</td><td>USA Own Account</td><td class="num red">3,000</td><td class="num red">15,877</td><td>USD</td><td><span class="badge badge-crit">OUTBOUND</span></td><td class="num blue">5.2924</td></tr>
+      <tr><td>2026-03-18</td><td>BB Brasil</td><td>USA Own Account</td><td class="num red">3,000</td><td class="num red">15,963</td><td>USD</td><td><span class="badge badge-crit">OUTBOUND</span></td><td class="num blue">5.3211</td></tr>
+      <tr><td>2026-04-22</td><td>BB Brasil</td><td>USA Own Account</td><td class="num red">3,000</td><td class="num red">15,878</td><td>USD</td><td><span class="badge badge-crit">OUTBOUND</span></td><td class="num blue">5.2927</td></tr>
+      <tr><td>2026-04-30</td><td>Banco Topázio</td><td>Interactive Brokers</td><td class="num green">100</td><td class="num green">504</td><td>USD</td><td><span class="badge badge-ok">IB DEP</span></td><td class="num blue">5.0362</td></tr>
+      <tr><td>2026-05-07</td><td>BB Brasil</td><td>USA Own Account</td><td class="num red">3,000</td><td class="num red">15,133</td><td>USD</td><td><span class="badge badge-crit">OUTBOUND</span></td><td class="num blue">5.0443</td></tr>
+      <tr><td>2026-05-07</td><td>Banco Inter</td><td>USA Own Account</td><td class="num red">5,000</td><td class="num red">24,940</td><td>USD</td><td><span class="badge badge-crit">OUTBOUND</span></td><td class="num blue">4.9880</td></tr>
+      <tr><td>2026-05-11</td><td>Banco Inter</td><td>USA Own Account</td><td class="num red">15,000</td><td class="num red">74,340</td><td>USD</td><td><span class="badge badge-crit">OUTBOUND</span></td><td class="num blue">4.9560</td></tr>
+      <tr><td>2026-05-15</td><td>BB Brasil</td><td>USA Own Account</td><td class="num red">500</td><td class="num red">2,578</td><td>USD</td><td><span class="badge badge-crit">OUTBOUND</span></td><td class="num blue">5.1558</td></tr>
+      <tr><td>2026-05-15</td><td>Wise Brasil</td><td>UK [REDACTED]</td><td class="num red">250</td><td class="num red">1,246</td><td>USD</td><td><span class="badge badge-crit">OUTBOUND</span></td><td class="num blue">4.9851</td></tr>
+      <tr><td>2026-05-18</td><td>BB Brasil</td><td>USA Own Account</td><td class="num red">200</td><td class="num red">1,019</td><td>USD</td><td><span class="badge badge-crit">OUTBOUND</span></td><td class="num blue">5.0958</td></tr>
+      <tr><td>2026-05-18</td><td>Wise Brasil</td><td>Interactive Brokers</td><td class="num green">3,835</td><td class="num green">19,196</td><td>USD</td><td><span class="badge badge-ok">IB DEP</span></td><td class="num blue">5.0056</td></tr>
+      <tr><td>2026-05-19</td><td>Banco Topázio</td><td>Interactive Brokers</td><td class="num green">1,000</td><td class="num green">5,115</td><td>USD</td><td><span class="badge badge-ok">IB DEP</span></td><td class="num blue">5.1149</td></tr>
+      <tr><td>2026-05-20</td><td>Banco Topázio</td><td>Interactive Brokers</td><td class="num green">6,212</td><td class="num green">31,652</td><td>USD</td><td><span class="badge badge-ok">IB DEP</span></td><td class="num blue">5.0949</td></tr>
+      <tr><td>2026-05-22</td><td>Banco Topázio</td><td>Fundos BRL</td><td class="num gray">—</td><td class="num cyan">45,000</td><td>BRL</td><td><span class="badge badge-med">FUND</span></td><td class="num gray">—</td></tr>
+      <tr><td>2026-05-26</td><td>BB Brasil</td><td>USA Own Account</td><td class="num red">10,000</td><td class="num red">51,028</td><td>USD</td><td><span class="badge badge-crit">OUTBOUND</span></td><td class="num blue">5.1028</td></tr>
+      <tr><td>2026-05-28</td><td>BB Brasil</td><td>USA Own Account</td><td class="num red">5,000</td><td class="num red">25,651</td><td>USD</td><td><span class="badge badge-crit">OUTBOUND</span></td><td class="num blue">5.1302</td></tr>
+      <tr><td>2026-05-28</td><td>Banco Topázio</td><td>Interactive Brokers</td><td class="num green">20,000</td><td class="num green">101,772</td><td>USD</td><td><span class="badge badge-ok">IB DEP</span></td><td class="num blue">5.0886</td></tr>
+      <tr><td>2026-06-05</td><td>Wise Brasil</td><td>UK [REDACTED]</td><td class="num red">100</td><td class="num red">514</td><td>USD</td><td><span class="badge badge-crit">OUTBOUND</span></td><td class="num blue">5.1421</td></tr>
+      <tr><td>2026-06-05</td><td>Banco Topázio</td><td>Fundos BRL</td><td class="num gray">—</td><td class="num cyan">78,324</td><td>BRL</td><td><span class="badge badge-med">FUND</span></td><td class="num gray">—</td></tr>
+      <tr><td>2026-06-05</td><td>BB Brasil</td><td>USA → [REDACTED]</td><td class="num gray">—</td><td class="num cyan">73,857</td><td>BRL</td><td><span class="badge badge-ok">INBOUND</span></td><td class="num gray">—</td></tr>
+      <tr><td>2026-06-16</td><td>Ouribank</td><td>Inbound payment</td><td class="num gray">—</td><td class="num cyan">25,000</td><td>BRL</td><td><span class="badge badge-ok">INBOUND</span></td><td class="num gray">—</td></tr>
+      <tr><td>2026-06-19</td><td>Banco Topázio</td><td>Fundos BRL</td><td class="num gray">—</td><td class="num cyan">52,442</td><td>BRL</td><td><span class="badge badge-med">FUND</span></td><td class="num gray">—</td></tr>
+      <tr><td>2026-06-22</td><td>BB Brasil</td><td>USA Own Account</td><td class="num orange">46,229</td><td class="num orange">241,546</td><td>USD</td><td><span class="badge badge-crit flash">LARGE OUT</span></td><td class="num blue">5.2245</td></tr>
+      <tr><td>2026-06-22</td><td>Wise Brasil</td><td>UK [REDACTED]</td><td class="num red">17,000</td><td class="num red">87,442</td><td>USD</td><td><span class="badge badge-crit">OUTBOUND</span></td><td class="num blue">5.1436</td></tr>
+      <tr><td>2026-06-22</td><td>Wise Brasil</td><td>Interactive Brokers</td><td class="num green">7,454</td><td class="num green">38,397</td><td>USD</td><td><span class="badge badge-ok">IB DEP</span></td><td class="num blue">5.1510</td></tr>
+      <tr><td>2026-06-26</td><td>Wise Brasil</td><td>Interactive Brokers</td><td class="num red">3,835</td><td class="num red">19,196</td><td>USD</td><td><span class="badge badge-review">IB WITHDR</span></td><td class="num blue">5.1783</td></tr>
+    </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ PAGE 04: PORTFOLIO -->
+<div class="page" id="p-port">
+  <div class="panel" style="margin-bottom:6px;">
+    <div class="ph">PORTFOLIO · Investment Deployment · IB + Fundos BRL</div>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="kpi-lbl">IB Deposits Total</div><div class="kpi-val green">USD 42,636</div><div class="kpi-sub">R$ 216,902</div></div>
+      <div class="kpi"><div class="kpi-lbl">IB Withdrawal</div><div class="kpi-val red">USD 3,835</div><div class="kpi-sub">R$ 19,196 · ⚠ Verify</div></div>
+      <div class="kpi"><div class="kpi-lbl">IB Net</div><div class="kpi-val cyan">USD 38,801</div><div class="kpi-sub">R$ 197,706</div></div>
+      <div class="kpi"><div class="kpi-lbl">Fundos BRL</div><div class="kpi-val green">R$ 175,766</div><div class="kpi-sub">3 deposits · Topázio</div></div>
+      <div class="kpi"><div class="kpi-lbl">Combined Deployment</div><div class="kpi-val orange">R$ 373,472</div><div class="kpi-sub">IB + Funds (gross)</div></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="panel">
+        <div class="ph">INTERACTIVE BROKERS — DEPOSIT TIMELINE</div>
+        <table class="bt">
+          <tr><th>DATE</th><th>INSTITUTION</th><th class="num">USD</th><th class="num">BRL COST</th><th class="num">FX RATE</th><th>TYPE</th></tr>
+          <tr><td>2026-01-26</td><td>Banco Topázio</td><td class="num green">200</td><td class="num">1,071.22</td><td class="num blue">5.3561</td><td>IB Deposit</td></tr>
+          <tr><td>2026-04-30</td><td>Banco Topázio</td><td class="num green">100</td><td class="num">503.62</td><td class="num blue">5.0362</td><td>IB Deposit</td></tr>
+          <tr><td>2026-05-18</td><td>Wise Brasil</td><td class="num green">3,835</td><td class="num">19,195.81</td><td class="num blue">5.0056</td><td>IB via Wise</td></tr>
+          <tr><td>2026-05-19</td><td>Banco Topázio</td><td class="num green">1,000</td><td class="num">5,114.85</td><td class="num blue">5.1149</td><td>IB Deposit</td></tr>
+          <tr><td>2026-05-20</td><td>Banco Topázio</td><td class="num green">6,212</td><td class="num">31,651.83</td><td class="num blue">5.0949</td><td>IB Deposit</td></tr>
+          <tr><td>2026-05-28</td><td>Banco Topázio</td><td class="num orange">20,000</td><td class="num">101,772.38</td><td class="num blue">5.0886</td><td>IB Deposit</td></tr>
+          <tr><td>2026-06-22</td><td>Wise Brasil</td><td class="num green">7,454</td><td class="num">38,396.86</td><td class="num blue">5.1510</td><td>IB via Wise</td></tr>
+          <tr><td>2026-06-26</td><td>Wise Brasil</td><td class="num red">−3,835</td><td class="num red">−19,195.81</td><td class="num blue">5.1783</td><td class="red">IB WITHDRAW</td></tr>
+          <tr style="background:rgba(0,204,68,.05)"><td><strong>NET IB</strong></td><td></td><td class="num green"><strong>38,801</strong></td><td class="num green"><strong>197,707</strong></td><td class="num blue">5.121</td><td></td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="col">
+      <div class="panel">
+        <div class="ph">FUNDOS BRL — CAPITAL DEPLOYMENTS</div>
+        <table class="bt">
+          <tr><th>DATE</th><th>INSTITUTION</th><th>DESTINATION</th><th class="num">BRL DEPLOYED</th></tr>
+          <tr><td>2026-05-22</td><td>Banco Topázio</td><td>Fundos investimento BRL</td><td class="num green">45,000.00</td></tr>
+          <tr><td>2026-06-05</td><td>Banco Topázio</td><td>Fundos investimento BRL</td><td class="num green">78,323.92</td></tr>
+          <tr><td>2026-06-19</td><td>Banco Topázio</td><td>Fundos investimento BRL</td><td class="num green">52,441.91</td></tr>
+          <tr style="background:rgba(0,204,68,.05)"><td><strong>TOTAL</strong></td><td></td><td></td><td class="num green"><strong>175,765.83</strong></td></tr>
+        </table>
+        <div class="chart-wrap">
+          <svg width="100%" height="140" id="svg-port"></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ PAGE 05: LIFESTYLE -->
+<div class="page" id="p-life">
+  <div class="panel" style="margin-bottom:6px;">
+    <div class="ph">LIFESTYLE & BURN RATE · Card + ML + iFood · Jan–Jun 2026</div>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="kpi-lbl">Card Spend H1</div><div class="kpi-val red">R$ 37,246</div></div>
+      <div class="kpi"><div class="kpi-lbl">Avg / Month</div><div class="kpi-val yellow">R$ 6,208</div></div>
+      <div class="kpi"><div class="kpi-lbl">ML + iFood H1</div><div class="kpi-val orange">R$ 27,489</div></div>
+      <div class="kpi"><div class="kpi-lbl">Highest Month</div><div class="kpi-val red">R$ 14,231 (Mar)</div></div>
+      <div class="kpi"><div class="kpi-lbl">Lowest Month</div><div class="kpi-val green">R$ 1,114 (Jun)</div></div>
+      <div class="kpi"><div class="kpi-lbl">Top Category</div><div class="kpi-val orange">Viagem 24.3%</div></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <div class="panel">
+        <div class="ph">MONTHLY CARD SPEND</div>
+        <table class="bt">
+          <tr><th>MONTH</th><th class="num">SPEND</th><th class="num">TXS</th><th class="num">vs AVG</th><th>TREND</th></tr>
+          <tr><td>2026-01</td><td class="num">3,745</td><td class="num">18</td><td class="num red">−2,462</td><td><div class="bar-bg"><div class="bar-fill" style="width:26%;background:#ff6600;"></div></div></td></tr>
+          <tr><td>2026-02</td><td class="num">9,516</td><td class="num">21</td><td class="num green">+3,308</td><td><div class="bar-bg"><div class="bar-fill" style="width:67%;background:#ff6600;"></div></div></td></tr>
+          <tr><td>2026-03</td><td class="num orange">14,231</td><td class="num">32</td><td class="num orange">+8,024</td><td><div class="bar-bg"><div class="bar-fill" style="width:100%;background:#ff2222;"></div></div></td></tr>
+          <tr><td>2026-04</td><td class="num">5,330</td><td class="num">33</td><td class="num red">−877</td><td><div class="bar-bg"><div class="bar-fill" style="width:37%;background:#ff6600;"></div></div></td></tr>
+          <tr><td>2026-05</td><td class="num">3,308</td><td class="num">29</td><td class="num red">−2,899</td><td><div class="bar-bg"><div class="bar-fill" style="width:23%;background:#ff6600;"></div></div></td></tr>
+          <tr><td>2026-06</td><td class="num green">1,114</td><td class="num">13</td><td class="num green">−5,093</td><td><div class="bar-bg"><div class="bar-fill" style="width:8%;background:#00cc44;"></div></div></td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="col">
+      <div class="panel">
+        <div class="ph">SPEND BY CATEGORY</div>
+        <table class="bt">
+          <tr><th>CATEGORY</th><th class="num">TOTAL</th><th class="num">%</th><th>CLASS</th></tr>
+          <tr><td>✈ Viagem</td><td class="num">9,037</td><td class="num orange">24.3%</td><td>💡 Discr.</td></tr>
+          <tr><td>🛒 Compras/ML</td><td class="num">8,745</td><td class="num yellow">23.5%</td><td>💡 Discr.</td></tr>
+          <tr><td>🤖 IA/Tecnologia</td><td class="num red">6,624</td><td class="num red">17.8%</td><td>⚠ Review</td></tr>
+          <tr><td>🎰 Loteria</td><td class="num red">6,455</td><td class="num red">17.3%</td><td>⚠ Review</td></tr>
+          <tr><td>📡 Internet</td><td class="num">1,413</td><td class="num">3.8%</td><td>✅ Essent.</td></tr>
+          <tr><td>📱 Assinatura</td><td class="num">1,228</td><td class="num">3.3%</td><td>💡 Discr.</td></tr>
+          <tr><td>🍕 Delivery</td><td class="num">1,218</td><td class="num">3.3%</td><td>✅ Essent.</td></tr>
+          <tr><td>🚗 Transporte</td><td class="num">205</td><td class="num">0.6%</td><td>💡 Discr.</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- ML + iFood recent orders -->
+  <div class="panel" style="margin-top:6px;">
+    <div class="ph">ML + iFOOD RECENT ORDERS <span class="ph-sub">69 items · R$27,489 total</span></div>
+    <div style="max-height:220px;overflow-y:auto;">
+    <table class="bt">
+      <tr><th>DATE</th><th>PLATFORM</th><th>ITEM</th><th class="num">VALUE</th><th>CATEGORY</th><th>STATUS</th></tr>
+      <tr><td>2026-06-16</td><td>ML</td><td>Suporte Monitor Articulado Portátil Dobrável</td><td class="num">144.00</td><td>Home Office</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-06-08</td><td>ML</td><td>Filtro De Ar Descartável Cpap Airmini Resmed</td><td class="num">41.65</td><td>Saúde/CPAP</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-06-03</td><td>ML</td><td>Máscara Nasal Resmed Airfit N30i Apneia</td><td class="num">480.00</td><td>Saúde/CPAP</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-06-01</td><td>ML</td><td>Macaco Hidráulico Tipo Jacaré 2ton Portátil</td><td class="num">249.99</td><td>Ferramentas</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-05-30</td><td>iFood</td><td>Pipa Sushi & Temakeria – 1x Monte Seu Poke</td><td class="num">90.29</td><td>Delivery/Sushi</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-05-18</td><td>iFood</td><td>Pipa Sushi & Temakeria – 1x Monte Seu Poke</td><td class="num">67.31</td><td>Delivery/Sushi</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-05-16</td><td>iFood</td><td>Maria Baunilha Confeitaria – 1x Trio Maria Baunilha</td><td class="num">73.03</td><td>Delivery/Confeitaria</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-05-11</td><td>ML</td><td>Câmera Inteligente Im7 3mp De Resolução</td><td class="num">429.90</td><td>Eletrônicos</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-05-11</td><td>iFood</td><td>iFood (taxa/pedido) – -</td><td class="num">7.95</td><td>Delivery/Taxa</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-05-09</td><td>ML</td><td>Sensor Presença Humana Radar Inteligente</td><td class="num">379.98</td><td>Eletrônicos</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-05-03</td><td>ML</td><td>Prateleira Estilo Industrial Suporte Em Madeira</td><td class="num">132.00</td><td>Casa</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-05-02</td><td>iFood</td><td>Bianca Tolêdo Confeitaria – 1x Cake Moça e Morango + 1x Cake Cenoura</td><td class="num">0.00</td><td>Delivery/Confeitaria</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-04-29</td><td>ML</td><td>Relógio Parede Digital Grande Calendário</td><td class="num">105.99</td><td>Casa</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-04-27</td><td>ML</td><td>Álcool Isopropílico Quimivida 1l 99,8%</td><td class="num">71.94</td><td>Higiene</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-04-27</td><td>iFood</td><td>Bianca Tolêdo Confeitaria – 1x Promoção: 2 Cake in box</td><td class="num">0.00</td><td>Delivery/Confeitaria</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-04-22</td><td>ML</td><td>Organizador De Fios E Cabos Baixo Mesa</td><td class="num">36.90</td><td>Home Office</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-04-20</td><td>iFood</td><td>Jurassic Pizza - Bessa – 1x Combo 1 - Pizza G + Refri 1l</td><td class="num">74.88</td><td>Delivery/Pizza</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-04-17</td><td>ML</td><td>Kit Teste Ouro Pedra De Toque + Ácido 22k</td><td class="num">69.90</td><td>Outros</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-04-16</td><td>ML</td><td>For I 2 Dispositivo De Ronco Elétrico</td><td class="num">62.25</td><td>Saúde/CPAP</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-04-12</td><td>ML</td><td>Bravecto 4,5 A 10 Kg Antipulgas</td><td class="num">162.90</td><td>Pet</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-04-05</td><td>ML</td><td>Antipulgas Bravecto Original De 20 A 40 Kg</td><td class="num">440.00</td><td>Pet</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-04-03</td><td>iFood</td><td>Matterello Pizza – 2x M (8 FATIAS) 2 SABORES</td><td class="num">0.00</td><td>Delivery/Pizza</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-XX</td><td>ML</td><td>4 produtos Mercado Livre</td><td class="num red">824.50</td><td>Cancelado</td><td><span class="badge badge-cancel">✗ CANCEL</span></td></tr>
+      <tr><td>2026-03-30</td><td>ML</td><td>Vittak Defletor Ar Condicionado Split</td><td class="num">27.90</td><td>Casa</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-30</td><td>ML</td><td>Traqueia Cpap Pvc Cinza 22mm X 1,80m</td><td class="num">49.90</td><td>Saúde/CPAP</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-29</td><td>ML</td><td>Lavadora De Alta Pressão Wap Premier 2600</td><td class="num">919.00</td><td>Casa</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-28</td><td>ML</td><td>Water Cooler Argb 240mm Pwm Para Cpu</td><td class="num">399.99</td><td>Eletrônicos</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-27</td><td>ML</td><td>Tapete Protetor De Piso Cadeira Gamer</td><td class="num">151.80</td><td>Home Office</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-25</td><td>ML</td><td>Electrolux Filtro/refil De Água Acqua Pure</td><td class="num">69.90</td><td>Casa</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-25</td><td>ML</td><td>Luminária Led 3d De Mesa Logo Personalizada</td><td class="num">137.86</td><td>Home Office</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-24</td><td>ML</td><td>Filtro De Café 51mm Não Pressurizado Inox</td><td class="num">54.90</td><td>Casa</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-23</td><td>ML</td><td>Máquina De Gelo Turbo Ice Premium Mondial</td><td class="num">699.90</td><td>Eletrodomésticos</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-22</td><td>ML</td><td>Relógio Digital Mesa Led Wooden Clock</td><td class="num">49.83</td><td>Casa</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-22</td><td>ML</td><td>Desk Pad Mouse Pad 90x40 Extra Grande</td><td class="num">41.24</td><td>Home Office</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-20</td><td>ML</td><td>Traqueia Para Air Mini Tubing Resmed 38822</td><td class="num">285.95</td><td>Saúde/CPAP</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-18</td><td>ML</td><td>Umidificador Resmed Humidx Plus Para Cpap</td><td class="num">86.33</td><td>Saúde/CPAP</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-16</td><td>ML</td><td>Capa Tv Televisão 32–75 Polegadas</td><td class="num">110.38</td><td>Casa</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-16</td><td>ML</td><td>Melhor Pegboard Setup Gamer Home Office</td><td class="num">63.90</td><td>Home Office</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-16</td><td>ML</td><td>Organizador De Cabos E Fios 5 Metros</td><td class="num">22.70</td><td>Home Office</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-16</td><td>ML</td><td>Luminária Barra Led Mesa Duas Cabeças</td><td class="num">127.40</td><td>Home Office</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-16</td><td>ML</td><td>Bolsa Organizadora De Cabo Fio Eletrônico</td><td class="num">20.67</td><td>Home Office</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-16</td><td>ML</td><td>Organizador De Gavetas Escritório Maxcril</td><td class="num">36.90</td><td>Home Office</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-16</td><td>ML</td><td>Cpap Portátil Resmed Airmini Automático</td><td class="num orange">4,980.91</td><td>Saúde/CPAP</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-13</td><td>ML</td><td>Mousepad Grande Programação AtalhosPhy</td><td class="num">59.90</td><td>Home Office</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-12</td><td>ML</td><td>Teclas Avulsas Teclado Magic Keyboard Apple</td><td class="num">79.00</td><td>Eletrônicos</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-12</td><td>ML</td><td>Chinelo Hoka One One Ora Athletic Slide</td><td class="num">599.90</td><td>Vestuário</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-12</td><td>ML</td><td>Tênis Hoka Mach 6 Masculino Azul Jeans</td><td class="num orange">1,009.78</td><td>Vestuário</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-10</td><td>ML</td><td>Lanterna De Mergulho F9 Inton Alto Desempenho</td><td class="num">558.72</td><td>Esportes</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-10</td><td>ML</td><td>Filtro De Café De Aço Inoxidável 1 Copo 51mm</td><td class="num">72.67</td><td>Casa</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-09</td><td>ML</td><td>Kit 4 Dilatador Nasal Espiral Anti Ronco</td><td class="num">21.89</td><td>Saúde/CPAP</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-09</td><td>ML</td><td>Dilatador Nasal Magnético Reduza O Ronco</td><td class="num">53.99</td><td>Saúde/CPAP</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-09</td><td>ML</td><td>Vermelho Gradiente Pbt Duas Cores Teclado</td><td class="num">60.08</td><td>Eletrônicos</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-06</td><td>ML</td><td>Cápsula Nespresso Inox Reutilizável + Tampe</td><td class="num">152.91</td><td>Casa</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-03-03</td><td>iFood</td><td>Dona Branca – 1x Pizza grande 8 fatias + Guaraná 1l</td><td class="num">57.00</td><td>Delivery/Pizza</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-02-XX</td><td>ML</td><td>Cpap Portátil Resmed Airmini (não entregue)</td><td class="num red orange">4,952.52</td><td>Saúde/CPAP</td><td><span class="badge badge-cancel">✗ FAILED</span></td></tr>
+      <tr><td>2026-02-27</td><td>ML</td><td>Monitor Gamer Aoc Agon 49 Curvo 144hz</td><td class="num orange">5,999.00</td><td>Eletrônicos</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-02-25</td><td>ML</td><td>Teclado Programável De 8 Teclas Multifuncio</td><td class="num">128.83</td><td>Eletrônicos</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-02-21</td><td>ML</td><td>Escova De Dente Elétrica Oral B Io Series 6</td><td class="num orange">1,200.05</td><td>Saúde/Higiene</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-02-19</td><td>ML</td><td>Processador De Vídeo Novastar Vc2 Painel D</td><td class="num orange">1,798.00</td><td>Eletrônicos</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-02-18</td><td>ML</td><td>Mouse Sem Fio Logitech Mx Master 4 Haptic</td><td class="num orange">1,590.00</td><td>Eletrônicos</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-02-17</td><td>ML</td><td>Aspirador De Pó Portátil Bateria 18v</td><td class="num">236.97</td><td>Casa</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-02-17</td><td>ML</td><td>Hoto Mini Aspirador De Pó Portátil Sem Fio</td><td class="num">496.29</td><td>Casa</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-02-12</td><td>ML</td><td>Máscara Nasal Airfit P30i P M G Resmed</td><td class="num">482.55</td><td>Saúde/CPAP</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-01-28</td><td>iFood</td><td>Maria Baunilha Confeitaria – 2x Copo da Felicidade</td><td class="num">0.00</td><td>Delivery/Confeitaria</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-01-16</td><td>iFood</td><td>Formaggio 43 - Forneria – 2x Pizza grande - até 02 sabores</td><td class="num">191.80</td><td>Delivery/Pizza</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-01-10</td><td>iFood</td><td>Maria Baunilha Confeitaria – 4x Copo da Felicidade</td><td class="num">111.60</td><td>Delivery/Confeitaria</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-01-06</td><td>iFood</td><td>Pizza Now Intermares – Pizza</td><td class="num">173.79</td><td>Delivery/Pizza</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-01-03</td><td>ML</td><td>Kit Odontológico Inox De Limpeza Removedor</td><td class="num">26.29</td><td>Saúde/Higiene</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+      <tr><td>2026-01-03</td><td>ML</td><td>Kit Cabo+espelho Odontológico Inox</td><td class="num">21.85</td><td>Saúde/Higiene</td><td><span class="badge badge-ok">✓ DELIV</span></td></tr>
+    </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ PAGE 06: SUBSCRIPTIONS -->
+<div class="page" id="p-subs">
+  <div class="panel" style="margin-bottom:6px;">
+    <div class="ph">SUBSCRIPTION MANAGER · Stack Audit · 15 Services</div>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="kpi-lbl">Total Stack/mo</div><div class="kpi-val red">R$ 1,345</div></div>
+      <div class="kpi"><div class="kpi-lbl">KEEP/mo</div><div class="kpi-val green">R$ 331.80</div></div>
+      <div class="kpi"><div class="kpi-lbl">CANCEL savings/mo</div><div class="kpi-val cyan">R$ 365.80</div></div>
+      <div class="kpi"><div class="kpi-lbl">CANCEL savings/yr</div><div class="kpi-val cyan">R$ 4,390</div></div>
+      <div class="kpi"><div class="kpi-lbl">REVIEW/mo</div><div class="kpi-val yellow">R$ 646.94</div></div>
+      <div class="kpi"><div class="kpi-lbl">Cancel Queue</div><div class="kpi-val red">4 services</div><div class="kpi-sub">Claude×2 + Grok + TuneIn</div></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <div class="panel">
+        <div class="ph">FULL SUBSCRIPTION REGISTER</div>
+        <table class="bt">
+          <tr><th>SERVICE</th><th>PLAN</th><th>EMAIL</th><th>CCY</th><th class="num">MO BRL</th><th>CATEGORY</th><th>DUP RISK</th><th>DECISION</th></tr>
+          <tr><td>Claude</td><td>Pro</td><td class="gray">automacao@</td><td>BRL</td><td class="num red">92.00</td><td>AI General/Coding</td><td><span class="badge badge-crit">HIGH</span></td><td><span class="badge badge-cancel">CANCEL</span></td></tr>
+          <tr><td>Claude</td><td>Pro</td><td class="gray">cadastros@</td><td>BRL</td><td class="num red">92.00</td><td>AI General/Coding</td><td><span class="badge badge-crit">HIGH</span></td><td><span class="badge badge-cancel">CANCEL</span></td></tr>
+          <tr><td>ChatGPT</td><td>Plus</td><td class="gray">giovannini@</td><td>USD</td><td class="num green">106.00</td><td>AI General Assistant</td><td><span class="badge badge-med">MEDIUM</span></td><td><span class="badge badge-keep">KEEP</span></td></tr>
+          <tr><td>Google</td><td>Pro</td><td class="gray">cadastros@</td><td>BRL</td><td class="num yellow">96.99</td><td>AI General/Workspace</td><td><span class="badge badge-crit">HIGH</span></td><td><span class="badge badge-review">REVIEW</span></td></tr>
+          <tr><td>Manus AI</td><td>Credits</td><td class="gray">cadastro@</td><td>—</td><td class="num gray">0</td><td>AI Agent/Credits</td><td><span class="badge badge-review">UNKN</span></td><td><span class="badge badge-review">REVIEW</span></td></tr>
+          <tr><td>Manus AI</td><td>Credits</td><td class="gray">automacao@</td><td>—</td><td class="num red">418.43</td><td>AI Agent/Credits</td><td><span class="badge badge-review">UNKN</span></td><td><span class="badge badge-review">REVIEW</span></td></tr>
+          <tr><td>Cursor</td><td>Pro</td><td class="gray">giovannini@</td><td>USD</td><td class="num green">106.00</td><td>AI Coding Asst.</td><td><span class="badge badge-med">MEDIUM</span></td><td><span class="badge badge-keep">KEEP</span></td></tr>
+          <tr><td>Desktop Cmdr</td><td>Unlimited</td><td class="gray">automacao@</td><td>—</td><td class="num yellow">45.37</td><td>AI Desktop Auto</td><td><span class="badge badge-review">UNKN</span></td><td><span class="badge badge-review">REVIEW</span></td></tr>
+          <tr><td>Filmora9</td><td>Annual</td><td class="gray">Unknown</td><td>BRL</td><td class="num">15.41</td><td>Creative/Prod</td><td><span class="badge badge-low">LOW</span></td><td><span class="badge badge-review">REVIEW</span></td></tr>
+          <tr><td>Grok</td><td>SuperGrok</td><td class="gray">Unknown</td><td>BRL</td><td class="num red">149.90</td><td>AI General/Media</td><td><span class="badge badge-crit">HIGH</span></td><td><span class="badge badge-cancel">CANCEL</span></td></tr>
+          <tr><td>iCloud+</td><td>200GB</td><td class="gray">Unknown</td><td>BRL</td><td class="num green">19.90</td><td>Cloud/Storage</td><td><span class="badge badge-low">LOW</span></td><td><span class="badge badge-keep">KEEP</span></td></tr>
+          <tr><td>Microsoft 365</td><td>Personal</td><td class="gray">Unknown</td><td>BRL</td><td class="num">42.42</td><td>Productivity</td><td><span class="badge badge-med">MEDIUM</span></td><td><span class="badge badge-review">REVIEW</span></td></tr>
+          <tr><td>NordVPN</td><td>Annual</td><td class="gray">Unknown</td><td>BRL</td><td class="num">28.33</td><td>Security/VPN</td><td><span class="badge badge-low">LOW</span></td><td><span class="badge badge-review">REVIEW</span></td></tr>
+          <tr><td>Perplexity</td><td>Pro Mac</td><td class="gray">Unknown</td><td>BRL</td><td class="num green">99.90</td><td>AI Research</td><td><span class="badge badge-crit">HIGH</span></td><td><span class="badge badge-keep">KEEP</span></td></tr>
+          <tr><td>TuneIn Radio</td><td>Premium</td><td class="gray">Unknown</td><td>BRL</td><td class="num red">31.90</td><td>Entertainment</td><td><span class="badge badge-low">LOW</span></td><td><span class="badge badge-cancel">CANCEL</span></td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="col">
+      <div class="panel" style="margin-bottom:6px;">
+        <div class="ph">CANCEL TRACKER · 4 Services</div>
+        <table class="bt">
+          <tr><th>SERVICE</th><th class="num">MO BRL</th><th>PRIORITY</th><th>TARGET</th><th>STATUS</th></tr>
+          <tr><td>Claude (automacao@)</td><td class="num red">92.00</td><td><span class="badge badge-crit">HIGH</span></td><td>Jul 2026</td><td><span class="badge badge-pend flash">PENDING</span></td></tr>
+          <tr><td>Claude (cadastros@)</td><td class="num red">92.00</td><td><span class="badge badge-crit">HIGH</span></td><td>Jul 2026</td><td><span class="badge badge-pend flash">PENDING</span></td></tr>
+          <tr><td>Grok SuperGrok</td><td class="num red">149.90</td><td><span class="badge badge-crit">HIGH</span></td><td>Jul 2026</td><td><span class="badge badge-pend flash">PENDING</span></td></tr>
+          <tr><td>TuneIn Radio</td><td class="num">31.90</td><td><span class="badge badge-low">LOW</span></td><td>Jul 2026</td><td><span class="badge badge-pend">PENDING</span></td></tr>
+          <tr style="background:rgba(0,204,68,.05)"><td><strong>TOTAL SAVINGS/MO</strong></td><td class="num green"><strong>365.80</strong></td><td></td><td></td><td></td></tr>
+          <tr><td><strong>TOTAL SAVINGS/YR</strong></td><td class="num cyan"><strong>4,389.60</strong></td><td></td><td></td><td></td></tr>
+        </table>
+      </div>
+      <div class="panel">
+        <div class="ph">STACK BREAKDOWN</div>
+        <div class="chart-wrap">
+          <svg width="100%" height="150" id="svg-subs"></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ PAGE 07: PIX BRIDGE -->
+<div class="page" id="p-pix">
+  <div class="panel" style="margin-bottom:6px;">
+    <div class="ph">CASH BRIDGE · Banco Inter Account 6627102 · PIX + FX Reconciliation</div>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="kpi-lbl">PIX In</div><div class="kpi-val green">R$ 237,010</div></div>
+      <div class="kpi"><div class="kpi-lbl">PIX Out</div><div class="kpi-val red">R$ 92,162</div></div>
+      <div class="kpi"><div class="kpi-lbl">Net PIX Flow</div><div class="kpi-val cyan">R$ 144,848</div></div>
+      <div class="kpi"><div class="kpi-lbl">Final Balance</div><div class="kpi-val yellow">R$ 18,934.67</div><div class="kpi-sub">13/Jul/2026</div></div>
+      <div class="kpi"><div class="kpi-lbl">FX/Câmbio Out</div><div class="kpi-val red">R$ 99,280</div><div class="kpi-sub">2 Inter ops</div></div>
+      <div class="kpi"><div class="kpi-lbl">IOF Paid</div><div class="kpi-val red">R$ 3,475</div></div>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="ph">MOVEMENT LOG · Inter Account 6627102</div>
+    <div style="max-height:400px;overflow-y:auto;">
+    <table class="bt">
+      <tr><th>DATE</th><th>TYPE</th><th>COUNTERPART</th><th class="num">PIX (R$)</th><th class="num">FX (R$)</th><th class="num">IOF (R$)</th></tr>
+      <tr><td>2026-06-28</td><td class="green">PIX In</td><td>[REDACTED]</td><td class="num green">2,000.00</td><td></td><td></td></tr>
+      <tr><td>2026-06-28</td><td class="green">PIX In</td><td>[REDACTED]</td><td class="num green">40,000.00</td><td></td><td></td></tr>
+      <tr><td>2026-06-25</td><td class="green">PIX In</td><td>[REDACTED]</td><td class="num green">10.00</td><td></td><td></td></tr>
+      <tr><td>2026-06-05</td><td class="red">PIX Out</td><td>[REDACTED-COUNTERPARTY]</td><td class="num red">−480.00</td><td></td><td></td></tr>
+      <tr><td>2026-05-28</td><td class="red">PIX Out</td><td>[REDACTED-COUNTERPARTY]</td><td class="num red">−450.00</td><td></td><td></td></tr>
+      <tr><td>2026-05-25</td><td class="red">PIX Out</td><td>[REDACTED-COUNTERPARTY]</td><td class="num red">−470.00</td><td></td><td></td></tr>
+      <tr><td>2026-05-24</td><td class="red">PIX Out</td><td>Moacir Jose De Morais Filho</td><td class="num red">−700.00</td><td></td><td></td></tr>
+      <tr><td>2026-05-22</td><td class="red">PIX Out</td><td>Lucas Rique Chaves Bezerra</td><td class="num red">−1,500.00</td><td></td><td></td></tr>
+      <tr><td>2026-05-22</td><td class="red">PIX Out</td><td>Lucas Rique Chaves Bezerra</td><td class="num red">−500.00</td><td></td><td></td></tr>
+      <tr><td>2026-05-22</td><td class="red orange">PIX Out</td><td class="orange">Sbct Tech Solutions Llc (USA)</td><td class="num orange">−45,000.00</td><td></td><td></td></tr>
+      <tr><td>2026-05-18</td><td class="green">PIX In</td><td>[REDACTED]</td><td class="num green">35,000.00</td><td></td><td></td></tr>
+      <tr><td>2026-05-18</td><td class="red">PIX Out</td><td>[REDACTED]</td><td class="num red">−20,000.00</td><td></td><td></td></tr>
+      <tr><td>2026-05-15</td><td class="red">PIX Out</td><td>Wise Brasil Corretora</td><td class="num red">−1,299.97</td><td></td><td></td></tr>
+      <tr><td>2026-05-11</td><td class="green">PIX In</td><td>[REDACTED]</td><td class="num green">40,000.00</td><td></td><td></td></tr>
+      <tr><td>2026-05-11</td><td class="red">Câmbio</td><td>Envio — remessa internacional</td><td></td><td class="num red">−74,340.40</td><td></td></tr>
+      <tr><td>2026-05-11</td><td class="yellow">IOF</td><td>IOF — Operação de câmbio</td><td></td><td></td><td class="num yellow">−2,601.91</td></tr>
+      <tr><td>2026-05-08</td><td class="green">PIX In</td><td>[REDACTED]</td><td class="num green">40,000.00</td><td></td><td></td></tr>
+      <tr><td>2026-05-07</td><td class="red">Câmbio</td><td>Envio — remessa internacional</td><td></td><td class="num red">−24,939.84</td><td></td></tr>
+      <tr><td>2026-05-07</td><td class="yellow">IOF</td><td>IOF — Operação de câmbio</td><td></td><td></td><td class="num yellow">−872.89</td></tr>
+      <tr><td>2026-04-28</td><td class="green">PIX In</td><td>[REDACTED]</td><td class="num green">40,000.00</td><td></td><td></td></tr>
+      <tr><td>2026-04-28</td><td class="red">PIX Out</td><td>Gloria Raquel M C Nobrega</td><td class="num red">−50.00</td><td></td><td></td></tr>
+      <tr><td>2026-04-28</td><td class="red">PIX Out</td><td>Mag Administracao De Negocios</td><td class="num red">−10.00</td><td></td><td></td></tr>
+      <tr><td>2026-04-28</td><td class="red">PIX Out</td><td>[REDACTED-COUNTERPARTY]</td><td class="num red">−470.00</td><td></td><td></td></tr>
+      <tr><td>2026-04-24</td><td class="red">PIX Out</td><td>37202818 Jose Periclis De Sousa</td><td class="num red">−6,800.00</td><td></td><td></td></tr>
+      <tr><td>2026-04-21</td><td class="red">PIX Out</td><td>[REDACTED]</td><td class="num red">−3,000.00</td><td></td><td></td></tr>
+      <tr><td>2026-03-20</td><td class="red">PIX Out</td><td>[REDACTED-COUNTERPARTY]</td><td class="num red">−350.00</td><td></td><td></td></tr>
+      <tr><td>2026-03-17</td><td class="red">PIX Out</td><td>Iago Kevyn Santos Moura</td><td class="num red">−500.00</td><td></td><td></td></tr>
+      <tr><td>2026-03-15</td><td class="red">PIX Out</td><td>[REDACTED]</td><td class="num red">−6,000.00</td><td></td><td></td></tr>
+      <tr><td>2026-03-15</td><td class="red">PIX Out</td><td>Mercado Pago Instituicao</td><td class="num red">−4,582.41</td><td></td><td></td></tr>
+      <tr><td>2026-02-11</td><td class="green">PIX In</td><td>[REDACTED]</td><td class="num green">40,000.00</td><td></td><td></td></tr>
+    </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ PAGE 08: ALERTS -->
+<div class="page" id="p-alerts">
+  <div class="panel" style="margin-bottom:6px;">
+    <div class="ph">RISK &amp; ACTION REGISTER · Wealth Management · Q3 2026</div>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="kpi-lbl">Critical</div><div class="kpi-val red flash">3</div></div>
+      <div class="kpi"><div class="kpi-lbl">High</div><div class="kpi-val yellow">4</div></div>
+      <div class="kpi"><div class="kpi-lbl">Medium</div><div class="kpi-val blue">3</div></div>
+      <div class="kpi"><div class="kpi-lbl">Low</div><div class="kpi-val gray">2</div></div>
+      <div class="kpi"><div class="kpi-lbl">All Pending</div><div class="kpi-val orange">11</div></div>
+      <div class="kpi"><div class="kpi-lbl">Monitored</div><div class="kpi-val green">1</div></div>
+    </div>
+  </div>
+  <table class="bt">
+    <tr><th>#</th><th>SEV</th><th>DOMAIN</th><th>FINDING</th><th class="num">BRL EXPOSURE</th><th>ACTION</th><th>STATUS</th></tr>
+    <tr>
+      <td>1</td>
+      <td><span class="badge badge-crit flash">CRITICAL</span></td>
+      <td>Subscriptions</td>
+      <td>4 services CANCEL: Claude×2 (R$184/mo) + Grok (R$149.90/mo) + TuneIn (R$31.90/mo) = R$365.80/mo</td>
+      <td class="num red">4,390/yr</td>
+      <td class="gray">Cancel all 4 before next billing. Apple Subscriptions + accounts.</td>
+      <td><span class="badge badge-pend flash">PENDING</span></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><span class="badge badge-crit flash">CRITICAL</span></td>
+      <td>FX Reconciliation</td>
+      <td>R$652,789 sent to USA Own Account (67995). 19 operations Jan–Jun. Validate USD account balances vs BCB records.</td>
+      <td class="num red">652,789</td>
+      <td class="gray">Pull USD account statement. Reconcile each BCB op against balance.</td>
+      <td><span class="badge badge-pend flash">PENDING</span></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><span class="badge badge-crit flash">CRITICAL</span></td>
+      <td>Sub Stack Bloat</td>
+      <td>7 services in REVIEW status. R$646.94/mo (~R$7,763/yr). Manus credits uncontrolled (R$418/mo avg).</td>
+      <td class="num red">~7,763/yr</td>
+      <td class="gray">Audit each REVIEW service this week. Decide KEEP/CANCEL. Target: eliminate ≥3.</td>
+      <td><span class="badge badge-pend flash">PENDING</span></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><span class="badge badge-high">HIGH</span></td>
+      <td>Liquidity Conc.</td>
+      <td>100% liquid in 2 digital banks (Inter R$18,935 + MP R$4,262 = R$23,197). BB balance R$0. Under R$30k target.</td>
+      <td class="num yellow">23,197</td>
+      <td class="gray">Maintain R$30k+ buffer. Distribute across BB Rende Fácil + Inter.</td>
+      <td><span class="badge badge-pend">PENDING</span></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><span class="badge badge-high">HIGH</span></td>
+      <td>IOF + FX Cost</td>
+      <td>R$3,475 IOF paid on Inter FX operations. Compare rates across Wise / Topázio / BB.</td>
+      <td class="num yellow">3,475</td>
+      <td class="gray">Review IOF rate per op. Compare institutions.</td>
+      <td><span class="badge badge-pend">PENDING</span></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><span class="badge badge-high">HIGH</span></td>
+      <td>IB Withdrawal</td>
+      <td>R$19,196 IB withdrawal via Wise Jun/2026 (91992). Destination unconfirmed. Did funds return to Inter or redeploy in IB?</td>
+      <td class="num yellow">19,196</td>
+      <td class="gray">Confirm destination. Check Inter + IB statements.</td>
+      <td><span class="badge badge-pend">PENDING</span></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><span class="badge badge-high">HIGH</span></td>
+      <td>Lottery/Gambling</td>
+      <td>R$6,455 in MP*LOTERIASONLINE charges (39 txs). No monthly budget cap. Avg R$1,076/mo.</td>
+      <td class="num yellow">6,455</td>
+      <td class="gray">Set monthly Loteria limit R$500. Remove card if exceeded.</td>
+      <td><span class="badge badge-pend">PENDING</span></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><span class="badge badge-med">MEDIUM</span></td>
+      <td>AI/Tech Overlap</td>
+      <td>R$6,624 charged via card on IA/Tech (37 txs) likely duplicates subscription stack. Claude.AI R$1,138 single charge anomaly.</td>
+      <td class="num blue">6,624</td>
+      <td class="gray">Cross-match card IA charges vs sub list. Consolidate billing method.</td>
+      <td><span class="badge badge-pend">PENDING</span></td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><span class="badge badge-med">MEDIUM</span></td>
+      <td>Travel/Viagem</td>
+      <td>R$9,037 in travel charges (LAN Airlines R$9,037 Mar/2026). Business vs personal classification missing.</td>
+      <td class="num blue">9,037</td>
+      <td class="gray">Classify: business vs personal. Flag deductible items.</td>
+      <td><span class="badge badge-pend">PENDING</span></td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><span class="badge badge-med">MEDIUM</span></td>
+      <td>ML Volume</td>
+      <td>R$31,570 Mercado Livre purchases. Strong Home Office + CPAP pattern. No CAPEX/HEALTH/CONSUMABLE tags.</td>
+      <td class="num blue">31,570</td>
+      <td class="gray">Tag each purchase: CAPEX / HEALTH / CONSUMABLE for tax tracking.</td>
+      <td><span class="badge badge-pend">PENDING</span></td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td><span class="badge badge-low">LOW</span></td>
+      <td>Wise Brasil</td>
+      <td>Multiple Wise operations (IB deposits + UK transfers). Ensure all reported to BACEN with KYC current.</td>
+      <td class="num gray">—</td>
+      <td class="gray">Confirm BACEN reporting compliance.</td>
+      <td><span class="badge badge-ok">MONITOR</span></td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td><span class="badge badge-low">LOW</span></td>
+      <td>SBCT Tech Solutions</td>
+      <td>R$45,000 PIX Out to SBCT Tech Solutions LLC (USA company) via Inter May/2026.</td>
+      <td class="num gray">45,000</td>
+      <td class="gray">Confirm nature: service invoice? investment? Ensure documentation.</td>
+      <td><span class="badge badge-pend">PENDING</span></td>
+    </tr>
+  </table>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ PAGE 09: TX LOG -->
+<div class="page" id="p-txlog">
+  <div class="panel" style="margin-bottom:6px;">
+    <div class="ph">TRANSACTION LOG · MP Faturas · Jan–Jun 2026 (146 entries)</div>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="kpi-lbl">Total Entries</div><div class="kpi-val orange">146</div></div>
+      <div class="kpi"><div class="kpi-lbl">Total Spend</div><div class="kpi-val red">R$ 37,246</div></div>
+      <div class="kpi"><div class="kpi-lbl">International</div><div class="kpi-val yellow">67%</div></div>
+      <div class="kpi"><div class="kpi-lbl">Top Merchant</div><div class="kpi-val orange">Loteria (~39 txs)</div></div>
+    </div>
+  </div>
+  <div class="panel" style="margin-bottom:6px;" id="weekly-rollup-panel">
+    <div class="ph">WEEKLY ROLLUP · MP Cartão spend by week (derived live from TX LOG rows)</div>
+    <div style="max-height:220px;overflow-y:auto;">
+    <table class="bt" id="weekly-rollup-table">
+      <tr><th>WEEK START</th><th>WEEK END</th><th class="num">BRL</th><th class="num">TXS</th></tr>
+      <tr><td>2026-01-05</td><td>2026-01-11</td><td class="num red">438.77</td><td class="num">5</td></tr>
+      <tr><td>2026-01-12</td><td>2026-01-18</td><td class="num red">819.86</td><td class="num">7</td></tr>
+      <tr><td>2026-01-19</td><td>2026-01-25</td><td class="num red">1,806.44</td><td class="num">3</td></tr>
+      <tr><td>2026-01-26</td><td>2026-02-01</td><td class="num red">680.33</td><td class="num">3</td></tr>
+      <tr><td>2026-02-02</td><td>2026-02-08</td><td class="num red">655.00</td><td class="num">5</td></tr>
+      <tr><td>2026-02-09</td><td>2026-02-15</td><td class="num red">6,878.01</td><td class="num">6</td></tr>
+      <tr><td>2026-02-16</td><td>2026-02-22</td><td class="num red">1,455.99</td><td class="num">6</td></tr>
+      <tr><td>2026-02-23</td><td>2026-03-01</td><td class="num red">526.90</td><td class="num">4</td></tr>
+      <tr><td>2026-03-02</td><td>2026-03-08</td><td class="num red">1,270.77</td><td class="num">7</td></tr>
+      <tr><td>2026-03-09</td><td>2026-03-15</td><td class="num red">10,448.75</td><td class="num">11</td></tr>
+      <tr><td>2026-03-16</td><td>2026-03-22</td><td class="num red">1,790.19</td><td class="num">8</td></tr>
+      <tr><td>2026-03-23</td><td>2026-03-29</td><td class="num red">540.50</td><td class="num">4</td></tr>
+      <tr><td>2026-03-30</td><td>2026-04-05</td><td class="num red">1,829.70</td><td class="num">9</td></tr>
+      <tr><td>2026-04-06</td><td>2026-04-12</td><td class="num red">103.16</td><td class="num">4</td></tr>
+      <tr><td>2026-04-13</td><td>2026-04-19</td><td class="num red">444.89</td><td class="num">4</td></tr>
+      <tr><td>2026-04-20</td><td>2026-04-26</td><td class="num red">2,074.47</td><td class="num">11</td></tr>
+      <tr><td>2026-04-27</td><td>2026-05-03</td><td class="num red">1,710.39</td><td class="num">11</td></tr>
+      <tr><td>2026-05-04</td><td>2026-05-10</td><td class="num red">627.58</td><td class="num">7</td></tr>
+      <tr><td>2026-05-11</td><td>2026-05-17</td><td class="num red">264.65</td><td class="num">4</td></tr>
+      <tr><td>2026-05-18</td><td>2026-05-24</td><td class="num red">1,343.73</td><td class="num">9</td></tr>
+      <tr><td>2026-05-25</td><td>2026-05-31</td><td class="num red">421.51</td><td class="num">5</td></tr>
+      <tr><td>2026-06-01</td><td>2026-06-07</td><td class="num red">1,114.17</td><td class="num">13</td></tr>
+      <tr style="border-top:1px solid var(--border2);font-weight:600;"><td colspan="2">TOTAL</td><td class="num red">37,245.76</td><td class="num">146</td></tr>
+    </table>
+    </div>
+  </div>
+  <!-- search bar -->
+  <div style="padding:4px 0 6px;">
+    <input id="tx-search" type="text" placeholder="Filter transactions..." style="background:var(--bg3);border:1px solid var(--border2);color:var(--white);padding:4px 8px;font-family:inherit;font-size:11px;width:280px;" oninput="filterTx()">
+    <span style="color:var(--gray);font-size:10px;margin-left:8px;" id="tx-count">146 rows</span>
+  </div>
+  <div style="max-height:480px;overflow-y:auto;">
+  <table class="bt" id="tx-table">
+    <tr><th>DATE</th><th>FATURA</th><th>MERCHANT</th><th class="num">BRL</th><th>CATEGORY</th><th>INTL</th></tr>
+
+    <tr><td>2026-01-06</td><td>2026-02</td><td>IFD*PIZZA NOW INTERMARES</td><td class="num red">−173.79</td><td>Delivery/iFood</td><td>Não</td></tr>
+    <tr><td>2026-01-08</td><td>2026-02</td><td>OPENAI *CHATGPT SUBSCR</td><td class="num red">−111.58</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-01-08</td><td>2026-02</td><td>APPLE.COM/BILL</td><td class="num red">−21.90</td><td>Assinatura</td><td>Não</td></tr>
+    <tr><td>2026-01-10</td><td>2026-02</td><td>IFD*34531468 EDWIN LEI</td><td class="num red">−111.60</td><td>Delivery/iFood</td><td>Não</td></tr>
+    <tr><td>2026-01-10</td><td>2026-02</td><td>APPLE.COM/BILL</td><td class="num red">−19.90</td><td>Assinatura</td><td>Não</td></tr>
+    <tr><td>2026-01-13</td><td>2026-02</td><td>MP*EDUARDOGIOVAN</td><td class="num red">−0.78</td><td>Outros</td><td>Não</td></tr>
+    <tr><td>2026-01-14</td><td>2026-02</td><td>MANUS AI</td><td class="num red">−25.79</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-01-15</td><td>2026-02</td><td>DL*Starlink Braz</td><td class="num red">−235.52</td><td>Internet</td><td>Não</td></tr>
+    <tr><td>2026-01-16</td><td>2026-02</td><td>MP*LOTERIASONLINEU1AQ</td><td class="num red">−143.60</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-01-16</td><td>2026-02</td><td>IFD*FORMAGGIO RESTAURANTE</td><td class="num red">−191.80</td><td>Delivery/iFood</td><td>Não</td></tr>
+    <tr><td>2026-01-17</td><td>2026-02</td><td>OPENAI *CHATGPT SUBSCR</td><td class="num red">−111.37</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-01-17</td><td>2026-02</td><td>MP*LOTERIASONLINE542V</td><td class="num red">−111.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-01-19</td><td>2026-02</td><td>LEMSQZY* PINEAPPLE-APP</td><td class="num red">−111.11</td><td>Assinatura</td><td>Sim</td></tr>
+    <tr><td>2026-01-21</td><td>2026-02</td><td>CLAUDE.AI SUBSCRIPTION</td><td class="num red">−1,138.50</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-01-21</td><td>2026-02</td><td>MANUS AI</td><td class="num red">−556.83</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-01-27</td><td>2026-02</td><td>RAYCAST.COM</td><td class="num red">−524.63</td><td>Outros</td><td>Sim</td></tr>
+    <tr><td>2026-01-28</td><td>2026-02</td><td>IFD*34531468 EDWIN LEI</td><td class="num red">−55.80</td><td>Delivery/iFood</td><td>Não</td></tr>
+    <tr><td>2026-01-30</td><td>2026-02</td><td>APPLE.COM/BILL</td><td class="num red">−99.90</td><td>Assinatura</td><td>Não</td></tr>
+    <tr><td>2026-02-03</td><td>2026-02</td><td>DESKTOP COMMANDER</td><td class="num red">−272.21</td><td>Outros</td><td>Sim</td></tr>
+    <tr><td>2026-02-04</td><td>2026-02</td><td>MP*LOTERIASONLINEM4UQ</td><td class="num red">−168.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-02-05</td><td>2026-02</td><td>MP*LOTERIASONLINEYY48</td><td class="num red">−84.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-02-05</td><td>2026-03</td><td>OPENAI *CHATGPT SUBSCR</td><td class="num red">−108.89</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-02-08</td><td>2026-03</td><td>APPLECOMBILL</td><td class="num red">−21.90</td><td>Assinatura</td><td>Não</td></tr>
+    <tr><td>2026-02-09</td><td>2026-03</td><td>MP*LOTERIASONLINEBFN5</td><td class="num red">−150.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-02-10</td><td>2026-03</td><td>APPLECOMBILL</td><td class="num red">−19.90</td><td>Assinatura</td><td>Não</td></tr>
+    <tr><td>2026-02-11</td><td>2026-03</td><td>MERCADOLIVRE*3PRODUTOS</td><td class="num red">−6,282.36</td><td>Compras/ML</td><td>Não</td></tr>
+    <tr><td>2026-02-14</td><td>2026-03</td><td>ANTHROPIC</td><td class="num red">−51.75</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-02-14</td><td>2026-03</td><td>MP*LOTERIASONLINEO4M4</td><td class="num red">−206.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-02-14</td><td>2026-03</td><td>MP*LOTERIASONLINEOBUG</td><td class="num red">−168.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-02-16</td><td>2026-03</td><td>DL *Starlink Brazil</td><td class="num red">−235.52</td><td>Internet</td><td>Não</td></tr>
+    <tr><td>2026-02-17</td><td>2026-03</td><td>OPENAI *CHATGPT SUBSCR</td><td class="num red">−108.27</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-02-18</td><td>2026-03</td><td>MP*LOTERIASONLINEFEG2</td><td class="num red">−168.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-02-21</td><td>2026-03</td><td>MP*LOTERIASONLINEU2WR</td><td class="num red">−168.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-02-21</td><td>2026-03</td><td>MP*LOTERIASONLINEQXFX</td><td class="num red">−238.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-02-21</td><td>2026-03</td><td>MANUS AI</td><td class="num red">−538.20</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-02-23</td><td>2026-03</td><td>MP*LOTERIASONLINEEIG7</td><td class="num red">−140.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-02-26</td><td>2026-03</td><td>MP*LOTERIASONLINEI4Q9</td><td class="num red">−168.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-02-27</td><td>2026-03</td><td>MP*LOTERIASONLINEYYRE</td><td class="num red">−119.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-02-28</td><td>2026-03</td><td>APPLECOMBILL</td><td class="num red">−99.90</td><td>Assinatura</td><td>Não</td></tr>
+    <tr><td>2026-03-04</td><td>2026-03</td><td>MP*LOTERIASONLINEFL2P</td><td class="num red">−221.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-03-05</td><td>2026-04</td><td>OPENAI *CHATGPT SUBSCR</td><td class="num red">−108.47</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-03-07</td><td>2026-04</td><td>MP*LOTERIASONLINEQPEZ</td><td class="num red">−243.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-03-07</td><td>2026-04</td><td>MP*LOTERIASONLINEQTKS</td><td class="num red">−168.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-03-08</td><td>2026-04</td><td>APPLECOMBILL</td><td class="num red">−21.90</td><td>Assinatura</td><td>Não</td></tr>
+    <tr><td>2026-03-08</td><td>2026-04</td><td>MERCADOLIVRE*7PRODUTOS</td><td class="num red">−453.64</td><td>Compras/ML</td><td>Não</td></tr>
+    <tr><td>2026-03-08</td><td>2026-04</td><td>GITHUB, INC.</td><td class="num red">−54.76</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-03-09</td><td>2026-04</td><td>GUMROAD* GUI RAMBO</td><td class="num red">−10.90</td><td>Digital</td><td>Sim</td></tr>
+    <tr><td>2026-03-10</td><td>2026-04</td><td>LAN AIRLINE</td><td class="num orange">−9,036.83</td><td>Viagem</td><td>Sim</td></tr>
+    <tr><td>2026-03-10</td><td>2026-04</td><td>APPLECOMBILL</td><td class="num red">−19.90</td><td>Assinatura</td><td>Não</td></tr>
+    <tr><td>2026-03-10</td><td>2026-04</td><td>OPENROUTER, INC</td><td class="num red">−113.78</td><td>Outros</td><td>Sim</td></tr>
+    <tr><td>2026-03-11</td><td>2026-04</td><td>IFD*iFood</td><td class="num red">−7.95</td><td>Delivery/iFood</td><td>Não</td></tr>
+    <tr><td>2026-03-12</td><td>2026-04</td><td>MP*LOTERIASONLINEP6LJ</td><td class="num red">−104.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-03-12</td><td>2026-04</td><td>MP*LOTERIASONLINEPA19</td><td class="num red">−168.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-03-13</td><td>2026-04</td><td>MP*LOTERIASONLINEJSZ1</td><td class="num red">−73.50</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-03-13</td><td>2026-04</td><td>MP*LOTERIASONLINEJX1C</td><td class="num red">−168.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-03-14</td><td>2026-04</td><td>STARLINK INTERNET</td><td class="num red">−235.52</td><td>Internet</td><td>Não</td></tr>
+    <tr><td>2026-03-15</td><td>2026-04</td><td>MERCADOLIVRE*3PRODUTOS</td><td class="num red">−510.37</td><td>Compras/ML</td><td>Não</td></tr>
+    <tr><td>2026-03-16</td><td>2026-04</td><td>ALLIANZ EVENT INS</td><td class="num red">−478.17</td><td>Outros</td><td>Sim</td></tr>
+    <tr><td>2026-03-17</td><td>2026-04</td><td>OPENAI *CHATGPT SUBSCR</td><td class="num red">−108.89</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-03-18</td><td>2026-04</td><td>MP*LOTERIASONLINENI9I</td><td class="num red">−267.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-03-19</td><td>2026-04</td><td>INTERNET ARCHIVE</td><td class="num red">−53.93</td><td>Outros</td><td>Sim</td></tr>
+    <tr><td>2026-03-19</td><td>2026-04</td><td>MP*LOTERIASONLINEU38A</td><td class="num red">−119.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-03-20</td><td>2026-04</td><td>EC*GOOGLEBRASILPAGAMEN</td><td class="num red">−96.99</td><td>Assinatura</td><td>Não</td></tr>
+    <tr><td>2026-03-21</td><td>2026-04</td><td>MERCADOLIVRE*5PRODUTOS</td><td class="num red">−119.73</td><td>Compras/ML</td><td>Não</td></tr>
+    <tr><td>2026-03-21</td><td>2026-04</td><td>MANUS AI</td><td class="num red">−546.48</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-03-23</td><td>2026-04</td><td>MP*LOTERIASONLINE12Q6</td><td class="num red">−107.50</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-03-26</td><td>2026-04</td><td>MP*LOTERIASONLINEWM4R</td><td class="num red">−161.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-03-28</td><td>2026-04</td><td>MP*LOTERIASONLINEKBE8</td><td class="num red">−168.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-03-28</td><td>2026-04</td><td>MP*LOTERIASONLINEKJOW</td><td class="num red">−104.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-03-30</td><td>2026-04</td><td>GROK XAI</td><td class="num red">−81.36</td><td>Outros</td><td>Sim</td></tr>
+    <tr><td>2026-03-30</td><td>2026-04</td><td>APPLECOMBILL</td><td class="num red">−99.90</td><td>Assinatura</td><td>Não</td></tr>
+    <tr><td>2026-04-01</td><td>2026-04</td><td>CURSOR, AI POWERED IDE</td><td class="num red">−111.81</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-04-03</td><td>2026-04</td><td>STARLINK INTERNET</td><td class="num red">−235.52</td><td>Internet</td><td>Não</td></tr>
+    <tr><td>2026-04-03</td><td>2026-04</td><td>MP*LOTERIASONLINEDVRW</td><td class="num red">−336.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-04-03</td><td>2026-04</td><td>IFD*MATTERELLO PIZZARI</td><td class="num red">−165.69</td><td>Delivery/iFood</td><td>Não</td></tr>
+    <tr><td>2026-04-03</td><td>2026-04</td><td>MERCADOLIVRE*3PRODUTOS</td><td class="num red">−602.90</td><td>Compras/ML</td><td>Não</td></tr>
+    <tr><td>2026-04-04</td><td>2026-04</td><td>MP*LOTERIASONLINE9CYW</td><td class="num red">−89.50</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-04-05</td><td>2026-05</td><td>OPENAI *CHATGPT SUBSCR</td><td class="num red">−107.02</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-04-08</td><td>2026-05</td><td>APPLECOMBILL</td><td class="num red">−21.90</td><td>Assinatura</td><td>Não</td></tr>
+    <tr><td>2026-04-08</td><td>2026-05</td><td>GITHUB, INC.</td><td class="num red">−53.41</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-04-10</td><td>2026-05</td><td>APPLECOMBILL</td><td class="num red">−19.90</td><td>Assinatura</td><td>Não</td></tr>
+    <tr><td>2026-04-11</td><td>2026-05</td><td>IFD*iFood</td><td class="num red">−7.95</td><td>Delivery/iFood</td><td>Não</td></tr>
+    <tr><td>2026-04-16</td><td>2026-05</td><td>MP*LOTERIASONLINE2FE1</td><td class="num red">−168.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-04-16</td><td>2026-05</td><td>MP*LOTERIASONLINE34H0</td><td class="num red">−100.50</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-04-16</td><td>2026-05</td><td>MERCADOLIVRE*MERCADOLI</td><td class="num red">−72.89</td><td>Compras/ML</td><td>Não</td></tr>
+    <tr><td>2026-04-17</td><td>2026-05</td><td>OPENAI *CHATGPT SUBSCR</td><td class="num red">−103.50</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-04-20</td><td>2026-05</td><td>IFD*JURASSIC PIZZA BES</td><td class="num red">−74.88</td><td>Delivery/iFood</td><td>Não</td></tr>
+    <tr><td>2026-04-20</td><td>2026-05</td><td>MICROSOFT*STORE</td><td class="num red">−509.00</td><td>Outros</td><td>Não</td></tr>
+    <tr><td>2026-04-21</td><td>2026-05</td><td>MERCADOLIVRE*PKFLEXLTDA</td><td class="num red">−111.83</td><td>Compras/ML</td><td>Não</td></tr>
+    <tr><td>2026-04-21</td><td>2026-05</td><td>MANUS AI</td><td class="num red">−515.43</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-04-22</td><td>2026-05</td><td>MP*EDUARDOGIOVAN</td><td class="num red">−201.72</td><td>Outros</td><td>Não</td></tr>
+    <tr><td>2026-04-23</td><td>2026-05</td><td>CLOUDFLARE</td><td class="num red">−107.61</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-04-23</td><td>2026-05</td><td>UBER * PENDING</td><td class="num red">−8.14</td><td>Transporte</td><td>Não</td></tr>
+    <tr><td>2026-04-23</td><td>2026-05</td><td>MP*LOTERIASONLINE72W6</td><td class="num red">−336.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-04-24</td><td>2026-05</td><td>APPLE.COM/BILL.</td><td class="num red">−31.90</td><td>Assinatura</td><td>Não</td></tr>
+    <tr><td>2026-04-24</td><td>2026-05</td><td>UBER * PENDING</td><td class="num red">−9.96</td><td>Transporte</td><td>Não</td></tr>
+    <tr><td>2026-04-25</td><td>2026-05</td><td>MP*LOTERIASONLINEN7GJ</td><td class="num red">−168.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-04-27</td><td>2026-05</td><td>WWW.PERPLEXITY.AI</td><td class="num red">−103.71</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-04-27</td><td>2026-05</td><td>MERCADOLIVRE*LINA</td><td class="num red">−106.98</td><td>Compras/ML</td><td>Não</td></tr>
+    <tr><td>2026-04-27</td><td>2026-05</td><td>MERCADOLIVRE*MERCADOLIVRE</td><td class="num red">−483.98</td><td>Compras/ML</td><td>Não</td></tr>
+    <tr><td>2026-04-27</td><td>2026-05</td><td>IFD*BIANCA DOS SANTOS</td><td class="num red">−92.89</td><td>Delivery/iFood</td><td>Não</td></tr>
+    <tr><td>2026-04-30</td><td>2026-05</td><td>WWW.PERPLEXITY.AI</td><td class="num red">−155.25</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-04-30</td><td>2026-05</td><td>APPLE.COM/BILL.</td><td class="num red">−99.90</td><td>Assinatura</td><td>Não</td></tr>
+    <tr><td>2026-04-30</td><td>2026-05</td><td>UBER * PENDING</td><td class="num red">−16.77</td><td>Transporte</td><td>Não</td></tr>
+    <tr><td>2026-05-01</td><td>2026-05</td><td>CURSOR, AI POWERED IDE</td><td class="num red">−111.81</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-05-01</td><td>2026-05</td><td>OPENAI* CHATGPT CREDIT</td><td class="num red">−206.59</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-05-02</td><td>2026-05</td><td>IFD*BIANCA DOS SANTOS</td><td class="num red">−96.99</td><td>Delivery/iFood</td><td>Não</td></tr>
+    <tr><td>2026-05-03</td><td>2026-05</td><td>STARLINK INTERNET</td><td class="num red">−235.52</td><td>Internet</td><td>Não</td></tr>
+    <tr><td>2026-05-05</td><td>2026-06</td><td>UBER * PENDING</td><td class="num red">−29.97</td><td>Transporte</td><td>Não</td></tr>
+    <tr><td>2026-05-05</td><td>2026-06</td><td>UBER * PENDING</td><td class="num red">−25.93</td><td>Transporte</td><td>Não</td></tr>
+    <tr><td>2026-05-05</td><td>2026-06</td><td>MP*LOTERIASONLINEJOSJ</td><td class="num red">−248.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-05-06</td><td>2026-06</td><td>OPENAI *CHATGPT SUBSCR</td><td class="num red">−101.85</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-05-08</td><td>2026-06</td><td>GITHUB, INC.</td><td class="num red">−50.93</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-05-09</td><td>2026-06</td><td>MP*LOTERIASONLINEDB7Z</td><td class="num red">−151.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-05-10</td><td>2026-06</td><td>APPLE.COM/BILL</td><td class="num red">−19.90</td><td>Assinatura</td><td>Não</td></tr>
+    <tr><td>2026-05-11</td><td>2026-06</td><td>IFD*iFood</td><td class="num red">−7.95</td><td>Delivery/iFood</td><td>Não</td></tr>
+    <tr><td>2026-05-16</td><td>2026-06</td><td>WWW.PERPLEXITY.AI</td><td class="num red">−78.72</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-05-16</td><td>2026-06</td><td>IFD*34.531.468 EDWIN LEIB</td><td class="num red">−73.03</td><td>Delivery/iFood</td><td>Não</td></tr>
+    <tr><td>2026-05-17</td><td>2026-06</td><td>OPENAI *CHATGPT SUBSCR</td><td class="num red">−104.95</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-05-18</td><td>2026-06</td><td>CLOUDFLARE</td><td class="num red">−83.44</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-05-18</td><td>2026-06</td><td>MP*LOTERIASONLINE281Q</td><td class="num red">−146.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-05-19</td><td>2026-06</td><td>IFD*PIPA SUSHI E TEMAK</td><td class="num red">−67.31</td><td>Delivery/iFood</td><td>Não</td></tr>
+    <tr><td>2026-05-19</td><td>2026-06</td><td>DL*GOOGLE YouTub</td><td class="num red">−269.00</td><td>Assinatura</td><td>Não</td></tr>
+    <tr><td>2026-05-19</td><td>2026-06</td><td>MP*LOTERIASONLINEAPI5</td><td class="num red">−120.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-05-20</td><td>2026-06</td><td>OPENAI* CHATGPT CREDIT</td><td class="num red">−208.66</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-05-22</td><td>2026-06</td><td>MP*LOTERIASONLINEPXMF</td><td class="num red">−210.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-05-23</td><td>2026-06</td><td>OPENAI* CHATGPT CREDIT</td><td class="num red">−207.42</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-05-24</td><td>2026-06</td><td>APPLE.COM/BILL</td><td class="num red">−31.90</td><td>Assinatura</td><td>Não</td></tr>
+    <tr><td>2026-05-28</td><td>2026-06</td><td>ANTHROPIC</td><td class="num red">−103.50</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-05-29</td><td>2026-06</td><td>UBER * PENDING</td><td class="num red">−13.97</td><td>Transporte</td><td>Não</td></tr>
+    <tr><td>2026-05-30</td><td>2026-06</td><td>APPLE.COM/BILL</td><td class="num red">−99.90</td><td>Assinatura</td><td>Não</td></tr>
+    <tr><td>2026-05-30</td><td>2026-06</td><td>CLAUDE.AI SUBSCRIPTION</td><td class="num red">−113.85</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-05-30</td><td>2026-06</td><td>IFD*PIPA SUSHI E TEMAK</td><td class="num red">−90.29</td><td>Delivery/iFood</td><td>Não</td></tr>
+    <tr><td>2026-06-01</td><td>2026-06</td><td>WWW.PERPLEXITY.AI</td><td class="num red">−78.56</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-06-01</td><td>2026-06</td><td>CURSOR, AI POWERED IDE</td><td class="num red">−111.81</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-06-02</td><td>2026-06</td><td>UBER * PENDING</td><td class="num red">−24.95</td><td>Transporte</td><td>Não</td></tr>
+    <tr><td>2026-06-02</td><td>2026-06</td><td>MP*LOTERIASONLINEJEPS</td><td class="num red">−161.50</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-06-03</td><td>2026-06</td><td>STARLINK INTERNET</td><td class="num red">−235.52</td><td>Internet</td><td>Não</td></tr>
+    <tr><td>2026-06-03</td><td>2026-06</td><td>DL*UberRides</td><td class="num red">−11.98</td><td>Transporte</td><td>Não</td></tr>
+    <tr><td>2026-06-03</td><td>2026-06</td><td>CONTA VIVO</td><td class="num red">−74.43</td><td>Telecomunicações</td><td>Não</td></tr>
+    <tr><td>2026-06-03</td><td>2026-06</td><td>UBER * PENDING</td><td class="num red">−19.68</td><td>Transporte</td><td>Não</td></tr>
+    <tr><td>2026-06-03</td><td>2026-06</td><td>MP*LOTERIASONLINESPC2</td><td class="num red">−117.00</td><td class="orange">Loteria</td><td>Não</td></tr>
+    <tr><td>2026-06-03</td><td>2026-06</td><td>UBER * PENDING</td><td class="num red">−43.99</td><td>Transporte</td><td>Não</td></tr>
+    <tr><td>2026-06-04</td><td>2026-06</td><td>WWW.PERPLEXITY.AI</td><td class="num red">−78.25</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-06-04</td><td>2026-06</td><td>WWW.PERPLEXITY.AI</td><td class="num red">−78.25</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+    <tr><td>2026-06-05</td><td>2026-06</td><td>WWW.PERPLEXITY.AI</td><td class="num red">−78.25</td><td class="yellow">IA/Tecnologia</td><td class="yellow">Sim</td></tr>
+  </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ PAGE 10: DATA MAP -->
+<div class="page" id="p-datamap">
+  <div class="panel" style="margin-bottom:6px;">
+    <div class="ph">DATA MAP <span class="ph-sub">Where every number on this dashboard actually comes from</span></div>
+    <div style="padding:8px 10px;color:var(--gray);font-size:10px;line-height:1.6;">
+      This dashboard is generated from <strong style="color:var(--white)">data/wealthcommand.xlsx</strong>,
+      sheet <strong style="color:var(--white)">CALC</strong>. Two tiers below: what the generator script
+      actually reads and rebuilds every run (guaranteed in sync), vs. what CALC's own KPI map says the
+      hand-built tiles <em>should</em> equal (a reference — not yet enforced by code, so check it rather
+      than assume it).
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <div class="panel">
+        <div class="ph">TIER 1 · SCRIPT-VERIFIED <span class="ph-sub">rebuilt from these exact cells every run</span></div>
+        <table class="bt">
+          <tr><th>DASHBOARD</th><th>SOURCE</th><th>STATUS</th></tr>
+          <tr><td>Subscriptions tab tiles + pie chart, CMD CTR "Sub Stack/mo" tile, ticker</td><td class="gray">CALC!C344:E346 (Section 4D)</td><td><span class="badge badge-ok">LIVE</span></td></tr>
+          <tr><td>Alert #3 "Sub Stack Bloat" — exposure + service count</td><td class="gray">CALC!C346:E346 (REVIEW row)</td><td><span class="badge badge-ok">LIVE</span></td></tr>
+          <tr><td>09 TX LOG — all 146 rows</td><td class="gray">02 CAPITAL FLOWS!B15:I221, Source="MP Cartão"</td><td><span class="badge badge-ok">LIVE</span></td></tr>
+          <tr><td>05 LIFESTYLE — ML+iFood orders, all 69 rows</td><td class="gray">05 LIFESTYLE!B34:G102</td><td><span class="badge badge-ok">LIVE</span></td></tr>
+          <tr><td>09 TX LOG — WEEKLY ROLLUP table</td><td class="gray">02 CAPITAL FLOWS!B15:I221, grouped Mon–Sun</td><td><span class="badge badge-ok">LIVE</span></td></tr>
+          <tr><td>11 NFC-E tab (all figures)</td><td class="gray">nfce/personal_inflation_data.json — NOT CALC</td><td><span class="badge badge-pause">SNAPSHOT</span></td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="col">
+      <div class="panel">
+        <div class="ph">LEGEND</div>
+        <table class="bt">
+          <tr><td><span class="badge badge-ok">LIVE</span></td><td class="gray">Generator reads this cell directly — cannot drift</td></tr>
+          <tr><td><span class="badge badge-ok">MATCH</span></td><td class="gray">Checked by hand against CALC — currently agrees</td></tr>
+          <tr><td><span class="badge badge-crit">MISMATCH</span></td><td class="gray">Checked by hand — currently disagrees with CALC</td></tr>
+          <tr><td><span class="badge badge-review">UNVERIFIED</span></td><td class="gray">No single declared source cell found in CALC</td></tr>
+          <tr><td><span class="badge badge-pause">SNAPSHOT</span></td><td class="gray">Point-in-time data, not recomputed by make regen</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <div class="panel">
+        <div class="ph">TIER 2 · CMD CTR TILES vs CALC'S OWN KPI MAP <span class="ph-sub">CALC!B121:F154 — "Section 6 · Master KPI Cells"</span></div>
+        <table class="bt">
+          <tr><th>TILE</th><th>CALC CELL</th><th class="num">TILE SHOWS</th><th class="num">CALC SAYS</th><th>STATUS</th></tr>
+          <tr><td>Est. Net Worth</td><td class="gray">CALC!E137</td><td class="num">R$ 358,277</td><td class="num">R$ 377,473.49</td><td><span class="badge badge-crit">MISMATCH</span></td></tr>
+          <tr><td>Total Liquidity</td><td class="gray">CALC!E123</td><td class="num">R$ 23,197</td><td class="num">R$ 23,196.90</td><td><span class="badge badge-ok">MATCH</span></td></tr>
+          <tr><td>IB Deployed</td><td class="gray">CALC!E126 ("IB NET DEPLOYED")</td><td class="num">R$ 197,707</td><td class="num">R$ 178,510.76</td><td><span class="badge badge-crit">MISMATCH</span></td></tr>
+          <tr><td>Fundos BRL</td><td class="gray">CALC!E127</td><td class="num">R$ 175,766</td><td class="num">R$ 175,765.83</td><td><span class="badge badge-ok">MATCH</span></td></tr>
+          <tr><td>FX Outbound H1</td><td class="gray">CALC!E128</td><td class="num">R$ 652,789</td><td class="num">R$ 652,788.61</td><td><span class="badge badge-ok">MATCH</span></td></tr>
+          <tr><td>Inbound H1</td><td class="gray">CALC!E129</td><td class="num">R$ 98,857</td><td class="num">R$ 98,857.00</td><td><span class="badge badge-ok">MATCH</span></td></tr>
+          <tr><td>Card Spend H1</td><td class="gray">CALC!E131</td><td class="num">R$ 37,246</td><td class="num">R$ 37,245.76</td><td><span class="badge badge-ok">MATCH</span></td></tr>
+          <tr><td>ML + iFood</td><td class="gray">— not in CALC's KPI map</td><td class="num">R$ 27,489</td><td class="num">—</td><td><span class="badge badge-review">UNVERIFIED</span></td></tr>
+          <tr><td>Sub Stack/mo</td><td class="gray">CALC!E133</td><td class="num">R$ 1,345</td><td class="num">R$ 1,344.54</td><td><span class="badge badge-ok">MATCH</span></td></tr>
+          <tr><td>Cancel Savings</td><td class="gray">CALC!E134</td><td class="num">R$ 365.80</td><td class="num">R$ 365.80</td><td><span class="badge badge-ok">MATCH</span></td></tr>
+          <tr><td>Avg FX Rate</td><td class="gray">CALC!E130</td><td class="num">5.180</td><td class="num">5.1799</td><td><span class="badge badge-ok">MATCH</span></td></tr>
+          <tr><td>PIX Net Flow</td><td class="gray">CALC!E136</td><td class="num">R$ 144,848</td><td class="num">R$ 144,847.62</td><td><span class="badge badge-ok">MATCH</span></td></tr>
+        </table>
+        <div style="padding:8px 10px;color:var(--gray);font-size:10px;line-height:1.6;">
+          The two MISMATCH rows share one root cause: how the June IB→Wise withdrawal (R$19,195.81) is
+          treated on the <strong style="color:var(--white)">04 PORTFOLIO</strong> sheet. "IB Deployed"
+          is showing the gross deposit figure instead of CALC's own net-of-withdrawal number — same bug
+          family as the Net Worth gap. See README.md → "Known open item".
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="p-nfce">
+  <div class="panel" style="margin-bottom:6px;">
+    <div class="ph">NFC-E PERSONAL INFLATION <span class="ph-sub">Household inflation from your own grocery/pharmacy receipts</span></div>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="kpi-lbl">Cumulative</div><div class="kpi-val red">58.9%</div></div>
+      <div class="kpi"><div class="kpi-lbl">Annualized</div><div class="kpi-val yellow">6.02%/yr</div></div>
+      <div class="kpi"><div class="kpi-lbl">YoY (12mo)</div><div class="kpi-val yellow">6.24%</div></div>
+      <div class="kpi"><div class="kpi-lbl">Tracked Spend</div><div class="kpi-val orange">R$ 151,276</div></div>
+    </div>
+    <div style="padding:8px 10px 4px;color:var(--gray);font-size:10px;line-height:1.6;">
+      Snapshot from <strong style="color:var(--white)">499 receipts</strong> &middot; 630 products tracked
+      &middot; 41% category coverage &middot; 2018-08 to 2026-07.
+      This is <strong style="color:var(--white)">separate from CALC</strong> and does not update with <code>make regen</code> --
+      it is a point-in-time run of <code>nfce/personal_inflation.py</code>, generated 2026-08-19.
+      Re-run that script against real NFC-e receipts, then re-run <code>make regen</code>, to refresh this tab.
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <div class="panel">
+        <div class="ph">YEAR OVER YEAR <span class="ph-sub">Personal index vs. official IPCA</span></div>
+        <table class="bt">
+          <tr><th>YEAR</th><th class="num">PERSONAL</th><th class="num">IPCA</th></tr>
+          <tr><td>2019</td><td class="num yellow">+4.65%</td><td class="num gray">+4.31%</td></tr>
+          <tr><td>2020</td><td class="num green">-5.86%</td><td class="num gray">+4.52%</td></tr>
+          <tr><td>2021</td><td class="num green">+7.68%</td><td class="num gray">+10.06%</td></tr>
+          <tr><td>2022</td><td class="num yellow">+10.29%</td><td class="num gray">+5.79%</td></tr>
+          <tr><td>2023</td><td class="num yellow">+9.98%</td><td class="num gray">+4.62%</td></tr>
+          <tr><td>2024</td><td class="num yellow">+7.33%</td><td class="num gray">+4.83%</td></tr>
+          <tr><td>2025</td><td class="num green">+3.83%</td><td class="num gray">+4.50%</td></tr>
+          <tr><td>2026 (partial)</td><td class="num green">+4.02%</td><td class="num gray">+4.30%</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="panel">
+        <div class="ph">TOP CATEGORIES BY SPEND</div>
+        <table class="bt">
+          <tr><th>CATEGORY</th><th class="num">SPEND (R$)</th><th class="num">CUM %</th></tr>
+          <tr><td>Alimentos</td><td class="num">41,014</td><td class="num yellow">+39.6%</td></tr>
+          <tr><td>Bebidas alcoólicas</td><td class="num">8,181</td><td class="num yellow">+53.6%</td></tr>
+          <tr><td>Higiene/Limpeza</td><td class="num">5,334</td><td class="num yellow">+111.2%</td></tr>
+          <tr><td>Casa/Materiais</td><td class="num">2,718</td><td class="num yellow">+87.3%</td></tr>
+          <tr><td>Outros</td><td class="num">2,138</td><td class="num yellow">+69.3%</td></tr>
+          <tr><td>Farmácia</td><td class="num">1,435</td><td class="num yellow">+45.5%</td></tr>
+          <tr><td>Bebidas</td><td class="num">1,032</td><td class="num yellow">+47.0%</td></tr>
+          <tr><td>Vestuário</td><td class="num">54</td><td class="num yellow">-5.4%</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <div class="panel">
+        <div class="ph">TOP RISERS <span class="ph-sub">biggest price increases, annualized</span></div>
+        <table class="bt">
+          <tr><th>PRODUCT</th><th class="num">ANN %</th></tr>
+          <tr><td>FIGADO BOM TODO 1KG</td><td class="num red">+60.5%</td></tr>
+          <tr><td>CENOURA kg</td><td class="num red">+59.1%</td></tr>
+          <tr><td>Couve Folha Organico Sempre Ve</td><td class="num red">+58.9%</td></tr>
+          <tr><td>SABONETE REXONA 84G BAMBOO FRESH</td><td class="num red">+58.2%</td></tr>
+          <tr><td>SABONETE REXONA 84G ANTIBACTERIAL…</td><td class="num red">+58.2%</td></tr>
+          <tr><td>BISC C CRACKER VITARELLA 350G TRAD</td><td class="num red">+53.1%</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="panel">
+        <div class="ph">TOP FALLERS <span class="ph-sub">biggest price drops, annualized</span></div>
+        <table class="bt">
+          <tr><th>PRODUCT</th><th class="num">ANN %</th></tr>
+          <tr><td>LARANJA PERA KG</td><td class="num green">-51.8%</td></tr>
+          <tr><td>ABACATE KG</td><td class="num green">-44.9%</td></tr>
+          <tr><td>Arroz  Branco Arretado 1Kg</td><td class="num green">-26.3%</td></tr>
+          <tr><td>HUGG LC UMED HIG 48U</td><td class="num green">-17.4%</td></tr>
+          <tr><td>Macarrao Vitarella Speciale 40</td><td class="num green">-14.9%</td></tr>
+          <tr><td>Arroz Urbano Parboilizado 1Kg</td><td class="num green">-14.4%</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div><!-- /content -->
+
+<!-- TICKER TAPE -->
+<div id="ticker">
+  <div id="ticker-inner">
+    <span class="tick-item">BB BRASIL <span class="tick-dn">R$0.00</span></span>
+    <span class="tick-sep">|</span>
+    <span class="tick-item">BANCO INTER <span class="tick-up">R$18,934.67</span></span>
+    <span class="tick-sep">|</span>
+    <span class="tick-item">MERCADO PAGO <span class="tick-up">R$4,262.23</span></span>
+    <span class="tick-sep">|</span>
+    <span class="tick-item">TOTAL LIQUIDITY <span class="tick-up">R$23,196.90</span></span>
+    <span class="tick-sep">|</span>
+    <span class="tick-item">IB DEPLOYED <span class="tick-up">USD 38,801 · R$197,707</span></span>
+    <span class="tick-sep">|</span>
+    <span class="tick-item">FUNDOS BRL <span class="tick-up">R$175,766</span></span>
+    <span class="tick-sep">|</span>
+    <span class="tick-item">EST NET WORTH <span class="tick-up">R$358,277</span></span>
+    <span class="tick-sep">|</span>
+    <span class="tick-item">FX OUT H1 <span class="tick-dn">R$652,789 · USD 126,279</span></span>
+    <span class="tick-sep">|</span>
+    <span class="tick-item">AVG FX RATE <span style="color:#3399ff">5.180</span></span>
+    <span class="tick-sep">|</span>
+    <span class="tick-item">CARD SPEND H1 <span class="tick-dn">R$37,246</span></span>
+    <span class="tick-sep">|</span>
+    <span class="tick-item">ML+iFOOD H1 <span class="tick-dn">R$27,489</span></span>
+    <span class="tick-sep">|</span>
+    <span class="tick-item">SUB STACK <span class="tick-dn">R$1,345/mo</span></span>
+    <span class="tick-sep">|</span>
+    <span class="tick-item">CANCEL SAVINGS <span class="tick-up">R$365.80/mo · R$4,390/yr</span></span>
+    <span class="tick-sep">|</span>
+    <span class="tick-item">PIX NET FLOW <span class="tick-up">R$144,848</span></span>
+    <span class="tick-sep">|</span>
+    <span class="tick-item">INFLATION IDX <span style="color:#ffcc00">158.57 · YoY 5.88%</span></span>
+    <span class="tick-sep">|</span>
+    <span class="tick-item">BCB PIX KEYS ACTIVE <span class="tick-up">6 keys · 10 institutions</span></span>
+    <span class="tick-sep">|</span>
+    <span class="tick-item">IOF PAID H1 <span class="tick-dn">R$3,475</span></span>
+    <span class="tick-sep">|</span>
+    <span class="tick-item">ALERTS PENDING <span class="tick-dn" style="animation:flash 1.5s infinite;display:inline-block;">11 ITEMS</span></span>
+    <span class="tick-sep">|</span>
+    <span class="tick-item">SOURCE data/wealthcommand.xlsx (CALC) · 31 Aug 2026</span>
+  </div>
+</div>
+
+</div><!-- /shell -->
+
+<script>
+// ── Clock
+function updateClock(){
+  const n=new Date();
+  document.getElementById('clock').textContent=
+    n.toLocaleDateString('pt-BR')+' '+
+    n.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit',second:'2-digit'})+
+    ' BRT';
+}
+setInterval(updateClock,1000); updateClock();
+
+// ── Font size (whole-page zoom — most elements use fixed px font-size,
+// so scaling --fs alone had no visible effect. zoom scales everything:
+// text, padding, tables, charts, together.)
+let fsZoom=100;
+function adjustFS(d){
+  fsZoom=Math.max(70,Math.min(150,fsZoom+d*10));
+  document.body.style.zoom=fsZoom+'%';
+  const lbl=document.getElementById('fs-pct');
+  if(lbl) lbl.textContent=fsZoom+'%';
+}
+
+// ── Tab navigation
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('p-'+id).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+// ── TX search filter
+function filterTx(){
+  const q=document.getElementById('tx-search').value.toLowerCase();
+  const rows=document.querySelectorAll('#tx-table tr:not(:first-child)');
+  let vis=0;
+  rows.forEach(r=>{
+    const txt=r.textContent.toLowerCase();
+    const show=txt.includes(q);
+    r.style.display=show?'':'none';
+    if(show) vis++;
+  });
+  document.getElementById('tx-count').textContent=vis+' rows';
+}
+
+// ── SVG helpers
+function svgEl(tag,attrs){
+  const el=document.createElementNS('http://www.w3.org/2000/svg',tag);
+  Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,v));
+  return el;
+}
+
+// ── Wealth Allocation Pie
+function drawAllocPie(){
+  const svg=document.getElementById('svg-alloc');
+  if(!svg) return;
+  const W=svg.clientWidth||320, H=140;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const cx=W/2-40, cy=H/2, r=55;
+  const data=[
+    {label:'Fundos BRL',v:175766,c:'#00cc44'},
+    {label:'IB Net',v:197707,c:'#3399ff'},
+    {label:'Liquid',v:23197,c:'#ffcc00'},
+  ];
+  const total=data.reduce((s,d)=>s+d.v,0);
+  let angle=-Math.PI/2;
+  data.forEach((d,i)=>{
+    const slice=2*Math.PI*(d.v/total);
+    const x1=cx+r*Math.cos(angle), y1=cy+r*Math.sin(angle);
+    angle+=slice;
+    const x2=cx+r*Math.cos(angle), y2=cy+r*Math.sin(angle);
+    const large=slice>Math.PI?1:0;
+    const path=svgEl('path',{
+      d:`M${cx},${cy} L${x1},${y1} A${r},${r} 0 ${large} 1 ${x2},${y2} Z`,
+      fill:d.c, stroke:'#0a0a0a','stroke-width':'2', opacity:'0.85'
+    });
+    svg.appendChild(path);
+  });
+  // legend
+  data.forEach((d,i)=>{
+    const lx=cx+r+20, ly=20+i*22;
+    const rect=svgEl('rect',{x:lx,y:ly,width:10,height:10,fill:d.c});
+    svg.appendChild(rect);
+    const pct=((d.v/total)*100).toFixed(1);
+    const txt=svgEl('text',{x:lx+14,y:ly+9,fill:'#e8e8e8','font-size':'9'});
+    txt.textContent=`${d.label} ${pct}%`;
+    svg.appendChild(txt);
+  });
+  const tot=svgEl('text',{x:cx,y:cy+4,'text-anchor':'middle',fill:'#ff6600','font-size':'10','font-weight':'bold'});
+  tot.textContent='R$358k';
+  svg.appendChild(tot);
+}
+
+// ── Monthly Spend Bar Chart
+function drawMonthly(){
+  const svg=document.getElementById('svg-monthly');
+  if(!svg) return;
+  const W=svg.clientWidth||540, H=140;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const data=[
+    {m:'Jan',v:3745},{m:'Feb',v:9516},{m:'Mar',v:14231},
+    {m:'Apr',v:5330},{m:'May',v:3308},{m:'Jun',v:1114}
+  ];
+  const pad={l:40,r:10,t:10,b:25};
+  const cw=W-pad.l-pad.r, ch=H-pad.t-pad.b;
+  const max=Math.max(...data.map(d=>d.v));
+  const bw=(cw/data.length)*0.6, gap=(cw/data.length)*0.4;
+  data.forEach((d,i)=>{
+    const x=pad.l+i*(bw+gap)+gap/2;
+    const bh=(d.v/max)*ch;
+    const y=pad.t+ch-bh;
+    const col=d.v>10000?'#ff2222':d.v>6000?'#ff6600':'#ffcc00';
+    const bar=svgEl('rect',{x,y,width:bw,height:bh,fill:col,opacity:'0.85'});
+    svg.appendChild(bar);
+    const lbl=svgEl('text',{x:x+bw/2,y:H-8,'text-anchor':'middle',fill:'#888','font-size':'9'});
+    lbl.textContent=d.m;
+    svg.appendChild(lbl);
+    const val=svgEl('text',{x:x+bw/2,y:y-3,'text-anchor':'middle',fill:'#e8e8e8','font-size':'8'});
+    val.textContent=(d.v/1000).toFixed(1)+'k';
+    svg.appendChild(val);
+  });
+  // avg line
+  const avgY=pad.t+ch-(6208/max)*ch;
+  const line=svgEl('line',{x1:pad.l,y1:avgY,x2:W-pad.r,y2:avgY,stroke:'#3399ff','stroke-width':'1','stroke-dasharray':'4,3'});
+  svg.appendChild(line);
+  const avgt=svgEl('text',{x:pad.l-2,y:avgY-3,fill:'#3399ff','font-size':'8','text-anchor':'end'});
+  avgt.textContent='avg';
+  svg.appendChild(avgt);
+}
+
+// ── FX Rate timeline
+function drawFXRate(){
+  const svg=document.getElementById('svg-fxrate');
+  if(!svg) return;
+  const W=svg.clientWidth||300, H=160;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const pts=[
+    {d:'Jan-27',r:5.2953},{d:'Jan-30',r:5.3546},{d:'Feb-09',r:5.2896},
+    {d:'Feb-11',r:5.2633},{d:'Mar-03',r:5.3414},{d:'Mar-13',r:5.2924},
+    {d:'Mar-18',r:5.3211},{d:'Apr-22',r:5.2927},{d:'May-07',r:5.0443},
+    {d:'May-07b',r:4.9880},{d:'May-11',r:4.9560},{d:'May-15',r:5.1558},
+    {d:'May-18',r:5.0958},{d:'May-26',r:5.1028},{d:'May-28',r:5.1302},
+    {d:'Jun-05',r:5.1421},{d:'Jun-22',r:5.2245},{d:'Jun-22b',r:5.1436}
+  ];
+  const pad={l:36,r:8,t:10,b:20};
+  const cw=W-pad.l-pad.r, ch=H-pad.t-pad.b;
+  const rates=pts.map(p=>p.r);
+  const mn=Math.min(...rates)-0.05, mx=Math.max(...rates)+0.05;
+  const sx=i=>(i/(pts.length-1))*cw+pad.l;
+  const sy=r=>pad.t+ch-(r-mn)/(mx-mn)*ch;
+  // grid
+  [4.95,5.00,5.10,5.20,5.30,5.40].forEach(rv=>{
+    if(rv<mn||rv>mx) return;
+    const yg=sy(rv);
+    const gl=svgEl('line',{x1:pad.l,y1:yg,x2:W-pad.r,y2:yg,stroke:'#222','stroke-width':'1'});
+    svg.appendChild(gl);
+    const gt=svgEl('text',{x:pad.l-2,y:yg+3,fill:'#555','font-size':'7','text-anchor':'end'});
+    gt.textContent=rv.toFixed(2);
+    svg.appendChild(gt);
+  });
+  // line
+  const poly=pts.map((p,i)=>`${sx(i)},${sy(p.r)}`).join(' ');
+  const pl=svgEl('polyline',{points:poly,fill:'none',stroke:'#3399ff','stroke-width':'1.5'});
+  svg.appendChild(pl);
+  // dots
+  pts.forEach((p,i)=>{
+    const c=svgEl('circle',{cx:sx(i),cy:sy(p.r),r:'2.5',fill:'#3399ff'});
+    svg.appendChild(c);
+  });
+  // avg line
+  const avgR=rates.reduce((a,b)=>a+b)/rates.length;
+  const avgL=svgEl('line',{x1:pad.l,y1:sy(avgR),x2:W-pad.r,y2:sy(avgR),stroke:'#ffcc00','stroke-width':'1','stroke-dasharray':'3,3'});
+  svg.appendChild(avgL);
+  const avgT=svgEl('text',{x:W-pad.r-2,y:sy(avgR)-3,fill:'#ffcc00','font-size':'7','text-anchor':'end'});
+  avgT.textContent='avg '+avgR.toFixed(3);
+  svg.appendChild(avgT);
+}
+
+// ── Capital flows bars
+function drawFlows(){
+  const svg=document.getElementById('svg-flows');
+  if(!svg) return;
+  const W=svg.clientWidth||500, H=110;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const months=['Jan','Feb','Mar','Apr','May','Jun'];
+  const cardSpend=[3745,9516,14231,5330,3308,1114];
+  const pixIn=[0,40000,0,40000,115000,42010];
+  const pad={l:8,r:8,t:8,b:18};
+  const cw=W-pad.l-pad.r, ch=H-pad.t-pad.b;
+  const allVals=[...cardSpend,...pixIn];
+  const max=Math.max(...allVals);
+  const bw=cw/(months.length*2.5);
+  months.forEach((m,i)=>{
+    const gx=pad.l+(i/months.length)*cw;
+    // spend bar
+    const sh=(cardSpend[i]/max)*ch;
+    const sb=svgEl('rect',{x:gx,y:pad.t+ch-sh,width:bw,height:sh,fill:'#ff4444',opacity:'0.8'});
+    svg.appendChild(sb);
+    // pix bar
+    const ph=(pixIn[i]/max)*ch;
+    const pb=svgEl('rect',{x:gx+bw+2,y:pad.t+ch-ph,width:bw,height:ph,fill:'#00cc44',opacity:'0.7'});
+    svg.appendChild(pb);
+    const lbl=svgEl('text',{x:gx+bw,y:H-4,'text-anchor':'middle',fill:'#888','font-size':'8'});
+    lbl.textContent=m;
+    svg.appendChild(lbl);
+  });
+}
+
+// ── Flow pie
+function drawFlowPie(){
+  const svg=document.getElementById('svg-flow-pie');
+  if(!svg) return;
+  const W=svg.clientWidth||220, H=230;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const cx=W/2, cy=H/2-15, r=70;
+  const data=[
+    {label:'FX Outbound',v:652789,c:'#ff2222'},
+    {label:'IB Deposits',v:197707,c:'#00cc44'},
+    {label:'Fund Capital',v:175766,c:'#3399ff'},
+    {label:'Inbound',v:98857,c:'#00cccc'},
+    {label:'Card Spend',v:37246,c:'#ffcc00'},
+  ];
+  const total=data.reduce((s,d)=>s+d.v,0);
+  let angle=-Math.PI/2;
+  data.forEach(d=>{
+    const slice=2*Math.PI*(d.v/total);
+    const x1=cx+r*Math.cos(angle), y1=cy+r*Math.sin(angle);
+    angle+=slice;
+    const x2=cx+r*Math.cos(angle), y2=cy+r*Math.sin(angle);
+    const large=slice>Math.PI?1:0;
+    const path=svgEl('path',{d:`M${cx},${cy} L${x1},${y1} A${r},${r} 0 ${large} 1 ${x2},${y2} Z`,fill:d.c,stroke:'#0a0a0a','stroke-width':'2',opacity:'0.85'});
+    svg.appendChild(path);
+  });
+  data.forEach((d,i)=>{
+    const lx=10, ly=H-90+i*18;
+    svg.appendChild(svgEl('rect',{x:lx,y:ly,width:9,height:9,fill:d.c}));
+    const pct=((d.v/total)*100).toFixed(1);
+    const t=svgEl('text',{x:lx+13,y:ly+8,fill:'#e8e8e8','font-size':'8.5'});
+    t.textContent=`${d.label} ${pct}%`;
+    svg.appendChild(t);
+  });
+}
+
+// ── Portfolio chart
+function drawPort(){
+  const svg=document.getElementById('svg-port');
+  if(!svg) return;
+  const W=svg.clientWidth||220, H=140;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const deposits=[1071,503,19196,5115,31652,101772,38397,-19196];
+  const labels=['Jan','Apr','May-18','May-19','May-20','May-28','Jun-22','Jun-26W'];
+  const colors=['#00cc44','#00cc44','#3399ff','#00cc44','#00cc44','#ffcc00','#3399ff','#ff2222'];
+  const pad={l:8,r:8,t:10,b:18};
+  const cw=W-pad.l-pad.r, ch=H-pad.t-pad.b;
+  const max=Math.max(...deposits.map(Math.abs));
+  const bw=cw/(deposits.length*1.5);
+  deposits.forEach((v,i)=>{
+    const gx=pad.l+(i/(deposits.length))*cw;
+    const bh=(Math.abs(v)/max)*ch;
+    const y=v>0?pad.t+ch-bh:pad.t+ch;
+    const bar=svgEl('rect',{x:gx,y,width:bw,height:bh,fill:colors[i],opacity:'0.85'});
+    svg.appendChild(bar);
+  });
+  // baseline
+  const bl=svgEl('line',{x1:pad.l,y1:pad.t+ch,x2:W-pad.r,y2:pad.t+ch,stroke:'#333','stroke-width':'1'});
+  svg.appendChild(bl);
+}
+
+// ── Subscriptions breakdown
+function drawSubs(){
+  const svg=document.getElementById('svg-subs');
+  if(!svg) return;
+  const W=svg.clientWidth||220, H=150;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const data=[
+    {label:'KEEP',v:331.8,c:'#00cc44'},
+    {label:'CANCEL',v:365.8,c:'#ff2222'},
+    {label:'REVIEW',v:646.94,c:'#ffcc00'},
+  ];
+  const cx=W/2, cy=H/2-5, r=55;
+  const total=data.reduce((s,d)=>s+d.v,0);
+  let angle=-Math.PI/2;
+  data.forEach(d=>{
+    const slice=2*Math.PI*(d.v/total);
+    const x1=cx+r*Math.cos(angle), y1=cy+r*Math.sin(angle);
+    angle+=slice;
+    const x2=cx+r*Math.cos(angle), y2=cy+r*Math.sin(angle);
+    const large=slice>Math.PI?1:0;
+    const path=svgEl('path',{d:`M${cx},${cy} L${x1},${y1} A${r},${r} 0 ${large} 1 ${x2},${y2} Z`,fill:d.c,stroke:'#0a0a0a','stroke-width':'2',opacity:'0.85'});
+    svg.appendChild(path);
+  });
+  data.forEach((d,i)=>{
+    const lx=10, ly=H-46+i*15;
+    svg.appendChild(svgEl('rect',{x:lx,y:ly,width:8,height:8,fill:d.c}));
+    const t=svgEl('text',{x:lx+12,y:ly+8,fill:'#e8e8e8','font-size':'8.5'});
+    t.textContent=`${d.label}  R$${d.v.toFixed(0)}/mo`;
+    svg.appendChild(t);
+  });
+}
+
+// ── Init all charts
+function initCharts(){
+  drawAllocPie();
+  drawMonthly();
+  drawFXRate();
+  drawFlows();
+  drawFlowPie();
+  drawPort();
+  drawSubs();
+}
+
+// redraw on resize
+window.addEventListener('resize',()=>{
+  ['svg-alloc','svg-monthly','svg-fxrate','svg-flows','svg-flow-pie','svg-port','svg-subs'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) while(el.firstChild) el.removeChild(el.firstChild);
+  });
+  initCharts();
+});
+
+document.addEventListener('DOMContentLoaded',initCharts);
+setTimeout(initCharts,200);
+</script>
+</body>
+</html>

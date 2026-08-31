@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Regenerated pipeline outputs (rebuild with: python3 personal_inflation.py)
+personal_inflation_data.json
+personal_inflation_validation.json
+personal_inflation_extracted_items.json
+nfce_all.json
+inflation_data.json
+nfce_items.csv
+nfce_transactions.csv

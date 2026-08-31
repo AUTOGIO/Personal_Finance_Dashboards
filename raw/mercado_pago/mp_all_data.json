@@ -1,0 +1,4640 @@
+{
+  "card_transactions": [
+    {
+      "date": "2026-01-06",
+      "invoice": "2026-02",
+      "merchant": "IFD*PIZZA NOW INTERMARES",
+      "amount": 173.79,
+      "category": "Delivery/iFood",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-01-08",
+      "invoice": "2026-02",
+      "merchant": "Compra internacional em OPENAI *CHATGPT SUBSCR",
+      "amount": 111.58,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-01-08",
+      "invoice": "2026-02",
+      "merchant": "APPLE.COM/BILL",
+      "amount": 21.9,
+      "category": "Assinatura",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-01-10",
+      "invoice": "2026-02",
+      "merchant": "IFD*34531468 EDWIN LEI",
+      "amount": 111.6,
+      "category": "Delivery/iFood",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-01-10",
+      "invoice": "2026-02",
+      "merchant": "APPLE.COM/BILL",
+      "amount": 19.9,
+      "category": "Assinatura",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-01-13",
+      "invoice": "2026-02",
+      "merchant": "MP*EDUARDOGIOVAN",
+      "amount": 0.78,
+      "category": "Outros",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-01-14",
+      "invoice": "2026-02",
+      "merchant": "Compra internacional em MANUS AI",
+      "amount": 25.79,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-01-15",
+      "invoice": "2026-02",
+      "merchant": "DL*Starlink Braz",
+      "amount": 235.52,
+      "category": "Internet",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-01-16",
+      "invoice": "2026-02",
+      "merchant": "MP*LOTERIASONLINEU1AQ",
+      "amount": 143.6,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-01-16",
+      "invoice": "2026-02",
+      "merchant": "IFD*FORMAGGIO RESTAURANTE",
+      "amount": 191.8,
+      "category": "Delivery/iFood",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-01-17",
+      "invoice": "2026-02",
+      "merchant": "Compra internacional em OPENAI *CHATGPT SUBSCR",
+      "amount": 111.37,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-01-17",
+      "invoice": "2026-02",
+      "merchant": "MP*LOTERIASONLINE542V",
+      "amount": 111.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-01-19",
+      "invoice": "2026-02",
+      "merchant": "Compra internacional em LEMSQZY* PINEAPPLE-APP",
+      "amount": 111.11,
+      "category": "Assinatura",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-01-21",
+      "invoice": "2026-02",
+      "merchant": "Compra internacional em CLAUDE.AI SUBSCRIPTION",
+      "amount": 1138.5,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-01-21",
+      "invoice": "2026-02",
+      "merchant": "Compra internacional em MANUS AI",
+      "amount": 556.83,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-01-27",
+      "invoice": "2026-02",
+      "merchant": "Compra internacional em RAYCAST.COM",
+      "amount": 524.63,
+      "category": "Outros",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-01-28",
+      "invoice": "2026-02",
+      "merchant": "IFD*34531468 EDWIN LEI",
+      "amount": 55.8,
+      "category": "Delivery/iFood",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-01-30",
+      "invoice": "2026-02",
+      "merchant": "APPLE.COM/BILL",
+      "amount": 99.9,
+      "category": "Assinatura",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-02-03",
+      "invoice": "2026-02",
+      "merchant": "Compra internacional em DESKTOP COMMANDER",
+      "amount": 272.21,
+      "category": "Outros",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-02-04",
+      "invoice": "2026-02",
+      "merchant": "MP*LOTERIASONLINEM4UQ",
+      "amount": 168.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-02-05",
+      "invoice": "2026-02",
+      "merchant": "MP*LOTERIASONLINEYY48",
+      "amount": 84.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-02-05",
+      "invoice": "2026-03",
+      "merchant": "Compra internacional em OPENAI *CHATGPT SUBSCR",
+      "amount": 108.89,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-02-08",
+      "invoice": "2026-03",
+      "merchant": "APPLECOMBILL",
+      "amount": 21.9,
+      "category": "Assinatura",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-02-09",
+      "invoice": "2026-03",
+      "merchant": "MP*LOTERIASONLINEBFN5",
+      "amount": 150.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-02-10",
+      "invoice": "2026-03",
+      "merchant": "APPLECOMBILL",
+      "amount": 19.9,
+      "category": "Assinatura",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-02-11",
+      "invoice": "2026-03",
+      "merchant": "MERCADOLIVRE*3PRODUTOS",
+      "amount": 6282.36,
+      "category": "Compras/ML",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-02-14",
+      "invoice": "2026-03",
+      "merchant": "Compra internacional em ANTHROPIC",
+      "amount": 51.75,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-02-14",
+      "invoice": "2026-03",
+      "merchant": "MP*LOTERIASONLINEO4M4",
+      "amount": 206.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-02-14",
+      "invoice": "2026-03",
+      "merchant": "MP*LOTERIASONLINEOBUG",
+      "amount": 168.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-02-16",
+      "invoice": "2026-03",
+      "merchant": "DL *Starlink Brazil",
+      "amount": 235.52,
+      "category": "Internet",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-02-17",
+      "invoice": "2026-03",
+      "merchant": "Compra internacional em OPENAI *CHATGPT SUBSCR",
+      "amount": 108.27,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-02-18",
+      "invoice": "2026-03",
+      "merchant": "MP*LOTERIASONLINEFEG2",
+      "amount": 168.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-02-21",
+      "invoice": "2026-03",
+      "merchant": "MP*LOTERIASONLINEU2WR",
+      "amount": 168.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-02-21",
+      "invoice": "2026-03",
+      "merchant": "MP*LOTERIASONLINEQXFX",
+      "amount": 238.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-02-21",
+      "invoice": "2026-03",
+      "merchant": "Compra internacional em MANUS AI",
+      "amount": 538.2,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-02-23",
+      "invoice": "2026-03",
+      "merchant": "MP*LOTERIASONLINEEIG7",
+      "amount": 140.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-02-26",
+      "invoice": "2026-03",
+      "merchant": "MP*LOTERIASONLINEI4Q9",
+      "amount": 168.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-02-27",
+      "invoice": "2026-03",
+      "merchant": "MP*LOTERIASONLINEYYRE",
+      "amount": 119.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-02-28",
+      "invoice": "2026-03",
+      "merchant": "APPLECOMBILL",
+      "amount": 99.9,
+      "category": "Assinatura",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-03-04",
+      "invoice": "2026-03",
+      "merchant": "MP*LOTERIASONLINEFL2P",
+      "amount": 221.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-03-05",
+      "invoice": "2026-04",
+      "merchant": "Compra internacional em OPENAI *CHATGPT SUBSCR",
+      "amount": 108.47,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-07",
+      "invoice": "2026-04",
+      "merchant": "MP*LOTERIASONLINEQPEZ",
+      "amount": 243.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-03-07",
+      "invoice": "2026-04",
+      "merchant": "MP*LOTERIASONLINEQTKS",
+      "amount": 168.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-03-08",
+      "invoice": "2026-04",
+      "merchant": "APPLECOMBILL",
+      "amount": 21.9,
+      "category": "Assinatura",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-03-08",
+      "invoice": "2026-04",
+      "merchant": "MERCADOLIVRE*7PRODUTOS",
+      "amount": 453.64,
+      "category": "Compras/ML",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-03-08",
+      "invoice": "2026-04",
+      "merchant": "Compra internacional em GITHUB, INC.",
+      "amount": 54.76,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-09",
+      "invoice": "2026-04",
+      "merchant": "Compra internacional em GUMROAD* GUI RAMBO",
+      "amount": 10.9,
+      "category": "Digital",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-10",
+      "invoice": "2026-04",
+      "merchant": "Compra internacional em LAN AIRLINE",
+      "amount": 9036.83,
+      "category": "Viagem",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-10",
+      "invoice": "2026-04",
+      "merchant": "APPLECOMBILL",
+      "amount": 19.9,
+      "category": "Assinatura",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-03-10",
+      "invoice": "2026-04",
+      "merchant": "Compra internacional em OPENROUTER, INC",
+      "amount": 113.78,
+      "category": "Outros",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-11",
+      "invoice": "2026-04",
+      "merchant": "IFD*iFood",
+      "amount": 7.95,
+      "category": "Delivery/iFood",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-03-12",
+      "invoice": "2026-04",
+      "merchant": "MP*LOTERIASONLINEP6LJ",
+      "amount": 104.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-03-12",
+      "invoice": "2026-04",
+      "merchant": "MP*LOTERIASONLINEPA19",
+      "amount": 168.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-03-13",
+      "invoice": "2026-04",
+      "merchant": "MP*LOTERIASONLINEJSZ1",
+      "amount": 73.5,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-13",
+      "invoice": "2026-04",
+      "merchant": "MP*LOTERIASONLINEJX1C",
+      "amount": 168.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-14",
+      "invoice": "2026-04",
+      "merchant": "STARLINK INTERNET",
+      "amount": 235.52,
+      "category": "Internet",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-15",
+      "invoice": "2026-04",
+      "merchant": "MERCADOLIVRE*3PRODUTOS",
+      "amount": 510.37,
+      "category": "Compras/ML",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-16",
+      "invoice": "2026-04",
+      "merchant": "Compra internacional em ALLIANZ EVENT INS",
+      "amount": 478.17,
+      "category": "Outros",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-17",
+      "invoice": "2026-04",
+      "merchant": "Compra internacional em OPENAI *CHATGPT SUBSCR",
+      "amount": 108.89,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-18",
+      "invoice": "2026-04",
+      "merchant": "MP*LOTERIASONLINENI9I",
+      "amount": 267.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-19",
+      "invoice": "2026-04",
+      "merchant": "Compra internacional em INTERNET ARCHIVE",
+      "amount": 53.93,
+      "category": "Outros",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-19",
+      "invoice": "2026-04",
+      "merchant": "MP*LOTERIASONLINEU38A",
+      "amount": 119.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-20",
+      "invoice": "2026-04",
+      "merchant": "EC*GOOGLEBRASILPAGAMEN",
+      "amount": 96.99,
+      "category": "Assinatura",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-21",
+      "invoice": "2026-04",
+      "merchant": "MERCADOLIVRE*5PRODUTOS",
+      "amount": 119.73,
+      "category": "Compras/ML",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-21",
+      "invoice": "2026-04",
+      "merchant": "Compra internacional em MANUS AI",
+      "amount": 546.48,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-23",
+      "invoice": "2026-04",
+      "merchant": "MP*LOTERIASONLINE12Q6",
+      "amount": 107.5,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-26",
+      "invoice": "2026-04",
+      "merchant": "MP*LOTERIASONLINEWM4R",
+      "amount": 161.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-28",
+      "invoice": "2026-04",
+      "merchant": "MP*LOTERIASONLINEKBE8",
+      "amount": 168.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-28",
+      "invoice": "2026-04",
+      "merchant": "MP*LOTERIASONLINEKJOW",
+      "amount": 104.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-30",
+      "invoice": "2026-04",
+      "merchant": "Compra internacional em GROK XAI",
+      "amount": 81.36,
+      "category": "Outros",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-03-30",
+      "invoice": "2026-04",
+      "merchant": "APPLECOMBILL",
+      "amount": 99.9,
+      "category": "Assinatura",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-04-01",
+      "invoice": "2026-04",
+      "merchant": "Compra internacional em CURSOR, AI POWERED IDE",
+      "amount": 111.81,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-04-03",
+      "invoice": "2026-04",
+      "merchant": "STARLINK INTERNET",
+      "amount": 235.52,
+      "category": "Internet",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-04-03",
+      "invoice": "2026-04",
+      "merchant": "MP*LOTERIASONLINEDVRW",
+      "amount": 336.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-04-03",
+      "invoice": "2026-04",
+      "merchant": "IFD*MATTERELLO PIZZARI",
+      "amount": 165.69,
+      "category": "Delivery/iFood",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-04-03",
+      "invoice": "2026-04",
+      "merchant": "MERCADOLIVRE*3PRODUTOS",
+      "amount": 602.9,
+      "category": "Compras/ML",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-04-04",
+      "invoice": "2026-04",
+      "merchant": "MP*LOTERIASONLINE9CYW",
+      "amount": 89.5,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-04-05",
+      "invoice": "2026-05",
+      "merchant": "Compra internacional em OPENAI *CHATGPT SUBSCR",
+      "amount": 107.02,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-04-08",
+      "invoice": "2026-05",
+      "merchant": "APPLECOMBILL",
+      "amount": 21.9,
+      "category": "Assinatura",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-04-08",
+      "invoice": "2026-05",
+      "merchant": "Compra internacional em GITHUB, INC.",
+      "amount": 53.41,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-04-10",
+      "invoice": "2026-05",
+      "merchant": "APPLECOMBILL",
+      "amount": 19.9,
+      "category": "Assinatura",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-04-11",
+      "invoice": "2026-05",
+      "merchant": "IFD*iFood",
+      "amount": 7.95,
+      "category": "Delivery/iFood",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-04-16",
+      "invoice": "2026-05",
+      "merchant": "MP*LOTERIASONLINE2FE1",
+      "amount": 168.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-04-16",
+      "invoice": "2026-05",
+      "merchant": "MP*LOTERIASONLINE34H0",
+      "amount": 100.5,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-04-16",
+      "invoice": "2026-05",
+      "merchant": "MERCADOLIVRE*MERCADOLI",
+      "amount": 72.89,
+      "category": "Compras/ML",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-04-17",
+      "invoice": "2026-05",
+      "merchant": "Compra internacional em OPENAI *CHATGPT SUBSCR",
+      "amount": 103.5,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-04-20",
+      "invoice": "2026-05",
+      "merchant": "IFD*JURASSIC PIZZA BES",
+      "amount": 74.88,
+      "category": "Delivery/iFood",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-04-20",
+      "invoice": "2026-05",
+      "merchant": "MICROSOFT*STORE",
+      "amount": 509.0,
+      "category": "Outros",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-04-21",
+      "invoice": "2026-05",
+      "merchant": "MERCADOLIVRE*PKFLEXLTDA",
+      "amount": 111.83,
+      "category": "Compras/ML",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-04-21",
+      "invoice": "2026-05",
+      "merchant": "Compra internacional em MANUS AI",
+      "amount": 515.43,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-04-22",
+      "invoice": "2026-05",
+      "merchant": "MP*EDUARDOGIOVAN",
+      "amount": 201.72,
+      "category": "Outros",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-04-23",
+      "invoice": "2026-05",
+      "merchant": "Compra internacional em CLOUDFLARE",
+      "amount": 107.61,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-04-23",
+      "invoice": "2026-05",
+      "merchant": "UBER * PENDING",
+      "amount": 8.14,
+      "category": "Transporte",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-04-23",
+      "invoice": "2026-05",
+      "merchant": "MP*LOTERIASONLINE72W6",
+      "amount": 336.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-04-24",
+      "invoice": "2026-05",
+      "merchant": "APPLE.COM/BILL.",
+      "amount": 31.9,
+      "category": "Assinatura",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-04-24",
+      "invoice": "2026-05",
+      "merchant": "UBER * PENDING",
+      "amount": 9.96,
+      "category": "Transporte",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-04-25",
+      "invoice": "2026-05",
+      "merchant": "MP*LOTERIASONLINEN7GJ",
+      "amount": 168.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-04-27",
+      "invoice": "2026-05",
+      "merchant": "Compra internacional em WWW.PERPLEXITY.AI",
+      "amount": 103.71,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-04-27",
+      "invoice": "2026-05",
+      "merchant": "MERCADOLIVRE*LINA",
+      "amount": 106.98,
+      "category": "Compras/ML",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-04-27",
+      "invoice": "2026-05",
+      "merchant": "MERCADOLIVRE*MERCADOLIVRE",
+      "amount": 483.98,
+      "category": "Compras/ML",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-04-27",
+      "invoice": "2026-05",
+      "merchant": "IFD*BIANCA DOS SANTOS",
+      "amount": 92.89,
+      "category": "Delivery/iFood",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-04-30",
+      "invoice": "2026-05",
+      "merchant": "Compra internacional em WWW.PERPLEXITY.AI",
+      "amount": 155.25,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-04-30",
+      "invoice": "2026-05",
+      "merchant": "APPLE.COM/BILL.",
+      "amount": 99.9,
+      "category": "Assinatura",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-04-30",
+      "invoice": "2026-05",
+      "merchant": "UBER * PENDING",
+      "amount": 16.77,
+      "category": "Transporte",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-01",
+      "invoice": "2026-05",
+      "merchant": "Compra internacional em CURSOR, AI POWERED IDE",
+      "amount": 111.81,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-01",
+      "invoice": "2026-05",
+      "merchant": "Compra internacional em OPENAI* CHATGPT CREDIT",
+      "amount": 206.59,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-02",
+      "invoice": "2026-05",
+      "merchant": "IFD*BIANCA DOS SANTOS",
+      "amount": 96.99,
+      "category": "Delivery/iFood",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-05-03",
+      "invoice": "2026-05",
+      "merchant": "STARLINK INTERNET",
+      "amount": 235.52,
+      "category": "Internet",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-05-05",
+      "invoice": "2026-06",
+      "merchant": "UBER * PENDING",
+      "amount": 29.97,
+      "category": "Transporte",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-05",
+      "invoice": "2026-06",
+      "merchant": "UBER * PENDING",
+      "amount": 25.93,
+      "category": "Transporte",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-05",
+      "invoice": "2026-06",
+      "merchant": "MP*LOTERIASONLINEJOSJ",
+      "amount": 248.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-06",
+      "invoice": "2026-06",
+      "merchant": "Compra internacional em OPENAI *CHATGPT SUBSCR",
+      "amount": 101.85,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-08",
+      "invoice": "2026-06",
+      "merchant": "Compra internacional em GITHUB, INC.",
+      "amount": 50.93,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-09",
+      "invoice": "2026-06",
+      "merchant": "MP*LOTERIASONLINEDB7Z",
+      "amount": 151.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-05-10",
+      "invoice": "2026-06",
+      "merchant": "APPLE.COM/BILL",
+      "amount": 19.9,
+      "category": "Assinatura",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-11",
+      "invoice": "2026-06",
+      "merchant": "IFD*iFood",
+      "amount": 7.95,
+      "category": "Delivery/iFood",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-16",
+      "invoice": "2026-06",
+      "merchant": "Compra internacional em WWW.PERPLEXITY.AI",
+      "amount": 78.72,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-16",
+      "invoice": "2026-06",
+      "merchant": "IFD*34.531.468 EDWIN LEIB",
+      "amount": 73.03,
+      "category": "Delivery/iFood",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-17",
+      "invoice": "2026-06",
+      "merchant": "Compra internacional em OPENAI *CHATGPT SUBSCR",
+      "amount": 104.95,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-18",
+      "invoice": "2026-06",
+      "merchant": "Compra internacional em CLOUDFLARE",
+      "amount": 83.44,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-18",
+      "invoice": "2026-06",
+      "merchant": "MP*LOTERIASONLINE281Q",
+      "amount": 146.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-19",
+      "invoice": "2026-06",
+      "merchant": "IFD*PIPA SUSHI E TEMAK",
+      "amount": 67.31,
+      "category": "Delivery/iFood",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-19",
+      "invoice": "2026-06",
+      "merchant": "DL*GOOGLE YouTub",
+      "amount": 269.0,
+      "category": "Assinatura",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-19",
+      "invoice": "2026-06",
+      "merchant": "MP*LOTERIASONLINEAPI5",
+      "amount": 120.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-20",
+      "invoice": "2026-06",
+      "merchant": "Compra internacional em OPENAI* CHATGPT CREDIT",
+      "amount": 208.66,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-22",
+      "invoice": "2026-06",
+      "merchant": "MP*LOTERIASONLINEPXMF",
+      "amount": 210.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-23",
+      "invoice": "2026-06",
+      "merchant": "Compra internacional em OPENAI* CHATGPT CREDIT",
+      "amount": 207.42,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-24",
+      "invoice": "2026-06",
+      "merchant": "APPLE.COM/BILL",
+      "amount": 31.9,
+      "category": "Assinatura",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-05-28",
+      "invoice": "2026-06",
+      "merchant": "Compra internacional em ANTHROPIC",
+      "amount": 103.5,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-29",
+      "invoice": "2026-06",
+      "merchant": "UBER * PENDING",
+      "amount": 13.97,
+      "category": "Transporte",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-30",
+      "invoice": "2026-06",
+      "merchant": "APPLE.COM/BILL",
+      "amount": 99.9,
+      "category": "Assinatura",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-30",
+      "invoice": "2026-06",
+      "merchant": "Compra internacional em CLAUDE.AI SUBSCRIPTION",
+      "amount": 113.85,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-05-30",
+      "invoice": "2026-06",
+      "merchant": "IFD*PIPA SUSHI E TEMAK",
+      "amount": 90.29,
+      "category": "Delivery/iFood",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-06-01",
+      "invoice": "2026-06",
+      "merchant": "Compra internacional em WWW.PERPLEXITY.AI",
+      "amount": 78.56,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-06-01",
+      "invoice": "2026-06",
+      "merchant": "Compra internacional em CURSOR, AI POWERED IDE",
+      "amount": 111.81,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-06-02",
+      "invoice": "2026-06",
+      "merchant": "UBER * PENDING",
+      "amount": 24.95,
+      "category": "Transporte",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-06-02",
+      "invoice": "2026-06",
+      "merchant": "MP*LOTERIASONLINEJEPS",
+      "amount": 161.5,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-06-03",
+      "invoice": "2026-06",
+      "merchant": "STARLINK INTERNET",
+      "amount": 235.52,
+      "category": "Internet",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-06-03",
+      "invoice": "2026-06",
+      "merchant": "DL*UberRides",
+      "amount": 11.98,
+      "category": "Transporte",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-06-03",
+      "invoice": "2026-06",
+      "merchant": "CONTA VIVO",
+      "amount": 74.43,
+      "category": "Telecomunicações",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-06-03",
+      "invoice": "2026-06",
+      "merchant": "UBER * PENDING",
+      "amount": 19.68,
+      "category": "Transporte",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-06-03",
+      "invoice": "2026-06",
+      "merchant": "MP*LOTERIASONLINESPC2",
+      "amount": 117.0,
+      "category": "Loteria",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-06-03",
+      "invoice": "2026-06",
+      "merchant": "UBER * PENDING",
+      "amount": 43.99,
+      "category": "Transporte",
+      "source": "MP Cartão",
+      "intl": false
+    },
+    {
+      "date": "2026-06-04",
+      "invoice": "2026-06",
+      "merchant": "Compra internacional em WWW.PERPLEXITY.AI",
+      "amount": 78.25,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-06-04",
+      "invoice": "2026-06",
+      "merchant": "Compra internacional em WWW.PERPLEXITY.AI",
+      "amount": 78.25,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    },
+    {
+      "date": "2026-06-05",
+      "invoice": "2026-06",
+      "merchant": "Compra internacional em WWW.PERPLEXITY.AI",
+      "amount": 78.25,
+      "category": "IA/Tecnologia",
+      "source": "MP Cartão",
+      "intl": true
+    }
+  ],
+  "monthly_totals": {
+    "2026-01": 0,
+    "2026-02": 4269.61,
+    "2026-03": 9212.69,
+    "2026-04": 15551.89,
+    "2026-05": 4439.93,
+    "2026-06": 3771.64
+  },
+  "account_movements": [
+    {
+      "date": "2026-01-02",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -64.5,
+      "category": "QR/Estabelecimento",
+      "ref": "140364445116"
+    },
+    {
+      "date": "2026-01-02",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -32.45,
+      "category": "QR/Estabelecimento",
+      "ref": "140364308006"
+    },
+    {
+      "date": "2026-01-02",
+      "description": "Rendimentos",
+      "amount": 1.2,
+      "category": "Rendimentos",
+      "ref": "1738000916884"
+    },
+    {
+      "date": "2026-01-02",
+      "description": "Compra de Kit Cabo+espelho Odontológico Inox Para Dentista Mercado Livre",
+      "amount": -21.85,
+      "category": "Saída",
+      "ref": "139735914391"
+    },
+    {
+      "date": "2026-01-02",
+      "description": "Compra de Kit Odontológico Inox De Limpeza Removedor De Tártaro Prateado Mercado",
+      "amount": -26.29,
+      "category": "Saída",
+      "ref": "139735974843"
+    },
+    {
+      "date": "2026-01-02",
+      "description": "Transferência Pix enviada Maria da Luz Assis da Silva",
+      "amount": -1340.0,
+      "category": "Saída",
+      "ref": "140420393774"
+    },
+    {
+      "date": "2026-01-03",
+      "description": "Pagamento com QR Pix AUTO POSTO INTERMARES LTDA",
+      "amount": -28.5,
+      "category": "QR/Estabelecimento",
+      "ref": "140587398514"
+    },
+    {
+      "date": "2026-01-03",
+      "description": "Pagamento com QR Pix COMERCIAL DE ALIMENTOS HORA H LTDA",
+      "amount": -40.0,
+      "category": "QR/Estabelecimento",
+      "ref": "140587498426"
+    },
+    {
+      "date": "2026-01-04",
+      "description": "Pagamento com QR Pix COMERCIAL DE ALIMENTOS HORA H LTDA",
+      "amount": -78.0,
+      "category": "QR/Estabelecimento",
+      "ref": "139992600803"
+    },
+    {
+      "date": "2026-01-04",
+      "description": "Pagamento com QR Pix AUTO POSTO INTERMARES LTDA",
+      "amount": -28.5,
+      "category": "QR/Estabelecimento",
+      "ref": "139991826021"
+    },
+    {
+      "date": "2026-01-05",
+      "description": "Rendimentos",
+      "amount": 0.54,
+      "category": "Rendimentos",
+      "ref": "1738043546063"
+    },
+    {
+      "date": "2026-01-05",
+      "description": "Transferência Pix enviada Veronica Freitas Lira",
+      "amount": -50.0,
+      "category": "Saída",
+      "ref": "140715887134"
+    },
+    {
+      "date": "2026-01-05",
+      "description": "Transferência Pix enviada Maria da Luz Assis da Silva",
+      "amount": -30.0,
+      "category": "Saída",
+      "ref": "140751775326"
+    },
+    {
+      "date": "2026-01-05",
+      "description": "Pagamento com QR Pix CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTDA",
+      "amount": -19.99,
+      "category": "QR/Estabelecimento",
+      "ref": "140753412034"
+    },
+    {
+      "date": "2026-01-05",
+      "description": "Pagamento com QR Pix ALLPARK EMPREENDIMENTOS, PARTICIPACOES E SERVICOS S.A.",
+      "amount": -11.0,
+      "category": "QR/Estabelecimento",
+      "ref": "140109769611"
+    },
+    {
+      "date": "2026-01-05",
+      "description": "Pagamento com QR Pix NOBRE CARNES COMERCIO VAREJISTA DE CARNES LTDA",
+      "amount": -77.93,
+      "category": "QR/Estabelecimento",
+      "ref": "140113452549"
+    },
+    {
+      "date": "2026-01-05",
+      "description": "Pagamento com QR Pix ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA",
+      "amount": -69.5,
+      "category": "QR/Estabelecimento",
+      "ref": "140114347573"
+    },
+    {
+      "date": "2026-01-05",
+      "description": "Transferência Pix enviada Maria da Luz Assis da Silva",
+      "amount": -40.0,
+      "category": "Saída",
+      "ref": "140120408615"
+    },
+    {
+      "date": "2026-01-05",
+      "description": "Pagamento com QR Pix DROGARIA DROGAVISTA LTDA",
+      "amount": -123.98,
+      "category": "QR/Estabelecimento",
+      "ref": "140162962847"
+    },
+    {
+      "date": "2026-01-06",
+      "description": "Rendimentos",
+      "amount": 0.32,
+      "category": "Rendimentos",
+      "ref": "1738111012183"
+    },
+    {
+      "date": "2026-01-06",
+      "description": "Pagamento com QR Pix CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTDA",
+      "amount": -16.99,
+      "category": "QR/Estabelecimento",
+      "ref": "140240723997"
+    },
+    {
+      "date": "2026-01-06",
+      "description": "Pagamento com QR Pix ALLPARK EMPREENDIMENTOS, PARTICIPACOES E SERVICOS S.A.",
+      "amount": -11.0,
+      "category": "QR/Estabelecimento",
+      "ref": "140252347235"
+    },
+    {
+      "date": "2026-01-06",
+      "description": "Pagamento com QR Pix NOBRE CARNES COMERCIO VAREJISTA DE CARNES LTDA",
+      "amount": -44.41,
+      "category": "QR/Estabelecimento",
+      "ref": "140254359003"
+    },
+    {
+      "date": "2026-01-06",
+      "description": "Pagamento com QR Pix ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA",
+      "amount": -78.49,
+      "category": "QR/Estabelecimento",
+      "ref": "140256680201"
+    },
+    {
+      "date": "2026-01-07",
+      "description": "Rendimentos",
+      "amount": 0.21,
+      "category": "Rendimentos",
+      "ref": "1738171066295"
+    },
+    {
+      "date": "2026-01-07",
+      "description": "Pagamento com QR Pix POSTO EXPRESSAO - COMBUSTIVEIS E CONVENIENCIAS LTDA",
+      "amount": -194.58,
+      "category": "QR/Estabelecimento",
+      "ref": "140441479173"
+    },
+    {
+      "date": "2026-01-08",
+      "description": "Rendimentos",
+      "amount": 0.2,
+      "category": "Rendimentos",
+      "ref": "1738230826719"
+    },
+    {
+      "date": "2026-01-08",
+      "description": "Transferência Pix recebida EDUARDO F GIOVANNINI",
+      "amount": 12000.0,
+      "category": "Entrada",
+      "ref": "141165744258"
+    },
+    {
+      "date": "2026-01-08",
+      "description": "Pagamento com QR Pix CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTDA",
+      "amount": -26.1,
+      "category": "QR/Estabelecimento",
+      "ref": "140522942843"
+    },
+    {
+      "date": "2026-01-08",
+      "description": "Pagamento com QR Pix COFFEE COVE CAFETERIA LTDA",
+      "amount": -8.0,
+      "category": "QR/Estabelecimento",
+      "ref": "141177173896"
+    },
+    {
+      "date": "2026-01-08",
+      "description": "Pagamento Cartão de crédito",
+      "amount": -6768.97,
+      "category": "Pagamento Fatura",
+      "ref": "141191608348"
+    },
+    {
+      "date": "2026-01-08",
+      "description": "Transferência Pix enviada Eva Bezerra da Silva Brandao",
+      "amount": -1310.0,
+      "category": "Saída",
+      "ref": "140535259511"
+    },
+    {
+      "date": "2026-01-08",
+      "description": "Pagamento com QR Pix ALLPARK EMPREENDIMENTOS, PARTICIPACOES E SERVICOS S.A.",
+      "amount": -11.0,
+      "category": "QR/Estabelecimento",
+      "ref": "141200366514"
+    },
+    {
+      "date": "2026-01-08",
+      "description": "Transferência cancelada PAGALEVE INSTITUICAO DE PAGAMENTO LTDA.",
+      "amount": 257.87,
+      "category": "Entrada",
+      "ref": "132474621737"
+    },
+    {
+      "date": "2026-01-08",
+      "description": "Pagamento com QR Pix AUTO POSTO INTERMARES LTDA",
+      "amount": -28.5,
+      "category": "QR/Estabelecimento",
+      "ref": "140604107041"
+    },
+    {
+      "date": "2026-01-08",
+      "description": "Pagamento com QR Pix COMERCIAL DE ALIMENTOS HORA H LTDA",
+      "amount": -115.0,
+      "category": "QR/Estabelecimento",
+      "ref": "140604220973"
+    },
+    {
+      "date": "2026-01-08",
+      "description": "Pagamento com QR Pix AUTO POSTO INTERMARES LTDA",
+      "amount": -240.75,
+      "category": "QR/Estabelecimento",
+      "ref": "140603404007"
+    },
+    {
+      "date": "2026-01-09",
+      "description": "Rendimentos",
+      "amount": 1.96,
+      "category": "Rendimentos",
+      "ref": "1738290982631"
+    },
+    {
+      "date": "2026-01-09",
+      "description": "Transferência Pix enviada Marinaldo Domingos de Souza",
+      "amount": -440.0,
+      "category": "Saída",
+      "ref": "140668213271"
+    },
+    {
+      "date": "2026-01-09",
+      "description": "Transferência Pix enviada Cristiano Borba da Silva",
+      "amount": -200.0,
+      "category": "Saída",
+      "ref": "140714788309"
+    },
+    {
+      "date": "2026-01-10",
+      "description": "Transferência Pix enviada Eva Bezerra da Silva Brandao",
+      "amount": -340.0,
+      "category": "Saída",
+      "ref": "140800875323"
+    },
+    {
+      "date": "2026-01-10",
+      "description": "Pagamento com QR Pix AUTO POSTO INTERMARES LTDA",
+      "amount": -38.0,
+      "category": "QR/Estabelecimento",
+      "ref": "140886759571"
+    },
+    {
+      "date": "2026-01-10",
+      "description": "Pagamento com QR Pix COMERCIAL DE ALIMENTOS HORA H LTDA",
+      "amount": -64.0,
+      "category": "QR/Estabelecimento",
+      "ref": "140887432957"
+    },
+    {
+      "date": "2026-01-11",
+      "description": "Pagamento com QR Pix REDE MENOR PRECO SUPERMERCADO LTDA",
+      "amount": -509.77,
+      "category": "QR/Estabelecimento",
+      "ref": "140948703195"
+    },
+    {
+      "date": "2026-01-12",
+      "description": "Rendimentos",
+      "amount": 1.5,
+      "category": "Rendimentos",
+      "ref": "1738354164997"
+    },
+    {
+      "date": "2026-01-12",
+      "description": "Pagamento com QR Pix DROGARIA DROGAVISTA LTDA",
+      "amount": -8.97,
+      "category": "QR/Estabelecimento",
+      "ref": "141685833502"
+    },
+    {
+      "date": "2026-01-12",
+      "description": "Pagamento com QR Pix EMILY SILVA FARIAS",
+      "amount": -8.0,
+      "category": "QR/Estabelecimento",
+      "ref": "141685958004"
+    },
+    {
+      "date": "2026-01-12",
+      "description": "Transferência Pix enviada Veronica Freitas Lira",
+      "amount": -40.0,
+      "category": "Saída",
+      "ref": "141039542283"
+    },
+    {
+      "date": "2026-01-12",
+      "description": "Pagamento com QR Pix CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTDA",
+      "amount": -16.99,
+      "category": "QR/Estabelecimento",
+      "ref": "141045741893"
+    },
+    {
+      "date": "2026-01-12",
+      "description": "Transferência Pix enviada Maria Gorete Ferreira da Costa",
+      "amount": -100.0,
+      "category": "Saída",
+      "ref": "141708912620"
+    },
+    {
+      "date": "2026-01-12",
+      "description": "Pagamento com QR Pix RFC CHOCOLATES CIA LTDA",
+      "amount": -10.0,
+      "category": "QR/Estabelecimento",
+      "ref": "141060814833"
+    },
+    {
+      "date": "2026-01-12",
+      "description": "Pagamento com QR Pix ALLPARK EMPREENDIMENTOS, PARTICIPACOES E SERVICOS S.A.",
+      "amount": -11.0,
+      "category": "QR/Estabelecimento",
+      "ref": "141073564619"
+    },
+    {
+      "date": "2026-01-12",
+      "description": "Pagamento com QR Pix COMERCIAL DE ALIMENTOS HORA H LTDA",
+      "amount": -30.0,
+      "category": "QR/Estabelecimento",
+      "ref": "141122625033"
+    },
+    {
+      "date": "2026-01-12",
+      "description": "Pagamento com QR Pix AUTO POSTO INTERMARES LTDA",
+      "amount": -28.5,
+      "category": "QR/Estabelecimento",
+      "ref": "141123272549"
+    },
+    {
+      "date": "2026-01-13",
+      "description": "Rendimentos",
+      "amount": 0.99,
+      "category": "Rendimentos",
+      "ref": "1738422011387"
+    },
+    {
+      "date": "2026-01-13",
+      "description": "Pagamento com QR Pix SUPERMERCADO LITORAL LTDA",
+      "amount": -1407.74,
+      "category": "QR/Estabelecimento",
+      "ref": "141851935900"
+    },
+    {
+      "date": "2026-01-13",
+      "description": "Pagamento com QR Pix Leandro Vital da Costa",
+      "amount": -30.0,
+      "category": "QR/Estabelecimento",
+      "ref": "141853678736"
+    },
+    {
+      "date": "2026-01-13",
+      "description": "Pagamento Cursor, ai powered ide",
+      "amount": -333.85,
+      "category": "Saída",
+      "ref": "141875146390"
+    },
+    {
+      "date": "2026-01-13",
+      "description": "Transferência Pix enviada Deborah Ribeiro de Morais Tenorio",
+      "amount": -350.0,
+      "category": "Saída",
+      "ref": "141898101148"
+    },
+    {
+      "date": "2026-01-13",
+      "description": "Pix enviado AUTO POSTO INTERMARES LTDA",
+      "amount": -41.77,
+      "category": "PIX Enviado",
+      "ref": "141255394999"
+    },
+    {
+      "date": "2026-01-14",
+      "description": "Rendimentos",
+      "amount": 0.03,
+      "category": "Rendimentos",
+      "ref": "1738481889333"
+    },
+    {
+      "date": "2026-01-17",
+      "description": "Transferência Pix recebida EDUARDO F GIOVANNINI",
+      "amount": 5000.0,
+      "category": "Entrada",
+      "ref": "142459637948"
+    },
+    {
+      "date": "2026-01-17",
+      "description": "Transferência Pix enviada Cristiano Borba da Silva",
+      "amount": -100.0,
+      "category": "Saída",
+      "ref": "142459007700"
+    },
+    {
+      "date": "2026-01-18",
+      "description": "Transferência Pix enviada Valdebam Procopio de Araujo",
+      "amount": -39.0,
+      "category": "Saída",
+      "ref": "142528374770"
+    },
+    {
+      "date": "2026-01-18",
+      "description": "Transferência Pix enviada Eva Bezerra da Silva Brandao",
+      "amount": -1440.0,
+      "category": "Saída",
+      "ref": "142539206414"
+    },
+    {
+      "date": "2026-01-18",
+      "description": "Pagamento com QR Pix 52.875.146 VALDEBAM PROCOPIO DE ARAUJO",
+      "amount": -113.0,
+      "category": "QR/Estabelecimento",
+      "ref": "141878867585"
+    },
+    {
+      "date": "2026-01-18",
+      "description": "Pagamento com QR Pix ALIEDSON BEZERRA SALVADOR",
+      "amount": -89.0,
+      "category": "QR/Estabelecimento",
+      "ref": "142586260776"
+    },
+    {
+      "date": "2026-01-18",
+      "description": "Pagamento com QR Pix ELSE LUDIMILLA CAVALCANTE DREYER DINN",
+      "amount": -77.0,
+      "category": "QR/Estabelecimento",
+      "ref": "141919348397"
+    },
+    {
+      "date": "2026-01-18",
+      "description": "Transferência Pix enviada Mauricio Bandeira Pereira",
+      "amount": -216.0,
+      "category": "Saída",
+      "ref": "142591852282"
+    },
+    {
+      "date": "2026-01-19",
+      "description": "Transferência Pix enviada Veronica Freitas Lira",
+      "amount": -20.0,
+      "category": "Saída",
+      "ref": "142643846572"
+    },
+    {
+      "date": "2026-01-19",
+      "description": "Pagamento com QR Pix CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTDA",
+      "amount": -16.99,
+      "category": "QR/Estabelecimento",
+      "ref": "141979483629"
+    },
+    {
+      "date": "2026-01-19",
+      "description": "Pagamento com QR Pix ALLPARK EMPREENDIMENTOS, PARTICIPACOES E SERVICOS S.A.",
+      "amount": -11.0,
+      "category": "QR/Estabelecimento",
+      "ref": "142668052972"
+    },
+    {
+      "date": "2026-01-20",
+      "description": "Transferência Pix recebida [REDACTED]",
+      "amount": 1.0,
+      "category": "Entrada",
+      "ref": "142079201069"
+    },
+    {
+      "date": "2026-01-20",
+      "description": "Rendimentos",
+      "amount": 1.28,
+      "category": "Rendimentos",
+      "ref": "1738741593654"
+    },
+    {
+      "date": "2026-01-20",
+      "description": "Pagamento GOOGLE BRASIL PAGAMENTOS LTDA.",
+      "amount": -96.99,
+      "category": "Saída",
+      "ref": "142092248851"
+    },
+    {
+      "date": "2026-01-20",
+      "description": "Transferência Pix enviada Maria da Luz Assis da Silva",
+      "amount": -100.0,
+      "category": "Saída",
+      "ref": "142828887362"
+    },
+    {
+      "date": "2026-01-20",
+      "description": "Pagamento com QR Pix AUTO POSTO INTERMARES LTDA",
+      "amount": -28.5,
+      "category": "QR/Estabelecimento",
+      "ref": "142189579787"
+    },
+    {
+      "date": "2026-01-20",
+      "description": "Pagamento com QR Pix COMERCIAL DE ALIMENTOS HORA H LTDA",
+      "amount": -2.0,
+      "category": "QR/Estabelecimento",
+      "ref": "142860163734"
+    },
+    {
+      "date": "2026-01-21",
+      "description": "Rendimentos",
+      "amount": 1.2,
+      "category": "Rendimentos",
+      "ref": "1738789062891"
+    },
+    {
+      "date": "2026-01-21",
+      "description": "Pagamento com QR Pix EDGLEY DE SOUSA FORMIGA",
+      "amount": -278.22,
+      "category": "QR/Estabelecimento",
+      "ref": "142274715325"
+    },
+    {
+      "date": "2026-01-22",
+      "description": "Rendimentos",
+      "amount": 1.07,
+      "category": "Rendimentos",
+      "ref": "1738849195055"
+    },
+    {
+      "date": "2026-01-22",
+      "description": "Transferência Pix enviada Nailson da Silva Oliveira",
+      "amount": -288.88,
+      "category": "Saída",
+      "ref": "143056021888"
+    },
+    {
+      "date": "2026-01-22",
+      "description": "Transferência Pix enviada Veronica Freitas Lira",
+      "amount": -30.0,
+      "category": "Saída",
+      "ref": "143068014278"
+    },
+    {
+      "date": "2026-01-22",
+      "description": "Pagamento com QR Pix NOBRE CARNES COMERCIO VAREJISTA DE CARNES LTDA",
+      "amount": -221.43,
+      "category": "QR/Estabelecimento",
+      "ref": "143073186046"
+    },
+    {
+      "date": "2026-01-22",
+      "description": "Transferência Pix enviada Cristiano Borba da Silva",
+      "amount": -100.0,
+      "category": "Saída",
+      "ref": "142449827987"
+    },
+    {
+      "date": "2026-01-23",
+      "description": "Rendimentos",
+      "amount": 0.81,
+      "category": "Rendimentos",
+      "ref": "1738907735791"
+    },
+    {
+      "date": "2026-01-23",
+      "description": "Pagamento com QR Pix Banco Topazio",
+      "amount": -1088.9,
+      "category": "QR/Estabelecimento",
+      "ref": "143240602918"
+    },
+    {
+      "date": "2026-01-23",
+      "description": "Pagamento com QR Pix AUTO POSTO INTERMARES LTDA",
+      "amount": -28.5,
+      "category": "QR/Estabelecimento",
+      "ref": "143274351900"
+    },
+    {
+      "date": "2026-01-23",
+      "description": "Pagamento com QR Pix COMERCIAL DE ALIMENTOS HORA H LTDA",
+      "amount": -109.5,
+      "category": "QR/Estabelecimento",
+      "ref": "143275692286"
+    },
+    {
+      "date": "2026-01-24",
+      "description": "Pagamento com QR Pix REDE MENOR PRECO SUPERMERCADO LTDA",
+      "amount": -194.79,
+      "category": "QR/Estabelecimento",
+      "ref": "142728079389"
+    },
+    {
+      "date": "2026-01-24",
+      "description": "Pagamento com QR Pix REDE MENOR PRECO SUPERMERCADO LTDA",
+      "amount": -5.29,
+      "category": "QR/Estabelecimento",
+      "ref": "142728031931"
+    },
+    {
+      "date": "2026-01-25",
+      "description": "Pagamento com QR Pix UBER DO BRASIL TECNOLOGIA LTDA.",
+      "amount": -21.97,
+      "category": "QR/Estabelecimento",
+      "ref": "142808686441"
+    },
+    {
+      "date": "2026-01-25",
+      "description": "Pagamento com QR Pix UBER DO BRASIL TECNOLOGIA LTDA.",
+      "amount": -20.99,
+      "category": "QR/Estabelecimento",
+      "ref": "143509171816"
+    },
+    {
+      "date": "2026-01-26",
+      "description": "Rendimentos",
+      "amount": 0.29,
+      "category": "Rendimentos",
+      "ref": "1738968449809"
+    },
+    {
+      "date": "2026-01-26",
+      "description": "Transferência Pix enviada Maria da Luz Assis da Silva",
+      "amount": -40.0,
+      "category": "Saída",
+      "ref": "142881232355"
+    },
+    {
+      "date": "2026-01-26",
+      "description": "Pagamento com QR Pix RFC CHOCOLATES CIA LTDA",
+      "amount": -10.0,
+      "category": "QR/Estabelecimento",
+      "ref": "143580215618"
+    },
+    {
+      "date": "2026-01-26",
+      "description": "Pagamento com QR Pix ALLPARK EMPREENDIMENTOS, PARTICIPACOES E SERVICOS S.A.",
+      "amount": -11.0,
+      "category": "QR/Estabelecimento",
+      "ref": "142907370329"
+    },
+    {
+      "date": "2026-01-27",
+      "description": "Rendimentos",
+      "amount": 0.09,
+      "category": "Rendimentos",
+      "ref": "1739036613747"
+    },
+    {
+      "date": "2026-01-27",
+      "description": "Pagamento com QR Pix ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA",
+      "amount": -78.3,
+      "category": "QR/Estabelecimento",
+      "ref": "143733264156"
+    },
+    {
+      "date": "2026-01-27",
+      "description": "Pagamento com QR Pix DROGAMAR MEDICAMENTOS E PERFUMARIA LTDA",
+      "amount": -99.95,
+      "category": "QR/Estabelecimento",
+      "ref": "143749382724"
+    },
+    {
+      "date": "2026-01-28",
+      "description": "Rendimentos",
+      "amount": 0.06,
+      "category": "Rendimentos",
+      "ref": "1739097065157"
+    },
+    {
+      "date": "2026-01-29",
+      "description": "Rendimentos",
+      "amount": 0.01,
+      "category": "Rendimentos",
+      "ref": "1739154278733"
+    },
+    {
+      "date": "2026-01-30",
+      "description": "Rendimentos",
+      "amount": 0.02,
+      "category": "Rendimentos",
+      "ref": "1739213577041"
+    },
+    {
+      "date": "2026-01-30",
+      "description": "Transferência recebida EDUARDO FORSTER GIOVANNINI",
+      "amount": 24021.04,
+      "category": "Entrada",
+      "ref": "144089107410"
+    },
+    {
+      "date": "2026-01-30",
+      "description": "Transferência Pix enviada Maria da Luz Assis da Silva",
+      "amount": -1340.0,
+      "category": "Saída",
+      "ref": "144155866364"
+    },
+    {
+      "date": "2026-01-30",
+      "description": "Pagamento com QR Pix TELEFONICA BRASIL S.A.",
+      "amount": -65.97,
+      "category": "QR/Estabelecimento",
+      "ref": "143499967141"
+    },
+    {
+      "date": "2026-01-30",
+      "description": "Pagamento com QR Pix TELEFONICA BRASIL S.A.",
+      "amount": -65.97,
+      "category": "QR/Estabelecimento",
+      "ref": "143501126115"
+    },
+    {
+      "date": "2026-01-31",
+      "description": "Pagamento com QR Pix 52.875.146 VALDEBAM PROCOPIO DE ARAUJO",
+      "amount": -123.0,
+      "category": "QR/Estabelecimento",
+      "ref": "144274582076"
+    },
+    {
+      "date": "2026-01-31",
+      "description": "Transferência Pix enviada Alisson Cleiton Cunha Monteiro",
+      "amount": -200.0,
+      "category": "Saída",
+      "ref": "143599485605"
+    },
+    {
+      "date": "2026-01-31",
+      "description": "Transferência Pix enviada Eduardo Silva dos Santos",
+      "amount": -200.0,
+      "category": "Saída",
+      "ref": "144281245540"
+    },
+    {
+      "date": "2026-02-01",
+      "description": "Pagamento com QR Pix Irineu Das Neves Amorim",
+      "amount": -30.0,
+      "category": "QR/Estabelecimento",
+      "ref": "143708841155"
+    },
+    {
+      "date": "2026-02-01",
+      "description": "Pagamento com QR Pix CAPPTA INSTITUICAO DE PAGAMENTO S.A",
+      "amount": -62.7,
+      "category": "QR/Estabelecimento",
+      "ref": "144415427910"
+    },
+    {
+      "date": "2026-02-01",
+      "description": "Pagamento com QR Pix COMERCIAL DE ALIMENTOS HORA H LTDA",
+      "amount": -21.0,
+      "category": "QR/Estabelecimento",
+      "ref": "143740484933"
+    },
+    {
+      "date": "2026-02-01",
+      "description": "Pagamento com QR Pix AUTO POSTO INTERMARES LTDA",
+      "amount": -28.5,
+      "category": "QR/Estabelecimento",
+      "ref": "144419947468"
+    },
+    {
+      "date": "2026-02-01",
+      "description": "Pagamento com QR Pix AUTO POSTO INTERMARES LTDA",
+      "amount": -363.0,
+      "category": "QR/Estabelecimento",
+      "ref": "144419885762"
+    },
+    {
+      "date": "2026-02-02",
+      "description": "Rendimentos",
+      "amount": 10.1,
+      "category": "Rendimentos",
+      "ref": "1739275260816"
+    },
+    {
+      "date": "2026-02-02",
+      "description": "Pagamento com QR Pix RESTAURANTE MINERIM LTDA",
+      "amount": -120.3,
+      "category": "QR/Estabelecimento",
+      "ref": "143828574263"
+    },
+    {
+      "date": "2026-02-02",
+      "description": "Pagamento com QR Pix L A BIKE COMERCIO E REPARACAO LTDA",
+      "amount": -43.55,
+      "category": "QR/Estabelecimento",
+      "ref": "143828236955"
+    },
+    {
+      "date": "2026-02-02",
+      "description": "Transferência Pix enviada Cristiano Borba da Silva",
+      "amount": -150.0,
+      "category": "Saída",
+      "ref": "144539567900"
+    },
+    {
+      "date": "2026-02-03",
+      "description": "Rendimentos",
+      "amount": 9.54,
+      "category": "Rendimentos",
+      "ref": "1739333085793"
+    },
+    {
+      "date": "2026-02-03",
+      "description": "Transferência Pix enviada [REDACTED]",
+      "amount": -1000.0,
+      "category": "Saída",
+      "ref": "144593202836"
+    },
+    {
+      "date": "2026-02-03",
+      "description": "Transferência Pix enviada Jrba Cabedelo Aluguel de Maquinas e Equipamentos Ltda",
+      "amount": -182.0,
+      "category": "Saída",
+      "ref": "144624984950"
+    },
+    {
+      "date": "2026-02-03",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -246.43,
+      "category": "QR/Estabelecimento",
+      "ref": "144646682658"
+    },
+    {
+      "date": "2026-02-03",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -246.43,
+      "category": "QR/Estabelecimento",
+      "ref": "144646790616"
+    },
+    {
+      "date": "2026-02-03",
+      "description": "Transferência Pix enviada Eduardo Silva dos Santos",
+      "amount": -350.0,
+      "category": "Saída",
+      "ref": "144663907300"
+    },
+    {
+      "date": "2026-02-03",
+      "description": "Pagamento Cursor usage mid  jan",
+      "amount": -217.71,
+      "category": "Saída",
+      "ref": "144673152366"
+    },
+    {
+      "date": "2026-02-04",
+      "description": "Rendimentos",
+      "amount": 8.61,
+      "category": "Rendimentos",
+      "ref": "1739396348360"
+    },
+    {
+      "date": "2026-02-04",
+      "description": "Pagamento com QR Pix 52.875.146 VALDEBAM PROCOPIO DE ARAUJO",
+      "amount": -60.0,
+      "category": "QR/Estabelecimento",
+      "ref": "144070655485"
+    },
+    {
+      "date": "2026-02-04",
+      "description": "Transferência Pix enviada Cristiano Borba da Silva",
+      "amount": -150.0,
+      "category": "Saída",
+      "ref": "144842343358"
+    },
+    {
+      "date": "2026-02-04",
+      "description": "Transferência Pix enviada Eduardo Silva dos Santos",
+      "amount": -100.0,
+      "category": "Saída",
+      "ref": "144858659662"
+    },
+    {
+      "date": "2026-02-04",
+      "description": "Transferência Pix enviada Estacao 89 Comercio Varejista de Alimentos Ltda",
+      "amount": -138.0,
+      "category": "Saída",
+      "ref": "144860387780"
+    },
+    {
+      "date": "2026-02-05",
+      "description": "Rendimentos",
+      "amount": 8.59,
+      "category": "Rendimentos",
+      "ref": "1739457515208"
+    },
+    {
+      "date": "2026-02-05",
+      "description": "Pagamento com QR Pix REDE MENOR PRECO SUPERMERCADO LTDA",
+      "amount": -408.47,
+      "category": "QR/Estabelecimento",
+      "ref": "144303566159"
+    },
+    {
+      "date": "2026-02-05",
+      "description": "Pagamento com QR Pix REDE MENOR PRECO SUPERMERCADO LTDA",
+      "amount": -29.5,
+      "category": "QR/Estabelecimento",
+      "ref": "144988078274"
+    },
+    {
+      "date": "2026-02-05",
+      "description": "Pagamento com QR Pix REDE MENOR PRECO SUPERMERCADO LTDA",
+      "amount": -149.9,
+      "category": "QR/Estabelecimento",
+      "ref": "144988286332"
+    },
+    {
+      "date": "2026-02-05",
+      "description": "Pagamento com QR Pix THALES JERONIMO DO NASCIMENTO SEIXAS",
+      "amount": -46.0,
+      "category": "QR/Estabelecimento",
+      "ref": "144305503087"
+    },
+    {
+      "date": "2026-02-06",
+      "description": "Rendimentos",
+      "amount": 8.43,
+      "category": "Rendimentos",
+      "ref": "1739517803370"
+    },
+    {
+      "date": "2026-02-07",
+      "description": "Pagamento com QR Pix POSTO EXPRESSAO - COMBUSTIVEIS E CONVENIENCIAS LTDA",
+      "amount": -48.99,
+      "category": "QR/Estabelecimento",
+      "ref": "144517991631"
+    },
+    {
+      "date": "2026-02-07",
+      "description": "Pix enviado Eva Bezerra da Silva Brandao",
+      "amount": -1320.0,
+      "category": "PIX Enviado",
+      "ref": "145252365964"
+    },
+    {
+      "date": "2026-02-08",
+      "description": "Pagamento com QR Pix PANIFICADORA SAO GONCALO LTDA",
+      "amount": -72.59,
+      "category": "QR/Estabelecimento",
+      "ref": "144670949347"
+    },
+    {
+      "date": "2026-02-08",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -164.45,
+      "category": "QR/Estabelecimento",
+      "ref": "145357569912"
+    },
+    {
+      "date": "2026-02-09",
+      "description": "Rendimentos",
+      "amount": 8.13,
+      "category": "Rendimentos",
+      "ref": "1739581596388"
+    },
+    {
+      "date": "2026-02-09",
+      "description": "Pagamento com QR Pix POSTO EXPRESSAO - COMBUSTIVEIS E CONVENIENCIAS LTDA",
+      "amount": -48.2,
+      "category": "QR/Estabelecimento",
+      "ref": "145468625566"
+    },
+    {
+      "date": "2026-02-10",
+      "description": "Rendimentos",
+      "amount": 7.42,
+      "category": "Rendimentos",
+      "ref": "1739652354978"
+    },
+    {
+      "date": "2026-02-10",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -249.21,
+      "category": "QR/Estabelecimento",
+      "ref": "145668665124"
+    },
+    {
+      "date": "2026-02-11",
+      "description": "Rendimentos",
+      "amount": 7.29,
+      "category": "Rendimentos",
+      "ref": "1739714598042"
+    },
+    {
+      "date": "2026-02-11",
+      "description": "Compra de 4 produtos Mercado Livre",
+      "amount": -6192.32,
+      "category": "Saída",
+      "ref": "145141471657"
+    },
+    {
+      "date": "2026-02-11",
+      "description": "Pagamento Cartão de crédito",
+      "amount": -6542.05,
+      "category": "Pagamento Fatura",
+      "ref": "145832121178"
+    },
+    {
+      "date": "2026-02-12",
+      "description": "Rendimentos",
+      "amount": 1.62,
+      "category": "Rendimentos",
+      "ref": "1739777422768"
+    },
+    {
+      "date": "2026-02-13",
+      "description": "Rendimentos",
+      "amount": 1.61,
+      "category": "Rendimentos",
+      "ref": "1739838621310"
+    },
+    {
+      "date": "2026-02-13",
+      "description": "Pagamento Cursor, ai powered ide",
+      "amount": -320.89,
+      "category": "Saída",
+      "ref": "145441964667"
+    },
+    {
+      "date": "2026-02-13",
+      "description": "Pix enviado Deborah Ribeiro de Morais Tenorio",
+      "amount": -350.0,
+      "category": "PIX Enviado",
+      "ref": "145474103643"
+    },
+    {
+      "date": "2026-02-16",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -245.33,
+      "category": "QR/Estabelecimento",
+      "ref": "146496117460"
+    },
+    {
+      "date": "2026-02-17",
+      "description": "Pix recebido EDUARDO F GIOVANNINI",
+      "amount": 7500.0,
+      "category": "PIX Recebido",
+      "ref": "145916046715"
+    },
+    {
+      "date": "2026-02-18",
+      "description": "Rendimentos",
+      "amount": 1.46,
+      "category": "Rendimentos",
+      "ref": "1739928472502"
+    },
+    {
+      "date": "2026-02-19",
+      "description": "Rendimentos",
+      "amount": 4.56,
+      "category": "Rendimentos",
+      "ref": "1739998337074"
+    },
+    {
+      "date": "2026-02-19",
+      "description": "Compra de 5 produtos Mercado Livre",
+      "amount": -2024.55,
+      "category": "Saída",
+      "ref": "146234783613"
+    },
+    {
+      "date": "2026-02-20",
+      "description": "Rendimentos",
+      "amount": 3.64,
+      "category": "Rendimentos",
+      "ref": "1740056218812"
+    },
+    {
+      "date": "2026-02-20",
+      "description": "Pagamento GOOGLE BRASIL PAGAMENTOS LTDA.",
+      "amount": -96.99,
+      "category": "Saída",
+      "ref": "146308914765"
+    },
+    {
+      "date": "2026-02-21",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -490.44,
+      "category": "QR/Estabelecimento",
+      "ref": "147187269226"
+    },
+    {
+      "date": "2026-02-21",
+      "description": "Pix enviado Maria da Luz Assis da Silva",
+      "amount": -35.0,
+      "category": "PIX Enviado",
+      "ref": "147218651824"
+    },
+    {
+      "date": "2026-02-21",
+      "description": "Pix enviado Cristiano Borba da Silva",
+      "amount": -100.0,
+      "category": "PIX Enviado",
+      "ref": "146547447981"
+    },
+    {
+      "date": "2026-02-21",
+      "description": "Pagamento com QR Pix MOMAN RESTAURANTE COMERCIO DE ALIMENTOS LTDA",
+      "amount": -85.7,
+      "category": "QR/Estabelecimento",
+      "ref": "147266046470"
+    },
+    {
+      "date": "2026-02-22",
+      "description": "Pix enviado Estacao 89 Comercio Varejista de Alimentos Ltda",
+      "amount": -115.88,
+      "category": "PIX Enviado",
+      "ref": "146643031369"
+    },
+    {
+      "date": "2026-02-23",
+      "description": "Rendimentos",
+      "amount": 3.61,
+      "category": "Rendimentos",
+      "ref": "1740120355392"
+    },
+    {
+      "date": "2026-02-23",
+      "description": "Pix enviado Batista e Almeida Comercio Varejista de Pecas e Acessorios Para Veic",
+      "amount": -680.0,
+      "category": "PIX Enviado",
+      "ref": "147424584528"
+    },
+    {
+      "date": "2026-02-23",
+      "description": "Pagamento com QR Pix REDE MENOR PRECO SUPERMERCADO LTDA",
+      "amount": -88.66,
+      "category": "QR/Estabelecimento",
+      "ref": "147430608552"
+    },
+    {
+      "date": "2026-02-23",
+      "description": "Pix enviado Eduardo Silva dos Santos",
+      "amount": -550.0,
+      "category": "PIX Enviado",
+      "ref": "146793328845"
+    },
+    {
+      "date": "2026-02-23",
+      "description": "Pix enviado Eduardo Carlos de Medeiros Ferreira",
+      "amount": -12.0,
+      "category": "PIX Enviado",
+      "ref": "146794024439"
+    },
+    {
+      "date": "2026-02-23",
+      "description": "Pix enviado Estacao 89 Comercio Varejista de Alimentos Ltda",
+      "amount": -74.39,
+      "category": "PIX Enviado",
+      "ref": "147504836072"
+    },
+    {
+      "date": "2026-02-24",
+      "description": "Rendimentos",
+      "amount": 3.26,
+      "category": "Rendimentos",
+      "ref": "1740191592438"
+    },
+    {
+      "date": "2026-02-25",
+      "description": "Rendimentos",
+      "amount": 2.99,
+      "category": "Rendimentos",
+      "ref": "1740250113615"
+    },
+    {
+      "date": "2026-02-25",
+      "description": "Pagamento com QR Pix PANIFICADORA SAO GONCALO LTDA",
+      "amount": -89.77,
+      "category": "QR/Estabelecimento",
+      "ref": "147014189797"
+    },
+    {
+      "date": "2026-02-25",
+      "description": "Pagamento com QR Pix AUTO POSTO INTERMARES LTDA",
+      "amount": -29.5,
+      "category": "QR/Estabelecimento",
+      "ref": "147794260620"
+    },
+    {
+      "date": "2026-02-25",
+      "description": "Pagamento com QR Pix COMERCIAL DE ALIMENTOS HORA H LTDA",
+      "amount": -59.5,
+      "category": "QR/Estabelecimento",
+      "ref": "147088988035"
+    },
+    {
+      "date": "2026-02-25",
+      "description": "Pagamento com QR Pix AUTO POSTO INTERMARES LTDA",
+      "amount": -240.02,
+      "category": "QR/Estabelecimento",
+      "ref": "147794296712"
+    },
+    {
+      "date": "2026-02-26",
+      "description": "Rendimentos",
+      "amount": 2.94,
+      "category": "Rendimentos",
+      "ref": "1740310230954"
+    },
+    {
+      "date": "2026-02-26",
+      "description": "Pagamento com QR Pix IATA INTERNATIONAL AIR TRANSPORT ASSOCIATION",
+      "amount": -2557.99,
+      "category": "QR/Estabelecimento",
+      "ref": "147953959768"
+    },
+    {
+      "date": "2026-02-26",
+      "description": "Pagamento com QR Pix PAGALI SERVICOS DE PAGAMENTO S.A.",
+      "amount": -520.02,
+      "category": "QR/Estabelecimento",
+      "ref": "147993225216"
+    },
+    {
+      "date": "2026-02-26",
+      "description": "Pix enviado Eva Bezerra da Silva Brandao",
+      "amount": -1000.0,
+      "category": "PIX Enviado",
+      "ref": "147302217557"
+    },
+    {
+      "date": "2026-02-27",
+      "description": "Rendimentos",
+      "amount": 1.66,
+      "category": "Rendimentos",
+      "ref": "1740370933155"
+    },
+    {
+      "date": "2026-02-27",
+      "description": "Transferência recebida EDUARDO FORSTER GIOVANNINI",
+      "amount": 30088.81,
+      "category": "Entrada",
+      "ref": "148049811090"
+    },
+    {
+      "date": "2026-02-27",
+      "description": "Pix enviado Eduardo Carlos de Medeiros Ferreira",
+      "amount": -6.0,
+      "category": "PIX Enviado",
+      "ref": "147350615839"
+    },
+    {
+      "date": "2026-02-27",
+      "description": "Pagamento com QR Pix FABIO MARQUES JERONIMO",
+      "amount": -131.4,
+      "category": "QR/Estabelecimento",
+      "ref": "147369338459"
+    },
+    {
+      "date": "2026-02-27",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -288.9,
+      "category": "QR/Estabelecimento",
+      "ref": "147370355709"
+    },
+    {
+      "date": "2026-02-27",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -18.99,
+      "category": "QR/Estabelecimento",
+      "ref": "148079827940"
+    },
+    {
+      "date": "2026-02-27",
+      "description": "Pagamento com QR Pix THALES JERONIMO DO NASCIMENTO SEIXAS",
+      "amount": -88.0,
+      "category": "QR/Estabelecimento",
+      "ref": "148153780696"
+    },
+    {
+      "date": "2026-02-28",
+      "description": "Pix enviado Cristiano Borba da Silva",
+      "amount": -200.0,
+      "category": "PIX Enviado",
+      "ref": "147486445525"
+    },
+    {
+      "date": "2026-02-28",
+      "description": "Pagamento com QR Pix THF RESTAURANTES LTDA",
+      "amount": -60.0,
+      "category": "QR/Estabelecimento",
+      "ref": "148197126228"
+    },
+    {
+      "date": "2026-02-28",
+      "description": "Pix enviado Maria da Luz Assis da Silva",
+      "amount": -140.0,
+      "category": "PIX Enviado",
+      "ref": "148196850710"
+    },
+    {
+      "date": "2026-02-28",
+      "description": "Pagamento com QR Pix UBER DO BRASIL TECNOLOGIA LTDA.",
+      "amount": -111.94,
+      "category": "QR/Estabelecimento",
+      "ref": "147494507783"
+    },
+    {
+      "date": "2026-02-28",
+      "description": "Pagamento com QR Pix RAIA DROGASIL S A",
+      "amount": -24.84,
+      "category": "QR/Estabelecimento",
+      "ref": "148276873708"
+    },
+    {
+      "date": "2026-02-28",
+      "description": "Pagamento com QR Pix IATA INTERNATIONAL AIR TRANSPORT ASSOCIATION",
+      "amount": -1513.04,
+      "category": "QR/Estabelecimento",
+      "ref": "148281605290"
+    },
+    {
+      "date": "2026-03-01",
+      "description": "Pagamento com QR Pix REDE INTEGRADA DE LOJAS DE CONVENIENCIA E PROXIMIDADE S.A.",
+      "amount": -17.1,
+      "category": "QR/Estabelecimento",
+      "ref": "147624638685"
+    },
+    {
+      "date": "2026-03-01",
+      "description": "Pagamento com QR Pix MP LANCHES LTDA",
+      "amount": -58.0,
+      "category": "QR/Estabelecimento",
+      "ref": "147670453129"
+    },
+    {
+      "date": "2026-03-01",
+      "description": "Pagamento com QR Pix B L SERVICE ADMINISTRADORA DE SERVICOS LTDA",
+      "amount": -243.36,
+      "category": "QR/Estabelecimento",
+      "ref": "147694863057"
+    },
+    {
+      "date": "2026-03-02",
+      "description": "Rendimentos",
+      "amount": 16.12,
+      "category": "Rendimentos",
+      "ref": "1740434023445"
+    },
+    {
+      "date": "2026-03-02",
+      "description": "Pagamento com QR Pix HORA PARK SISTEMA DE ESTACIONAMENTO ROTATIVO LTDA",
+      "amount": -120.0,
+      "category": "QR/Estabelecimento",
+      "ref": "148449730890"
+    },
+    {
+      "date": "2026-03-02",
+      "description": "Pix enviado Eduardo Silva dos Santos",
+      "amount": -570.0,
+      "category": "PIX Enviado",
+      "ref": "148514098408"
+    },
+    {
+      "date": "2026-03-02",
+      "description": "Pagamento com QR Pix AUTO POSTO INTERMARES LTDA",
+      "amount": -29.5,
+      "category": "QR/Estabelecimento",
+      "ref": "147846783649"
+    },
+    {
+      "date": "2026-03-03",
+      "description": "Rendimentos",
+      "amount": 14.77,
+      "category": "Rendimentos",
+      "ref": "1740505075563"
+    },
+    {
+      "date": "2026-03-03",
+      "description": "Pix enviado Eduardo Carlos de Medeiros Ferreira",
+      "amount": -12.0,
+      "category": "PIX Enviado",
+      "ref": "148633197358"
+    },
+    {
+      "date": "2026-03-03",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -201.7,
+      "category": "QR/Estabelecimento",
+      "ref": "148647229304"
+    },
+    {
+      "date": "2026-03-03",
+      "description": "Pix enviado Maria da Luz Assis da Silva",
+      "amount": -1360.0,
+      "category": "PIX Enviado",
+      "ref": "148679605406"
+    },
+    {
+      "date": "2026-03-03",
+      "description": "Pix enviado Marinaldo Domingos de Souza",
+      "amount": -470.0,
+      "category": "PIX Enviado",
+      "ref": "147989277053"
+    },
+    {
+      "date": "2026-03-03",
+      "description": "Pagamento com QR Pix CAIXA LOTERIAS S.A",
+      "amount": -168.0,
+      "category": "QR/Estabelecimento",
+      "ref": "147992643041"
+    },
+    {
+      "date": "2026-03-03",
+      "description": "Pagamento com QR Pix CAIXA LOTERIAS S.A",
+      "amount": -66.5,
+      "category": "QR/Estabelecimento",
+      "ref": "147994206717"
+    },
+    {
+      "date": "2026-03-03",
+      "description": "Pagamento Cartão de crédito",
+      "amount": -10634.66,
+      "category": "Pagamento Fatura",
+      "ref": "148707577152"
+    },
+    {
+      "date": "2026-03-03",
+      "description": "Pagamento com QR Pix IFOOD.COM AGENCIA DE RESTAURANTES ONLINE S.A.",
+      "amount": -57.0,
+      "category": "QR/Estabelecimento",
+      "ref": "148729042578"
+    },
+    {
+      "date": "2026-03-03",
+      "description": "Pix enviado Marinez Silva Sogliani",
+      "amount": -200.0,
+      "category": "PIX Enviado",
+      "ref": "148728553988"
+    },
+    {
+      "date": "2026-03-04",
+      "description": "Rendimentos",
+      "amount": 14.1,
+      "category": "Rendimentos",
+      "ref": "1740566208499"
+    },
+    {
+      "date": "2026-03-04",
+      "description": "Pix enviado Eva Bezerra da Silva Brandao",
+      "amount": -1320.0,
+      "category": "PIX Enviado",
+      "ref": "148777721574"
+    },
+    {
+      "date": "2026-03-04",
+      "description": "Compra Mercado Libre",
+      "amount": -999.51,
+      "category": "Saída",
+      "ref": "148812012136"
+    },
+    {
+      "date": "2026-03-04",
+      "description": "Pagamento com QR Pix OSVALDO LUIZ DE MEDEIROS",
+      "amount": -33.0,
+      "category": "QR/Estabelecimento",
+      "ref": "148827011816"
+    },
+    {
+      "date": "2026-03-04",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -162.48,
+      "category": "QR/Estabelecimento",
+      "ref": "148829400334"
+    },
+    {
+      "date": "2026-03-04",
+      "description": "Pix enviado Maria da Luz Assis da Silva",
+      "amount": -1700.0,
+      "category": "PIX Enviado",
+      "ref": "148122020681"
+    },
+    {
+      "date": "2026-03-04",
+      "description": "Pagamento com QR Pix THALES JERONIMO DO NASCIMENTO SEIXAS",
+      "amount": -46.0,
+      "category": "QR/Estabelecimento",
+      "ref": "148884099248"
+    },
+    {
+      "date": "2026-03-04",
+      "description": "Pagamento com QR Pix COMERCIAL DE ALIMENTOS HORA H LTDA",
+      "amount": -76.5,
+      "category": "QR/Estabelecimento",
+      "ref": "148170779675"
+    },
+    {
+      "date": "2026-03-04",
+      "description": "Pagamento com QR Pix AUTO POSTO INTERMARES LTDA",
+      "amount": -101.72,
+      "category": "QR/Estabelecimento",
+      "ref": "148172016611"
+    },
+    {
+      "date": "2026-03-05",
+      "description": "Rendimentos",
+      "amount": 7.28,
+      "category": "Rendimentos",
+      "ref": "1740629113590"
+    },
+    {
+      "date": "2026-03-05",
+      "description": "Pagamento com QR Pix PANIFICADORA SAO GONCALO LTDA",
+      "amount": -94.67,
+      "category": "QR/Estabelecimento",
+      "ref": "148972235060"
+    },
+    {
+      "date": "2026-03-05",
+      "description": "Pagamento com QR Pix THALES JERONIMO DO NASCIMENTO SEIXAS",
+      "amount": -14.0,
+      "category": "QR/Estabelecimento",
+      "ref": "148324552655"
+    },
+    {
+      "date": "2026-03-06",
+      "description": "Rendimentos",
+      "amount": 7.14,
+      "category": "Rendimentos",
+      "ref": "1740691228782"
+    },
+    {
+      "date": "2026-03-06",
+      "description": "Pagamento com QR Pix PANIFICADORA SAO GONCALO LTDA",
+      "amount": -65.41,
+      "category": "QR/Estabelecimento",
+      "ref": "149141913846"
+    },
+    {
+      "date": "2026-03-06",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -102.44,
+      "category": "QR/Estabelecimento",
+      "ref": "149144016572"
+    },
+    {
+      "date": "2026-03-06",
+      "description": "Pagamento com QR Pix Matias Alejandro Sanchez Suarez",
+      "amount": -88.0,
+      "category": "QR/Estabelecimento",
+      "ref": "149204523428"
+    },
+    {
+      "date": "2026-03-06",
+      "description": "Pagamento com QR Pix DROGAMAR MEDICAMENTOS E PERFUMARIA LTDA",
+      "amount": -65.23,
+      "category": "QR/Estabelecimento",
+      "ref": "149209451090"
+    },
+    {
+      "date": "2026-03-07",
+      "description": "Pix enviado Estacao 89 Comercio Varejista de Alimentos Ltda",
+      "amount": -159.39,
+      "category": "PIX Enviado",
+      "ref": "149369607434"
+    },
+    {
+      "date": "2026-03-08",
+      "description": "Pagamento com QR Pix COMERCIAL DE ALIMENTOS HORA H LTDA",
+      "amount": -112.3,
+      "category": "QR/Estabelecimento",
+      "ref": "148745434485"
+    },
+    {
+      "date": "2026-03-08",
+      "description": "Pagamento com QR Pix AUTO POSTO INTERMARES LTDA",
+      "amount": -29.5,
+      "category": "QR/Estabelecimento",
+      "ref": "149461657956"
+    },
+    {
+      "date": "2026-03-08",
+      "description": "Pagamento com QR Pix COMERCIAL DE ALIMENTOS HORA H LTDA",
+      "amount": -11.0,
+      "category": "QR/Estabelecimento",
+      "ref": "149462704578"
+    },
+    {
+      "date": "2026-03-09",
+      "description": "Rendimentos",
+      "amount": 7.06,
+      "category": "Rendimentos",
+      "ref": "1740756926754"
+    },
+    {
+      "date": "2026-03-09",
+      "description": "Pagamento com QR Pix PANIFICADORA SAO GONCALO LTDA",
+      "amount": -108.33,
+      "category": "QR/Estabelecimento",
+      "ref": "149572805352"
+    },
+    {
+      "date": "2026-03-09",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -243.22,
+      "category": "QR/Estabelecimento",
+      "ref": "149573759594"
+    },
+    {
+      "date": "2026-03-10",
+      "description": "Rendimentos",
+      "amount": 6.74,
+      "category": "Rendimentos",
+      "ref": "1740831096200"
+    },
+    {
+      "date": "2026-03-10",
+      "description": "Pagamento Cartão de crédito",
+      "amount": -418.48,
+      "category": "Pagamento Fatura",
+      "ref": "148954318099"
+    },
+    {
+      "date": "2026-03-10",
+      "description": "Pagamento Cartão de crédito",
+      "amount": -4786.82,
+      "category": "Pagamento Fatura",
+      "ref": "149672260928"
+    },
+    {
+      "date": "2026-03-10",
+      "description": "Pagamento Cartão de crédito",
+      "amount": -5855.44,
+      "category": "Pagamento Fatura",
+      "ref": "148954497541"
+    },
+    {
+      "date": "2026-03-10",
+      "description": "Pix enviado Eduardo Carlos de Medeiros Ferreira",
+      "amount": -18.0,
+      "category": "PIX Enviado",
+      "ref": "149736359262"
+    },
+    {
+      "date": "2026-03-10",
+      "description": "Pix enviado Estacao 89 Comercio Varejista de Alimentos Ltda",
+      "amount": -94.69,
+      "category": "PIX Enviado",
+      "ref": "149094127499"
+    },
+    {
+      "date": "2026-03-11",
+      "description": "Rendimentos",
+      "amount": 1.79,
+      "category": "Rendimentos",
+      "ref": "1740894145088"
+    },
+    {
+      "date": "2026-03-11",
+      "description": "Pagamento com QR Pix MM SERVICOS DE ALIMENTOS LTDA",
+      "amount": -29.0,
+      "category": "QR/Estabelecimento",
+      "ref": "149175831627"
+    },
+    {
+      "date": "2026-03-11",
+      "description": "Pagamento com QR Pix STAR SHOP CONVENIENCIAS LTDA",
+      "amount": -45.99,
+      "category": "QR/Estabelecimento",
+      "ref": "149178333173"
+    },
+    {
+      "date": "2026-03-12",
+      "description": "Rendimentos",
+      "amount": 1.71,
+      "category": "Rendimentos",
+      "ref": "1740959227014"
+    },
+    {
+      "date": "2026-03-12",
+      "description": "Pagamento com QR Pix AUTO POSTO INTERMARES LTDA",
+      "amount": -43.75,
+      "category": "QR/Estabelecimento",
+      "ref": "149341767675"
+    },
+    {
+      "date": "2026-03-12",
+      "description": "Pagamento com QR Pix COMERCIAL DE ALIMENTOS HORA H LTDA",
+      "amount": -12.0,
+      "category": "QR/Estabelecimento",
+      "ref": "150063674252"
+    },
+    {
+      "date": "2026-03-12",
+      "description": "Pagamento com QR Pix SUPERMERCADO LITORAL LTDA",
+      "amount": -212.03,
+      "category": "QR/Estabelecimento",
+      "ref": "150064897396"
+    },
+    {
+      "date": "2026-03-13",
+      "description": "Rendimentos",
+      "amount": 1.6,
+      "category": "Rendimentos",
+      "ref": "1741022463524"
+    },
+    {
+      "date": "2026-03-13",
+      "description": "Pagamento com QR Pix HS PETROLEO COMERCIO DE COMBUSTIVEL LTDA",
+      "amount": -20.73,
+      "category": "QR/Estabelecimento",
+      "ref": "149468159617"
+    },
+    {
+      "date": "2026-03-13",
+      "description": "Pagamento com QR Pix NIVE NUCLEO DE INSPECAO E VISTORIA VEICULAR LTDA",
+      "amount": -106.43,
+      "category": "QR/Estabelecimento",
+      "ref": "149480754141"
+    },
+    {
+      "date": "2026-03-13",
+      "description": "Pix enviado Geovane Ribeiro das Neves",
+      "amount": -100.0,
+      "category": "PIX Enviado",
+      "ref": "150202784738"
+    },
+    {
+      "date": "2026-03-13",
+      "description": "Pagamento Cursor, ai powered ide",
+      "amount": -323.24,
+      "category": "Saída",
+      "ref": "149484323635"
+    },
+    {
+      "date": "2026-03-13",
+      "description": "Pix enviado Eva Bezerra da Silva Brandao",
+      "amount": -790.0,
+      "category": "PIX Enviado",
+      "ref": "150206028494"
+    },
+    {
+      "date": "2026-03-13",
+      "description": "Pagamento com QR Pix THALES JERONIMO DO NASCIMENTO SEIXAS",
+      "amount": -91.0,
+      "category": "QR/Estabelecimento",
+      "ref": "150266251080"
+    },
+    {
+      "date": "2026-03-13",
+      "description": "Pagamento com QR Pix AUTO POSTO INTERMARES LTDA",
+      "amount": -29.5,
+      "category": "QR/Estabelecimento",
+      "ref": "149544819345"
+    },
+    {
+      "date": "2026-03-13",
+      "description": "Pagamento com QR Pix COMERCIAL DE ALIMENTOS HORA H LTDA",
+      "amount": -27.0,
+      "category": "QR/Estabelecimento",
+      "ref": "150266731552"
+    },
+    {
+      "date": "2026-03-14",
+      "description": "Pix enviado Eduardo Silva dos Santos",
+      "amount": -850.0,
+      "category": "PIX Enviado",
+      "ref": "149643909853"
+    },
+    {
+      "date": "2026-03-15",
+      "description": "Pagamento com QR Pix EDNA DA SILVA ROCHA",
+      "amount": -37.0,
+      "category": "QR/Estabelecimento",
+      "ref": "150438558228"
+    },
+    {
+      "date": "2026-03-15",
+      "description": "Pagamento Mercado Libre",
+      "amount": -409.43,
+      "category": "Saída",
+      "ref": "150446078386"
+    },
+    {
+      "date": "2026-03-15",
+      "description": "Pagamento Cursor usage  feb",
+      "amount": -213.72,
+      "category": "Saída",
+      "ref": "150446891460"
+    },
+    {
+      "date": "2026-03-15",
+      "description": "Pagamento com QR Pix BRENA DA TRINDADE BEZERRA",
+      "amount": -70.0,
+      "category": "QR/Estabelecimento",
+      "ref": "150496153776"
+    },
+    {
+      "date": "2026-03-15",
+      "description": "Pagamento Pp*ticketfulfi",
+      "amount": -15.53,
+      "category": "Saída",
+      "ref": "149806042777"
+    },
+    {
+      "date": "2026-03-16",
+      "description": "Rendimentos",
+      "amount": 1.0,
+      "category": "Rendimentos",
+      "ref": "1741086736821"
+    },
+    {
+      "date": "2026-03-17",
+      "description": "Rendimentos",
+      "amount": 0.21,
+      "category": "Rendimentos",
+      "ref": "1741148117547"
+    },
+    {
+      "date": "2026-03-17",
+      "description": "Pix enviado Eduardo Carlos de Medeiros Ferreira",
+      "amount": -12.0,
+      "category": "PIX Enviado",
+      "ref": "150009690143"
+    },
+    {
+      "date": "2026-03-17",
+      "description": "Pix enviado Estacao 89 Comercio Varejista de Alimentos Ltda",
+      "amount": -110.69,
+      "category": "PIX Enviado",
+      "ref": "150091569837"
+    },
+    {
+      "date": "2026-03-18",
+      "description": "Rendimentos",
+      "amount": 0.22,
+      "category": "Rendimentos",
+      "ref": "1741213651466"
+    },
+    {
+      "date": "2026-03-18",
+      "description": "Pagamento com QR Pix UBER DO BRASIL TECNOLOGIA LTDA.",
+      "amount": -16.54,
+      "category": "QR/Estabelecimento",
+      "ref": "150144082077"
+    },
+    {
+      "date": "2026-03-18",
+      "description": "Pagamento Mercado Livre",
+      "amount": -285.95,
+      "category": "Saída",
+      "ref": "150189786279"
+    },
+    {
+      "date": "2026-03-19",
+      "description": "Rendimentos",
+      "amount": 0.03,
+      "category": "Rendimentos",
+      "ref": "1741275809428"
+    },
+    {
+      "date": "2026-03-20",
+      "description": "Rendimentos",
+      "amount": 0.03,
+      "category": "Rendimentos",
+      "ref": "1741338343564"
+    },
+    {
+      "date": "2026-03-23",
+      "description": "Rendimentos",
+      "amount": 0.02,
+      "category": "Rendimentos",
+      "ref": "1741396726544"
+    },
+    {
+      "date": "2026-03-24",
+      "description": "Rendimentos",
+      "amount": 0.03,
+      "category": "Rendimentos",
+      "ref": "1741432565240"
+    },
+    {
+      "date": "2026-03-25",
+      "description": "Rendimentos",
+      "amount": 0.03,
+      "category": "Rendimentos",
+      "ref": "1741468761145"
+    },
+    {
+      "date": "2026-03-26",
+      "description": "Rendimentos",
+      "amount": 0.04,
+      "category": "Rendimentos",
+      "ref": "1741537156856"
+    },
+    {
+      "date": "2026-03-27",
+      "description": "Rendimentos",
+      "amount": 0.03,
+      "category": "Rendimentos",
+      "ref": "1741601493834"
+    },
+    {
+      "date": "2026-03-29",
+      "description": "Pagamento Mercado Livre",
+      "amount": -52.89,
+      "category": "Saída",
+      "ref": "152384102768"
+    },
+    {
+      "date": "2026-03-30",
+      "description": "Rendimentos",
+      "amount": 0.02,
+      "category": "Rendimentos",
+      "ref": "1741668454137"
+    },
+    {
+      "date": "2026-03-30",
+      "description": "Transferência recebida EDUARDO FORSTER GIOVANNINI",
+      "amount": 27193.14,
+      "category": "Entrada",
+      "ref": "151755189039"
+    },
+    {
+      "date": "2026-03-30",
+      "description": "Pagamento Cartão de crédito",
+      "amount": -2884.07,
+      "category": "Pagamento Fatura",
+      "ref": "151756210649"
+    },
+    {
+      "date": "2026-03-30",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -198.34,
+      "category": "QR/Estabelecimento",
+      "ref": "151776115591"
+    },
+    {
+      "date": "2026-03-30",
+      "description": "Pagamento com QR Pix COMGEL COMERCIL DE FERRAGENS GUEDES LTDA",
+      "amount": -20.5,
+      "category": "QR/Estabelecimento",
+      "ref": "151777208023"
+    },
+    {
+      "date": "2026-03-30",
+      "description": "Pix enviado Eduardo Silva dos Santos",
+      "amount": -850.0,
+      "category": "PIX Enviado",
+      "ref": "152531327060"
+    },
+    {
+      "date": "2026-03-30",
+      "description": "Pix enviado Maria da Luz Assis da Silva",
+      "amount": -1000.0,
+      "category": "PIX Enviado",
+      "ref": "151861534939"
+    },
+    {
+      "date": "2026-03-31",
+      "description": "Rendimentos",
+      "amount": 10.17,
+      "category": "Rendimentos",
+      "ref": "1741735540255"
+    },
+    {
+      "date": "2026-03-31",
+      "description": "Pagamento com QR Pix PANIFICADORA PAIVA LTDA",
+      "amount": -96.85,
+      "category": "QR/Estabelecimento",
+      "ref": "151941687441"
+    },
+    {
+      "date": "2026-03-31",
+      "description": "Pix enviado Maria da Luz Assis da Silva",
+      "amount": -330.0,
+      "category": "PIX Enviado",
+      "ref": "152716671640"
+    },
+    {
+      "date": "2026-03-31",
+      "description": "Pagamento com QR Pix CARAJAS MATERIAL DE CONSTRUCAO LTDA",
+      "amount": -640.0,
+      "category": "QR/Estabelecimento",
+      "ref": "152006109987"
+    },
+    {
+      "date": "2026-03-31",
+      "description": "Pagamento com QR Pix JACARE COMERCIO DE COMBUSTIVEIS LTDA",
+      "amount": -41.47,
+      "category": "QR/Estabelecimento",
+      "ref": "152019210961"
+    },
+    {
+      "date": "2026-04-01",
+      "description": "Rendimentos",
+      "amount": 9.58,
+      "category": "Rendimentos",
+      "ref": "1741805550939"
+    },
+    {
+      "date": "2026-04-01",
+      "description": "Pagamento com QR Pix ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA",
+      "amount": -113.8,
+      "category": "QR/Estabelecimento",
+      "ref": "152833636626"
+    },
+    {
+      "date": "2026-04-01",
+      "description": "Pagamento com QR Pix EDGLEY DE SOUSA FORMIGA",
+      "amount": -53.93,
+      "category": "QR/Estabelecimento",
+      "ref": "152834775544"
+    },
+    {
+      "date": "2026-04-01",
+      "description": "Pix enviado Eva Bezerra da Silva Brandao",
+      "amount": -2080.0,
+      "category": "PIX Enviado",
+      "ref": "152151991553"
+    },
+    {
+      "date": "2026-04-01",
+      "description": "Pix enviado Marinaldo Domingos de Souza",
+      "amount": -700.0,
+      "category": "PIX Enviado",
+      "ref": "152189207147"
+    },
+    {
+      "date": "2026-04-02",
+      "description": "Rendimentos",
+      "amount": 8.33,
+      "category": "Rendimentos",
+      "ref": "1741860789671"
+    },
+    {
+      "date": "2026-04-02",
+      "description": "Pagamento com QR Pix IATA INTERNATIONAL AIR TRANSPORT ASSOCIATION",
+      "amount": -1422.71,
+      "category": "QR/Estabelecimento",
+      "ref": "152210734999"
+    },
+    {
+      "date": "2026-04-02",
+      "description": "Pagamento com QR Pix COMPANHIA DE AGUA E ESGOTOS DA PARAIBA CAGEPA",
+      "amount": -227.03,
+      "category": "QR/Estabelecimento",
+      "ref": "152211492245"
+    },
+    {
+      "date": "2026-04-02",
+      "description": "Pagamento com QR Pix REDE BOM COMERCIO LTDA",
+      "amount": -112.27,
+      "category": "QR/Estabelecimento",
+      "ref": "152995794336"
+    },
+    {
+      "date": "2026-04-02",
+      "description": "Pix enviado Eduardo Silva dos Santos",
+      "amount": -350.0,
+      "category": "PIX Enviado",
+      "ref": "152285797203"
+    },
+    {
+      "date": "2026-04-02",
+      "description": "Pagamento de conta Vivo Móvel SP",
+      "amount": -67.79,
+      "category": "Saída",
+      "ref": "153040899150"
+    },
+    {
+      "date": "2026-04-02",
+      "description": "Pagamento com QR Pix REDE MENOR PRECO SUPERMERCADO LTDA",
+      "amount": -253.88,
+      "category": "QR/Estabelecimento",
+      "ref": "152309349407"
+    },
+    {
+      "date": "2026-04-02",
+      "description": "Pix enviado Estacao 89 Comercio Varejista de Alimentos Ltda",
+      "amount": -75.5,
+      "category": "PIX Enviado",
+      "ref": "152317783031"
+    },
+    {
+      "date": "2026-04-03",
+      "description": "Pix enviado Tambau Jampa Comercio de Bolos Ltda",
+      "amount": -76.4,
+      "category": "PIX Enviado",
+      "ref": "152408085079"
+    },
+    {
+      "date": "2026-04-06",
+      "description": "Rendimentos",
+      "amount": 7.1,
+      "category": "Rendimentos",
+      "ref": "1741894471920"
+    },
+    {
+      "date": "2026-04-06",
+      "description": "Pix enviado Marinaldo Domingos de Souza",
+      "amount": -170.0,
+      "category": "PIX Enviado",
+      "ref": "153473539648"
+    },
+    {
+      "date": "2026-04-06",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -319.32,
+      "category": "QR/Estabelecimento",
+      "ref": "152742062685"
+    },
+    {
+      "date": "2026-04-07",
+      "description": "Rendimentos",
+      "amount": 6.68,
+      "category": "Rendimentos",
+      "ref": "1741975004040"
+    },
+    {
+      "date": "2026-04-07",
+      "description": "Pix enviado Gleudson Silva Farias",
+      "amount": -1260.0,
+      "category": "PIX Enviado",
+      "ref": "152926299217"
+    },
+    {
+      "date": "2026-04-07",
+      "description": "Pix enviado Estacao 89 Comercio Varejista de Alimentos Ltda",
+      "amount": -124.7,
+      "category": "PIX Enviado",
+      "ref": "153702911324"
+    },
+    {
+      "date": "2026-04-07",
+      "description": "Pix enviado Gleudson Silva Farias",
+      "amount": -198.0,
+      "category": "PIX Enviado",
+      "ref": "153706657664"
+    },
+    {
+      "date": "2026-04-07",
+      "description": "Pix enviado Eva Bezerra da Silva Brandao",
+      "amount": -480.0,
+      "category": "PIX Enviado",
+      "ref": "152982291023"
+    },
+    {
+      "date": "2026-04-07",
+      "description": "Pagamento com QR Pix UBER DO BRASIL TECNOLOGIA LTDA.",
+      "amount": -78.99,
+      "category": "QR/Estabelecimento",
+      "ref": "152986917211"
+    },
+    {
+      "date": "2026-04-08",
+      "description": "Pagamento com QR Pix THF RESTAURANTES LTDA",
+      "amount": -49.0,
+      "category": "QR/Estabelecimento",
+      "ref": "153014651109"
+    },
+    {
+      "date": "2026-04-08",
+      "description": "Rendimentos",
+      "amount": 6.12,
+      "category": "Rendimentos",
+      "ref": "1742042464351"
+    },
+    {
+      "date": "2026-04-08",
+      "description": "Pix enviado Gerson Botasso",
+      "amount": -22.0,
+      "category": "PIX Enviado",
+      "ref": "153806481256"
+    },
+    {
+      "date": "2026-04-08",
+      "description": "Pagamento com QR Pix CHOPERIA GIOVANETTI DO CAMBUI LTDA",
+      "amount": -222.97,
+      "category": "QR/Estabelecimento",
+      "ref": "153890744706"
+    },
+    {
+      "date": "2026-04-09",
+      "description": "Rendimentos",
+      "amount": 5.71,
+      "category": "Rendimentos",
+      "ref": "1742104581060"
+    },
+    {
+      "date": "2026-04-09",
+      "description": "Pagamento com QR Pix NICO PANIFICADORA DO CASTELO LTDA",
+      "amount": -73.7,
+      "category": "QR/Estabelecimento",
+      "ref": "153206446865"
+    },
+    {
+      "date": "2026-04-09",
+      "description": "Pix enviado Gabriel Resende Firmino",
+      "amount": -3235.0,
+      "category": "PIX Enviado",
+      "ref": "153981525106"
+    },
+    {
+      "date": "2026-04-09",
+      "description": "Pix enviado Br Brake Comercio e Servicos Automotivos Ltda",
+      "amount": -3200.0,
+      "category": "PIX Enviado",
+      "ref": "153982013390"
+    },
+    {
+      "date": "2026-04-09",
+      "description": "Pix enviado Williams Firmino dos Santos",
+      "amount": -2085.0,
+      "category": "PIX Enviado",
+      "ref": "153982035656"
+    },
+    {
+      "date": "2026-04-09",
+      "description": "Pagamento com QR Pix COVABRA SUPERMERCADOS LTDA",
+      "amount": -713.4,
+      "category": "QR/Estabelecimento",
+      "ref": "153266803713"
+    },
+    {
+      "date": "2026-04-09",
+      "description": "Pagamento com QR Pix COVABRA SUPERMERCADOS LTDA",
+      "amount": -97.19,
+      "category": "QR/Estabelecimento",
+      "ref": "154020467652"
+    },
+    {
+      "date": "2026-04-10",
+      "description": "Rendimentos",
+      "amount": 1.48,
+      "category": "Rendimentos",
+      "ref": "1742167042945"
+    },
+    {
+      "date": "2026-04-11",
+      "description": "Pagamento com QR Pix BUTIQUIM DO FORTAO LTDA",
+      "amount": -170.0,
+      "category": "QR/Estabelecimento",
+      "ref": "153638155677"
+    },
+    {
+      "date": "2026-04-12",
+      "description": "Pagamento com QR Pix BUTIQUIM DO FORTAO LTDA",
+      "amount": -196.13,
+      "category": "QR/Estabelecimento",
+      "ref": "153720548055"
+    },
+    {
+      "date": "2026-04-13",
+      "description": "Rendimentos",
+      "amount": 1.47,
+      "category": "Rendimentos",
+      "ref": "1742236910982"
+    },
+    {
+      "date": "2026-04-14",
+      "description": "Rendimentos",
+      "amount": 1.31,
+      "category": "Rendimentos",
+      "ref": "1742319199075"
+    },
+    {
+      "date": "2026-04-14",
+      "description": "Pagamento com QR Pix B L SERVICE ADMINISTRADORA DE SERVICOS LTDA",
+      "amount": -208.0,
+      "category": "QR/Estabelecimento",
+      "ref": "153965358981"
+    },
+    {
+      "date": "2026-04-14",
+      "description": "Pix enviado Eduardo Silva dos Santos",
+      "amount": -670.0,
+      "category": "PIX Enviado",
+      "ref": "154718263318"
+    },
+    {
+      "date": "2026-04-14",
+      "description": "Pagamento com QR Pix GF4 PARTICIPACOES LTDA",
+      "amount": -114.77,
+      "category": "QR/Estabelecimento",
+      "ref": "154740821490"
+    },
+    {
+      "date": "2026-04-14",
+      "description": "Pagamento com QR Pix Bessa Express Loja De Proximidade Ltda",
+      "amount": -46.98,
+      "category": "QR/Estabelecimento",
+      "ref": "154040242241"
+    },
+    {
+      "date": "2026-04-14",
+      "description": "Pix enviado Vilberto Pessoa Soares",
+      "amount": -125.0,
+      "category": "PIX Enviado",
+      "ref": "154791728124"
+    },
+    {
+      "date": "2026-04-15",
+      "description": "Rendimentos",
+      "amount": 0.88,
+      "category": "Rendimentos",
+      "ref": "1742377808375"
+    },
+    {
+      "date": "2026-04-15",
+      "description": "Pagamento com QR Pix ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA",
+      "amount": -175.4,
+      "category": "QR/Estabelecimento",
+      "ref": "154975430216"
+    },
+    {
+      "date": "2026-04-16",
+      "description": "Rendimentos",
+      "amount": 0.79,
+      "category": "Rendimentos",
+      "ref": "1742443569115"
+    },
+    {
+      "date": "2026-04-16",
+      "description": "Pagamento com QR Pix TELEFONICA BRASIL S.A.",
+      "amount": -70.97,
+      "category": "QR/Estabelecimento",
+      "ref": "155004973156"
+    },
+    {
+      "date": "2026-04-16",
+      "description": "Pix enviado Marinaldo Domingos de Souza",
+      "amount": -1200.0,
+      "category": "PIX Enviado",
+      "ref": "155021530678"
+    },
+    {
+      "date": "2026-04-16",
+      "description": "Pagamento com QR Pix COMPANHIA DE AGUA E ESGOTOS DA PARAIBA CAGEPA",
+      "amount": -90.22,
+      "category": "QR/Estabelecimento",
+      "ref": "155033328056"
+    },
+    {
+      "date": "2026-04-17",
+      "description": "Rendimentos",
+      "amount": 0.12,
+      "category": "Rendimentos",
+      "ref": "1742513417452"
+    },
+    {
+      "date": "2026-04-20",
+      "description": "Rendimentos",
+      "amount": 0.13,
+      "category": "Rendimentos",
+      "ref": "1742580467993"
+    },
+    {
+      "date": "2026-04-20",
+      "description": "Pagamento GOOGLE BRASIL PAGAMENTOS LTDA.",
+      "amount": -96.99,
+      "category": "Saída",
+      "ref": "154833745935"
+    },
+    {
+      "date": "2026-04-22",
+      "description": "Rendimentos",
+      "amount": 0.08,
+      "category": "Rendimentos",
+      "ref": "1742699139127"
+    },
+    {
+      "date": "2026-04-22",
+      "description": "Pix recebido EDIMILSON RAMOS DE OLIVEIRA JUNIOR",
+      "amount": 19.0,
+      "category": "PIX Recebido",
+      "ref": "155901253900"
+    },
+    {
+      "date": "2026-04-22",
+      "description": "Pagamento com QR Pix 55.103.928 MARIA EDUARDA CARDOSO DA COSTA",
+      "amount": -35.0,
+      "category": "QR/Estabelecimento",
+      "ref": "155201852175"
+    },
+    {
+      "date": "2026-04-23",
+      "description": "Rendimentos",
+      "amount": 0.07,
+      "category": "Rendimentos",
+      "ref": "1742769856085"
+    },
+    {
+      "date": "2026-04-23",
+      "description": "Pagamento com QR Pix Amanda Gabrielle Freire De Souza",
+      "amount": -131.0,
+      "category": "QR/Estabelecimento",
+      "ref": "155352443049"
+    },
+    {
+      "date": "2026-04-24",
+      "description": "Rendimentos",
+      "amount": 0.02,
+      "category": "Rendimentos",
+      "ref": "1742830331657"
+    },
+    {
+      "date": "2026-04-27",
+      "description": "Rendimentos",
+      "amount": 0.01,
+      "category": "Rendimentos",
+      "ref": "1742901877439"
+    },
+    {
+      "date": "2026-04-28",
+      "description": "Rendimentos",
+      "amount": 0.02,
+      "category": "Rendimentos",
+      "ref": "1742982409308"
+    },
+    {
+      "date": "2026-04-29",
+      "description": "Rendimentos",
+      "amount": 0.01,
+      "category": "Rendimentos",
+      "ref": "1743040115437"
+    },
+    {
+      "date": "2026-04-30",
+      "description": "Rendimentos",
+      "amount": 0.01,
+      "category": "Rendimentos",
+      "ref": "1743110260953"
+    },
+    {
+      "date": "2026-04-30",
+      "description": "Transferência recebida EDUARDO FORSTER GIOVANNINI",
+      "amount": 27193.14,
+      "category": "Entrada",
+      "ref": "156287893239"
+    },
+    {
+      "date": "2026-05-01",
+      "description": "Pix enviado Maria da Luz Assis da Silva",
+      "amount": -1190.0,
+      "category": "PIX Enviado",
+      "ref": "156482764763"
+    },
+    {
+      "date": "2026-05-01",
+      "description": "Pix enviado [REDACTED]",
+      "amount": -1500.0,
+      "category": "PIX Enviado",
+      "ref": "157277283070"
+    },
+    {
+      "date": "2026-05-03",
+      "description": "Pix enviado Eduardo Silva dos Santos",
+      "amount": -570.0,
+      "category": "PIX Enviado",
+      "ref": "157503123146"
+    },
+    {
+      "date": "2026-05-04",
+      "description": "Rendimentos",
+      "amount": 11.65,
+      "category": "Rendimentos",
+      "ref": "1743176355208"
+    },
+    {
+      "date": "2026-05-04",
+      "description": "Pix enviado Marinaldo Domingos de Souza",
+      "amount": -180.0,
+      "category": "PIX Enviado",
+      "ref": "156852973721"
+    },
+    {
+      "date": "2026-05-05",
+      "description": "Rendimentos",
+      "amount": 10.24,
+      "category": "Rendimentos",
+      "ref": "1743260411771"
+    },
+    {
+      "date": "2026-05-05",
+      "description": "Pagamento SALUTARE MEDICINA E SAUDE",
+      "amount": -130.91,
+      "category": "Saída",
+      "ref": "157802402212"
+    },
+    {
+      "date": "2026-05-05",
+      "description": "Pix enviado Eduardo Silva dos Santos",
+      "amount": -450.0,
+      "category": "PIX Enviado",
+      "ref": "157905028464"
+    },
+    {
+      "date": "2026-05-05",
+      "description": "Pagamento Cartão de crédito",
+      "amount": -1722.68,
+      "category": "Pagamento Fatura",
+      "ref": "157907424040"
+    },
+    {
+      "date": "2026-05-05",
+      "description": "Pagamento Cartão de crédito",
+      "amount": -8627.35,
+      "category": "Pagamento Fatura",
+      "ref": "157139914617"
+    },
+    {
+      "date": "2026-05-06",
+      "description": "Rendimentos",
+      "amount": 10.18,
+      "category": "Rendimentos",
+      "ref": "1743324850487"
+    },
+    {
+      "date": "2026-05-06",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -232.44,
+      "category": "QR/Estabelecimento",
+      "ref": "157981953362"
+    },
+    {
+      "date": "2026-05-06",
+      "description": "Pagamento com QR Pix EDGLEY DE SOUSA FORMIGA",
+      "amount": -198.35,
+      "category": "QR/Estabelecimento",
+      "ref": "157214670055"
+    },
+    {
+      "date": "2026-05-06",
+      "description": "Pix enviado Gleudson Silva Farias",
+      "amount": -1260.0,
+      "category": "PIX Enviado",
+      "ref": "157231141069"
+    },
+    {
+      "date": "2026-05-06",
+      "description": "Pix enviado Casa dos Criadores Comercio Ltda",
+      "amount": -281.0,
+      "category": "PIX Enviado",
+      "ref": "157252225025"
+    },
+    {
+      "date": "2026-05-06",
+      "description": "Pix enviado Casa dos Criadores Comercio Ltda",
+      "amount": -15.0,
+      "category": "PIX Enviado",
+      "ref": "158021830828"
+    },
+    {
+      "date": "2026-05-07",
+      "description": "Rendimentos",
+      "amount": 4.73,
+      "category": "Rendimentos",
+      "ref": "1743387752167"
+    },
+    {
+      "date": "2026-05-07",
+      "description": "Pagamento com QR Pix VINDI PAGAMENTOS SA",
+      "amount": -494.8,
+      "category": "QR/Estabelecimento",
+      "ref": "157467292465"
+    },
+    {
+      "date": "2026-05-08",
+      "description": "Rendimentos",
+      "amount": 4.72,
+      "category": "Rendimentos",
+      "ref": "1743455883028"
+    },
+    {
+      "date": "2026-05-08",
+      "description": "Pagamento de conta Vivo Móvel SP",
+      "amount": -251.43,
+      "category": "Saída",
+      "ref": "158276307540"
+    },
+    {
+      "date": "2026-05-08",
+      "description": "Pagamento com QR Pix PANIFICADORA SAO GONCALO LTDA",
+      "amount": -78.91,
+      "category": "QR/Estabelecimento",
+      "ref": "157566215629"
+    },
+    {
+      "date": "2026-05-08",
+      "description": "Pagamento com QR Pix SUPERMERCADO LITORAL LTDA",
+      "amount": -430.42,
+      "category": "QR/Estabelecimento",
+      "ref": "157570731541"
+    },
+    {
+      "date": "2026-05-08",
+      "description": "Pix enviado Eva Bezerra da Silva Brandao",
+      "amount": -1040.0,
+      "category": "PIX Enviado",
+      "ref": "157589983803"
+    },
+    {
+      "date": "2026-05-08",
+      "description": "Pagamento Mercado Libre",
+      "amount": -390.69,
+      "category": "Saída",
+      "ref": "157607162465"
+    },
+    {
+      "date": "2026-05-09",
+      "description": "Pagamento Mercado Libre",
+      "amount": -379.98,
+      "category": "Saída",
+      "ref": "157692336095"
+    },
+    {
+      "date": "2026-05-09",
+      "description": "Pix enviado Eduardo Silva dos Santos",
+      "amount": -350.0,
+      "category": "PIX Enviado",
+      "ref": "157713825511"
+    },
+    {
+      "date": "2026-05-10",
+      "description": "Pix enviado Estacao 89 Comercio Varejista de Alimentos Ltda",
+      "amount": -97.1,
+      "category": "PIX Enviado",
+      "ref": "158711310526"
+    },
+    {
+      "date": "2026-05-11",
+      "description": "Rendimentos",
+      "amount": 3.56,
+      "category": "Rendimentos",
+      "ref": "1743527514456"
+    },
+    {
+      "date": "2026-05-11",
+      "description": "Pix enviado MEGA BYTE COMPUTADORES",
+      "amount": -386.91,
+      "category": "PIX Enviado",
+      "ref": "158738697878"
+    },
+    {
+      "date": "2026-05-11",
+      "description": "Pagamento com QR Pix SECRETARIA DE ESTADO DA FAZENDA SEFAZ PB",
+      "amount": -1342.74,
+      "category": "QR/Estabelecimento",
+      "ref": "158765690240"
+    },
+    {
+      "date": "2026-05-12",
+      "description": "Rendimentos",
+      "amount": 2.46,
+      "category": "Rendimentos",
+      "ref": "1743608351070"
+    },
+    {
+      "date": "2026-05-12",
+      "description": "Pix enviado Eduardo Silva dos Santos",
+      "amount": -350.0,
+      "category": "PIX Enviado",
+      "ref": "158199268649"
+    },
+    {
+      "date": "2026-05-12",
+      "description": "Pix enviado Maria da Luz Assis da Silva",
+      "amount": -200.0,
+      "category": "PIX Enviado",
+      "ref": "158978731712"
+    },
+    {
+      "date": "2026-05-12",
+      "description": "Pagamento com QR Pix ATLANTICO SUL HOTELARIA E RESTAURANTES L",
+      "amount": -110.0,
+      "category": "QR/Estabelecimento",
+      "ref": "158997083882"
+    },
+    {
+      "date": "2026-05-12",
+      "description": "Pagamento com QR Pix LINDEMBERG FRANCISCO DA SILVA",
+      "amount": -22.85,
+      "category": "QR/Estabelecimento",
+      "ref": "159034648594"
+    },
+    {
+      "date": "2026-05-13",
+      "description": "Rendimentos",
+      "amount": 2.17,
+      "category": "Rendimentos",
+      "ref": "1743680014253"
+    },
+    {
+      "date": "2026-05-14",
+      "description": "Rendimentos",
+      "amount": 2.17,
+      "category": "Rendimentos",
+      "ref": "1743740277941"
+    },
+    {
+      "date": "2026-05-14",
+      "description": "Pix enviado Gleudson Silva Farias",
+      "amount": -1080.0,
+      "category": "PIX Enviado",
+      "ref": "158525703339"
+    },
+    {
+      "date": "2026-05-15",
+      "description": "Rendimentos",
+      "amount": 1.7,
+      "category": "Rendimentos",
+      "ref": "1743806389661"
+    },
+    {
+      "date": "2026-05-15",
+      "description": "Pagamento com QR Pix EDNA DA SILVA ROCHA",
+      "amount": -36.0,
+      "category": "QR/Estabelecimento",
+      "ref": "159368262616"
+    },
+    {
+      "date": "2026-05-15",
+      "description": "Pix enviado LUMIAR HEALTH BUILDERS EQUIPAMENTOS HOSPITALARES LTDA",
+      "amount": -554.92,
+      "category": "PIX Enviado",
+      "ref": "158627713907"
+    },
+    {
+      "date": "2026-05-15",
+      "description": "Pix enviado Eduardo Silva dos Santos",
+      "amount": -470.0,
+      "category": "PIX Enviado",
+      "ref": "159477158596"
+    },
+    {
+      "date": "2026-05-15",
+      "description": "Pagamento com QR Pix Matias Alejandro Sanchez Suarez",
+      "amount": -86.0,
+      "category": "QR/Estabelecimento",
+      "ref": "158720150329"
+    },
+    {
+      "date": "2026-05-16",
+      "description": "Pagamento com QR Pix JACARE COMERCIO DE COMBUSTIVEIS LTDA",
+      "amount": -62.92,
+      "category": "QR/Estabelecimento",
+      "ref": "159556144598"
+    },
+    {
+      "date": "2026-05-16",
+      "description": "Pagamento com QR Pix ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA",
+      "amount": -225.28,
+      "category": "QR/Estabelecimento",
+      "ref": "158876698655"
+    },
+    {
+      "date": "2026-05-17",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -225.95,
+      "category": "QR/Estabelecimento",
+      "ref": "158921915515"
+    },
+    {
+      "date": "2026-05-17",
+      "description": "Pagamento com QR Pix UMI SUSHI BAR LTDA",
+      "amount": -85.8,
+      "category": "QR/Estabelecimento",
+      "ref": "159782722086"
+    },
+    {
+      "date": "2026-05-18",
+      "description": "Rendimentos",
+      "amount": 1.44,
+      "category": "Rendimentos",
+      "ref": "1743878340337"
+    },
+    {
+      "date": "2026-05-18",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -144.44,
+      "category": "QR/Estabelecimento",
+      "ref": "159069634595"
+    },
+    {
+      "date": "2026-05-18",
+      "description": "Pix enviado Ewerton de Sousa Emeri",
+      "amount": -1000.0,
+      "category": "PIX Enviado",
+      "ref": "159848695704"
+    },
+    {
+      "date": "2026-05-19",
+      "description": "Rendimentos",
+      "amount": 0.44,
+      "category": "Rendimentos",
+      "ref": "1743959522015"
+    },
+    {
+      "date": "2026-05-20",
+      "description": "Rendimentos",
+      "amount": 0.45,
+      "category": "Rendimentos",
+      "ref": "1744023964803"
+    },
+    {
+      "date": "2026-05-20",
+      "description": "Pagamento GOOGLE BRASIL PAGAMENTOS LTDA.",
+      "amount": -96.99,
+      "category": "Saída",
+      "ref": "160115426126"
+    },
+    {
+      "date": "2026-05-21",
+      "description": "Rendimentos",
+      "amount": 0.4,
+      "category": "Rendimentos",
+      "ref": "1744090581773"
+    },
+    {
+      "date": "2026-05-22",
+      "description": "Rendimentos",
+      "amount": 0.41,
+      "category": "Rendimentos",
+      "ref": "1744156081670"
+    },
+    {
+      "date": "2026-05-25",
+      "description": "Rendimentos",
+      "amount": 0.4,
+      "category": "Rendimentos",
+      "ref": "1744220281503"
+    },
+    {
+      "date": "2026-05-25",
+      "description": "Pix enviado Maria da Luz Assis da Silva",
+      "amount": -150.0,
+      "category": "PIX Enviado",
+      "ref": "160985845840"
+    },
+    {
+      "date": "2026-05-26",
+      "description": "Rendimentos",
+      "amount": 0.4,
+      "category": "Rendimentos",
+      "ref": "1744264426037"
+    },
+    {
+      "date": "2026-05-26",
+      "description": "Pix enviado Estacao 89 Comercio Varejista de Alimentos Ltda",
+      "amount": -128.9,
+      "category": "PIX Enviado",
+      "ref": "161143729776"
+    },
+    {
+      "date": "2026-05-27",
+      "description": "Rendimentos",
+      "amount": 0.33,
+      "category": "Rendimentos",
+      "ref": "1744336964814"
+    },
+    {
+      "date": "2026-05-27",
+      "description": "Pix enviado Gleudson Silva Farias",
+      "amount": -180.0,
+      "category": "PIX Enviado",
+      "ref": "160519108265"
+    },
+    {
+      "date": "2026-05-28",
+      "description": "Rendimentos",
+      "amount": 0.28,
+      "category": "Rendimentos",
+      "ref": "1744402543850"
+    },
+    {
+      "date": "2026-05-28",
+      "description": "Pix recebido EDUARDO F GIOVANNINI",
+      "amount": 17000.0,
+      "category": "PIX Recebido",
+      "ref": "160583092359"
+    },
+    {
+      "date": "2026-05-28",
+      "description": "Pix enviado Marinaldo Domingos de Souza",
+      "amount": -168.0,
+      "category": "PIX Enviado",
+      "ref": "160584707703"
+    },
+    {
+      "date": "2026-05-28",
+      "description": "Pix enviado Estacao 89 Comercio Varejista de Alimentos Ltda",
+      "amount": -154.9,
+      "category": "PIX Enviado",
+      "ref": "161453335256"
+    },
+    {
+      "date": "2026-05-29",
+      "description": "Rendimentos",
+      "amount": 7.5,
+      "category": "Rendimentos",
+      "ref": "1744469902926"
+    },
+    {
+      "date": "2026-05-29",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -118.94,
+      "category": "QR/Estabelecimento",
+      "ref": "160803252937"
+    },
+    {
+      "date": "2026-05-29",
+      "description": "Pagamento com código QR Erasmo Luiz Travassos De Souza",
+      "amount": -10.0,
+      "category": "Saída",
+      "ref": "161616983178"
+    },
+    {
+      "date": "2026-05-29",
+      "description": "Pagamento com QR Pix VIRGINIA BARROS VIEIRA",
+      "amount": -10.0,
+      "category": "QR/Estabelecimento",
+      "ref": "161627388234"
+    },
+    {
+      "date": "2026-05-29",
+      "description": "Pix enviado Maria Edilza de Souza",
+      "amount": -17.0,
+      "category": "PIX Enviado",
+      "ref": "161629808910"
+    },
+    {
+      "date": "2026-05-30",
+      "description": "Pagamento com QR Pix ENERGISA PARAIBA - DISTRIBUIDORA DE ENERGIA S.A",
+      "amount": -144.65,
+      "category": "QR/Estabelecimento",
+      "ref": "161722276508"
+    },
+    {
+      "date": "2026-05-30",
+      "description": "Pagamento com QR Pix ENERGISA PARAIBA - DISTRIBUIDORA DE ENERGIA S.A",
+      "amount": -720.01,
+      "category": "QR/Estabelecimento",
+      "ref": "161722772400"
+    },
+    {
+      "date": "2026-05-31",
+      "description": "Pix enviado Eva Bezerra da Silva Brandao",
+      "amount": -1110.0,
+      "category": "PIX Enviado",
+      "ref": "161051451749"
+    },
+    {
+      "date": "2026-05-31",
+      "description": "Pagamento Mercado Livre",
+      "amount": -249.99,
+      "category": "Saída",
+      "ref": "161087686309"
+    },
+    {
+      "date": "2026-05-31",
+      "description": "Pagamento Mercado Libre",
+      "amount": -547.64,
+      "category": "Saída",
+      "ref": "161880342250"
+    },
+    {
+      "date": "2026-05-31",
+      "description": "Pagamento com QR Pix ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA",
+      "amount": -155.4,
+      "category": "QR/Estabelecimento",
+      "ref": "161901119204"
+    },
+    {
+      "date": "2026-06-01",
+      "description": "Rendimentos",
+      "amount": 7.43,
+      "category": "Rendimentos",
+      "ref": "1744539734583"
+    },
+    {
+      "date": "2026-06-01",
+      "description": "Pagamento com QR Pix EDGLEY DE SOUSA FORMIGA",
+      "amount": -48.72,
+      "category": "QR/Estabelecimento",
+      "ref": "161177447109"
+    },
+    {
+      "date": "2026-06-01",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -165.9,
+      "category": "QR/Estabelecimento",
+      "ref": "161972213288"
+    },
+    {
+      "date": "2026-06-01",
+      "description": "Pagamento com QR Pix EDGLEY DE SOUSA FORMIGA",
+      "amount": -55.71,
+      "category": "QR/Estabelecimento",
+      "ref": "161993896860"
+    },
+    {
+      "date": "2026-06-02",
+      "description": "Rendimentos",
+      "amount": 5.98,
+      "category": "Rendimentos",
+      "ref": "1744624699005"
+    },
+    {
+      "date": "2026-06-02",
+      "description": "Pix enviado Ewerton de Sousa Emeri",
+      "amount": -1000.0,
+      "category": "PIX Enviado",
+      "ref": "162231392520"
+    },
+    {
+      "date": "2026-06-02",
+      "description": "Pix enviado Jonathan Borba da Silva",
+      "amount": -100.0,
+      "category": "PIX Enviado",
+      "ref": "162229671794"
+    },
+    {
+      "date": "2026-06-02",
+      "description": "Pix enviado Estacao 89 Comercio Varejista de Alimentos Ltda",
+      "amount": -119.4,
+      "category": "PIX Enviado",
+      "ref": "161457148295"
+    },
+    {
+      "date": "2026-06-03",
+      "description": "Rendimentos",
+      "amount": 5.99,
+      "category": "Rendimentos",
+      "ref": "1744683051011"
+    },
+    {
+      "date": "2026-06-03",
+      "description": "Pagamento com QR Pix PEDRO HENRIQUE ALMEIDA DANTAS",
+      "amount": -1200.0,
+      "category": "QR/Estabelecimento",
+      "ref": "162363729096"
+    },
+    {
+      "date": "2026-06-03",
+      "description": "Pix enviado Eduardo Silva dos Santos",
+      "amount": -350.0,
+      "category": "PIX Enviado",
+      "ref": "161612165053"
+    },
+    {
+      "date": "2026-06-04",
+      "description": "Pagamento com QR Pix PANIFICADORA SAO GONCALO LTDA",
+      "amount": -103.08,
+      "category": "QR/Estabelecimento",
+      "ref": "161694231459"
+    },
+    {
+      "date": "2026-06-04",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -36.48,
+      "category": "QR/Estabelecimento",
+      "ref": "162492669506"
+    },
+    {
+      "date": "2026-06-04",
+      "description": "Pagamento com QR Pix AUTO POSTO INTERMARES LTDA",
+      "amount": -29.5,
+      "category": "QR/Estabelecimento",
+      "ref": "161774339399"
+    },
+    {
+      "date": "2026-06-04",
+      "description": "Pagamento com QR Pix COMERCIAL DE ALIMENTOS HORA H LTDA",
+      "amount": -11.5,
+      "category": "QR/Estabelecimento",
+      "ref": "161775266583"
+    },
+    {
+      "date": "2026-06-04",
+      "description": "Pagamento com QR Pix DROGARIA DROGAVISTA LTDA",
+      "amount": -16.99,
+      "category": "QR/Estabelecimento",
+      "ref": "161774623709"
+    },
+    {
+      "date": "2026-06-04",
+      "description": "Pagamento com QR Pix ELSE LUDIMILLA CAVALCANTE DREYER DINN",
+      "amount": -50.0,
+      "category": "QR/Estabelecimento",
+      "ref": "161775887019"
+    },
+    {
+      "date": "2026-06-05",
+      "description": "Rendimentos",
+      "amount": 4.95,
+      "category": "Rendimentos",
+      "ref": "1744801360987"
+    },
+    {
+      "date": "2026-06-05",
+      "description": "Pagamento com QR Pix PANIFICADORA SAO GONCALO LTDA",
+      "amount": -34.33,
+      "category": "QR/Estabelecimento",
+      "ref": "161885578685"
+    },
+    {
+      "date": "2026-06-05",
+      "description": "Pagamento com QR Pix MERCADINHO LACANTO LTDA",
+      "amount": -83.49,
+      "category": "QR/Estabelecimento",
+      "ref": "162686702112"
+    },
+    {
+      "date": "2026-06-05",
+      "description": "Pix enviado Veronica Freitas Lira",
+      "amount": -500.0,
+      "category": "PIX Enviado",
+      "ref": "162730765138"
+    },
+    {
+      "date": "2026-06-06",
+      "description": "Pagamento com QR Pix DROGAMAR MEDICAMENTOS E PERFUMARIA LTDA",
+      "amount": -13.49,
+      "category": "QR/Estabelecimento",
+      "ref": "162830267966"
+    },
+    {
+      "date": "2026-06-06",
+      "description": "Pagamento com QR Pix SUPERMERCADO LITORAL LTDA",
+      "amount": -124.59,
+      "category": "QR/Estabelecimento",
+      "ref": "162033938523"
+    },
+    {
+      "date": "2026-06-06",
+      "description": "Pix enviado Maria da Luz Assis da Silva",
+      "amount": -2130.0,
+      "category": "PIX Enviado",
+      "ref": "162845628436"
+    },
+    {
+      "date": "2026-06-06",
+      "description": "Pagamento com QR Pix MFT - MADEIRA FERMELA TRENDS FOODS LTDA",
+      "amount": -15.0,
+      "category": "QR/Estabelecimento",
+      "ref": "162055205089"
+    },
+    {
+      "date": "2026-06-06",
+      "description": "Pagamento com QR Pix THF RESTAURANTES LTDA",
+      "amount": -32.0,
+      "category": "QR/Estabelecimento",
+      "ref": "162056531603"
+    },
+    {
+      "date": "2026-06-06",
+      "description": "Pagamento com QR Pix BBP GASTRONOMIA LTDA",
+      "amount": -94.7,
+      "category": "QR/Estabelecimento",
+      "ref": "162112697031"
+    },
+    {
+      "date": "2026-06-08",
+      "description": "Rendimentos",
+      "amount": 4.63,
+      "category": "Rendimentos",
+      "ref": "1744878873282"
+    },
+    {
+      "date": "2026-06-08",
+      "description": "Pix enviado Marinaldo Domingos de Souza",
+      "amount": -180.0,
+      "category": "PIX Enviado",
+      "ref": "162348473661"
+    },
+    {
+      "date": "2026-06-09",
+      "description": "Rendimentos",
+      "amount": 3.3,
+      "category": "Rendimentos",
+      "ref": "1744963697093"
+    },
+    {
+      "date": "2026-06-10",
+      "description": "Rendimentos",
+      "amount": 3.29,
+      "category": "Rendimentos",
+      "ref": "1745028810537"
+    },
+    {
+      "date": "2026-06-10",
+      "description": "Pagamento Cartão de crédito",
+      "amount": -6813.48,
+      "category": "Pagamento Fatura",
+      "ref": "163466907332"
+    },
+    {
+      "date": "2026-06-11",
+      "description": "Rendimentos",
+      "amount": 0.35,
+      "category": "Rendimentos",
+      "ref": "1745099110608"
+    },
+    {
+      "date": "2026-06-12",
+      "description": "Rendimentos",
+      "amount": 0.35,
+      "category": "Rendimentos",
+      "ref": "1745172275984"
+    },
+    {
+      "date": "2026-06-13",
+      "description": "Pix enviado Maria da Luz Assis da Silva",
+      "amount": -150.0,
+      "category": "PIX Enviado",
+      "ref": "163965988564"
+    },
+    {
+      "date": "2026-06-14",
+      "description": "Pix enviado Eva Bezerra da Silva Brandao",
+      "amount": -590.0,
+      "category": "PIX Enviado",
+      "ref": "164100571848"
+    },
+    {
+      "date": "2026-06-15",
+      "description": "Rendimentos",
+      "amount": 0.35,
+      "category": "Rendimentos",
+      "ref": "1745239670517"
+    },
+    {
+      "date": "2026-06-16",
+      "description": "Rendimentos",
+      "amount": 0.03,
+      "category": "Rendimentos",
+      "ref": "1745286157555"
+    },
+    {
+      "date": "2026-06-17",
+      "description": "Rendimentos",
+      "amount": 0.03,
+      "category": "Rendimentos",
+      "ref": "1745360513722"
+    },
+    {
+      "date": "2026-06-18",
+      "description": "Rendimentos",
+      "amount": 0.02,
+      "category": "Rendimentos",
+      "ref": "1745429382164"
+    },
+    {
+      "date": "2026-06-19",
+      "description": "Rendimentos",
+      "amount": 0.03,
+      "category": "Rendimentos",
+      "ref": "1745498110981"
+    },
+    {
+      "date": "2026-06-19",
+      "description": "Pagamento com QR Pix JACARE COMERCIO DE COMBUSTIVEIS LTDA",
+      "amount": -32.99,
+      "category": "QR/Estabelecimento",
+      "ref": "164088596127"
+    },
+    {
+      "date": "2026-06-21",
+      "description": "Pagamento com QR Pix JACARE COMERCIO DE COMBUSTIVEIS LTDA",
+      "amount": -26.95,
+      "category": "QR/Estabelecimento",
+      "ref": "164328795951"
+    },
+    {
+      "date": "2026-06-22",
+      "description": "Rendimentos",
+      "amount": 0.01,
+      "category": "Rendimentos",
+      "ref": "1745570971932"
+    }
+  ],
+  "generated": "2026-07-06T03:01:27"
+}

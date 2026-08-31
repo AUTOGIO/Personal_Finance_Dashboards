@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>NFC-e · Análise 2020–2026</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#0f0f1a;color:#e8e8f0;font-size:14px}
+.header{background:linear-gradient(135deg,#1e1e2e 0%,#2a1a4e 100%);padding:28px 40px 20px;border-bottom:1px solid #333}
+.header h1{font-size:22px;font-weight:700;color:#a78bfa;margin-bottom:4px}
+.header p{color:#777;font-size:13px}
+.tabs{display:flex;gap:0;padding:0 40px;background:#13131f;border-bottom:1px solid #222}
+.tab{padding:13px 20px;cursor:pointer;color:#777;font-size:13px;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap}
+.tab:hover{color:#ccc}
+.tab.active{color:#a78bfa;border-bottom-color:#a78bfa}
+.pane{display:none;padding:28px 40px}
+.pane.active{display:block}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:14px;margin-bottom:28px}
+.kpi{background:#1a1a2e;border:1px solid #2a2a44;border-radius:10px;padding:18px 14px}
+.kpi .label{color:#777;font-size:11px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px}
+.kpi .value{font-size:21px;font-weight:700;color:#a78bfa}
+.kpi .sub{color:#555;font-size:12px;margin-top:3px}
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px}
+.chart-box{background:#1a1a2e;border:1px solid #2a2a44;border-radius:10px;padding:18px}
+.chart-box h3{font-size:12px;color:#888;margin-bottom:14px;text-transform:uppercase;letter-spacing:.5px}
+.chart-box.wide{grid-column:1/-1}
+canvas{max-height:260px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead th{background:#1a1a2e;color:#777;font-weight:600;padding:9px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px;position:sticky;top:0;z-index:2}
+tbody tr{border-bottom:1px solid #1a1a28}
+tbody tr:hover{background:#1a1a2e}
+td{padding:8px 12px;color:#ccc}
+td.num{text-align:right;font-variant-numeric:tabular-nums;color:#e8e8f0}
+td.disc{color:#63be7b}
+td.merchant{font-weight:500;color:#e8e8f0;max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cat-badge{background:#1e1040;color:#a78bfa;padding:2px 8px;border-radius:20px;font-size:11px;white-space:nowrap}
+.section-title{font-size:14px;font-weight:700;color:#e8e8f0;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid #1e1e30}
+.table-wrap{background:#13131f;border:1px solid #1e1e2e;border-radius:10px;overflow:hidden;max-height:500px;overflow-y:auto}
+.search-bar{margin-bottom:12px}
+.search-bar input{width:100%;padding:9px 14px;background:#1a1a2e;border:1px solid #333;border-radius:8px;color:#e8e8f0;font-size:13px}
+.search-bar input::placeholder{color:#444}
+.search-bar input:focus{outline:none;border-color:#a78bfa}
+.insight-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
+.insight{background:#1a1a2e;border:1px solid #2a2a44;border-radius:10px;padding:16px}
+.insight h4{color:#a78bfa;font-size:11px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.insight p{color:#bbb;font-size:13px;line-height:1.6}
+.insight strong{color:#e8e8f0}
+.bar-row{display:flex;align-items:center;gap:10px;margin-bottom:7px;font-size:12px}
+.bar-label{width:150px;color:#999;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex-shrink:0}
+.bar-fill{height:16px;background:#7c3aed;border-radius:3px;min-width:2px;transition:width .3s}
+.bar-val{color:#777;font-variant-numeric:tabular-nums;white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>🧾 NFC-e · Análise Fiscal 2020–2026</h1>
+  <p>Personal NFC-e dashboard &nbsp;·&nbsp; 433 notas fiscais &nbsp;·&nbsp; Gerado: 2026-07-03</p>
+</div>
+<div class="tabs">
+  <div class="tab active" onclick="show('overview',this)">📊 Visão Geral</div>
+  <div class="tab" onclick="show('temporal',this)">📅 Temporal</div>
+  <div class="tab" onclick="show('categories',this)">🏷 Categorias</div>
+  <div class="tab" onclick="show('merchants',this)">🏪 Estabelecimentos</div>
+  <div class="tab" onclick="show('items',this)">🛒 Produtos</div>
+  <div class="tab" onclick="show('all',this)">📋 Todas as Notas</div>
+</div>
+
+<div id="overview" class="pane active">
+  <div class="kpis">
+    
+    <div class="kpi"><div class="label">Total Gasto 6 Anos</div><div class="value">R$105,576</div><div class="sub">2020–2026</div></div>
+    <div class="kpi"><div class="label">Notas Fiscais</div><div class="value">433</div><div class="sub">4,772 itens</div></div>
+    <div class="kpi"><div class="label">Ticket Médio</div><div class="value">R$244</div><div class="sub">por NFC-e</div></div>
+    <div class="kpi"><div class="label">Descontos Obtidos</div><div class="value">R$2,341</div><div class="sub">economizados</div></div>
+    <div class="kpi"><div class="label">Maior NFC-e</div><div class="value">R$4,390</div><div class="sub">Cleide Marinho Peças</div></div>
+    <div class="kpi"><div class="label">Melhor Ano (spend)</div><div class="value">2025</div><div class="sub">R$29,824</div></div>
+  </div>
+  <div class="insight-grid">
+    
+    <div class="insight"><h4>🏆 Categoria Dominante</h4><p><strong>🛒 Supermercado</strong> lidera com <strong>R$46,098</strong> (44% do total) em 56 compras. Supermercado Litoral LTDA é o estabelecimento #1: R$34.221 em 42 visitas — R$814/visita.</p></div>
+    <div class="insight"><h4>🍽 Alimentação Fora</h4><p>Restaurantes + Bar + Pizza somam <strong>R$18,290</strong> em 219 saídas (R$84/visita média). Lambreta 79 é o mais frequente: 74 pedidos, R$5.179.</p></div>
+    <div class="insight"><h4>💊 Farmácia & Saúde</h4><p><strong>37 compras</strong> em farmácias totalizando <strong>R$4,386</strong>. Pague Menos e RaiaDrogasil são as principais. Ticket médio R$119.</p></div>
+    <div class="insight"><h4>📈 Tendência</h4><p>Crescimento de <strong>468%</strong> de 2020 para 2025. 2026 (6 meses): R$12.657 → projeção anual <strong>~R$25.000</strong>. 2025 foi o ano record.</p></div>
+  </div>
+  <div class="section-title">Distribuição por Categoria</div>
+  <div style="background:#13131f;border:1px solid #1e1e2e;border-radius:10px;padding:18px">
+    <div class="bar-row"><div class="bar-label">🛒 Supermercado</div><div class="bar-fill" style="width:360px"></div><div class="bar-val">R$ 46,097.84 &nbsp;(56x)</div></div>
+<div class="bar-row"><div class="bar-label">🏪 Outros</div><div class="bar-fill" style="width:245px"></div><div class="bar-val">R$ 31,417.07 &nbsp;(86x)</div></div>
+<div class="bar-row"><div class="bar-label">🍽 Restaurante</div><div class="bar-fill" style="width:75px"></div><div class="bar-val">R$  9,681.45 &nbsp;(121x)</div></div>
+<div class="bar-row"><div class="bar-label">🍺 Bar/Bebidas</div><div class="bar-fill" style="width:52px"></div><div class="bar-val">R$  6,781.51 &nbsp;(72x)</div></div>
+<div class="bar-row"><div class="bar-label">🔧 Material/Casa</div><div class="bar-fill" style="width:35px"></div><div class="bar-val">R$  4,490.72 &nbsp;(10x)</div></div>
+<div class="bar-row"><div class="bar-label">💊 Farmácia</div><div class="bar-fill" style="width:34px"></div><div class="bar-val">R$  4,385.83 &nbsp;(37x)</div></div>
+<div class="bar-row"><div class="bar-label">🍕 Restaurante/Pizza</div><div class="bar-fill" style="width:14px"></div><div class="bar-val">R$  1,827.12 &nbsp;(26x)</div></div>
+<div class="bar-row"><div class="bar-label">🍫 Padaria/Doces</div><div class="bar-fill" style="width:4px"></div><div class="bar-val">R$    582.68 &nbsp;(24x)</div></div>
+<div class="bar-row"><div class="bar-label">🏥 Saúde</div><div class="bar-fill" style="width:2px"></div><div class="bar-val">R$    312.24 &nbsp;(1x)</div></div>
+
+  </div>
+</div>
+
+<div id="temporal" class="pane">
+  <div class="charts">
+    <div class="chart-box wide"><h3>Gastos Mensais (R$)</h3><canvas id="monthChart"></canvas></div>
+    <div class="chart-box"><h3>Total por Ano (R$)</h3><canvas id="yearChart"></canvas></div>
+    <div class="chart-box"><h3>Quantidade de NFC-e por Ano</h3><canvas id="countChart"></canvas></div>
+  </div>
+</div>
+
+<div id="categories" class="pane">
+  <div class="charts">
+    <div class="chart-box"><h3>Por Categoria (R$ Total)</h3><canvas id="catDonut"></canvas></div>
+    <div class="chart-box"><h3>Número de Notas por Categoria</h3><canvas id="catBar"></canvas></div>
+  </div>
+</div>
+
+<div id="merchants" class="pane">
+  <div class="section-title">Top 20 Estabelecimentos por Valor Total</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Estabelecimento</th><th>Categoria</th><th>Visitas</th><th>Total Gasto</th><th>Ticket Médio</th></tr></thead>
+    <tbody><tr><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">42</td><td class="num">R$34,221.05</td><td class="num">R$814.79</td></tr>
+<tr><td class="merchant">REDE MENOR PRECO SUPERMERCADOS LTDA</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">9</td><td class="num">R$8,525.59</td><td class="num">R$947.29</td></tr>
+<tr><td class="merchant">CLEIDE MARINHO PECAS E SERVICOS LTDA - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">4</td><td class="num">R$7,458.00</td><td class="num">R$1,864.50</td></tr>
+<tr><td class="merchant">Masterboi PARAIBA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">5</td><td class="num">R$6,180.80</td><td class="num">R$1,236.16</td></tr>
+<tr><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">74</td><td class="num">R$5,178.99</td><td class="num">R$69.99</td></tr>
+<tr><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">41</td><td class="num">R$3,995.30</td><td class="num">R$97.45</td></tr>
+<tr><td class="merchant">Feirao da Construcao Eireli - EPP</td><td><span class="cat-badge">🔧 Material/Casa</span></td><td class="num">3</td><td class="num">R$2,504.66</td><td class="num">R$834.89</td></tr>
+<tr><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">27</td><td class="num">R$2,454.31</td><td class="num">R$90.90</td></tr>
+<tr><td class="merchant">MARIA DAS DORES FERREIRA BEZERRA ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">1</td><td class="num">R$2,240.00</td><td class="num">R$2,240.00</td></tr>
+<tr><td class="merchant">REDE MENOR PRECO SUPERMERCADO LTDA</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">3</td><td class="num">R$2,104.83</td><td class="num">R$701.61</td></tr>
+<tr><td class="merchant">CARAJAS MATERIAL DE CONSTRUCAO LTDA</td><td><span class="cat-badge">🔧 Material/Casa</span></td><td class="num">4</td><td class="num">R$1,766.06</td><td class="num">R$441.51</td></tr>
+<tr><td class="merchant">FABIO FERRAGENS - FONE 833245-2444</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">2</td><td class="num">R$1,641.90</td><td class="num">R$820.95</td></tr>
+<tr><td class="merchant">CIA BRASILEIRA DE DISTRIBUICAO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">7</td><td class="num">R$1,471.77</td><td class="num">R$210.25</td></tr>
+<tr><td class="merchant">QTD. TOTAL DE ITENS 111</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">1</td><td class="num">R$1,407.74</td><td class="num">R$1,407.74</td></tr>
+<tr><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S/A</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">10</td><td class="num">R$1,407.35</td><td class="num">R$140.73</td></tr>
+<tr><td class="merchant">PZ FOOD SERVICE PIZZARIA LTDA</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">19</td><td class="num">R$1,362.39</td><td class="num">R$71.70</td></tr>
+<tr><td class="merchant">RAIADROGASIL S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">7</td><td class="num">R$1,325.90</td><td class="num">R$189.41</td></tr>
+<tr><td class="merchant">LEVISSIMO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">10</td><td class="num">R$1,144.65</td><td class="num">R$114.47</td></tr>
+<tr><td class="merchant">Andre Luiz Mendonca Do Nascimento</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">1</td><td class="num">R$1,137.00</td><td class="num">R$1,137.00</td></tr>
+<tr><td class="merchant">DEREK DE TEJO PEREIRA BARLOW - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">16</td><td class="num">R$1,123.89</td><td class="num">R$70.24</td></tr>
+</tbody>
+  </table></div>
+</div>
+
+<div id="items" class="pane">
+  <div class="section-title">Top 20 Produtos / Itens por Valor Total Gasto</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Produto</th><th>Qtd Total</th><th>Total Gasto</th><th>Preço Médio</th></tr></thead>
+    <tbody><tr><td class="merchant">TAXA DE ENTREGA</td><td class="num">162</td><td class="num">R$1,811.06</td><td class="num">R$11.18</td></tr>
+<tr><td class="merchant">ARGAMASSA AC-III 15KG</td><td class="num">40</td><td class="num">R$1,320.00</td><td class="num">R$33.00</td></tr>
+<tr><td class="merchant">POLPETINES DE ORIG MOL</td><td class="num">30</td><td class="num">R$1,262.00</td><td class="num">R$42.07</td></tr>
+<tr><td class="merchant">PEIXE SARDINHA CONG.</td><td class="num">87</td><td class="num">R$1,170.18</td><td class="num">R$13.45</td></tr>
+<tr><td class="merchant">PIZZA GRANDE (8 FATIAS)</td><td class="num">21</td><td class="num">R$1,146.50</td><td class="num">R$54.60</td></tr>
+<tr><td class="merchant">CAFETEIRA ESPRESSO</td><td class="num">2</td><td class="num">R$923.80</td><td class="num">R$461.90</td></tr>
+<tr><td class="merchant">D1 PIZZA GRANDE</td><td class="num">11</td><td class="num">R$879.30</td><td class="num">R$79.94</td></tr>
+<tr><td class="merchant">REPARO DA CAIXA CRA</td><td class="num">1</td><td class="num">R$800.00</td><td class="num">R$800.00</td></tr>
+<tr><td class="merchant">MOUSSE DE CHOCOLATE</td><td class="num">94</td><td class="num">R$758.00</td><td class="num">R$8.06</td></tr>
+<tr><td class="merchant">CORONITA EXTRA N OW</td><td class="num">168</td><td class="num">R$727.92</td><td class="num">R$4.33</td></tr>
+<tr><td class="merchant">PAPEL HIG.NEVE NEUTRO</td><td class="num">25</td><td class="num">R$721.22</td><td class="num">R$28.85</td></tr>
+<tr><td class="merchant">COXA S COXA CG IN NAT</td><td class="num">72</td><td class="num">R$701.28</td><td class="num">R$9.74</td></tr>
+<tr><td class="merchant">CERV CORONA EXTRA LN</td><td class="num">116</td><td class="num">R$694.84</td><td class="num">R$5.99</td></tr>
+<tr><td class="merchant">CALHA AQUAPLUV 3</td><td class="num">3</td><td class="num">R$689.70</td><td class="num">R$229.90</td></tr>
+<tr><td class="merchant">APERITIVO CAMPARI</td><td class="num">11</td><td class="num">R$675.89</td><td class="num">R$61.44</td></tr>
+<tr><td class="merchant">DESODORANTE AEROSOL</td><td class="num">43</td><td class="num">R$651.77</td><td class="num">R$15.16</td></tr>
+<tr><td class="merchant">BOX BLACK 0158X198X31</td><td class="num">1</td><td class="num">R$640.00</td><td class="num">R$640.00</td></tr>
+<tr><td class="merchant">CAPSULA TRES</td><td class="num">31</td><td class="num">R$637.69</td><td class="num">R$20.57</td></tr>
+<tr><td class="merchant">KOMBO 2 PIZZAS</td><td class="num">8</td><td class="num">R$623.90</td><td class="num">R$77.99</td></tr>
+<tr><td class="merchant">SARDINHA INT MB PCT</td><td class="num">64</td><td class="num">R$594.56</td><td class="num">R$9.29</td></tr>
+</tbody>
+  </table></div>
+</div>
+
+<div id="all" class="pane">
+  <div class="search-bar"><input type="text" id="searchBox" placeholder="Buscar por estabelecimento, categoria, data, pagamento…" oninput="filterTable()"></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Data</th><th>Estabelecimento</th><th>Categoria</th><th>Total</th><th>Desconto</th><th>Pagamento</th><th>Itens</th></tr></thead>
+    <tbody id="receiptsBody"><tr><td>2026-06-30</td><td class="merchant">L A Bike Comercio E Reparacao Ltda</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$672.00</td><td class="num disc">R$0.20</td><td>Dinheiro</td><td class="num">7</td></tr>
+<tr><td>2026-06-22</td><td class="merchant">Masterboi PARAIBA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$2,749.00</td><td class="num disc">—</td><td>PIX</td><td class="num">26</td></tr>
+<tr><td>2026-06-17</td><td class="merchant">Supermercado Litoral</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$623.22</td><td class="num disc">—</td><td>PIX</td><td class="num">36</td></tr>
+<tr><td>2026-05-19</td><td class="merchant">REDE MENOR PRECO SUPERMERCADOS LTDA</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$900.61</td><td class="num disc">R$35.68</td><td>PIX</td><td class="num">57</td></tr>
+<tr><td>2026-04-17</td><td class="merchant">EMPORIO DALU COMERCIO VAREJISTA LTDA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$815.78</td><td class="num disc">—</td><td>PIX</td><td class="num">12</td></tr>
+<tr><td>2026-04-17</td><td class="merchant">REDE MENOR PRECO SUPERMERCADOS LTDA</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$1,958.15</td><td class="num disc">R$47.94</td><td>PIX</td><td class="num">92</td></tr>
+<tr><td>2026-04-16</td><td class="merchant">FORTE FRUTOS COMERCIAL LTDA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$526.54</td><td class="num disc">—</td><td>PIX</td><td class="num">42</td></tr>
+<tr><td>2026-04-02</td><td class="merchant">CARAJAS MATERIAL DE CONSTRUCAO LTDA</td><td><span class="cat-badge">🔧 Material/Casa</span></td><td class="num">R$671.78</td><td class="num disc">—</td><td>PIX</td><td class="num">3</td></tr>
+<tr><td>2026-04-02</td><td class="merchant">CARAJAS MATERIAL DE CONSTRUCAO LTDA</td><td><span class="cat-badge">🔧 Material/Casa</span></td><td class="num">R$461.90</td><td class="num disc">—</td><td>Crédito Loja</td><td class="num">1</td></tr>
+<tr><td>2026-03-11</td><td class="merchant">REDE MENOR PRECO SUPERMERCADOS LTDA</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$1,243.74</td><td class="num disc">—</td><td>PIX</td><td class="num">77</td></tr>
+<tr><td>2026-01-19</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$16.99</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2026-01-15</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$19.99</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2026-01-13</td><td class="merchant">QTD. TOTAL DE ITENS 111</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$1,407.74</td><td class="num disc">—</td><td>Outros</td><td class="num">0</td></tr>
+<tr><td>2026-01-12</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$16.99</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2026-01-11</td><td class="merchant">REDE MENOR PRECO SUPERMERCADOS LTDA</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$509.77</td><td class="num disc">—</td><td>PIX</td><td class="num">4</td></tr>
+<tr><td>2026-01-08</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$26.10</td><td class="num disc">R$6.98</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2026-01-06</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$16.99</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2026-01-05</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$19.99</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2025-12-29</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$16.99</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2025-12-29</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$1,755.87</td><td class="num disc">—</td><td>Outros</td><td class="num">85</td></tr>
+<tr><td>2025-12-23</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$16.99</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2025-12-18</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$796.42</td><td class="num disc">—</td><td>Outros</td><td class="num">71</td></tr>
+<tr><td>2025-12-15</td><td class="merchant">MIRANDA COMPUTACAO E COMERCIO LTDA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$199.00</td><td class="num disc">—</td><td>Crédito Loja</td><td class="num">1</td></tr>
+<tr><td>2025-11-30</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$977.57</td><td class="num disc">—</td><td>Outros</td><td class="num">72</td></tr>
+<tr><td>2025-11-16</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S/A</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$159.45</td><td class="num disc">R$4.49</td><td>Cartão de Crédito</td><td class="num">6</td></tr>
+<tr><td>2025-11-13</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$55.14</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2025-11-11</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$41.27</td><td class="num disc">—</td><td>Outros</td><td class="num">6</td></tr>
+<tr><td>2025-11-10</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$19.99</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2025-11-07</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$19.99</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2025-11-06</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$19.99</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2025-11-05</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$19.99</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2025-11-04</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$19.99</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2025-11-03</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$19.99</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2025-10-31</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$19.99</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2025-10-30</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$19.99</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2025-10-29</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$16.99</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2025-10-27</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$30.46</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2025-10-27</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$818.52</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">69</td></tr>
+<tr><td>2025-10-24</td><td class="merchant">CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTD</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$19.99</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2025-10-24</td><td class="merchant">RAIADROGASIL S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$535.97</td><td class="num disc">R$203.14</td><td>Cartão de Crédito</td><td class="num">9</td></tr>
+<tr><td>2025-10-21</td><td class="merchant">RAIADROGASIL S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$245.54</td><td class="num disc">R$98.14</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2025-10-15</td><td class="merchant">RAIADROGASIL S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$147.76</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2025-10-01</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$792.49</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">65</td></tr>
+<tr><td>2025-09-03</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$883.72</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">58</td></tr>
+<tr><td>2025-08-20</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$849.86</td><td class="num disc">R$43.98</td><td>Cartão de Crédito</td><td class="num">50</td></tr>
+<tr><td>2025-08-07</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$735.77</td><td class="num disc">R$21.99</td><td>Cartão de Crédito</td><td class="num">55</td></tr>
+<tr><td>2025-08-06</td><td class="merchant">Feirao da Construcao Eireli - EPP</td><td><span class="cat-badge">🔧 Material/Casa</span></td><td class="num">R$1,200.00</td><td class="num disc">R$51.36</td><td>Dinheiro</td><td class="num">13</td></tr>
+<tr><td>2025-08-06</td><td class="merchant">Feirao da Construcao Eireli - EPP</td><td><span class="cat-badge">🔧 Material/Casa</span></td><td class="num">R$61.86</td><td class="num disc">R$2.64</td><td>Dinheiro</td><td class="num">1</td></tr>
+<tr><td>2025-07-28</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$931.69</td><td class="num disc">R$21.99</td><td>Cartão de Crédito</td><td class="num">65</td></tr>
+<tr><td>2025-07-15</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$822.40</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">58</td></tr>
+<tr><td>2025-07-05</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S/A</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$105.56</td><td class="num disc">R$18.97</td><td>Cartão de Crédito</td><td class="num">7</td></tr>
+<tr><td>2025-07-03</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$1,279.34</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">88</td></tr>
+<tr><td>2025-06-29</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S/A</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$163.73</td><td class="num disc">R$35.80</td><td>Outros</td><td class="num">11</td></tr>
+<tr><td>2025-06-07</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$772.86</td><td class="num disc">—</td><td>Outros</td><td class="num">62</td></tr>
+<tr><td>2025-06-06</td><td class="merchant">RAIADROGASIL S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$82.50</td><td class="num disc">R$27.60</td><td>PIX</td><td class="num">2</td></tr>
+<tr><td>2025-05-31</td><td class="merchant">FORMAGGIO RESTAURANTE E CULINARIA COMERCIO DE</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$96.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2025-05-26</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$1,007.47</td><td class="num disc">—</td><td>Outros</td><td class="num">62</td></tr>
+<tr><td>2025-05-17</td><td class="merchant">PZ FOOD SERVICE PIZZARIA LTDA</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$79.00</td><td class="num disc">R$10.00</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2025-05-17</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$135.00</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2025-05-13</td><td class="merchant">RAIADROGASIL S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$118.37</td><td class="num disc">R$28.57</td><td>PIX</td><td class="num">3</td></tr>
+<tr><td>2025-05-05</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$734.03</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">51</td></tr>
+<tr><td>2025-05-03</td><td class="merchant">FORMAGGIO RESTAURANTE E CULINARIA COMERCIO DE</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$175.90</td><td class="num disc">R$10.00</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2025-04-23</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$689.47</td><td class="num disc">—</td><td>Outros</td><td class="num">65</td></tr>
+<tr><td>2025-04-22</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S/A</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$49.73</td><td class="num disc">R$7.05</td><td>Cartão de Crédito</td><td class="num">3</td></tr>
+<tr><td>2025-04-20</td><td class="merchant">BESSA BRASIL BAR E RESTAURANTE LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$60.90</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">1</td></tr>
+<tr><td>2025-04-19</td><td class="merchant">REDE MENOR PRECO SUPERMERCADOS LTDA</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$977.32</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">31</td></tr>
+<tr><td>2025-04-19</td><td class="merchant">FORMAGGIO RESTAURANTE E CULINARIA COMERCIO DE</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$228.00</td><td class="num disc">R$10.00</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2025-04-19</td><td class="merchant">MSM MASSAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$300.60</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2025-04-13</td><td class="merchant">BESSA BRASIL BAR E RESTAURANTE LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$73.90</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2025-04-08</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$999.68</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">70</td></tr>
+<tr><td>2025-04-06</td><td class="merchant">BESSA BRASIL BAR E RESTAURANTE LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$60.90</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">1</td></tr>
+<tr><td>2025-03-30</td><td class="merchant">BESSA BRASIL BAR E RESTAURANTE LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$73.90</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2025-03-25</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$710.24</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">51</td></tr>
+<tr><td>2025-03-23</td><td class="merchant">BESSA BRASIL BAR E RESTAURANTE LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$127.80</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">3</td></tr>
+<tr><td>2025-03-18</td><td class="merchant">FABIO FERRAGENS - FONE 833245-2444</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$841.90</td><td class="num disc">—</td><td>PIX</td><td class="num">4</td></tr>
+<tr><td>2025-03-16</td><td class="merchant">BESSA BRASIL BAR E RESTAURANTE LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$73.90</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2025-03-16</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S/A</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$171.72</td><td class="num disc">R$28.34</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2025-03-15</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$121.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2025-03-12</td><td class="merchant">FABIO FERRAGENS - FONE 833245-2444</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$800.00</td><td class="num disc">R$20.00</td><td>PIX</td><td class="num">2</td></tr>
+<tr><td>2025-03-09</td><td class="merchant">BESSA BRASIL BAR E RESTAURANTE LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$73.90</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2025-03-06</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$994.75</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">70</td></tr>
+<tr><td>2025-03-02</td><td class="merchant">BESSA BRASIL BAR E RESTAURANTE LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$73.90</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2025-03-01</td><td class="merchant">PZ FOOD SERVICE PIZZARIA LTDA</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$70.00</td><td class="num disc">R$10.00</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2025-02-25</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$746.10</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">58</td></tr>
+<tr><td>2025-02-23</td><td class="merchant">BESSA BRASIL BAR E RESTAURANTE LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$127.80</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">3</td></tr>
+<tr><td>2025-02-16</td><td class="merchant">BESSA BRASIL BAR E RESTAURANTE LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$127.80</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">3</td></tr>
+<tr><td>2025-02-15</td><td class="merchant">POKE COMIDA HAVAIANA COMERCIO DE ALIMENTOS E</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$99.99</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2025-02-11</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$810.99</td><td class="num disc">—</td><td>Outros</td><td class="num">59</td></tr>
+<tr><td>2025-02-09</td><td class="merchant">BESSA BRASIL BAR E RESTAURANTE LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$115.80</td><td class="num disc">R$5.00</td><td>Cartão de Crédito</td><td class="num">3</td></tr>
+<tr><td>2025-01-27</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$968.88</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">59</td></tr>
+<tr><td>2025-01-21</td><td class="merchant">ARCOS DOURADOS COMERCIO DE ALIMENTOS SA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$218.40</td><td class="num disc">—</td><td>Outros</td><td class="num">20</td></tr>
+<tr><td>2025-01-20</td><td class="merchant">RAIADROGASIL S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$26.90</td><td class="num disc">R$24.38</td><td>Cartão de Crédito</td><td class="num">1</td></tr>
+<tr><td>2025-01-20</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$121.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2025-01-17</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$127.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2025-01-15</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$764.10</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">65</td></tr>
+<tr><td>2025-01-03</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$127.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2025-01-02</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$847.78</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">50</td></tr>
+<tr><td>2024-12-28</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$120.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2024-12-27</td><td class="merchant">PZ FOOD SERVICE PIZZARIA LTDA</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$71.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2024-12-16</td><td class="merchant">LG PIZZA LTDA EPP</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$81.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2024-12-15</td><td class="merchant">LG PIZZA LTDA EPP</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$65.98</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2024-12-14</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$120.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2024-12-13</td><td class="merchant">FORMAGGIO RESTAURANTE E CULINARIA COMERCIO DE</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$86.89</td><td class="num disc">R$10.00</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2024-12-08</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$636.44</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">48</td></tr>
+<tr><td>2024-12-07</td><td class="merchant">FORMAGGIO RESTAURANTE E CULINARIA COMERCIO DE</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$114.79</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2024-12-02</td><td class="merchant">SENDAS DISTRIBUIDORA S/A</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$279.00</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2024-11-30</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$127.00</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2024-11-23</td><td class="merchant">FORMAGGIO RESTAURANTE E CULINARIA COMERCIO DE</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$114.79</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2024-11-22</td><td class="merchant">CARAJAS MATERIAL DE CONSTRUCAO LTDA</td><td><span class="cat-badge">🔧 Material/Casa</span></td><td class="num">R$519.39</td><td class="num disc">—</td><td>PIX</td><td class="num">3</td></tr>
+<tr><td>2024-11-21</td><td class="merchant">IMIFARMA PRODU FARMACEU E COSMETIC S.A</td><td><span class="cat-badge">🏥 Saúde</span></td><td class="num">R$312.24</td><td class="num disc">—</td><td>Outros</td><td class="num">6</td></tr>
+<tr><td>2024-11-17</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$874.98</td><td class="num disc">—</td><td>Outros</td><td class="num">55</td></tr>
+<tr><td>2024-11-16</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$127.00</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2024-11-01</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$677.70</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">42</td></tr>
+<tr><td>2024-10-26</td><td class="merchant">FORMAGGIO RESTAURANTE E CULINARIA COMERCIO DE</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$88.89</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2024-10-25</td><td class="merchant">Andre Luiz Mendonca Do Nascimento</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$1,137.00</td><td class="num disc">—</td><td>PIX</td><td class="num">0</td></tr>
+<tr><td>2024-10-24</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$524.52</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">35</td></tr>
+<tr><td>2024-10-17</td><td class="merchant">REDE MENOR PRECO SUPERMERCADOS LTDA</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$790.43</td><td class="num disc">—</td><td>Outros</td><td class="num">49</td></tr>
+<tr><td>2024-10-13</td><td class="merchant">BESSA BRASIL BAR E RESTAURANTE LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$102.00</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2024-10-13</td><td class="merchant">DROGARIA DROGAVISTA LTDA (R-56 FILIAL 35)</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$509.41</td><td class="num disc">R$124.39</td><td>PIX</td><td class="num">4</td></tr>
+<tr><td>2024-10-01</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S/A</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$233.12</td><td class="num disc">R$13.80</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2024-09-17</td><td class="merchant">REDE MENOR PRECO SUPERMERCADOS LTDA</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$685.28</td><td class="num disc">—</td><td>Outros</td><td class="num">62</td></tr>
+<tr><td>2024-09-13</td><td class="merchant">FORMAGGIO RESTAURANTE E CULINARIA COMERCIO DE</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$102.79</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2024-09-11</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$51.70</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2024-09-03</td><td class="merchant">REDE MENOR PRECO SUPERMERCADOS LTDA</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$575.72</td><td class="num disc">—</td><td>Outros</td><td class="num">36</td></tr>
+<tr><td>2024-08-30</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S/A</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$83.19</td><td class="num disc">R$3.31</td><td>Crédito Loja</td><td class="num">2</td></tr>
+<tr><td>2024-08-29</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S/A</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$209.30</td><td class="num disc">R$243.50</td><td>Cartão de Crédito</td><td class="num">6</td></tr>
+<tr><td>2024-08-28</td><td class="merchant">REDE MENOR PRECO SUPERMERCADOS LTDA</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$884.57</td><td class="num disc">—</td><td>Outros</td><td class="num">73</td></tr>
+<tr><td>2024-08-28</td><td class="merchant">AC COMERCIO DE CHOCOLATES FINOS LTDA</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$27.88</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2024-08-17</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$122.00</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2024-08-13</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$1,136.37</td><td class="num disc">—</td><td>Outros</td><td class="num">91</td></tr>
+<tr><td>2024-08-06</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$122.00</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2024-05-14</td><td class="merchant">Masterboi PARAIBA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$514.57</td><td class="num disc">—</td><td>Outros</td><td class="num">5</td></tr>
+<tr><td>2024-05-02</td><td class="merchant">CIA BRASILEIRA DE DISTRIBUICAO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$256.27</td><td class="num disc">—</td><td>Crédito Loja</td><td class="num">9</td></tr>
+<tr><td>2024-04-17</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$120.00</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2024-04-16</td><td class="merchant">CASA DO ESCAPAMENTO LTDA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$370.00</td><td class="num disc">—</td><td>PIX</td><td class="num">1</td></tr>
+<tr><td>2024-04-05</td><td class="merchant">A P BARBOSA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$85.00</td><td class="num disc">R$10.00</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2024-03-25</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$627.02</td><td class="num disc">—</td><td>Outros</td><td class="num">44</td></tr>
+<tr><td>2024-03-05</td><td class="merchant">Masterboi PARAIBA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$815.98</td><td class="num disc">—</td><td>Outros</td><td class="num">31</td></tr>
+<tr><td>2024-03-05</td><td class="merchant">Masterboi PARAIBA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$809.97</td><td class="num disc">—</td><td>Outros</td><td class="num">6</td></tr>
+<tr><td>2024-02-14</td><td class="merchant">PZ FOOD SERVICE PIZZARIA LTDA</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$64.40</td><td class="num disc">R$5.00</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2024-02-08</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$68.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2024-02-06</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$85.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2024-01-16</td><td class="merchant">PZ FOOD SERVICE PIZZARIA LTDA</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$62.40</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2024-01-03</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$122.00</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2023-11-11</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$76.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-10-15</td><td class="merchant">AC COMERCIO DE CHOCOLATES FINOS LTDA</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$19.80</td><td class="num disc">R$3.40</td><td>PIX</td><td class="num">2</td></tr>
+<tr><td>2023-10-13</td><td class="merchant">CLEIDE MARINHO PECAS E SERVICOS LTDA - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$330.00</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2023-10-03</td><td class="merchant">Masterboi PARAIBA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$1,291.28</td><td class="num disc">—</td><td>Outros</td><td class="num">34</td></tr>
+<tr><td>2023-09-30</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$106.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-09-29</td><td class="merchant">CIA BRASILEIRA DE DISTRIBUICAO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$334.28</td><td class="num disc">R$186.00</td><td>PIX</td><td class="num">3</td></tr>
+<tr><td>2023-09-15</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$137.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2023-09-03</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$814.22</td><td class="num disc">—</td><td>Dinheiro</td><td class="num">57</td></tr>
+<tr><td>2023-08-08</td><td class="merchant">PZ FOOD SERVICE PIZZARIA LTDA</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$58.00</td><td class="num disc">R$5.00</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-07-22</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S/A</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$85.70</td><td class="num disc">R$14.09</td><td>Cartão de Crédito</td><td class="num">5</td></tr>
+<tr><td>2023-07-19</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$86.81</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-07-19</td><td class="merchant">PZ FOOD SERVICE PIZZARIA LTDA</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$60.50</td><td class="num disc">R$5.00</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-07-09</td><td class="merchant">PZ FOOD SERVICE PIZZARIA LTDA</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$60.50</td><td class="num disc">R$5.00</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-07-03</td><td class="merchant">CLEIDE MARINHO PECAS E SERVICOS LTDA - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$400.00</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">1</td></tr>
+<tr><td>2023-06-30</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$947.59</td><td class="num disc">R$19.99</td><td>Cartão de Crédito</td><td class="num">76</td></tr>
+<tr><td>2023-06-30</td><td class="merchant">CLEIDE MARINHO PECAS E SERVICOS LTDA - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$4,390.00</td><td class="num disc">R$180.00</td><td>Cartão de Crédito</td><td class="num">7</td></tr>
+<tr><td>2023-06-18</td><td class="merchant">PZ FOOD SERVICE PIZZARIA LTDA</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$62.00</td><td class="num disc">R$5.00</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-06-15</td><td class="merchant">PZ FOOD SERVICE PIZZARIA LTDA</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$62.90</td><td class="num disc">R$5.00</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-06-11</td><td class="merchant">PZ FOOD SERVICE PIZZARIA LTDA</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$58.90</td><td class="num disc">R$5.00</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-05-27</td><td class="merchant">PZ FOOD SERVICE PIZZARIA LTDA</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$51.49</td><td class="num disc">R$5.00</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-05-21</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$86.31</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-05-20</td><td class="merchant">Y M Dias LTDA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$35.90</td><td class="num disc">R$10.00</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2023-05-08</td><td class="merchant">PZ FOOD SERVICE PIZZARIA LTDA</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$58.90</td><td class="num disc">R$5.00</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-05-04</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$68.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-05-03</td><td class="merchant">PZ FOOD SERVICE PIZZARIA LTDA</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$60.50</td><td class="num disc">R$5.00</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2023-05-02</td><td class="merchant">PZ FOOD SERVICE PIZZARIA LTDA</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$56.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-04-22</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$91.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-04-18</td><td class="merchant">PZ FOOD SERVICE PIZZARIA LTDA</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$59.50</td><td class="num disc">R$5.00</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2023-04-16</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$91.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-04-14</td><td class="merchant">Y M Dias LTDA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$45.90</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2023-04-14</td><td class="merchant">Y M Dias LTDA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$75.80</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-04-09</td><td class="merchant">PZ FOOD SERVICE PIZZARIA LTDA</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$55.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-04-08</td><td class="merchant">BERCY JP COMERCIO DE ALIMENTOS LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$83.80</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2023-04-06</td><td class="merchant">CIA BRASILEIRA DE DISTRIBUICAO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$216.77</td><td class="num disc">—</td><td>Crédito Loja</td><td class="num">3</td></tr>
+<tr><td>2023-03-30</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$69.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-03-25</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$82.71</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-03-21</td><td class="merchant">PZ FOOD SERVICE PIZZARIA LTDA</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$60.40</td><td class="num disc">R$5.00</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-03-19</td><td class="merchant">COZINHA REGIONAL RESTAURANTE EIRELI</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$102.30</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2023-03-18</td><td class="merchant">CIA BRASILEIRA DE DISTRIBUICAO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$68.59</td><td class="num disc">—</td><td>Crédito Loja</td><td class="num">1</td></tr>
+<tr><td>2023-03-17</td><td class="merchant">COZINHA REGIONAL RESTAURANTE EIRELI</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$89.40</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-03-12</td><td class="merchant">CIA BRASILEIRA DE DISTRIBUICAO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$213.98</td><td class="num disc">—</td><td>Crédito Loja</td><td class="num">2</td></tr>
+<tr><td>2023-03-07</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$79.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2023-03-04</td><td class="merchant">CIA BRASILEIRA DE DISTRIBUICAO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$205.67</td><td class="num disc">—</td><td>Crédito Loja</td><td class="num">2</td></tr>
+<tr><td>2023-03-04</td><td class="merchant">PZ FOOD SERVICE PIZZARIA LTDA</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$251.00</td><td class="num disc">R$5.00</td><td>Outros</td><td class="num">6</td></tr>
+<tr><td>2023-02-26</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$115.00</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2023-02-22</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$62.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2023-02-21</td><td class="merchant">CIA BRASILEIRA DE DISTRIBUICAO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$176.21</td><td class="num disc">—</td><td>Crédito Loja</td><td class="num">2</td></tr>
+<tr><td>2023-02-18</td><td class="merchant">COZINHA REGIONAL RESTAURANTE EIRELI</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$105.30</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-02-17</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$109.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2023-02-15</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$56.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-02-11</td><td class="merchant">COZINHA REGIONAL RESTAURANTE EIRELI</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$126.30</td><td class="num disc">R$5.00</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2023-02-11</td><td class="merchant">BERCY JP COMERCIO DE ALIMENTOS LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$77.80</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-02-10</td><td class="merchant">COZINHA REGIONAL RESTAURANTE EIRELI</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$126.30</td><td class="num disc">R$5.00</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2023-02-09</td><td class="merchant">COZINHA REGIONAL RESTAURANTE EIRELI</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$82.30</td><td class="num disc">R$5.00</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-02-08</td><td class="merchant">COZINHA REGIONAL RESTAURANTE EIRELI</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$120.10</td><td class="num disc">R$5.00</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2023-02-07</td><td class="merchant">COZINHA REGIONAL RESTAURANTE EIRELI</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$116.20</td><td class="num disc">R$5.00</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-02-05</td><td class="merchant">COZINHA REGIONAL RESTAURANTE EIRELI</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$110.20</td><td class="num disc">R$5.00</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2023-02-04</td><td class="merchant">BERCY JP COMERCIO DE ALIMENTOS LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$132.80</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2023-01-22</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$69.36</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2023-01-21</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$137.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2023-01-19</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$149.00</td><td class="num disc">—</td><td>Outros</td><td class="num">5</td></tr>
+<tr><td>2023-01-09</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$86.89</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-12-28</td><td class="merchant">MAGAZINE LUIZA S A</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$336.90</td><td class="num disc">—</td><td>PIX</td><td class="num">1</td></tr>
+<tr><td>2022-12-28</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$113.00</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">3</td></tr>
+<tr><td>2022-12-27</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$95.00</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2022-12-21</td><td class="merchant">REDE MENOR PRECO SUPERMERCADO LTDA</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$780.19</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">62</td></tr>
+<tr><td>2022-12-20</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$43.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-12-19</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$82.71</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-12-18</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$82.71</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-12-18</td><td class="merchant">RAISSA LIMA SIMPLICIO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$53.90</td><td class="num disc">R$1.72</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2022-12-18</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$98.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-12-09</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$62.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2022-12-05</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$84.71</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-12-04</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$80.94</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2022-12-01</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$82.71</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-11-25</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$98.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-11-20</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$52.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-11-20</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$52.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-11-20</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$52.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-11-16</td><td class="merchant">Derek de tejo pereira barlow- ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$80.00</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2022-11-14</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$82.71</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-11-13</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$71.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2022-11-13</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$82.30</td><td class="num disc">R$8.60</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-11-08</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$64.99</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2022-11-08</td><td class="merchant">Derek de tejo pereira barlow- ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$60.18</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-11-03</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$58.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2022-10-25</td><td class="merchant">Derek de tejo pereira barlow- ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$63.18</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2022-10-23</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$90.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-10-22</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$99.42</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-10-10</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$82.21</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-10-05</td><td class="merchant">DE ORIGEM HAMBURGUER ARTESANAL LTDA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$45.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-10-01</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$104.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2022-09-27</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$100.56</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2022-09-22</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$80.41</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-09-21</td><td class="merchant">RAIADROGASIL S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$168.86</td><td class="num disc">R$2.31</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2022-09-19</td><td class="merchant">THIAGO NEVES MAIA DE SOUZA - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$97.90</td><td class="num disc">—</td><td>Dinheiro</td><td class="num">2</td></tr>
+<tr><td>2022-09-17</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$111.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2022-09-11</td><td class="merchant">THIAGO NEVES MAIA DE SOUZA - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$66.99</td><td class="num disc">—</td><td>Dinheiro</td><td class="num">3</td></tr>
+<tr><td>2022-09-10</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$90.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-09-07</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$90.96</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-09-01</td><td class="merchant">REDE MENOR PRECO SUPERMERCADO LTDA</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$718.93</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">65</td></tr>
+<tr><td>2022-08-31</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$95.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-08-26</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$66.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-08-25</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$80.41</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-08-23</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$101.50</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2022-08-19</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S/A</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$145.85</td><td class="num disc">R$0.04</td><td>Cartão de Crédito</td><td class="num">6</td></tr>
+<tr><td>2022-08-14</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$90.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-08-11</td><td class="merchant">Derek de tejo pereira barlow- ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$56.50</td><td class="num disc">R$5.00</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2022-08-03</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$58.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2022-07-31</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$80.41</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-07-31</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$67.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2022-07-27</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$58.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-07-26</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$80.41</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-07-20</td><td class="merchant">CLEIDE MARINHO PECAS E SERVICOS LTDA - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$2,338.00</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">21</td></tr>
+<tr><td>2022-07-16</td><td class="merchant">DEGUSTAR COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$108.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2022-07-12</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S.A</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$145.70</td><td class="num disc">R$47.67</td><td>Outros</td><td class="num">8</td></tr>
+<tr><td>2022-07-12</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$58.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-07-07</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$654.90</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">63</td></tr>
+<tr><td>2022-07-05</td><td class="merchant">Derek de tejo pereira barlow- ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$87.50</td><td class="num disc">R$20.00</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2022-07-01</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$74.47</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-06-27</td><td class="merchant">LG PIZZA LTDA EPP</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$61.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-06-25</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$148.75</td><td class="num disc">—</td><td>Dinheiro</td><td class="num">2</td></tr>
+<tr><td>2022-06-25</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$148.75</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-06-24</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$112.81</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-06-22</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$76.87</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-06-17</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$148.75</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-06-14</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$88.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-05-12</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$88.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-05-01</td><td class="merchant">CORDEIRO COMERCIO DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$88.85</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-04-26</td><td class="merchant">DEGUSTAR COM. DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$63.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-04-26</td><td class="merchant">REDE MENOR PRECO SUPERMERCADO LTDA</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$605.71</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">61</td></tr>
+<tr><td>2022-04-25</td><td class="merchant">MARIA DAS DORES FERREIRA BEZERRA ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$2,240.00</td><td class="num disc">—</td><td>Dinheiro</td><td class="num">3</td></tr>
+<tr><td>2022-04-19</td><td class="merchant">DEGUSTAR COM. DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$111.00</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2022-04-05</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$84.90</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2022-03-30</td><td class="merchant">LAMPADINHA MATERIAIS ELETRICOS LTDA LJ11</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$775.90</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">20</td></tr>
+<tr><td>2022-03-30</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$52.80</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-03-25</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$27.80</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-03-13</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$61.80</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-03-08</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$67.30</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2022-03-07</td><td class="merchant">OLIVEIRA COMERCIO ATACADISTA LTDA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$535.30</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2022-03-03</td><td class="merchant">DEREK DE TEJO PEREIRA BARLOW - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$78.50</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2022-02-28</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$71.80</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2022-02-27</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$57.80</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-02-23</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$57.80</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-02-13</td><td class="merchant">DEREK DE TEJO PEREIRA BARLOW - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$85.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-01-27</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$816.09</td><td class="num disc">R$18.89</td><td>Cartão de Crédito</td><td class="num">88</td></tr>
+<tr><td>2022-01-25</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$64.79</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2022-01-21</td><td class="merchant">DEGUSTAR COM. DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$94.90</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-01-19</td><td class="merchant">DEREK DE TEJO PEREIRA BARLOW - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$66.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-01-13</td><td class="merchant">DEREK DE TEJO PEREIRA BARLOW - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$67.50</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2022-01-07</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$65.54</td><td class="num disc">R$8.83</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2022-01-02</td><td class="merchant">LEVISSIMO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$140.00</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2021-12-26</td><td class="merchant">DEREK DE TEJO PEREIRA BARLOW - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$72.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2021-12-23</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S.A</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$41.15</td><td class="num disc">R$10.99</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2021-12-22</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$61.29</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2021-12-18</td><td class="merchant">DEGUSTAR COM. DE BEBIDAS E ALIMENTOS LTDA</td><td><span class="cat-badge">🍺 Bar/Bebidas</span></td><td class="num">R$63.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2021-12-09</td><td class="merchant">DEREK DE TEJO PEREIRA BARLOW - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$75.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2021-12-06</td><td class="merchant">SEU PORTUGA SERVICOS DE ALIMENTOS LTDA-ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$64.28</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2021-12-02</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S.A</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$49.69</td><td class="num disc">R$27.45</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2021-12-01</td><td class="merchant">SEU PORTUGA SERVICOS DE ALIMENTOS LTDA-ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$81.20</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2021-11-30</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S.A</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$115.70</td><td class="num disc">R$110.80</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2021-11-29</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$711.76</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">71</td></tr>
+<tr><td>2021-11-25</td><td class="merchant">DEREK DE TEJO PEREIRA BARLOW - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$73.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2021-11-14</td><td class="merchant">DEREK DE TEJO PEREIRA BARLOW - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$73.00</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2021-11-12</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$51.79</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2021-11-08</td><td class="merchant">L V PIZZARIA E RESTAURANTE LTDA - ME</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$71.50</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2021-11-07</td><td class="merchant">BAR DO CUSCUZ PRAIA RESTAURANTE LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$60.80</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2021-11-06</td><td class="merchant">JOSENILDO ARAUJO DO NASCIMENTO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$68.93</td><td class="num disc">—</td><td>Dinheiro</td><td class="num">2</td></tr>
+<tr><td>2021-11-02</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S.A</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$52.15</td><td class="num disc">R$21.77</td><td>Dinheiro</td><td class="num">4</td></tr>
+<tr><td>2021-11-02</td><td class="merchant">SEU PORTUGA SERVICOS DE ALIMENTOS LTDA-ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$73.76</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">3</td></tr>
+<tr><td>2021-10-28</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$59.79</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2021-10-25</td><td class="merchant">MONTEL PISCINAS COMERCIO VAREJISTA LTDA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$150.00</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">1</td></tr>
+<tr><td>2021-10-15</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$53.29</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2021-10-13</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$53.29</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2021-10-08</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$59.79</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2021-09-30</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$56.29</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2021-09-25</td><td class="merchant">LEVISSIMO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$126.00</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2021-09-24</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$595.37</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">56</td></tr>
+<tr><td>2021-09-15</td><td class="merchant">CHURRASCO NO PAO SERVICOS DE ALIMENTACAO LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$35.99</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2021-08-30</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$516.84</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">59</td></tr>
+<tr><td>2021-08-30</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$62.10</td><td class="num disc">R$3.20</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2021-08-24</td><td class="merchant">DEREK DE TEJO PEREIRA BARLOW - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$70.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2021-08-20</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$35.30</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2021-08-15</td><td class="merchant">MARIA DAS GRAÃAS DE MEDEIROS SARAIVA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$97.40</td><td class="num disc">—</td><td>Cartão de Débito</td><td class="num">3</td></tr>
+<tr><td>2021-08-10</td><td class="merchant">BAR DO CUSCUZ PRAIA RESTAURANTE LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$41.80</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2021-08-03</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$104.79</td><td class="num disc">—</td><td>Outros</td><td class="num">5</td></tr>
+<tr><td>2021-08-01</td><td class="merchant">MARIA DAS GRAÃAS DE MEDEIROS SARAIVA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$89.40</td><td class="num disc">—</td><td>Cartão de Débito</td><td class="num">3</td></tr>
+<tr><td>2021-07-31</td><td class="merchant">LEVISSIMO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$126.00</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2021-07-28</td><td class="merchant">LG PIZZA LTDA EPP</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$52.25</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2021-07-03</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$97.80</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">5</td></tr>
+<tr><td>2021-07-02</td><td class="merchant">LEVISSIMO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$100.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2021-06-24</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$620.88</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">57</td></tr>
+<tr><td>2021-06-23</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$88.29</td><td class="num disc">—</td><td>Outros</td><td class="num">5</td></tr>
+<tr><td>2021-06-19</td><td class="merchant">LEVISSIMO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$126.00</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2021-06-16</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$66.79</td><td class="num disc">—</td><td>Outros</td><td class="num">5</td></tr>
+<tr><td>2021-06-15</td><td class="merchant">DEREK DE TEJO PEREIRA BARLOW - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$79.00</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2021-06-09</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$81.29</td><td class="num disc">—</td><td>Outros</td><td class="num">5</td></tr>
+<tr><td>2021-06-04</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$54.32</td><td class="num disc">R$29.51</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2021-06-01</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$574.65</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">70</td></tr>
+<tr><td>2021-05-28</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$57.29</td><td class="num disc">—</td><td>Cartão de Débito</td><td class="num">4</td></tr>
+<tr><td>2021-05-23</td><td class="merchant">LEVISSIMO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$103.50</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2021-05-21</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$84.30</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2021-05-18</td><td class="merchant">CDG SERVICOS DE BARES E RESTAURANTES LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$83.50</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2021-05-16</td><td class="merchant">DEREK DE TEJO PEREIRA BARLOW - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$66.50</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2021-05-05</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$66.29</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2021-05-01</td><td class="merchant">CDG SERVICOS DE BARES E RESTAURANTES LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$56.70</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2021-04-29</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$65.29</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2021-04-27</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$65.29</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2021-04-22</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$54.79</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2021-04-21</td><td class="merchant">RSARP LANCHONETE EIRELI ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$65.00</td><td class="num disc">—</td><td>Cartão de Débito</td><td class="num">5</td></tr>
+<tr><td>2021-04-20</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$62.79</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2021-04-20</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$30.00</td><td class="num disc">R$7.08</td><td>Cartão de Crédito</td><td class="num">7</td></tr>
+<tr><td>2021-04-14</td><td class="merchant">DEREK DE TEJO PEREIRA BARLOW - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$64.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2021-04-10</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$37.40</td><td class="num disc">R$20.96</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2021-04-10</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$73.80</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2021-04-09</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$49.79</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2021-04-06</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$116.20</td><td class="num disc">—</td><td>Outros</td><td class="num">6</td></tr>
+<tr><td>2021-04-05</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$15.38</td><td class="num disc">R$0.76</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2021-04-05</td><td class="merchant">MONTEL MONTEIRO MATERIAL DE CONSTRUCAO LTDA</td><td><span class="cat-badge">🔧 Material/Casa</span></td><td class="num">R$105.00</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2021-03-31</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$97.20</td><td class="num disc">—</td><td>Outros</td><td class="num">5</td></tr>
+<tr><td>2021-03-26</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$65.70</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2021-03-23</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$65.70</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">3</td></tr>
+<tr><td>2021-03-11</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$55.58</td><td class="num disc">R$8.47</td><td>Cartão de Crédito</td><td class="num">3</td></tr>
+<tr><td>2021-03-03</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$62.80</td><td class="num disc">—</td><td>Cartão de Débito</td><td class="num">4</td></tr>
+<tr><td>2021-02-28</td><td class="merchant">LEVISSIMO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$114.00</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2021-02-24</td><td class="merchant">CDG SERVICOS DE BARES E RESTAURANTES LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$51.70</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2021-02-22</td><td class="merchant">CARDOSO DA COSTA & CIA LTDA - BESSA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$835.43</td><td class="num disc">—</td><td>Outros</td><td class="num">72</td></tr>
+<tr><td>2021-02-21</td><td class="merchant">LEVISSIMO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$88.50</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2021-02-17</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$46.19</td><td class="num disc">R$15.51</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2021-02-16</td><td class="merchant">MONTEL MONTEIRO MATERIAL DE CONSTRUCAO LTDA</td><td><span class="cat-badge">🔧 Material/Casa</span></td><td class="num">R$60.00</td><td class="num disc">—</td><td>Cartão de Débito</td><td class="num">1</td></tr>
+<tr><td>2021-02-13</td><td class="merchant">LEVISSIMO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$124.50</td><td class="num disc">—</td><td>Outros</td><td class="num">5</td></tr>
+<tr><td>2021-02-10</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$124.27</td><td class="num disc">R$30.21</td><td>Cartão de Crédito</td><td class="num">8</td></tr>
+<tr><td>2021-02-07</td><td class="merchant">LEVISSIMO</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$96.15</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2021-01-31</td><td class="merchant">DEREK DE TEJO PEREIRA BARLOW - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$54.25</td><td class="num disc">R$14.75</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2021-01-29</td><td class="merchant">DEREK DE TEJO PEREIRA BARLOW - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$77.87</td><td class="num disc">R$22.63</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2021-01-29</td><td class="merchant">DEREK DE TEJO PEREIRA BARLOW - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$47.87</td><td class="num disc">R$12.63</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2021-01-23</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$93.80</td><td class="num disc">—</td><td>Outros</td><td class="num">5</td></tr>
+<tr><td>2021-01-15</td><td class="merchant">FERNANDES E VASCONCELLOS COMERCIO DE ALIMENTOS</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$116.90</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2021-01-13</td><td class="merchant">Feirao da Construcao Eireli - EPP</td><td><span class="cat-badge">🔧 Material/Casa</span></td><td class="num">R$1,242.80</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2021-01-11</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$607.24</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">62</td></tr>
+<tr><td>2021-01-10</td><td class="merchant">DEREK DE TEJO PEREIRA BARLOW - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$74.40</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2021-01-07</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$87.98</td><td class="num disc">R$20.00</td><td>Outros</td><td class="num">5</td></tr>
+<tr><td>2021-01-04</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$87.98</td><td class="num disc">—</td><td>Outros</td><td class="num">5</td></tr>
+<tr><td>2021-01-02</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$79.49</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2021-01-01</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$58.79</td><td class="num disc">—</td><td>Outros</td><td class="num">5</td></tr>
+<tr><td>2020-12-24</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$44.99</td><td class="num disc">R$20.00</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2020-12-23</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$82.99</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2020-12-20</td><td class="merchant">MONIQUE PEIXOTO FERNANDES SILVA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$104.00</td><td class="num disc">R$10.00</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2020-12-17</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$63.48</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2020-12-13</td><td class="merchant">MONIQUE PEIXOTO FERNANDES SILVA</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$87.00</td><td class="num disc">R$10.00</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2020-12-09</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$44.99</td><td class="num disc">R$20.00</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2020-12-06</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$120.00</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2020-12-04</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$62.29</td><td class="num disc">—</td><td>Outros</td><td class="num">5</td></tr>
+<tr><td>2020-12-02</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$62.29</td><td class="num disc">—</td><td>Outros</td><td class="num">5</td></tr>
+<tr><td>2020-12-01</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$35.79</td><td class="num disc">R$20.00</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2020-11-21</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$19.15</td><td class="num disc">R$21.44</td><td>Cartão de Crédito</td><td class="num">3</td></tr>
+<tr><td>2020-11-18</td><td class="merchant">CARAJAS MATERIAL DE CONSTRUCAO LTDA</td><td><span class="cat-badge">🔧 Material/Casa</span></td><td class="num">R$112.99</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">5</td></tr>
+<tr><td>2020-11-16</td><td class="merchant">CAIO CESAR PALITOT REMIGIO ALVES</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$60.00</td><td class="num disc">—</td><td>Dinheiro</td><td class="num">1</td></tr>
+<tr><td>2020-11-16</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$770.55</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">92</td></tr>
+<tr><td>2020-11-13</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$62.29</td><td class="num disc">—</td><td>Outros</td><td class="num">5</td></tr>
+<tr><td>2020-11-11</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$50.99</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2020-11-06</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$53.29</td><td class="num disc">—</td><td>Outros</td><td class="num">5</td></tr>
+<tr><td>2020-11-05</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$33.79</td><td class="num disc">R$20.00</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2020-11-03</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$50.79</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2020-11-01</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$64.99</td><td class="num disc">R$15.40</td><td>Cartão de Crédito</td><td class="num">4</td></tr>
+<tr><td>2020-10-05</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$769.52</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">73</td></tr>
+<tr><td>2020-10-02</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$53.29</td><td class="num disc">—</td><td>Outros</td><td class="num">4</td></tr>
+<tr><td>2020-09-23</td><td class="merchant">TAG ALIMENTOS LTDA.</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$57.99</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2020-09-01</td><td class="merchant">MONTEL MONTEIRO MATERIAL DE CONSTRUCAO LTDA</td><td><span class="cat-badge">🔧 Material/Casa</span></td><td class="num">R$55.00</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">1</td></tr>
+<tr><td>2020-08-29</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$82.80</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2020-08-29</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$82.80</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2020-08-13</td><td class="merchant">SUPERMERCADO LITORAL LTDA.</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$654.41</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">96</td></tr>
+<tr><td>2020-08-04</td><td class="merchant">CABO BRANCO SERVICOS DE ALIMENTOS LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$41.00</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2020-07-18</td><td class="merchant">MANUS LANCHES LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$37.00</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2020-07-10</td><td class="merchant">L V PIZZARIA E RESTAURANTE LTDA ME</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$64.00</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">6</td></tr>
+<tr><td>2020-07-09</td><td class="merchant">LAMBRETA 79 REFEICOES DELIVERY LTDA - ME</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$52.79</td><td class="num disc">—</td><td>Outros</td><td class="num">3</td></tr>
+<tr><td>2020-06-19</td><td class="merchant">MEAT UP ACOUGUE E RESTAURANTE LTDA</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$30.00</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2020-06-16</td><td class="merchant">ASSB COMERCIO VAREJISTA DE DOCES LTDA</td><td><span class="cat-badge">🍫 Padaria/Doces</span></td><td class="num">R$60.20</td><td class="num disc">—</td><td>Outros</td><td class="num">2</td></tr>
+<tr><td>2020-05-07</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$76.51</td><td class="num disc">R$12.47</td><td>Cartão de Crédito</td><td class="num">6</td></tr>
+<tr><td>2020-05-01</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$62.95</td><td class="num disc">R$25.51</td><td>Dinheiro</td><td class="num">2</td></tr>
+<tr><td>2020-05-01</td><td class="merchant">TAG ALIMENTOS LTDA.</td><td><span class="cat-badge">🍽 Restaurante</span></td><td class="num">R$112.79</td><td class="num disc">—</td><td>Outros</td><td class="num">1</td></tr>
+<tr><td>2020-04-15</td><td class="merchant">THIAGO NEVES MAIA DE SOUZA - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$51.10</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2020-03-16</td><td class="merchant">SUPERMERCADO CONJ. PEDRO GONDIM COM. VAR. DE ALI</td><td><span class="cat-badge">🛒 Supermercado</span></td><td class="num">R$623.15</td><td class="num disc">—</td><td>Dinheiro</td><td class="num">20</td></tr>
+<tr><td>2020-03-14</td><td class="merchant">JOSE DAMACIEUDO DE OLIVEIRA DANTAS EIRELI</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$35.80</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">2</td></tr>
+<tr><td>2020-03-01</td><td class="merchant">JOSE DAMACIEUDO DE OLIVEIRA DANTAS EIRELI</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$55.00</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">3</td></tr>
+<tr><td>2020-02-19</td><td class="merchant">JOSE DAMACIEUDO DE OLIVEIRA DANTAS EIRELI</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$52.00</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">3</td></tr>
+<tr><td>2020-01-30</td><td class="merchant">EMPREENDIMENTOS PAGUE MENOS S.A.</td><td><span class="cat-badge">💊 Farmácia</span></td><td class="num">R$24.40</td><td class="num disc">R$8.45</td><td>Cartão de Crédito</td><td class="num">3</td></tr>
+<tr><td>2020-01-26</td><td class="merchant">L V PIZZARIA E RESTAURANTE LTDA ME</td><td><span class="cat-badge">🍕 Restaurante/Pizza</span></td><td class="num">R$69.00</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">5</td></tr>
+<tr><td>2020-01-04</td><td class="merchant">THIAGO NEVES MAIA DE SOUZA - ME</td><td><span class="cat-badge">🏪 Outros</span></td><td class="num">R$60.80</td><td class="num disc">—</td><td>Cartão de Crédito</td><td class="num">3</td></tr>
+</tbody>
+  </table></div>
+</div>
+
+<script>
+const CO = {responsive:true,maintainAspectRatio:true,
+  plugins:{legend:{labels:{color:"#888",font:{size:11}}}},
+  scales:{x:{ticks:{color:"#666",font:{size:11}},grid:{color:"#1a1a28"}},
+          y:{ticks:{color:"#666",font:{size:11}},grid:{color:"#1a1a28"}}}};
+const C = ["#7c3aed","#5b21b6","#a78bfa","#60a5fa","#34d399","#f59e0b","#f87171","#fb923c","#a3e635","#22d3ee"];
+
+new Chart(document.getElementById("monthChart"),{type:"bar",data:{
+  labels:["2020-01", "2020-02", "2020-03", "2020-04", "2020-05", "2020-06", "2020-07", "2020-08", "2020-09", "2020-10", "2020-11", "2020-12", "2021-01", "2021-02", "2021-03", "2021-04", "2021-05", "2021-06", "2021-07", "2021-08", "2021-09", "2021-10", "2021-11", "2021-12", "2022-01", "2022-02", "2022-03", "2022-04", "2022-05", "2022-06", "2022-07", "2022-08", "2022-09", "2022-10", "2022-11", "2022-12", "2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-03", "2026-04", "2026-05", "2026-06"],datasets:[{label:"R$",data:[154.2, 52.0, 713.95, 51.1, 252.25, 90.2, 153.79, 861.01, 112.99, 822.81, 1278.83, 707.82, 2629.37, 1540.74, 346.98, 804.73, 518.08, 1691.22, 376.05, 1017.63, 813.65, 376.16, 1352.39, 507.61, 1314.82, 272.4, 1599.4, 3104.61, 176.85, 784.93, 3752.39, 693.26, 1525.61, 483.81, 753.18, 1995.77, 442.25, 1515.51, 1222.05, 718.77, 417.1, 5521.39, 693.51, 58.0, 1391.5, 1641.08, 76.0, 184.4, 217.4, 2252.97, 575.0, 770.84, 2585.31, 1415.49, 3385.37, 2753.1, 1575.1, 3201.06, 2028.48, 4133.01, 3440.5, 2345.77, 1019.09, 3138.99, 2847.49, 883.72, 2647.7, 1353.37, 2785.27, 2034.56, 1243.74, 4434.15, 900.61, 4044.22],backgroundColor:"#6d28d9",borderRadius:2}]
+},options:{...CO,plugins:{legend:{display:false}}}});
+
+new Chart(document.getElementById("yearChart"),{type:"bar",data:{
+  labels:["2020", "2021", "2022", "2023", "2024", "2025", "2026"],datasets:[{label:"Total",data:[5250.95, 11974.61, 16457.03, 13697.16, 15714.98, 29824.45, 12657.28],backgroundColor:C,borderRadius:5}]
+},options:{...CO,plugins:{legend:{display:false}}}});
+
+new Chart(document.getElementById("countChart"),{type:"bar",data:{
+  labels:["2020", "2021", "2022", "2023", "2024", "2025", "2026"],datasets:[{label:"NFC-e",data:[44, 93, 90, 62, 47, 79, 18],backgroundColor:"#4c1d95",borderRadius:5}]
+},options:{...CO,plugins:{legend:{display:false}}}});
+
+new Chart(document.getElementById("catDonut"),{type:"doughnut",data:{
+  labels:["\ud83d\uded2 Supermercado", "\ud83c\udfea Outros", "\ud83c\udf7d Restaurante", "\ud83c\udf7a Bar/Bebidas", "\ud83d\udd27 Material/Casa", "\ud83d\udc8a Farm\u00e1cia", "\ud83c\udf55 Restaurante/Pizza", "\ud83c\udf6b Padaria/Doces", "\ud83c\udfe5 Sa\u00fade"],datasets:[{data:[46097.84, 31417.07, 9681.45, 6781.51, 4490.72, 4385.83, 1827.12, 582.68, 312.24],backgroundColor:C,borderWidth:0}]
+},options:{responsive:true,maintainAspectRatio:true,plugins:{legend:{position:"right",labels:{color:"#888",font:{size:11},boxWidth:12}}}}});
+
+new Chart(document.getElementById("catBar"),{type:"bar",data:{
+  labels:["\ud83d\uded2 Supermercado", "\ud83c\udfea Outros", "\ud83c\udf7d Restaurante", "\ud83c\udf7a Bar/Bebidas", "\ud83d\udd27 Material/Casa", "\ud83d\udc8a Farm\u00e1cia", "\ud83c\udf55 Restaurante/Pizza", "\ud83c\udf6b Padaria/Doces", "\ud83c\udfe5 Sa\u00fade"],datasets:[{label:"Notas",data:[56, 86, 121, 72, 10, 37, 26, 24, 1],backgroundColor:C,borderRadius:3}]
+},options:{...CO,indexAxis:"y",plugins:{legend:{display:false}}}});
+
+function show(id,btn){
+  document.querySelectorAll(".pane").forEach(p=>p.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  document.getElementById(id).classList.add("active"); btn.classList.add("active");
+}
+function filterTable(){
+  const q=document.getElementById("searchBox").value.toLowerCase();
+  document.querySelectorAll("#receiptsBody tr").forEach(r=>{r.style.display=r.textContent.toLowerCase().includes(q)?"":"none"});
+}
+</script></body></html>

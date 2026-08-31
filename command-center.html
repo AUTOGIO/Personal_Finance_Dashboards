@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COMMAND CENTER — iMac M3 · macOS 26.6.2</title>
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg2: #111111;
+    --bg3: #181818;
+    --bg4: #1e1e1e;
+    --border: #2a2a2a;
+    --border2: #333;
+    --orange: #ff6600;
+    --orange2: #ff8800;
+    --yellow: #ffcc00;
+    --green: #00cc44;
+    --green2: #00ff55;
+    --red: #ff2222;
+    --red2: #ff4444;
+    --blue: #3399ff;
+    --blue2: #66bbff;
+    --cyan: #00cccc;
+    --white: #e8e8e8;
+    --gray: #888;
+    --gray2: #555;
+    --fs: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html {
+    min-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'SF Mono','SFMono-Regular','Menlo','Courier New',monospace;
+    font-size: var(--fs);
+    min-height: 100%;
+  }
+
+  /* ── TOP BAR ── */
+  #topbar {
+    background: #000;
+    border-bottom: 2px solid var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    height: 32px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  .tb-left { display: flex; align-items: center; gap: 12px; }
+  .tb-logo { color: var(--orange); font-weight: bold; font-size: 14px; letter-spacing: 2px; }
+  .tb-title { color: var(--yellow); font-size: 11px; }
+  .tb-right { display: flex; align-items: center; gap: 8px; }
+  #clock { color: var(--green); font-size: 11px; min-width: 140px; text-align: right; }
+  .fs-btn {
+    background: var(--bg3);
+    border: 1px solid var(--border2);
+    color: var(--white);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 11px;
+    padding: 2px 7px;
+    line-height: 1;
+  }
+  .fs-btn:hover { background: var(--orange); color: #000; border-color: var(--orange); }
+  .fs-label { color: var(--gray); font-size: 10px; }
+
+  /* ── NAV TABS ── */
+  #navtabs {
+    background: #0d0d0d;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-shrink: 0;
+    position: sticky;
+    top: 32px;
+    z-index: 19;
+    overflow-x: auto;
+  }
+  .tab {
+    padding: 5px 16px;
+    cursor: pointer;
+    font-size: 10px;
+    letter-spacing: 1px;
+    border-right: 1px solid var(--border);
+    color: var(--gray);
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+  .tab:hover { color: var(--orange); background: var(--bg2); }
+  .tab.active { color: var(--orange); border-bottom: 2px solid var(--orange); background: var(--bg2); margin-bottom: -1px; }
+
+  /* ── LAYOUT ── */
+  #shell {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  #content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 6px;
+  }
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ── GRID ── */
+  .row { display: flex; gap: 6px; margin-bottom: 6px; flex-wrap: wrap; }
+  .col { flex: 1; min-width: 0; }
+  .col-2 { flex: 2; }
+  .col-3 { flex: 3; }
+  .col-half { flex: 0 0 50%; }
+
+  /* ── PANELS ── */
+  .panel {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 0;
+  }
+  .ph {
+    background: var(--bg3);
+    border-bottom: 1px solid var(--border);
+    padding: 3px 7px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: var(--orange);
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ph-sub { color: var(--gray); font-size: 8px; text-transform: none; letter-spacing: 0; }
+  .pb { padding: 6px 8px; }
+
+  /* ── KPI BLOCKS ── */
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 4px; padding: 5px; }
+  .kpi {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    padding: 5px 8px;
+  }
+  .kpi-lbl { color: var(--gray); font-size: 8px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2px; }
+  .kpi-val { font-size: 14px; font-weight: bold; color: var(--orange); line-height: 1.1; }
+  .kpi-val.green { color: var(--green); }
+  .kpi-val.red { color: var(--red); }
+  .kpi-val.yellow { color: var(--yellow); }
+  .kpi-val.blue { color: var(--blue); }
+  .kpi-val.cyan { color: var(--cyan); }
+  .kpi-sub { color: var(--gray2); font-size: 8px; margin-top: 1px; }
+
+  /* ── TABLES ── */
+  .bt {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10px;
+  }
+  .bt th {
+    background: var(--bg4);
+    color: var(--orange);
+    padding: 3px 6px;
+    text-align: left;
+    border-bottom: 1px solid var(--border2);
+    font-size: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .bt td {
+    padding: 3px 6px;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+    color: var(--white);
+  }
+  .bt tr:hover td { background: rgba(255,102,0,0.06); }
+  .bt .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .bt .green { color: var(--green); }
+  .bt .red { color: var(--red2); }
+  .bt .yellow { color: var(--yellow); }
+  .bt .blue { color: var(--blue2); }
+  .bt .cyan { color: var(--cyan); }
+  .bt .orange { color: var(--orange); }
+  .bt .gray { color: var(--gray); }
+
+  /* ── BADGES ── */
+  .badge {
+    display: inline-block;
+    padding: 1px 5px;
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border: 1px solid;
+  }
+  .badge-keep { color: var(--green); border-color: var(--green); }
+  .badge-cancel { color: var(--red); border-color: var(--red); }
+  .badge-review { color: var(--yellow); border-color: var(--yellow); }
+  .badge-pause { color: var(--blue); border-color: var(--blue); }
+  .badge-crit { color: var(--red); border-color: var(--red); background: rgba(255,34,34,.1); }
+  .badge-high { color: var(--yellow); border-color: var(--yellow); }
+  .badge-med { color: var(--blue); border-color: var(--blue); }
+  .badge-low { color: var(--gray); border-color: var(--gray); }
+  .badge-ok { color: var(--green); border-color: var(--green); }
+  .badge-pend { color: var(--gray); border-color: var(--gray); }
+
+  /* ── SVG CHARTS ── */
+  .chart-wrap { padding: 6px 8px; }
+  svg text { font-family: 'Courier New', monospace; }
+
+  /* ── TICKER TAPE ── */
+  #ticker {
+    background: #000;
+    border-top: 1px solid var(--orange);
+    height: 22px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  #ticker-inner {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    height: 22px;
+    align-items: center;
+    white-space: nowrap;
+  }
+  @keyframes scroll {
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(-200%); }
+  }
+  .tick-item { padding: 0 18px; font-size: 10px; color: var(--gray); }
+  .tick-item span { margin-left: 4px; }
+  .tick-up { color: var(--green); }
+  .tick-dn { color: var(--red); }
+  .tick-sep { color: var(--border2); }
+
+  /* scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border2); }
+
+  /* sparkline */
+  .spark { vertical-align: middle; }
+
+  /* mini bar */
+  .bar-bg { background: var(--bg4); height: 6px; width: 100%; }
+  .bar-fill { height: 6px; }
+
+  /* flash animation for alerts */
+  @keyframes flash { 0%,100%{opacity:1} 50%{opacity:.4} }
+  .flash { animation: flash 1.8s infinite; }
+
+  /* color legend dots */
+  .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 3px; vertical-align: middle; }
+
+  /* section divider */
+  .sdiv { border-top: 1px solid var(--border2); margin: 4px 0; }
+
+  /* small chip */
+  .chip { display: inline-block; padding: 0 4px; font-size: 8px; background: var(--bg4); border: 1px solid var(--border2); margin-right: 2px; }
+</style>
+</head>
+<body>
+<div id="shell">
+
+<div id="topbar">
+  <div class="tb-left">
+    <span class="tb-logo">◆ COMMAND</span>
+    <span class="tb-title">CMD CTR · iMac M3 · Apple M3 · macOS 26.6.2 (25G83) · arm64</span>
+  </div>
+  <div class="tb-right">
+    <span class="fs-label">FONT</span>
+    <button class="fs-btn" onclick="adjustFS(-1)">A−</button>
+    <span id="fs-pct" style="color:var(--gray);font-size:10px;min-width:32px;display:inline-block;text-align:center;">100%</span>
+    <button class="fs-btn" onclick="adjustFS(+1)">A+</button>
+    <span id="clock">—</span>
+  </div>
+</div>
+
+<div id="navtabs">
+  <div class="tab active" onclick="showPage('cmd')">00 CMD CTR</div>
+  <div class="tab" onclick="showPage('bal')">01 BALANCES</div>
+  <div class="tab" onclick="showPage('fx')">02 FX OPS</div>
+  <div class="tab" onclick="showPage('tx')">03 TRANSACTIONS</div>
+  <div class="tab" onclick="showPage('subs')">04 SUBSCRIPTIONS</div>
+  <div class="tab" onclick="showPage('pix')">05 PIX BRIDGE</div>
+  <div class="tab" onclick="showPage('mon')">06 MONTHLY</div>
+  <div class="tab" onclick="showPage('cat')">07 CATEGORIES</div>
+  <div class="tab" onclick="showPage('alerts')">08 ALERTS</div>
+  <div class="tab" onclick="showPage('repos')">09 REPOS</div>
+  <div class="tab" onclick="showPage('prj')">10 PROJECTS</div>
+  <div class="tab" onclick="showPage('cfg')">11 CONFIG</div>
+  <div class="tab" onclick="showPage('system')">12 SYSTEM</div>
+</div>
+
+<div id="content">
+<div class="page active" id="p-cmd"><div class="panel" style="margin-bottom:6px;"><div class="ph">COMMAND CENTER · giovannini.eduardo@gmail.com’s iMac<span class="ph-sub">Generated 31 Aug 2026 · Source: data/command-center.xlsx · Host: iMac M3 / macOS 26.6.2</span></div><div class="pb"><div class="kpi-grid"><div class="kpi"><div class="kpi-lbl">Est. Net Worth</div><div class="kpi-val orange">R$ 377.473</div><div class="kpi-sub">Liquid + Investments</div></div><div class="kpi"><div class="kpi-lbl">Total Liquidity</div><div class="kpi-val yellow">R$ 23.197</div><div class="kpi-sub">Inter + MP + BB</div></div><div class="kpi"><div class="kpi-lbl">IB Net Deployed</div><div class="kpi-val green">USD 34,966</div><div class="kpi-sub">R$ 178.511</div></div><div class="kpi"><div class="kpi-lbl">Fundos BRL</div><div class="kpi-val green">R$ 175.766</div><div class="kpi-sub">Topázio deposits</div></div><div class="kpi"><div class="kpi-lbl">FX Outbound H1</div><div class="kpi-val red">R$ 652.789</div><div class="kpi-sub">USD 126,279 · 19 ops</div></div><div class="kpi"><div class="kpi-lbl">Inbound H1</div><div class="kpi-val cyan">R$ 98.857</div><div class="kpi-sub">câmbio in</div></div><div class="kpi"><div class="kpi-lbl">Card Spend H1</div><div class="kpi-val red">R$ 37.246</div><div class="kpi-sub">146 txs</div></div><div class="kpi"><div class="kpi-lbl">PIX Net Flow</div><div class="kpi-val blue">R$ 144.848</div><div class="kpi-sub">Inter bridge</div></div><div class="kpi"><div class="kpi-lbl">Sub Stack/mo</div><div class="kpi-val red">R$ 1.344,55</div><div class="kpi-sub">15 services</div></div><div class="kpi"><div class="kpi-lbl">Cancel Savings</div><div class="kpi-val green">R$ 365,80</div><div class="kpi-sub">4 services · /mo</div></div><div class="kpi"><div class="kpi-lbl">IOF Paid H1</div><div class="kpi-val yellow"></div><div class="kpi-sub">FX operation tax</div></div><div class="kpi"><div class="kpi-lbl">Open Alerts</div><div class="kpi-val red">12</div><div class="kpi-sub">3 critical</div></div></div><div style="padding:5px 8px;color:var(--gray);font-size:9px;">HOST <span class="chip">Mac15,5</span> iMac · <span class="chip">Apple M3</span> <span class="chip">arm64</span> · <span class="chip">macOS 26.6.2 (25G83)</span> · <span class="chip">16 GB</span> · <span class="chip">8 cores</span></div></div></div><div class="row"><div class="col panel"><div class="ph">WEALTH ALLOCATION</div><div class="chart-wrap"><svg id="svg-alloc" width="100%" height="140"></svg></div></div><div class="col-2 panel"><div class="ph">MONTHLY CARD SPEND · H1 2026</div><div class="chart-wrap"><svg id="svg-monthly" width="100%" height="140"></svg></div></div></div><div class="row"><div class="col-2 panel"><div class="ph">CAPITAL FLOWS · CARD vs PIX-IN</div><div class="chart-wrap"><svg id="svg-flows" width="100%" height="110"></svg></div></div><div class="col panel"><div class="ph">FLOW COMPOSITION</div><div class="chart-wrap"><svg id="svg-flow-pie" width="100%" height="230"></svg></div></div></div><div class="panel" style="margin-bottom:6px;"><div class="ph">PRIORITY ALERTS<span class="ph-sub">Top of ALERTS register</span></div><div class="pb"><table class="bt">
+<tr><th class="num">#</th><th class="">Severity</th><th class="">Domain</th><th class="">Finding</th><th class="num">BRL Exposure</th><th class="">Recommended Action</th><th class="">Status</th></tr>
+<tr><td class="num">1</td><td><span class="badge badge-crit">CRITICAL</span></td><td>Subscriptions</td><td>CANCEL queue: Claude x2 (R$184/mo) + Grok (R$149.90/mo) + TuneIn (R$31.90/mo) = R$365.80/mo</td><td class="num">4,389.60</td><td>Cancel all 4 before next billing. Apple Subscriptions + app accounts.</td><td class="red">Pending</td></tr>
+<tr><td class="num">2</td><td><span class="badge badge-crit">CRITICAL</span></td><td>FX Reconciliation</td><td>R$652,789 sent to USA Own Account (67995). 19 ops Jan-Jun. Validate USD balances vs BCB.</td><td class="num">652,788.61</td><td>Pull USD account statement. Reconcile each BCB op against balance.</td><td class="red">Pending</td></tr>
+<tr><td class="num">3</td><td><span class="badge badge-crit">CRITICAL</span></td><td>Sub Stack Bloat</td><td>6 services in REVIEW. Annual exposure ~R$7,763. Manus credits uncontrolled.</td><td class="num">7,763.28</td><td>Audit each REVIEW service. Decide KEEP/CANCEL. Target: eliminate ≥3.</td><td class="red">Pending</td></tr>
+<tr><td class="num">4</td><td><span class="badge badge-high">HIGH</span></td><td>Liquidity</td><td>100% liquid in 2 digital banks (Inter + MP = R$23,197). BB balance R$0. Below R$30k target.</td><td class="num">23,196.90</td><td>Maintain R$30k+ buffer. Distribute across BB Rende Fácil + Inter.</td><td class="red">Pending</td></tr>
+</table></div></div></div>
+<div class="page" id="p-bal"><div class="panel" style="margin-bottom:6px;"><div class="ph">BALANCES — Bank &amp; Investment Accounts<span class="ph-sub">Update balances weekly. Blue cells = your input. Black cells = formulas.</span></div><div class="pb"><table class="bt">
+<tr><th class="">Institution</th><th class="">Type</th><th class="num">Balance (BRL)</th><th class="num">Balance (USD)</th><th class="">Last Updated</th><th class="">Status</th><th class="">Notes</th></tr>
+<tr><td>Banco Inter</td><td>Digital</td><td class="num">18,934.67</td><td class="num"></td><td>2026-07-13</td><td><span class="badge badge-ok">CONFIRMED</span></td><td>Conta 662710-2 · R$18,922.07 disp + R$12.60 bloq</td></tr>
+<tr><td>Mercado Pago</td><td>Digital</td><td class="num">4,262.23</td><td class="num"></td><td>2026-07-12</td><td><span class="badge badge-ok">CONFIRMED</span></td><td>Extrato MP PDF 01-12/Jul/2026</td></tr>
+<tr><td>BB Brasil</td><td>Checking</td><td class="num">0</td><td class="num"></td><td>2026-07-13</td><td><span class="badge badge-ok">CONFIRMED</span></td><td>Rende Fácil balance not in export</td></tr>
+<tr><td>TOTAL LIQUID</td><td></td><td class="num">23,196.90</td><td class="num"></td><td></td><td></td><td></td></tr>
+<tr><td colspan="7" class="orange" style="background:var(--bg3);font-size:9px;letter-spacing:1px;">◆ INVESTMENTS</td></tr>
+<tr><td>Instrument</td><td>Type</td><td class="num">BRL Equiv</td><td class="num">USD Amount</td><td>Period</td><td>Status</td><td>Notes</td></tr>
+<tr><td>IB Net Deposits</td><td>Brokerage</td><td class="num">178,510.76</td><td class="num">34,966.42</td><td>Jan-Jun 2026</td><td><span class="badge badge-ok">DEPLOYED</span></td><td>Auto: FX_OPS IB Deposit sum - IB Withdraw sum</td></tr>
+<tr><td>Fundos BRL — Topázio</td><td>Fund</td><td class="num">175,765.83</td><td class="num"></td><td>May-Jun 2026</td><td><span class="badge badge-ok">DEPLOYED</span></td><td>Auto: FX_OPS Fund Deposit sum</td></tr>
+<tr><td>TOTAL INVESTMENTS</td><td></td><td class="num">354,276.59</td><td class="num"></td><td></td><td></td><td></td></tr>
+<tr><td>EST. NET WORTH</td><td></td><td class="num">377,473.49</td><td class="num"></td><td></td><td></td><td></td></tr>
+</table></div></div></div>
+<div class="page" id="p-fx"><div class="row"><div class="col-2 panel"><div class="ph">USD/BRL RATE · EVERY USD OP</div><div class="chart-wrap"><svg id="svg-fxrate" width="100%" height="160"></svg></div></div><div class="col panel"><div class="ph">DIRECTION SUMMARY</div><div class="pb"><table class="bt">
+<tr><th class="">Direction</th><th class="num">Count</th><th class="num">BRL Total</th><th class="num">FCY Total</th><th class="num">Avg Rate</th></tr>
+<tr><td class="yellow">Outbound</td><td class="num">19</td><td class="num">652,788.61</td><td class="num">126,279.38</td><td class="num">5.17</td></tr>
+<tr><td>IB Deposit</td><td class="num">7</td><td class="num">197,706.57</td><td class="num">38,801.24</td><td class="num">5.10</td></tr>
+<tr><td>IB Withdraw</td><td class="num">1</td><td class="num">19,195.81</td><td class="num">3,834.82</td><td class="num">5.01</td></tr>
+<tr><td>Fund Deposit</td><td class="num">3</td><td class="num">175,765.83</td><td class="num">0</td><td class="num"></td></tr>
+<tr><td class="green">Inbound</td><td class="num">2</td><td class="num">98,857</td><td class="num">0</td><td class="num"></td></tr>
+</table></div></div></div><div class="panel" style="margin-bottom:6px;"><div class="ph">FX OPERATIONS — BCB Câmbio Register<span class="ph-sub">Append one row per BCB câmbio operation. Source: BCB Câmbio PDF.</span></div><div class="pb"><table class="bt">
+<tr><th class="">Date</th><th class="">Institution</th><th class="">Destination</th><th class="">CCY</th><th class="num">FCY Amount</th><th class="num">BRL Amount</th><th class="num">FX Rate</th><th class="">Direction</th><th class="">Nature</th></tr>
+<tr><td>2026-01-26</td><td>Banco Topázio</td><td>Interactive Brokers</td><td>USD</td><td class="num">200</td><td class="num">1,071.22</td><td class="num">5.36</td><td>IB Deposit</td><td>91992 IB deposit</td></tr>
+<tr><td>2026-01-27</td><td>BB Brasil</td><td>USA - Own Account</td><td>USD</td><td class="num">3,000</td><td class="num">15,886.01</td><td class="num">5.30</td><td>Outbound</td><td>67995 Self-transfer</td></tr>
+<tr><td>2026-01-30</td><td>BB Brasil</td><td>USA - Own Account</td><td>USD</td><td class="num">3,000</td><td class="num">16,063.89</td><td class="num">5.35</td><td>Outbound</td><td>67995 Self-transfer</td></tr>
+<tr><td>2026-02-09</td><td>BB Brasil</td><td>USA - Own Account</td><td>USD</td><td class="num">3,000</td><td class="num">15,868.79</td><td class="num">5.29</td><td>Outbound</td><td>67995 Self-transfer</td></tr>
+<tr><td>2026-02-11</td><td>BB Brasil</td><td>USA - Own Account</td><td>USD</td><td class="num">3,000</td><td class="num">15,789.96</td><td class="num">5.26</td><td>Outbound</td><td>67995 Self-transfer</td></tr>
+<tr><td>2026-03-03</td><td>BB Brasil</td><td>USA - Own Account</td><td>USD</td><td class="num">3,000</td><td class="num">16,024.35</td><td class="num">5.34</td><td>Outbound</td><td>67995 Self-transfer</td></tr>
+<tr><td>2026-03-13</td><td>BB Brasil</td><td>USA - Own Account</td><td>USD</td><td class="num">3,000</td><td class="num">15,877.18</td><td class="num">5.29</td><td>Outbound</td><td>67995 Self-transfer</td></tr>
+<tr><td>2026-03-18</td><td>BB Brasil</td><td>USA - Own Account</td><td>USD</td><td class="num">3,000</td><td class="num">15,963.15</td><td class="num">5.32</td><td>Outbound</td><td>67995 Self-transfer</td></tr>
+<tr><td>2026-04-22</td><td>BB Brasil</td><td>USA - Own Account</td><td>USD</td><td class="num">3,000</td><td class="num">15,878.08</td><td class="num">5.29</td><td>Outbound</td><td>67995 Self-transfer</td></tr>
+<tr><td>2026-04-30</td><td>Banco Topázio</td><td>Interactive Brokers</td><td>USD</td><td class="num">100</td><td class="num">503.62</td><td class="num">5.04</td><td>IB Deposit</td><td>91992 IB deposit</td></tr>
+<tr><td>2026-05-07</td><td>BB Brasil</td><td>USA - Own Account</td><td>USD</td><td class="num">3,000</td><td class="num">15,132.89</td><td class="num">5.04</td><td>Outbound</td><td>67995 Self-transfer</td></tr>
+<tr><td>2026-05-07</td><td>Banco Inter</td><td>USA - Own Account</td><td>USD</td><td class="num">5,000</td><td class="num">24,939.84</td><td class="num">4.99</td><td>Outbound</td><td>67995 via Inter</td></tr>
+<tr><td>2026-05-11</td><td>Banco Inter</td><td>USA - Own Account</td><td>USD</td><td class="num">15,000</td><td class="num">74,340.40</td><td class="num">4.96</td><td>Outbound</td><td>67995 via Inter</td></tr>
+<tr><td>2026-05-15</td><td>BB Brasil</td><td>USA - Own Account</td><td>USD</td><td class="num">500</td><td class="num">2,577.87</td><td class="num">5.16</td><td>Outbound</td><td>67995 Self-transfer</td></tr>
+<tr><td>2026-05-15</td><td>Wise Brasil</td><td>UK - Eduardo Giovannini</td><td>USD</td><td class="num">250</td><td class="num">1,246.27</td><td class="num">4.99</td><td>Outbound</td><td>67995 Wise UK</td></tr>
+<tr><td>2026-05-18</td><td>BB Brasil</td><td>USA - Own Account</td><td>USD</td><td class="num">200</td><td class="num">1,019.15</td><td class="num">5.10</td><td>Outbound</td><td>67995 Self-transfer</td></tr>
+<tr><td>2026-05-18</td><td>Wise Brasil</td><td>Interactive Brokers</td><td>USD</td><td class="num">3,834.82</td><td class="num">19,195.81</td><td class="num">5.01</td><td>IB Deposit</td><td>91992 IB via Wise</td></tr>
+<tr><td>2026-05-19</td><td>Banco Topázio</td><td>Interactive Brokers</td><td>USD</td><td class="num">1,000</td><td class="num">5,114.85</td><td class="num">5.11</td><td>IB Deposit</td><td>91992 IB deposit</td></tr>
+<tr><td>2026-05-20</td><td>Banco Topázio</td><td>Interactive Brokers</td><td>USD</td><td class="num">6,212.32</td><td class="num">31,651.83</td><td class="num">5.09</td><td>IB Deposit</td><td>91992 IB deposit</td></tr>
+<tr><td>2026-05-22</td><td>Banco Topázio</td><td>Fundos investimento BRL</td><td>BRL</td><td class="num">0</td><td class="num">45,000</td><td class="num"></td><td>Fund Deposit</td><td>67043 Fund capital</td></tr>
+<tr><td>2026-05-26</td><td>BB Brasil</td><td>USA - Own Account</td><td>USD</td><td class="num">10,000</td><td class="num">51,027.68</td><td class="num">5.10</td><td>Outbound</td><td>67995 Self-transfer</td></tr>
+<tr><td>2026-05-28</td><td>BB Brasil</td><td>USA - Own Account</td><td>USD</td><td class="num">5,000</td><td class="num">25,650.76</td><td class="num">5.13</td><td>Outbound</td><td>67995 Self-transfer</td></tr>
+<tr><td>2026-05-28</td><td>Banco Topázio</td><td>Interactive Brokers</td><td>USD</td><td class="num">20,000</td><td class="num">101,772.38</td><td class="num">5.09</td><td>IB Deposit</td><td>91992 IB deposit</td></tr>
+<tr><td>2026-06-05</td><td>Wise Brasil</td><td>UK - Eduardo Giovannini</td><td>USD</td><td class="num">100</td><td class="num">514.21</td><td class="num">5.14</td><td>Outbound</td><td>67995 Wise UK</td></tr>
+<tr><td>2026-06-05</td><td>Banco Topázio</td><td>Fundos investimento BRL</td><td>BRL</td><td class="num">0</td><td class="num">78,323.92</td><td class="num"></td><td>Fund Deposit</td><td>67043 Fund capital</td></tr>
+<tr><td>2026-06-05</td><td>BB Brasil</td><td>USA → Eduardo Forster Giovannini</td><td>BRL</td><td class="num">0</td><td class="num">73,857</td><td class="num"></td><td>Inbound</td><td>72629 Inbound from USA</td></tr>
+<tr><td>2026-06-16</td><td>Ouribank</td><td>Inbound payment order</td><td>BRL</td><td class="num">0</td><td class="num">25,000</td><td class="num"></td><td>Inbound</td><td>72629 Inbound payment order</td></tr>
+<tr><td>2026-06-19</td><td>Banco Topázio</td><td>Fundos investimento BRL</td><td>BRL</td><td class="num">0</td><td class="num">52,441.91</td><td class="num"></td><td>Fund Deposit</td><td>67043 Fund capital</td></tr>
+<tr><td>2026-06-22</td><td>BB Brasil</td><td>USA - Own Account</td><td>USD</td><td class="num">46,229.38</td><td class="num">241,545.87</td><td class="num">5.22</td><td>Outbound</td><td>67995 Self-transfer</td></tr>
+<tr><td>2026-06-22</td><td>Wise Brasil</td><td>UK - Eduardo Giovannini</td><td>USD</td><td class="num">17,000</td><td class="num">87,442.26</td><td class="num">5.14</td><td>Outbound</td><td>67995 Wise UK</td></tr>
+<tr><td>2026-06-22</td><td>Wise Brasil</td><td>Interactive Brokers</td><td>USD</td><td class="num">7,454.10</td><td class="num">38,396.86</td><td class="num">5.15</td><td>IB Deposit</td><td>91992 IB via Wise</td></tr>
+<tr><td>2026-06-26</td><td>Wise Brasil</td><td>Interactive Brokers</td><td>USD</td><td class="num">3,834.82</td><td class="num">19,195.81</td><td class="num">5.18</td><td>IB Withdraw</td><td>91992 IB withdrawal</td></tr>
+</table></div></div></div>
+<div class="page" id="p-tx"><div class="panel" style="margin-bottom:6px;"><div class="ph">TRANSACTIONS — MP Faturas Card Statement<span class="ph-sub">Paste new transactions when each fatura closes. 146 entries Jan-Jun 2026.</span></div><div class="pb"><div style="padding:5px 8px;"><input id="tx-search" oninput="filterTx()" placeholder="filter merchants / category…" style="background:var(--bg3);border:1px solid var(--border2);color:var(--white);font-family:inherit;font-size:11px;padding:3px 7px;width:260px;"><span id="tx-count" style="color:var(--gray);font-size:10px;margin-left:8px;">146 rows</span></div><table class="bt" id="tx-table">
+<tr><th class="num">#</th><th class="">Date</th><th class="">Fatura</th><th class="">Merchant</th><th class="num">Value (BRL)</th><th class="">Category</th><th class="">International</th></tr>
+<tr><td class="num">1</td><td>2026-01-06</td><td>2026-02</td><td>IFD*PIZZA NOW INTERMARES</td><td class="num red">-173.79</td><td>Delivery/iFood</td><td>Não</td></tr>
+<tr><td class="num">2</td><td>2026-01-08</td><td>2026-02</td><td>OPENAI *CHATGPT SUBSCR</td><td class="num red">-111.58</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">3</td><td>2026-01-08</td><td>2026-02</td><td>APPLE.COM/BILL</td><td class="num red">-21.90</td><td>Assinatura</td><td>Não</td></tr>
+<tr><td class="num">4</td><td>2026-01-10</td><td>2026-02</td><td>IFD*34531468 EDWIN LEI</td><td class="num red">-111.60</td><td>Delivery/iFood</td><td>Não</td></tr>
+<tr><td class="num">5</td><td>2026-01-10</td><td>2026-02</td><td>APPLE.COM/BILL</td><td class="num red">-19.90</td><td>Assinatura</td><td>Não</td></tr>
+<tr><td class="num">6</td><td>2026-01-14</td><td>2026-02</td><td>MANUS AI</td><td class="num red">-25.79</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">7</td><td>2026-01-15</td><td>2026-02</td><td>DL*Starlink Braz</td><td class="num red">-235.52</td><td>Internet</td><td>Não</td></tr>
+<tr><td class="num">8</td><td>2026-01-16</td><td>2026-02</td><td>MP*LOTERIASONLINEU1AQ</td><td class="num red">-143.60</td><td>Loteria</td><td>Sim</td></tr>
+<tr><td class="num">9</td><td>2026-01-16</td><td>2026-02</td><td>IFD*FORMAGGIO RESTAURANTE</td><td class="num red">-191.80</td><td>Delivery/iFood</td><td>Sim</td></tr>
+<tr><td class="num">10</td><td>2026-01-17</td><td>2026-02</td><td>OPENAI *CHATGPT SUBSCR</td><td class="num red">-111.37</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">11</td><td>2026-01-17</td><td>2026-02</td><td>MP*LOTERIASONLINE542V</td><td class="num red">-111</td><td>Loteria</td><td>Sim</td></tr>
+<tr><td class="num">12</td><td>2026-01-19</td><td>2026-02</td><td>LEMSQZY* PINEAPPLE-APP</td><td class="num red">-111.11</td><td>Assinatura</td><td>Sim</td></tr>
+<tr><td class="num">13</td><td>2026-01-21</td><td>2026-02</td><td>CLAUDE.AI SUBSCRIPTION</td><td class="num red">-1,138.50</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">14</td><td>2026-01-21</td><td>2026-02</td><td>MANUS AI</td><td class="num red">-556.83</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">15</td><td>2026-01-27</td><td>2026-02</td><td>RAYCAST.COM</td><td class="num red">-524.63</td><td>Outros</td><td>Sim</td></tr>
+<tr><td class="num">16</td><td>2026-01-28</td><td>2026-02</td><td>IFD*34531468 EDWIN LEI</td><td class="num red">-55.80</td><td>Delivery/iFood</td><td>Não</td></tr>
+<tr><td class="num">17</td><td>2026-01-30</td><td>2026-02</td><td>APPLE.COM/BILL</td><td class="num red">-99.90</td><td>Assinatura</td><td>Sim</td></tr>
+<tr><td class="num">18</td><td>2026-02-03</td><td>2026-02</td><td>DESKTOP COMMANDER</td><td class="num red">-272.21</td><td>Outros</td><td>Sim</td></tr>
+<tr><td class="num">19</td><td>2026-02-04</td><td>2026-02</td><td>MP*LOTERIASONLINEM4UQ</td><td class="num red">-168</td><td>Loteria</td><td>Não</td></tr>
+<tr><td class="num">20</td><td>2026-02-05</td><td>2026-02</td><td>MP*LOTERIASONLINEYY48</td><td class="num red">-84</td><td>Loteria</td><td>Não</td></tr>
+<tr><td class="num">21</td><td>2026-02-05</td><td>2026-03</td><td>OPENAI *CHATGPT SUBSCR</td><td class="num red">-108.89</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">22</td><td>2026-02-11</td><td>2026-03</td><td>MERCADOLIVRE*3PRODUTOS</td><td class="num red">-6,282.36</td><td>Compras/ML</td><td>Não</td></tr>
+<tr><td class="num">23</td><td>2026-02-14</td><td>2026-03</td><td>ANTHROPIC</td><td class="num red">-51.75</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">24</td><td>2026-02-14</td><td>2026-03</td><td>MP*LOTERIASONLINEO4M4</td><td class="num red">-206</td><td>Loteria</td><td>Sim</td></tr>
+<tr><td class="num">25</td><td>2026-02-16</td><td>2026-03</td><td>DL *Starlink Brazil</td><td class="num red">-235.52</td><td>Internet</td><td>Sim</td></tr>
+<tr><td class="num">26</td><td>2026-02-17</td><td>2026-03</td><td>OPENAI *CHATGPT SUBSCR</td><td class="num red">-108.27</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">27</td><td>2026-02-21</td><td>2026-03</td><td>MANUS AI</td><td class="num red">-538.20</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">28</td><td>2026-03-05</td><td>2026-04</td><td>OPENAI *CHATGPT SUBSCR</td><td class="num red">-108.47</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">29</td><td>2026-03-08</td><td>2026-04</td><td>MERCADOLIVRE*7PRODUTOS</td><td class="num red">-453.64</td><td>Compras/ML</td><td>Não</td></tr>
+<tr><td class="num">30</td><td>2026-03-08</td><td>2026-04</td><td>GITHUB, INC.</td><td class="num red">-54.76</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">31</td><td>2026-03-10</td><td>2026-04</td><td>LAN AIRLINE</td><td class="num red">-9,036.83</td><td>Viagem</td><td>Sim</td></tr>
+<tr><td class="num">32</td><td>2026-03-10</td><td>2026-04</td><td>OPENROUTER, INC</td><td class="num red">-113.78</td><td>Outros</td><td>Sim</td></tr>
+<tr><td class="num">33</td><td>2026-03-14</td><td>2026-04</td><td>STARLINK INTERNET</td><td class="num red">-235.52</td><td>Internet</td><td>Sim</td></tr>
+<tr><td class="num">34</td><td>2026-03-17</td><td>2026-04</td><td>OPENAI *CHATGPT SUBSCR</td><td class="num red">-108.89</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">35</td><td>2026-03-21</td><td>2026-04</td><td>MANUS AI</td><td class="num red">-546.48</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">36</td><td>2026-03-30</td><td>2026-04</td><td>GROK XAI</td><td class="num red">-81.36</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">37</td><td>2026-04-01</td><td>2026-04</td><td>CURSOR AI POWERED IDE</td><td class="num red">-111.81</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">38</td><td>2026-04-05</td><td>2026-05</td><td>OPENAI *CHATGPT SUBSCR</td><td class="num red">-107.02</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">39</td><td>2026-04-17</td><td>2026-05</td><td>OPENAI *CHATGPT SUBSCR</td><td class="num red">-103.50</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">40</td><td>2026-04-20</td><td>2026-05</td><td>MICROSOFT*STORE</td><td class="num red">-509</td><td>Outros</td><td>Não</td></tr>
+<tr><td class="num">41</td><td>2026-04-21</td><td>2026-05</td><td>MANUS AI</td><td class="num red">-515.43</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">42</td><td>2026-04-23</td><td>2026-05</td><td>CLOUDFLARE</td><td class="num red">-107.61</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">43</td><td>2026-04-27</td><td>2026-05</td><td>PERPLEXITY.AI</td><td class="num red">-103.71</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">44</td><td>2026-05-01</td><td>2026-05</td><td>CURSOR AI POWERED IDE</td><td class="num red">-111.81</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">45</td><td>2026-05-03</td><td>2026-05</td><td>STARLINK INTERNET</td><td class="num red">-235.52</td><td>Internet</td><td>Não</td></tr>
+<tr><td class="num">46</td><td>2026-05-06</td><td>2026-06</td><td>OPENAI *CHATGPT SUBSCR</td><td class="num red">-101.85</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">47</td><td>2026-05-08</td><td>2026-06</td><td>GITHUB, INC.</td><td class="num red">-50.93</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">48</td><td>2026-05-17</td><td>2026-06</td><td>OPENAI *CHATGPT SUBSCR</td><td class="num red">-104.95</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">49</td><td>2026-05-18</td><td>2026-06</td><td>CLOUDFLARE</td><td class="num red">-83.44</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">50</td><td>2026-05-19</td><td>2026-06</td><td>DL*GOOGLE YouTub</td><td class="num red">-269</td><td>Assinatura</td><td>Sim</td></tr>
+<tr><td class="num">51</td><td>2026-05-28</td><td>2026-06</td><td>ANTHROPIC</td><td class="num red">-103.50</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">52</td><td>2026-05-30</td><td>2026-06</td><td>CLAUDE.AI SUBSCRIPTION</td><td class="num red">-113.85</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">53</td><td>2026-06-01</td><td>2026-06</td><td>CURSOR AI POWERED IDE</td><td class="num red">-111.81</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">54</td><td>2026-06-01</td><td>2026-06</td><td>PERPLEXITY.AI</td><td class="num red">-78.56</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">55</td><td>2026-06-03</td><td>2026-06</td><td>STARLINK INTERNET</td><td class="num red">-235.52</td><td>Internet</td><td>Não</td></tr>
+<tr><td class="num">56</td><td>2026-06-03</td><td>2026-06</td><td>CONTA VIVO</td><td class="num red">-74.43</td><td>Telecomunicações</td><td>Não</td></tr>
+<tr><td class="num">57</td><td>2026-06-04</td><td>2026-06</td><td>PERPLEXITY.AI</td><td class="num red">-78.25</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">58</td><td>2026-06-04</td><td>2026-06</td><td>PERPLEXITY.AI</td><td class="num red">-78.25</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td class="num">59</td><td>2026-06-05</td><td>2026-06</td><td>PERPLEXITY.AI</td><td class="num red">-78.25</td><td>IA/Tecnologia</td><td>Sim</td></tr>
+<tr><td colspan="7" class="orange" style="background:var(--bg3);font-size:9px;letter-spacing:1px;">◆ SUMMARY</td></tr>
+<tr><td class="num"></td><td></td><td></td><td>TOTAL</td><td class="num red">-26,007.55</td><td></td><td></td></tr>
+<tr><td class="num"></td><td></td><td></td><td>TX COUNT</td><td class="num">59</td><td></td><td></td></tr>
+<tr><td class="num">⚠ This contains a representative 59-tx subset. Paste full 146-tx MP Faturas data to replace.</td><td></td><td></td><td></td><td class="num"></td><td></td><td></td></tr>
+</table></div></div></div>
+<div class="page" id="p-subs"><div class="row"><div class="col-2 panel"><div class="ph">DECISION SUMMARY</div><div class="pb"><table class="bt">
+<tr><th class="">◆ DECISION SUMMARY</th></tr>
+<tr><td>KEEP total/mo</td></tr>
+<tr><td>CANCEL savings/mo</td></tr>
+<tr><td>REVIEW total/mo</td></tr>
+<tr><td>CANCEL savings/yr</td></tr>
+<tr><td>TOTAL STACK/mo</td></tr>
+</table></div></div><div class="col panel"><div class="ph">MONTHLY R$ BY DECISION</div><div class="chart-wrap"><svg id="svg-subs" width="100%" height="150"></svg></div></div></div><div class="panel" style="margin-bottom:6px;"><div class="ph">SUBSCRIPTIONS — 15 Services Tracked<span class="ph-sub">Update decisions and status. Renewal dates from Apple Subscriptions export.</span></div><div class="pb"><table class="bt">
+<tr><th class="">Service</th><th class="">Plan</th><th class="">Email</th><th class="">CCY</th><th class="num">Monthly BRL</th><th class="">Category</th><th class="">Dup Risk</th><th class="">Decision</th><th class="">Renewal Date</th><th class="">Status</th></tr>
+<tr><td>Claude</td><td>Pro</td><td>automacao.giovannini@gmail.com</td><td>BRL</td><td class="num">92</td><td>AI - General/Coding</td><td><span class="badge badge-high">HIGH</span></td><td><span class="badge badge-cancel">CANCEL</span></td><td>2026-07-15</td><td><span class="badge badge-pend">Pending</span></td></tr>
+<tr><td>Claude</td><td>Pro</td><td>cadastros.online1979@gmail.com</td><td>BRL</td><td class="num">92</td><td>AI - General/Coding</td><td><span class="badge badge-high">HIGH</span></td><td><span class="badge badge-cancel">CANCEL</span></td><td>2026-07-15</td><td><span class="badge badge-pend">Pending</span></td></tr>
+<tr><td>ChatGPT</td><td>Plus</td><td>giovannini.eduardo@gmail.com</td><td>USD</td><td class="num">106</td><td>AI - General Assistant</td><td><span class="badge badge-med">MEDIUM</span></td><td><span class="badge badge-keep">KEEP</span></td><td></td><td><span class="badge badge-keep">Active</span></td></tr>
+<tr><td>Google</td><td>Pro</td><td>cadastros.online1979@gmail.com</td><td>BRL</td><td class="num">96.99</td><td>AI - General/Workspace</td><td><span class="badge badge-high">HIGH</span></td><td><span class="badge badge-review">REVIEW</span></td><td></td><td><span class="badge badge-keep">Active</span></td></tr>
+<tr><td>Manus</td><td>Credits</td><td>cadastro.giovannini@gmail.com</td><td class="gray">UNK</td><td class="num">0</td><td>AI - Agent/Credits</td><td>UNKNOWN</td><td><span class="badge badge-review">REVIEW</span></td><td></td><td>Unknown</td></tr>
+<tr><td>Manus</td><td>Credits</td><td>automacao.giovannini@gmail.com</td><td class="gray">UNK</td><td class="num">418.43</td><td>AI - Agent/Credits</td><td>UNKNOWN</td><td><span class="badge badge-review">REVIEW</span></td><td></td><td>Unknown</td></tr>
+<tr><td>Cursor</td><td>Pro</td><td>giovannini.eduardo@gmail.com</td><td>USD</td><td class="num">106</td><td>AI - Coding Assistant</td><td><span class="badge badge-med">MEDIUM</span></td><td><span class="badge badge-keep">KEEP</span></td><td></td><td><span class="badge badge-keep">Active</span></td></tr>
+<tr><td>Desktop Commander</td><td>Unlimited</td><td>automacao.giovannini@gmail.com</td><td class="gray">UNK</td><td class="num">45.37</td><td>AI - Desktop Automation</td><td>UNKNOWN</td><td><span class="badge badge-review">REVIEW</span></td><td></td><td>Unknown</td></tr>
+<tr><td>Filmora9</td><td>Annual</td><td class="gray">Unknown</td><td>BRL</td><td class="num">15.41</td><td>Creative/Productivity</td><td><span class="badge badge-low">LOW</span></td><td><span class="badge badge-review">REVIEW</span></td><td>2026-07-08</td><td><span class="badge badge-keep">Active</span></td></tr>
+<tr><td>Grok</td><td>SuperGrok</td><td class="gray">Unknown</td><td>BRL</td><td class="num">149.90</td><td>AI - General/Media</td><td><span class="badge badge-high">HIGH</span></td><td><span class="badge badge-cancel">CANCEL</span></td><td>2026-09-14</td><td><span class="badge badge-pend">Pending</span></td></tr>
+<tr><td>iCloud+</td><td>200 GB</td><td class="gray">Unknown</td><td>BRL</td><td class="num">19.90</td><td>Cloud/Storage</td><td><span class="badge badge-low">LOW</span></td><td><span class="badge badge-keep">KEEP</span></td><td>2026-07-10</td><td><span class="badge badge-keep">Active</span></td></tr>
+<tr><td>Microsoft 365</td><td>Personal</td><td class="gray">Unknown</td><td>BRL</td><td class="num">42.42</td><td>Productivity/Cloud</td><td><span class="badge badge-med">MEDIUM</span></td><td><span class="badge badge-review">REVIEW</span></td><td>2027-06-20</td><td><span class="badge badge-keep">Active</span></td></tr>
+<tr><td>NordVPN</td><td>Annual</td><td class="gray">Unknown</td><td>BRL</td><td class="num">28.33</td><td>Security/VPN</td><td><span class="badge badge-low">LOW</span></td><td><span class="badge badge-review">REVIEW</span></td><td>2026-10-06</td><td><span class="badge badge-keep">Active</span></td></tr>
+<tr><td>Perplexity</td><td>Pro Mac</td><td class="gray">Unknown</td><td>BRL</td><td class="num">99.90</td><td>AI - Research</td><td><span class="badge badge-high">HIGH</span></td><td><span class="badge badge-keep">KEEP</span></td><td>2026-06-30</td><td><span class="badge badge-keep">Active</span></td></tr>
+<tr><td>TuneIn Radio</td><td>Premium</td><td class="gray">Unknown</td><td>BRL</td><td class="num">31.90</td><td>Entertainment</td><td><span class="badge badge-low">LOW</span></td><td><span class="badge badge-cancel">CANCEL</span></td><td>2026-07-23</td><td><span class="badge badge-pend">Pending</span></td></tr>
+</table></div></div></div>
+<div class="page" id="p-pix"><div class="panel" style="margin-bottom:6px;"><div class="ph">PIX — Banco Inter Cash Bridge<span class="ph-sub">Paste from Inter extrato. PIX + Câmbio + IOF movements.</span></div><div class="pb"><table class="bt">
+<tr><th class="">Date</th><th class="">Type</th><th class="">Counterpart</th><th class="num">PIX Amount</th><th class="num">FX Amount</th><th class="num">IOF Amount</th></tr>
+<tr><td>2026-06-28</td><td>PIX In</td><td>Eduardo Forster Giovannini</td><td class="num">2,000</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-06-28</td><td>PIX In</td><td>Eduardo F Giovannini</td><td class="num">40,000</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-06-25</td><td>PIX In</td><td>Eduardo F Giovannini</td><td class="num">10</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-06-05</td><td>PIX Out</td><td>Eduardo Silva Dos Santos</td><td class="num red">-480</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-05-28</td><td>PIX Out</td><td>Eduardo Silva Dos Santos</td><td class="num red">-450</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-05-25</td><td>PIX Out</td><td>Eduardo Silva Dos Santos</td><td class="num red">-470</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-05-24</td><td>PIX Out</td><td>Moacir Jose De Morais Filho</td><td class="num red">-700</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-05-22</td><td>PIX Out</td><td>Lucas Rique Chaves Bezerra</td><td class="num red">-1,500</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-05-22</td><td>PIX Out</td><td>Lucas Rique Chaves Bezerra</td><td class="num red">-500</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-05-22</td><td>PIX Out</td><td>Sbct Tech Solutions Llc</td><td class="num red">-45,000</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-05-18</td><td>PIX In</td><td>Eduardo F Giovannini</td><td class="num">35,000</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-05-18</td><td>PIX Out</td><td>Eduardo Giovannini</td><td class="num red">-20,000</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-05-15</td><td>PIX Out</td><td>Wise Brasil Corretora De Cambio Ltda</td><td class="num red">-1,299.97</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-05-11</td><td>PIX In</td><td>Eduardo F Giovannini</td><td class="num">40,000</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-05-11</td><td>Câmbio</td><td>Envio - remessa internacional</td><td class="num"></td><td class="num red">-74,340.40</td><td class="num"></td></tr>
+<tr><td>2026-05-11</td><td>IOF</td><td>IOF - Operação de câmbio</td><td class="num"></td><td class="num"></td><td class="num red">-2,601.91</td></tr>
+<tr><td>2026-05-08</td><td>PIX In</td><td>Eduardo F Giovannini</td><td class="num">40,000</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-05-07</td><td>Câmbio</td><td>Envio - remessa internacional</td><td class="num"></td><td class="num red">-24,939.84</td><td class="num"></td></tr>
+<tr><td>2026-05-07</td><td>IOF</td><td>IOF - Operação de câmbio</td><td class="num"></td><td class="num"></td><td class="num red">-872.89</td></tr>
+<tr><td>2026-04-28</td><td>PIX In</td><td>Eduardo F Giovannini</td><td class="num">40,000</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-04-28</td><td>PIX Out</td><td>Gloria Raquel M C Nobrega</td><td class="num red">-50</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-04-28</td><td>PIX Out</td><td>Mag Administracao De Negocios Ltda</td><td class="num red">-10</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-04-28</td><td>PIX Out</td><td>Eduardo Silva Dos Santos</td><td class="num red">-470</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-04-24</td><td>PIX Out</td><td>Jose Periclis De Sousa Da Costa</td><td class="num red">-6,800</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-04-21</td><td>PIX Out</td><td>Eduardo Forster Giovannini</td><td class="num red">-3,000</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-03-20</td><td>PIX Out</td><td>Eduardo Silva Dos Santos</td><td class="num red">-350</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-03-17</td><td>PIX Out</td><td>Iago Kevyn Santos Moura</td><td class="num red">-500</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-03-15</td><td>PIX Out</td><td>Eduardo Forster Giovannini</td><td class="num red">-6,000</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-03-15</td><td>PIX Out</td><td>Mercado Pago Instituicao De Pagamento Ltda</td><td class="num red">-4,582.41</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>2026-02-11</td><td>PIX In</td><td>Eduardo F Giovannini</td><td class="num">40,000</td><td class="num"></td><td class="num"></td></tr>
+<tr><td colspan="6" class="orange" style="background:var(--bg3);font-size:9px;letter-spacing:1px;">◆ SUMMARY</td></tr>
+<tr><td>PIX In</td><td></td><td></td><td class="num">237,010</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>PIX Out</td><td></td><td></td><td class="num red">-92,162.38</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>Net PIX Flow</td><td></td><td></td><td class="num">144,847.62</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>Total Câmbio Out</td><td></td><td></td><td class="num red">-99,280.24</td><td class="num"></td><td class="num"></td></tr>
+<tr><td>Total IOF Paid</td><td></td><td></td><td class="num red">-3,474.80</td><td class="num"></td><td class="num"></td></tr>
+</table></div></div></div>
+<div class="page" id="p-mon"><div class="panel" style="margin-bottom:6px;"><div class="ph">MONTHLY — Cash Flow Summary · Jan–Jun 2026<span class="ph-sub">One row per month. Card from TRANSACTIONS, PIX from PIX tab, FX from FX_OPS. Update when new month closes.</span></div><div class="pb"><table class="bt">
+<tr><th class="">Month</th><th class="num">Card Spend</th><th class="num">Txs</th><th class="num">PIX In</th><th class="num">PIX Out</th><th class="num">FX Out</th><th class="num">FX In</th><th class="num">IOF</th><th class="num">Net Flow</th></tr>
+<tr><td>2026-01</td><td class="num">3,745.40</td><td class="num">18</td><td class="num">0</td><td class="num">0</td><td class="num">31,949.90</td><td class="num">1,071.22</td><td class="num">0</td><td class="num red">-34,624.08</td></tr>
+<tr><td>2026-02</td><td class="num">9,515.90</td><td class="num">21</td><td class="num">40,000</td><td class="num">0</td><td class="num">31,658.75</td><td class="num">0</td><td class="num">0</td><td class="num red">-1,174.65</td></tr>
+<tr><td>2026-03</td><td class="num">14,231.47</td><td class="num">32</td><td class="num">0</td><td class="num">11,432.41</td><td class="num">47,864.68</td><td class="num">0</td><td class="num">0</td><td class="num red">-73,528.56</td></tr>
+<tr><td>2026-04</td><td class="num">5,330.44</td><td class="num">33</td><td class="num">40,000</td><td class="num">10,330</td><td class="num">15,878.08</td><td class="num">503.62</td><td class="num">0</td><td class="num">8,965.10</td></tr>
+<tr><td>2026-05</td><td class="num">3,308.38</td><td class="num">29</td><td class="num">115,000</td><td class="num">69,919.97</td><td class="num">195,934.86</td><td class="num">202,734.87</td><td class="num">3,474.80</td><td class="num">45,046.86</td></tr>
+<tr><td>2026-06</td><td class="num">1,114.17</td><td class="num">13</td><td class="num">42,010</td><td class="num">480</td><td class="num">329,502.34</td><td class="num">268,019.69</td><td class="num">0</td><td class="num red">-20,586.82</td></tr>
+<tr><td>TOTAL H1 2026</td><td class="num">37,245.76</td><td class="num">146</td><td class="num">237,010</td><td class="num">92,162.38</td><td class="num">652,788.61</td><td class="num">472,329.40</td><td class="num">3,474.80</td><td class="num red">-75,902.15</td></tr>
+<tr><td>AVG/MONTH</td><td class="num">6,207.63</td><td class="num"></td><td class="num">39,501.67</td><td class="num">15,360.40</td><td class="num">108,798.10</td><td class="num">78,721.57</td><td class="num"></td><td class="num red">-12,650.36</td></tr>
+</table></div></div><div class="row"><div class="col panel"><div class="ph">CARD SPEND TREND</div><div class="chart-wrap"><svg id="svg-monthly2" width="100%" height="150"></svg></div></div></div><div class="panel" style="margin-bottom:6px;"><div class="ph">MoM CHANGES — Card Spend</div><div class="pb"><table class="bt">
+<tr><th class="">Month</th><th class="num">Spend</th><th class="num">Prior Month</th><th class="num">MoM %</th><th class="">Direction</th></tr>
+<tr><td>2026-06</td><td class="num">1,114.17</td><td class="num">3,308.38</td><td class="num red">-0.66</td><td>▼ Lower</td></tr>
+<tr><td>2026-05</td><td class="num">3,308.38</td><td class="num">5,330.44</td><td class="num red">-0.38</td><td>▼ Lower</td></tr>
+<tr><td>2026-04</td><td class="num">5,330.44</td><td class="num">14,231.47</td><td class="num red">-0.63</td><td>▼ Lower</td></tr>
+<tr><td>2026-03</td><td class="num">14,231.47</td><td class="num">9,515.90</td><td class="num">0.50</td><td>▲ Higher</td></tr>
+<tr><td>2026-02</td><td class="num">9,515.90</td><td class="num">3,745.40</td><td class="num">1.54</td><td>▲ Higher</td></tr>
+<tr><td>2026-01</td><td class="num">3,745.40</td><td class="num">0</td><td class="num">0</td><td>▲ Higher</td></tr>
+</table></div></div></div>
+<div class="page" id="p-cat"><div class="row"><div class="col panel"><div class="ph">SPEND BY CATEGORY</div><div class="chart-wrap"><svg id="svg-cats" width="100%" height="200"></svg></div></div></div><div class="panel" style="margin-bottom:6px;"><div class="ph">CATEGORIES — Card Spend Breakdown · H1 2026<span class="ph-sub">Sorted largest to smallest. Update when full transaction data changes.</span></div><div class="pb"><table class="bt">
+<tr><th class="">Category</th><th class="num">Total (R$)</th><th class="num">% of Card</th><th class="num">Avg/Month</th><th class="num">Txs</th><th class="">Classification</th></tr>
+<tr><td>Viagem</td><td class="num">9,036.83</td><td class="num">0.24</td><td class="num">1,506.14</td><td class="num">1</td><td>💡 Discretionary</td></tr>
+<tr><td>Compras/ML</td><td class="num">8,744.68</td><td class="num">0.23</td><td class="num">1,457.45</td><td class="num">9</td><td>💡 Discretionary</td></tr>
+<tr><td>IA/Tecnologia</td><td class="num">6,624.36</td><td class="num">0.18</td><td class="num">1,104.06</td><td class="num">37</td><td>⚠ Review</td></tr>
+<tr><td>Loteria</td><td class="num">6,455.10</td><td class="num">0.17</td><td class="num">1,075.85</td><td class="num">39</td><td>⚠ Review</td></tr>
+<tr><td>Outros</td><td class="num">2,235.58</td><td class="num">0.06</td><td class="num">372.60</td><td class="num">9</td><td>❓ Unknown</td></tr>
+<tr><td>Internet</td><td class="num">1,413.12</td><td class="num">0.04</td><td class="num">235.52</td><td class="num">6</td><td>✅ Essential</td></tr>
+<tr><td>Assinatura</td><td class="num">1,227.50</td><td class="num">0.03</td><td class="num">204.58</td><td class="num">19</td><td>💡 Discretionary</td></tr>
+<tr><td>Delivery/iFood</td><td class="num">1,217.92</td><td class="num">0.03</td><td class="num">202.99</td><td class="num">14</td><td>✅ Essential</td></tr>
+<tr><td>Transporte</td><td class="num">205.34</td><td class="num">0.01</td><td class="num">34.22</td><td class="num">10</td><td>💡 Discretionary</td></tr>
+<tr><td>Telecomunicações</td><td class="num">74.43</td><td class="num">0.00</td><td class="num">12.41</td><td class="num">1</td><td>✅ Essential</td></tr>
+<tr><td>Digital</td><td class="num">10.90</td><td class="num">0.00</td><td class="num">1.82</td><td class="num">1</td><td>❓ Unknown</td></tr>
+<tr><td>TOTAL</td><td class="num">37,245.76</td><td class="num"></td><td class="num"></td><td class="num">146</td><td></td></tr>
+</table></div></div><div class="panel" style="margin-bottom:6px;"><div class="ph">BY CLASSIFICATION</div><div class="pb"><table class="bt">
+<tr><th class="">◆ BY CLASSIFICATION</th></tr>
+<tr><td>✅ Essential</td></tr>
+<tr><td>💡 Discretionary</td></tr>
+<tr><td>⚠ Review</td></tr>
+<tr><td>❓ Unknown</td></tr>
+</table></div></div></div>
+<div class="page" id="p-alerts"><div class="panel" style="margin-bottom:6px;"><div class="ph">ALERTS — Risk &amp; Action Register · Cross-Domain<span class="ph-sub">Full alert register. Sources: finance, subscriptions, repos, projects. Update status as resolved.</span></div><div class="pb"><table class="bt">
+<tr><th class="num">#</th><th class="">Severity</th><th class="">Domain</th><th class="">Finding</th><th class="num">BRL Exposure</th><th class="">Recommended Action</th><th class="">Status</th></tr>
+<tr><td class="num">1</td><td><span class="badge badge-crit">CRITICAL</span></td><td>Subscriptions</td><td>CANCEL queue: Claude x2 (R$184/mo) + Grok (R$149.90/mo) + TuneIn (R$31.90/mo) = R$365.80/mo</td><td class="num">4,389.60</td><td>Cancel all 4 before next billing. Apple Subscriptions + app accounts.</td><td class="red">Pending</td></tr>
+<tr><td class="num">2</td><td><span class="badge badge-crit">CRITICAL</span></td><td>FX Reconciliation</td><td>R$652,789 sent to USA Own Account (67995). 19 ops Jan-Jun. Validate USD balances vs BCB.</td><td class="num">652,788.61</td><td>Pull USD account statement. Reconcile each BCB op against balance.</td><td class="red">Pending</td></tr>
+<tr><td class="num">3</td><td><span class="badge badge-crit">CRITICAL</span></td><td>Sub Stack Bloat</td><td>6 services in REVIEW. Annual exposure ~R$7,763. Manus credits uncontrolled.</td><td class="num">7,763.28</td><td>Audit each REVIEW service. Decide KEEP/CANCEL. Target: eliminate ≥3.</td><td class="red">Pending</td></tr>
+<tr><td class="num">4</td><td><span class="badge badge-high">HIGH</span></td><td>Liquidity</td><td>100% liquid in 2 digital banks (Inter + MP = R$23,197). BB balance R$0. Below R$30k target.</td><td class="num">23,196.90</td><td>Maintain R$30k+ buffer. Distribute across BB Rende Fácil + Inter.</td><td class="red">Pending</td></tr>
+<tr><td class="num">5</td><td><span class="badge badge-high">HIGH</span></td><td>IOF + FX Cost</td><td>R$3,475 IOF paid on Inter FX. Compare rates across Wise / Topázio / BB.</td><td class="num">3,474.80</td><td>Review IOF rate per op. Compare institutions for next transfers.</td><td class="red">Pending</td></tr>
+<tr><td class="num">6</td><td><span class="badge badge-high">HIGH</span></td><td>IB Withdrawal</td><td>R$19,196 IB withdrawal via Wise Jun/2026. Destination unconfirmed.</td><td class="num">19,195.81</td><td>Confirm destination. Check Inter + IB statements.</td><td class="red">Pending</td></tr>
+<tr><td class="num">7</td><td><span class="badge badge-high">HIGH</span></td><td>Lottery/Gambling</td><td>R$6,455 Loteria on MP card (39 txs). No budget cap. Avg R$1,076/mo.</td><td class="num">6,455.10</td><td>Set monthly Loteria limit R$500. Remove card if exceeded.</td><td class="red">Pending</td></tr>
+<tr><td class="num">8</td><td><span class="badge badge-med">MEDIUM</span></td><td>AI/Tech Overlap</td><td>R$6,624 via card on IA/Tech (37 txs). Likely duplicates subscription stack.</td><td class="num">6,624.36</td><td>Cross-match card IA charges vs sub list. Consolidate billing method.</td><td class="red">Pending</td></tr>
+<tr><td class="num">9</td><td><span class="badge badge-med">MEDIUM</span></td><td>Travel/Viagem</td><td>R$9,037 travel charges (LAN Airlines Mar/2026). Business vs personal unclassified.</td><td class="num">9,036.83</td><td>Classify: business vs personal. Flag deductible items.</td><td class="red">Pending</td></tr>
+<tr><td class="num">10</td><td><span class="badge badge-med">MEDIUM</span></td><td>ML Volume</td><td>R$31,570 Mercado Livre purchases. Strong Home Office + CPAP pattern. No tags.</td><td class="num">31,570.45</td><td>Tag each purchase: CAPEX / HEALTH / CONSUMABLE for tax tracking.</td><td class="red">Pending</td></tr>
+<tr><td class="num">11</td><td><span class="badge badge-low">LOW</span></td><td>Wise Brasil</td><td>Multiple Wise ops (IB deposits + UK transfers). Ensure BACEN reporting.</td><td class="num"></td><td>Confirm BACEN reporting compliance. Keep KYC current.</td><td class="gray">Monitor</td></tr>
+<tr><td class="num">12</td><td><span class="badge badge-low">LOW</span></td><td>SBCT Tech Solutions</td><td>R$45,000 PIX Out to SBCT Tech Solutions LLC (USA) via Inter May/2026.</td><td class="num">45,000</td><td>Confirm nature: service invoice? investment? Ensure documentation.</td><td class="red">Pending</td></tr>
+</table></div></div><div class="panel" style="margin-bottom:6px;"><div class="ph">COUNTS</div><div class="pb"><table class="bt">
+<tr><th class="">◆ COUNTS</th><th class=""></th><th class="num">Total</th><th class="num">Pending</th></tr>
+<tr><td></td><td><span class="badge badge-crit">CRITICAL</span></td><td class="num">3</td><td class="num">3</td></tr>
+<tr><td></td><td><span class="badge badge-high">HIGH</span></td><td class="num">4</td><td class="num">4</td></tr>
+<tr><td></td><td><span class="badge badge-med">MEDIUM</span></td><td class="num">3</td><td class="num">3</td></tr>
+<tr><td></td><td><span class="badge badge-low">LOW</span></td><td class="num">2</td><td class="num">1</td></tr>
+</table></div></div></div>
+<div class="page" id="p-repos"><div class="panel" style="margin-bottom:6px;"><div class="ph">REPOS — Git Repository Health · ~/Documents/GitHub<span class="ph-sub">Update via rescan-repos.zsh output. Currently 2 repos on iMac M3.</span></div><div class="pb"><table class="bt">
+<tr><th class="">Name</th><th class="">Status</th><th class="">Branch</th><th class="num">Dirty Files</th><th class="">Last Commit</th><th class="num">Days Since</th><th class="">Remote</th><th class="">Language</th><th class="num">Risk Score</th><th class="">Notes</th></tr>
+<tr><td>financas-2026</td><td><span class="badge badge-review">dirty</span></td><td>main</td><td class="num">2</td><td>2026-07-14</td><td class="num">48</td><td>github.com/AUTOGIO/financas-2026</td><td>Python</td><td class="num">27</td><td>Primary finance workspace · command-center source</td></tr>
+<tr><td>MacHealthOS</td><td><span class="badge badge-review">dirty</span></td><td>main</td><td class="num">5</td><td>2026-07-10</td><td class="num">52</td><td>github.com/AUTOGIO/MacHealthOS</td><td>Swift</td><td class="num">30</td><td>Mac system health monitoring</td></tr>
+</table></div></div><div class="panel" style="margin-bottom:6px;"><div class="ph">STATUS SUMMARY</div><div class="pb"><table class="bt">
+<tr><th class="">◆ STATUS SUMMARY</th></tr>
+<tr><td>Total Repos</td></tr>
+<tr><td class="green">Clean</td></tr>
+<tr><td class="red">Dirty</td></tr>
+<tr><td class="red">Broken</td></tr>
+</table></div></div></div>
+<div class="page" id="p-prj"><div class="panel" style="margin-bottom:6px;"><div class="ph">PROJECTS — Operational Status Board<span class="ph-sub">Manual update. One row per active project. This is NOT automated — it is your 2-min status board.</span></div><div class="pb"><table class="bt">
+<tr><th class="">Project</th><th class="">Status</th><th class="">Current Focus</th><th class="">Blocker</th><th class="">Next Action</th><th class="">Last Touched</th><th class="">Priority</th></tr>
+<tr><td>financas-2026</td><td><span class="badge badge-keep">Active</span></td><td>Command Center build</td><td>None</td><td>Complete xlsx + html</td><td>2026-07-14</td><td><span class="badge badge-high">HIGH</span></td></tr>
+<tr><td>MacHealthOS</td><td><span class="badge badge-keep">Active</span></td><td>iMac M3 setup from zero</td><td>None</td><td>Continue system configuration</td><td>2026-07-10</td><td><span class="badge badge-high">HIGH</span></td></tr>
+<tr><td>Global Retirement ETF</td><td><span class="badge badge-pause">Paused</span></td><td>Portfolio architecture</td><td>Waiting for iMac setup</td><td>Clone repo to iMac when ready</td><td></td><td><span class="badge badge-med">MEDIUM</span></td></tr>
+<tr><td>IBKR-Excel-Bridge</td><td><span class="badge badge-pause">Paused</span></td><td>IB → Excel snapshots</td><td>Needs TWS on iMac</td><td>Install TWS, clone repo</td><td></td><td><span class="badge badge-med">MEDIUM</span></td></tr>
+<tr><td>PersonalLifeOS</td><td><span class="badge badge-pause">Paused</span></td><td>SwiftUI habits/schedule</td><td>Needs clean Xcode build</td><td>Verify build on MBA, then clone</td><td></td><td><span class="badge badge-low">LOW</span></td></tr>
+<tr><td>AUTOGIO_PIOS</td><td><span class="badge badge-pause">Paused</span></td><td>UniFi/Starlink health</td><td>WAN stability gate reset</td><td>Re-run WAN gate when on iMac</td><td></td><td><span class="badge badge-low">LOW</span></td></tr>
+</table></div></div><div class="panel" style="margin-bottom:6px;"><div class="ph">COUNTS</div><div class="pb"><table class="bt">
+<tr><th class="">◆ COUNTS</th></tr>
+<tr><td class="green">Active</td></tr>
+<tr><td class="yellow">Paused</td></tr>
+<tr><td>Blocked</td></tr>
+</table></div></div></div>
+<div class="page" id="p-cfg"><div class="panel" style="margin-bottom:6px;"><div class="ph">CONFIG — Alert Thresholds &amp; Parameters<span class="ph-sub">Edit values to change what triggers alerts in the Command Center.</span></div><div class="pb"><table class="bt">
+<tr><th class="">Parameter</th><th class="num">Value</th><th class="">Unit</th><th class="">Notes</th></tr>
+<tr><td>Liquidity Floor</td><td class="num">20,000</td><td>BRL</td><td>Alert if TOTAL LIQUID &lt; this value</td></tr>
+<tr><td>Monthly Burn Cap</td><td class="num">8,000</td><td>BRL</td><td>Alert if card spend in any month exceeds this</td></tr>
+<tr><td>Subscription Stack Cap</td><td class="num">500</td><td>BRL/mo</td><td>Alert if total KEEP subscriptions &gt; this</td></tr>
+<tr><td>Repo Staleness Days</td><td class="num">30</td><td>days</td><td>Risk score +5 if repo has no commit in this many days</td></tr>
+<tr><td>FX Rate Low Alert</td><td class="num">4.90</td><td>BRL/USD</td><td>Alert if any FX op below this rate</td></tr>
+<tr><td>FX Rate High Alert</td><td class="num">5.40</td><td>BRL/USD</td><td>Alert if any FX op above this rate</td></tr>
+<tr><td>Cancel Savings Target</td><td class="num">365.80</td><td>BRL/mo</td><td>Expected monthly savings from CANCEL queue</td></tr>
+<tr><td>Renewal Warning Days</td><td class="num">7</td><td>days</td><td>Alert when a subscription renewal is within this many days</td></tr>
+<tr><td>Project Stale Days</td><td class="num">14</td><td>days</td><td>Alert if active project not touched in this many days</td></tr>
+<tr><td>Net Worth Currency</td><td class="num">BRL</td><td></td><td>All amounts denominated in BRL unless marked USD</td></tr>
+<tr><td>Report Period</td><td class="num">H1 2026</td><td></td><td>Jan-Jun 2026</td></tr>
+<tr><td>Owner</td><td class="num">Eduardo Forster Giovannini</td><td></td><td>CPF redacted</td></tr>
+</table></div></div></div>
+<div class="page" id="p-system"><div class="panel" style="margin-bottom:6px;"><div class="ph">SYSTEM — Host Machine<span class="ph-sub">Live probe · tailored for this iMac</span></div><div class="pb"><div class="kpi-grid"><div class="kpi"><div class="kpi-lbl">Chip</div><div class="kpi-val cyan">Apple M3</div><div class="kpi-sub"></div></div><div class="kpi"><div class="kpi-lbl">macOS</div><div class="kpi-val cyan">26.6.2</div><div class="kpi-sub"></div></div><div class="kpi"><div class="kpi-lbl">Build</div><div class="kpi-val cyan">25G83</div><div class="kpi-sub"></div></div><div class="kpi"><div class="kpi-lbl">Arch</div><div class="kpi-val cyan">arm64</div><div class="kpi-sub"></div></div><div class="kpi"><div class="kpi-lbl">Memory</div><div class="kpi-val cyan">16 GB</div><div class="kpi-sub"></div></div><div class="kpi"><div class="kpi-lbl">Cores</div><div class="kpi-val cyan">8</div><div class="kpi-sub"></div></div></div></div></div><div class="panel" style="margin-bottom:6px;"><div class="ph">HOST DETAIL<span class="ph-sub">sw_vers · sysctl · uname</span></div><div class="pb"><table class="bt"><tr><th>Attribute</th><th>Value</th></tr>
+<tr><td class='gray'>Computer</td><td class='cyan'>giovannini.eduardo@gmail.com’s iMac</td></tr>
+<tr><td class='gray'>Model Identifier</td><td class='cyan'>Mac15,5 (iMac, Apple Silicon)</td></tr>
+<tr><td class='gray'>Chip</td><td class='cyan'>Apple M3</td></tr>
+<tr><td class='gray'>Architecture</td><td class='cyan'>arm64</td></tr>
+<tr><td class='gray'>Total Cores</td><td class='cyan'>8</td></tr>
+<tr><td class='gray'>Memory</td><td class='cyan'>16 GB</td></tr>
+<tr><td class='gray'>Operating System</td><td class='cyan'>macOS 26.6.2</td></tr>
+<tr><td class='gray'>Build</td><td class='cyan'>25G83</td></tr>
+<tr><td class='gray'>Dashboard Generated</td><td class='cyan'>31 Aug 2026</td></tr>
+<tr><td class='gray'>Data Source</td><td class='cyan'>data/command-center.xlsx</td></tr>
+<tr><td class='gray'>Tracked Repos</td><td class='cyan'>2 (2 dirty)</td></tr>
+<tr><td class='gray'>Active Projects</td><td class='cyan'>2 active · 4 paused</td></tr>
+</table></div></div></div>
+</div>
+
+<div id="ticker"><div id="ticker-inner"><span class="tick-item">NET WORTH <span class="tick-up">R$ 377.473</span></span><span class="tick-sep">|</span><span class="tick-item">LIQUID <span class="tick-dn">R$ 23.197</span></span><span class="tick-sep">|</span><span class="tick-item">IB USD <span class="tick-up">USD 34,966</span></span><span class="tick-sep">|</span><span class="tick-item">FUNDOS <span class="tick-up">R$ 175.766</span></span><span class="tick-sep">|</span><span class="tick-item">FX OUT H1 <span class="tick-dn">R$ 652.789</span></span><span class="tick-sep">|</span><span class="tick-item">CARD H1 <span class="tick-dn">R$ 37.246</span></span><span class="tick-sep">|</span><span class="tick-item">SUB/MO <span class="tick-dn">R$ 1.344,55</span></span><span class="tick-sep">|</span><span class="tick-item">CANCEL SAVE <span class="tick-up">R$ 365,80</span></span><span class="tick-sep">|</span><span class="tick-item">ALERTS <span class="tick-dn">12</span></span><span class="tick-sep">|</span><span class="tick-item">REPOS <span class="tick-up">2</span></span><span class="tick-item">NET WORTH <span class="tick-up">R$ 377.473</span></span><span class="tick-sep">|</span><span class="tick-item">LIQUID <span class="tick-dn">R$ 23.197</span></span><span class="tick-sep">|</span><span class="tick-item">IB USD <span class="tick-up">USD 34,966</span></span><span class="tick-sep">|</span><span class="tick-item">FUNDOS <span class="tick-up">R$ 175.766</span></span><span class="tick-sep">|</span><span class="tick-item">FX OUT H1 <span class="tick-dn">R$ 652.789</span></span><span class="tick-sep">|</span><span class="tick-item">CARD H1 <span class="tick-dn">R$ 37.246</span></span><span class="tick-sep">|</span><span class="tick-item">SUB/MO <span class="tick-dn">R$ 1.344,55</span></span><span class="tick-sep">|</span><span class="tick-item">CANCEL SAVE <span class="tick-up">R$ 365,80</span></span><span class="tick-sep">|</span><span class="tick-item">ALERTS <span class="tick-dn">12</span></span><span class="tick-sep">|</span><span class="tick-item">REPOS <span class="tick-up">2</span></span></div></div>
+
+</div>
+<script>
+window.DATA = {"alloc": [{"label": "Fundos BRL", "v": 175765.83, "c": "#00cc44"}, {"label": "IB Net", "v": 178510.76, "c": "#3399ff"}, {"label": "Liquid", "v": 23196.9, "c": "#ffcc00"}], "nw": 377473.49, "monthly": {"labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"], "card": [3745.4, 9515.9, 14231.47, 5330.44, 3308.38, 1114.17], "avg": 6207.626666666667}, "fxrate": [{"d": "01-26", "r": 5.3561}, {"d": "01-27", "r": 5.2953}, {"d": "01-30", "r": 5.3546}, {"d": "02-09", "r": 5.2896}, {"d": "02-11", "r": 5.2633}, {"d": "03-03", "r": 5.3414}, {"d": "03-13", "r": 5.2924}, {"d": "03-18", "r": 5.3211}, {"d": "04-22", "r": 5.2927}, {"d": "04-30", "r": 5.0362}, {"d": "05-07", "r": 5.0443}, {"d": "05-07", "r": 4.988}, {"d": "05-11", "r": 4.956}, {"d": "05-15", "r": 5.1558}, {"d": "05-15", "r": 4.9851}, {"d": "05-18", "r": 5.0958}, {"d": "05-18", "r": 5.0056}, {"d": "05-19", "r": 5.1149}, {"d": "05-20", "r": 5.0949}, {"d": "05-26", "r": 5.1028}, {"d": "05-28", "r": 5.1302}, {"d": "05-28", "r": 5.0886}, {"d": "06-05", "r": 5.1421}, {"d": "06-22", "r": 5.2245}, {"d": "06-22", "r": 5.1436}, {"d": "06-22", "r": 5.151}, {"d": "06-26", "r": 5.1783}], "flows": {"labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"], "card": [3745.4, 9515.9, 14231.47, 5330.44, 3308.38, 1114.17], "pixIn": [0, 40000.0, 0, 40000.0, 115000.0, 42010.0]}, "flowpie": [{"label": "FX Outbound", "v": 652788.61, "c": "#ff2222"}, {"label": "IB Deposits", "v": 197706.57, "c": "#00cc44"}, {"label": "Fund Capital", "v": 175765.83, "c": "#3399ff"}, {"label": "Inbound", "v": 98857.0, "c": "#00cccc"}, {"label": "Card Spend", "v": 37245.76, "c": "#ffcc00"}], "subs": [{"label": "KEEP", "v": 331.8, "c": "#00cc44"}, {"label": "CANCEL", "v": 365.8, "c": "#ff2222"}, {"label": "REVIEW", "v": 646.95, "c": "#ffcc00"}], "categories": [{"label": "Viagem", "v": 9036.83, "c": "#ff6600"}, {"label": "Compras/ML", "v": 8744.68, "c": "#3399ff"}, {"label": "IA/Tecnologia", "v": 6624.36, "c": "#00cc44"}, {"label": "Loteria", "v": 6455.1, "c": "#ffcc00"}, {"label": "Outros", "v": 2235.58, "c": "#00cccc"}, {"label": "Internet", "v": 1413.12, "c": "#ff4444"}, {"label": "Assinatura", "v": 1227.5, "c": "#ff8800"}, {"label": "Delivery/iFood", "v": 1217.92, "c": "#66bbff"}, {"label": "Transporte", "v": 205.34, "c": "#00ff55"}, {"label": "Telecomunica\u00e7\u00f5es", "v": 74.43, "c": "#888"}, {"label": "Digital", "v": 10.9, "c": "#555"}]};
+
+function updateClock(){
+  const n=new Date();
+  document.getElementById('clock').textContent=
+    n.toLocaleDateString('pt-BR')+' '+
+    n.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit',second:'2-digit'})+' BRT';
+}
+setInterval(updateClock,1000); updateClock();
+
+let fsZoom=100;
+function adjustFS(d){
+  fsZoom=Math.max(70,Math.min(150,fsZoom+d*10));
+  document.body.style.zoom=fsZoom+'%';
+  const lbl=document.getElementById('fs-pct'); if(lbl) lbl.textContent=fsZoom+'%';
+}
+
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('p-'+id).classList.add('active');
+  event.currentTarget.classList.add('active');
+  setTimeout(initCharts,30);
+}
+
+function filterTx(){
+  const q=document.getElementById('tx-search').value.toLowerCase();
+  const rows=document.querySelectorAll('#tx-table tr:not(:first-child)');
+  let vis=0;
+  rows.forEach(r=>{const t=r.textContent.toLowerCase();const s=t.includes(q);r.style.display=s?'':'none';if(s)vis++;});
+  document.getElementById('tx-count').textContent=vis+' rows';
+}
+
+function svgEl(tag,attrs){const el=document.createElementNS('http://www.w3.org/2000/svg',tag);
+  Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,v));return el;}
+
+function pie(id,data,cx0off,title){
+  const svg=document.getElementById(id); if(!svg) return;
+  const W=svg.clientWidth||300,H=svg.getAttribute('height')-0||150;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const cx=W/2-cx0off,cy=H/2-5,r=Math.min(60,H/2-15);
+  const total=data.reduce((s,d)=>s+(d.v||0),0)||1;let a=-Math.PI/2;
+  data.forEach(d=>{const sl=2*Math.PI*((d.v||0)/total);
+    const x1=cx+r*Math.cos(a),y1=cy+r*Math.sin(a);a+=sl;
+    const x2=cx+r*Math.cos(a),y2=cy+r*Math.sin(a);const lg=sl>Math.PI?1:0;
+    svg.appendChild(svgEl('path',{d:`M${cx},${cy} L${x1},${y1} A${r},${r} 0 ${lg} 1 ${x2},${y2} Z`,
+      fill:d.c,stroke:'#0a0a0a','stroke-width':'2',opacity:'0.85'}));});
+  data.forEach((d,i)=>{const lx=cx+r+16,ly=14+i*18;
+    svg.appendChild(svgEl('rect',{x:lx,y:ly,width:9,height:9,fill:d.c}));
+    const pct=(((d.v||0)/total)*100).toFixed(1);
+    const t=svgEl('text',{x:lx+13,y:ly+8,fill:'#e8e8e8','font-size':'8.5'});
+    t.textContent=`${d.label} ${pct}%`;svg.appendChild(t);});
+}
+
+function bars(id,labels,series){
+  const svg=document.getElementById(id); if(!svg) return;
+  const W=svg.clientWidth||500,H=svg.getAttribute('height')-0||140;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const pad={l:40,r:10,t:12,b:22},cw=W-pad.l-pad.r,ch=H-pad.t-pad.b;
+  const allv=series.flatMap(s=>s.v);const max=Math.max(...allv,1);
+  const groups=labels.length,gw=cw/groups,bw=gw/(series.length+0.6);
+  labels.forEach((m,i)=>{
+    series.forEach((s,si)=>{const v=s.v[i]||0;const bh=(v/max)*ch;
+      const x=pad.l+i*gw+si*bw+bw*0.3;const y=pad.t+ch-bh;
+      svg.appendChild(svgEl('rect',{x,y,width:bw*0.9,height:bh,fill:s.c,opacity:'0.85'}));});
+    const lbl=svgEl('text',{x:pad.l+i*gw+gw/2,y:H-6,'text-anchor':'middle',fill:'#888','font-size':'9'});
+    lbl.textContent=m;svg.appendChild(lbl);});
+}
+
+function drawMonthly(id){
+  const svg=document.getElementById(id); if(!svg) return;
+  const D=window.DATA.monthly;const W=svg.clientWidth||540,H=svg.getAttribute('height')-0||140;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const pad={l:40,r:10,t:12,b:25},cw=W-pad.l-pad.r,ch=H-pad.t-pad.b;
+  const max=Math.max(...D.card,1),bw=(cw/D.card.length)*0.6,gap=(cw/D.card.length)*0.4;
+  D.card.forEach((v,i)=>{const x=pad.l+i*(bw+gap)+gap/2,bh=(v/max)*ch,y=pad.t+ch-bh;
+    const col=v>10000?'#ff2222':v>6000?'#ff6600':'#ffcc00';
+    svg.appendChild(svgEl('rect',{x,y,width:bw,height:bh,fill:col,opacity:'0.85'}));
+    const lb=svgEl('text',{x:x+bw/2,y:H-8,'text-anchor':'middle',fill:'#888','font-size':'9'});lb.textContent=D.labels[i];svg.appendChild(lb);
+    const vl=svgEl('text',{x:x+bw/2,y:y-3,'text-anchor':'middle',fill:'#e8e8e8','font-size':'8'});vl.textContent=(v/1000).toFixed(1)+'k';svg.appendChild(vl);});
+  const avgY=pad.t+ch-(D.avg/max)*ch;
+  svg.appendChild(svgEl('line',{x1:pad.l,y1:avgY,x2:W-pad.r,y2:avgY,stroke:'#3399ff','stroke-width':'1','stroke-dasharray':'4,3'}));
+  const at=svgEl('text',{x:pad.l-2,y:avgY-3,fill:'#3399ff','font-size':'8','text-anchor':'end'});at.textContent='avg';svg.appendChild(at);
+}
+
+function drawFX(){
+  const svg=document.getElementById('svg-fxrate'); if(!svg) return;
+  const pts=window.DATA.fxrate;if(!pts.length) return;
+  const W=svg.clientWidth||300,H=160;svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const pad={l:36,r:8,t:10,b:20},cw=W-pad.l-pad.r,ch=H-pad.t-pad.b;
+  const rates=pts.map(p=>p.r),mn=Math.min(...rates)-0.05,mx=Math.max(...rates)+0.05;
+  const sx=i=>(i/(pts.length-1))*cw+pad.l,sy=r=>pad.t+ch-(r-mn)/(mx-mn)*ch;
+  [4.9,5.0,5.1,5.2,5.3,5.4].forEach(rv=>{if(rv<mn||rv>mx)return;const yg=sy(rv);
+    svg.appendChild(svgEl('line',{x1:pad.l,y1:yg,x2:W-pad.r,y2:yg,stroke:'#222','stroke-width':'1'}));
+    const gt=svgEl('text',{x:pad.l-2,y:yg+3,fill:'#555','font-size':'7','text-anchor':'end'});gt.textContent=rv.toFixed(2);svg.appendChild(gt);});
+  const poly=pts.map((p,i)=>`${sx(i)},${sy(p.r)}`).join(' ');
+  svg.appendChild(svgEl('polyline',{points:poly,fill:'none',stroke:'#3399ff','stroke-width':'1.5'}));
+  pts.forEach((p,i)=>svg.appendChild(svgEl('circle',{cx:sx(i),cy:sy(p.r),r:'2.2',fill:'#3399ff'})));
+  const avg=rates.reduce((a,b)=>a+b)/rates.length;
+  svg.appendChild(svgEl('line',{x1:pad.l,y1:sy(avg),x2:W-pad.r,y2:sy(avg),stroke:'#ffcc00','stroke-width':'1','stroke-dasharray':'3,3'}));
+  const at=svgEl('text',{x:W-pad.r-2,y:sy(avg)-3,fill:'#ffcc00','font-size':'7','text-anchor':'end'});at.textContent='avg '+avg.toFixed(3);svg.appendChild(at);
+}
+
+function clearSvg(id){const el=document.getElementById(id);if(el)while(el.firstChild)el.removeChild(el.firstChild);}
+
+function initCharts(){
+  ['svg-alloc','svg-monthly','svg-monthly2','svg-fxrate','svg-flows','svg-flow-pie','svg-subs','svg-cats'].forEach(clearSvg);
+  pie('svg-alloc',window.DATA.alloc,40);
+  drawMonthly('svg-monthly'); drawMonthly('svg-monthly2');
+  drawFX();
+  bars('svg-flows',window.DATA.flows.labels,[
+    {v:window.DATA.flows.card,c:'#ff4444'},{v:window.DATA.flows.pixIn,c:'#00cc44'}]);
+  pie('svg-flow-pie',window.DATA.flowpie,0);
+  pie('svg-subs',window.DATA.subs,0);
+  bars('svg-cats',window.DATA.categories.map(c=>c.label.slice(0,6)),
+    [{v:window.DATA.categories.map(c=>c.v),c:'#ff6600'}]);
+}
+
+window.addEventListener('resize',initCharts);
+document.addEventListener('DOMContentLoaded',initCharts);
+setTimeout(initCharts,200);
+
+</script>
+</body>
+</html>

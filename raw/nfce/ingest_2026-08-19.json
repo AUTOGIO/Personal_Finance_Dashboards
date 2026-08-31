@@ -1,0 +1,54 @@
+{
+  "ingested_at": "2026-08-19",
+  "source_files": [
+    {
+      "path": "Downloads/NFCE_20260819024939.txt",
+      "installed": "~/.financas-notas/personal/NFCE_20260819024939.txt",
+      "format": "receipt_line_items",
+      "unique_keys": 21,
+      "date_span": "2026-01-13 .. 2026-07-16",
+      "track": "personal",
+      "notes": "21 receipts already in XML; re-ingested Litoral nº6885 from TXT after removing OCR XML"
+    },
+    {
+      "path": "Downloads/NFCE_20260819025042.txt",
+      "format": "receipt_line_items",
+      "track": "skipped",
+      "notes": "Duplicate of NFCE_20260819024939.txt"
+    },
+    {
+      "path": "Downloads/NFCE_20260819025658.txt",
+      "installed": "LitoralPriceTracker/.../NOTAS_LITORAL/NFCE_20260819025658.txt",
+      "format": "product_snapshot_compact",
+      "rows": 4542,
+      "snapshot_date": "2023-12-30",
+      "track": "litoral_store"
+    },
+    {
+      "path": "Downloads/NFCE_20260819030750.txt",
+      "installed": "LitoralPriceTracker/.../NOTAS_LITORAL/NFCE_20260819030750.txt",
+      "format": "receipt_line_items",
+      "unique_keys": 9,
+      "date_span": "2020-08-13 .. 2021-11-29",
+      "merchant": "SUPERMERCADO LITORAL LTDA.",
+      "track": "litoral_store"
+    }
+  ],
+  "personal_changes": {
+    "receipts_before": 499,
+    "receipts_after": 499,
+    "ocr_xml_removed": "25260708189400000107652060000068851220143101",
+    "receipt_txt_receipts_added": 1,
+    "receipt_txt_skipped_cancelled": 1,
+    "tracked_products_before": 622,
+    "tracked_products_after": 630,
+    "final_index_before": 159.58,
+    "final_index_after": 158.87,
+    "yoy12_before": 6.58,
+    "yoy12_after": 6.24
+  },
+  "code_changes": [
+    "personal_inflation.py: parse_sefaz_receipt_txt_exports + Brazilian number parsing",
+    "litoral_store_prices.py: compact 4-col product TXT + receipt TXT merge"
+  ]
+}
