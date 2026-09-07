@@ -6,7 +6,8 @@ __pycache__/
 *.pyc
 
 # Regenerated pipeline outputs (rebuild with: python3 personal_inflation.py)
-personal_inflation_data.json
+# personal_inflation_data.json is TRACKED — notas/ is empty so this snapshot
+# cannot be rebuilt; losing it freezes bloomberg tab 11 permanently.
 personal_inflation_validation.json
 personal_inflation_extracted_items.json
 nfce_all.json
