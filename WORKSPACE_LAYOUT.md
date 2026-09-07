@@ -4,13 +4,21 @@ Three-monitor Spencer layout **Personal Finance** for weekly finance work. Refer
 
 ## One-liner
 
-From the repo root:
+From the repo root (prefer `make check` first after workbook edits):
 
 ```bash
-make workspace
+make check && make workspace
 ```
 
 This regenerates both dashboards, opens the correct documents, and restores Spencer window positions.
+
+## First-time layout capture
+
+If `spencer --list` does not show **Personal Finance**:
+
+1. Arrange the four apps as in the table below (close extra Comet windows).
+2. Run `spencer --create` and name the layout **`Personal Finance`** exactly (that is what `LAYOUT_NAME` expects).
+3. Then `make workspace` should exit 0.
 
 ## Target layout
 
@@ -19,7 +27,7 @@ This regenerates both dashboards, opens the correct documents, and restores Spen
 | iMac (left) | 2 | Comet | `command-center.html` |
 | LG Ultrawide (center, main) | 1 | Microsoft Excel | `data/command-center.xlsx` |
 | LG Ultrawide (right) | 3 | Cursor (left half) | `Personal_Finance.code-workspace` |
-| LG Ultrawide (right) | 3 | Obsidian (right half) | Graph view on `~/Documents/Obsidian` |
+| LG Ultrawide (right) | 3 | Obsidian (right half) | `~/Documents/Obsidian` (script opens Graph; any Obsidian title passes verify) |
 
 ```text
 ┌─────────────┬──────────────────────┬──────────────────────┐
@@ -103,7 +111,7 @@ spencer --update "Personal Finance"
 | `Spencer layout not found` | Open Spencer → Layout Manager → confirm **Personal Finance** exists |
 | Comet shows wrong page | Script opens `command-center.html`; close extra Comet tabs |
 | Excel wrong workbook | Layout expects `data/command-center.xlsx` (not `wealthcommand.xlsx`) |
-| Obsidian not in Graph view | Open Graph manually once, then `spencer --update "Personal Finance"` |
+| Obsidian window not detected | Title check only needs the substring `Obsidian`; Graph is opened via URI but not required as the active tab |
 | Window verify timeout | Wait for slow apps, re-run; grant Accessibility permission |
 | `could not read window titles` | Grant Accessibility to your terminal (see prerequisites) |
 | Generator failure | Fix workbook errors first; script aborts before Spencer restore |
