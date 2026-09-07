@@ -88,6 +88,8 @@ exports under `raw/` by institution (`raw/mercado_pago/`,
    ```
    Confirm the last line says `[ok] all N spot-checks passed` (not
    `[WARNING]`). Your browser opens with the updated wealth dashboard.
+   Optional safety: `make check` verifies both workbooks still have the
+   expected sheets.
 
 ### Command center pass (detailed checklist)
 
