@@ -1,120 +1,117 @@
 # Personal_Finance
 
-Local personal finance workspace: one Excel workbook, one static HTML
-dashboard generated from it, and raw bank/receipt exports. No app, no
+Local personal finance workspace: **two Excel workbooks**, **two static HTML
+dashboards** generated from them, and raw bank/receipt exports. No app, no
 server, no build step.
 
 ## Source of truth
 
-**`data/wealthcommand.xlsx`, sheet `CALC`.** It says so itself (cell
-header: "CALC — Single Source of Truth"). Every figure on the dashboard is
-derived from that one sheet — not from the other sheets in the same
-workbook, not from `raw/`, not typed by hand into the HTML.
+**Each dashboard has its own workbook — don't cross them.**
+
+| Dashboard | Workbook | Source of truth |
+|---|---|---|
+| `bloomberg-terminal.html` | `data/wealthcommand.xlsx` | Sheet **`CALC`** only |
+| `command-center.html` | `data/command-center.xlsx` | **All 11 sheets** (1:1 with tabs) |
+
+For the wealth dashboard, `CALC` declares itself "Single Source of Truth".
+Every patched figure on `bloomberg-terminal.html` traces to `CALC` — not
+other sheets in the same workbook, not `raw/`, not hand-typed HTML.
 
 Two things that are *not* the source of truth, on purpose:
-- **`raw/`** is upstream of CALC — the original bank/receipt exports CALC
-  was built from. It's the ground truth for any single transaction, but
-  it's unprocessed and nothing reads it automatically.
-- **The workbook's own `01 NET WORTH` sheet disagrees with CALC** on net
-  worth (R$358,277 vs R$377,473) — traced to how the June IB→Wise
-  withdrawal is recorded on `04 PORTFOLIO`. The dashboard shows CALC's
-  number throughout, since CALC is the declared source of truth, but this
-  is a real unresolved disagreement, not a display bug. Worth checking
-  against the actual account statements in `raw/`.
+- **`raw/`** is upstream — original bank/receipt exports. Ground truth for
+  any single transaction, but nothing reads it automatically.
+- **Net worth disagreements** between dashboards and within the wealth
+  workbook (CALC vs `01 NET WORTH` tile) are documented open items — see
+  `AI_GUIDE.md` → "Known open items". Reconcile against `raw/` statements;
+  don't force one number to match another.
 
 ## Layout
 
 ```
 Personal_Finance/
 ├── README.md                     you are here
-├── LEIA-ME.md                    weekly update ritual (Portuguese)
-├── Makefile                      make regen / make open / make clean
-├── bloomberg-terminal.html       the dashboard — open directly in a browser
+├── AI_GUIDE.md                   canonical guide for humans and AI assistants
+├── USER_GUIDE.md                 plain-language walkthrough + weekly checklist
+├── LEIA-ME.md                    weekly ritual (Portuguese)
+├── Makefile                      make regen / check / workspace / open / clean
+├── WORKSPACE_LAYOUT.md           Spencer 3-display layout
+├── bloomberg-terminal.html       wealth dashboard — GENERATED
+├── command-center.html           ops dashboard — GENERATED
 ├── data/
-│   └── wealthcommand.xlsx        the workbook (CALC = source of truth)
+│   ├── wealthcommand.xlsx        wealth workbook (CALC = source of truth)
+│   └── command-center.xlsx       ops workbook (11 sheets)
 ├── scripts/
-│   └── regenerate_dashboard.py   rebuilds the dashboard from data/wealthcommand.xlsx
-├── reports/
-│   └── personal-finance-executive-report-2026-07.docx   point-in-time snapshot, not auto-updated
-├── raw/                          bank & receipt exports, by institution — feeds the workbook manually
-│   └── financas2026_import/      reference CSVs migrated from the old financas-2026 project (see below)
-└── nfce/                         NFC-e personal inflation tracker — standalone, migrated from financas-2026
+│   ├── regenerate_dashboard.py   patches bloomberg-terminal.html from CALC
+│   ├── generate_command_center.py   rebuilds command-center.html from workbook
+│   ├── check_integrity.py        make check — sheet + irreplaceable-file preflight
+│   └── backup.sh                 timestamped backup outside iCloud
+├── reports/                      point-in-time snapshots (docx), not auto-updated
+├── raw/                          bank & receipt exports — feeds workbooks manually
+└── nfce/                         NFC-e personal inflation tracker (Bloomberg tab 11)
 ```
+
+**Location:** `~/Documents/GitHub/Personal_Finance` (not iCloud).
 
 ## Updating
 
+**Wealth dashboard:**
 ```bash
-make regen     # rebuild bloomberg-terminal.html from data/wealthcommand.xlsx
-make open      # regen, then open the dashboard in your browser
+make regen     # patch bloomberg-terminal.html from data/wealthcommand.xlsx
+make open      # regen, then open in your browser
 make clean     # remove .DS_Store / __pycache__
 ```
 
+**Command center:**
+```bash
+python3 scripts/generate_command_center.py   # full rebuild from command-center.xlsx
+open command-center.html
+```
+
 `make regen` runs `scripts/regenerate_dashboard.py`, which patches
-`bloomberg-terminal.html` in place — it does not rebuild the file from
-scratch, so anything you've hand-edited elsewhere in the HTML survives a
-re-run. It's idempotent: running it twice in a row with no workbook
-changes produces zero diffs.
+`bloomberg-terminal.html` in place — it does not rebuild from scratch.
+Confirm `[ok] all N spot-checks passed` after every run.
 
-Requires `openpyxl` (already on this Mac's system Python 3; if missing:
-`pip3 install --break-system-packages openpyxl`). No venv, no other
-dependencies.
-
-## NFC-E tab (11 NFC-E)
-
-A separate personal-inflation tracker (grocery/pharmacy NFC-e receipts,
-not bank/card data). Shows cumulative & annualized inflation, YoY vs.
-official IPCA, top spend categories, and biggest risers/fallers.
-
-**This tab is a snapshot, not live** — unlike everything else on the
-dashboard, `make regen` does not recompute it, only re-renders whatever's
-currently in `nfce/personal_inflation_data.json` (generated 2026-08-19
-from 499 receipts). To refresh: get real receipts into
-`nfce/notas/NFCE_XML_*/`, run `cd nfce && python3 personal_inflation.py
---verify-ground-truth`, then `make regen`.
-
-## Weekly rollup (on the 09 TX LOG tab)
-
-`regenerate_dashboard.py` also renders a "WEEKLY ROLLUP" table on the TX LOG
-tab — MP Cartão spend grouped Mon–Sun. It's computed live from the same
-`02 CAPITAL FLOWS` rows as the transaction table below it, every `make regen`
-— not a stored figure, so it never needs separate updating.
+Requires `openpyxl` for the wealth patcher (system Python on this Mac;
+elsewhere: `pip3 install --break-system-packages openpyxl`). The command
+center generator uses stdlib only. No venv.
 
 ## Weekly ritual
 
-See `LEIA-ME.md` (Portuguese) — the short version is: update `data/wealthcommand.xlsx`,
-then `make open`.
+See **`USER_GUIDE.md` §4** (combined wealth + ops checklist) and
+**`AI_GUIDE.md` → Weekly workflows** (AI prompt templates).
 
-New to this project, or explaining it to someone who is? See `USER_GUIDE.md` —
-plain-language walkthrough, no technical background assumed.
+Short version:
+1. Save exports under `raw/`
+2. Update `wealthcommand.xlsx` (`CALC`) → `make open`
+3. Update `command-center.xlsx` (input cells) → `python3 scripts/generate_command_center.py`
+4. Review both dashboards; reconcile cross-dashboard gaps in the owning workbook
 
-Handing this project to an AI assistant (Claude, ChatGPT/Codex, Gemini, Cursor,
-or another)? Point it at `AI_GUIDE.md` — most of them will pick it up
-automatically via `CLAUDE.md` / `AGENTS.md` / `GEMINI.md` / `.cursorrules`,
-which all just point to it.
+Portuguese checklist: `LEIA-ME.md`.
+
+## NFC-E tab (11 NFC-E)
+
+Personal-inflation tracker (grocery/pharmacy NFC-e receipts). **Snapshot,
+not live** — `make regen` re-renders `nfce/personal_inflation_data.json`
+(tracked; dated 2026-08-19) without recomputing it. **`nfce/notas/` is
+empty**, so the tab is frozen until source XMLs are restored (check Time
+Machine manually). Then: receipts under `nfce/notas/NFCE_XML_*/`,
+`cd nfce && python3 personal_inflation.py --verify-ground-truth`, then
+`make regen`.
+
+## Weekly rollup (09 TX LOG tab)
+
+Computed live from `02 CAPITAL FLOWS` (MP Cartão rows) on every `make regen` —
+no separate CSV to maintain.
 
 ## Migrated from financas-2026
 
-`financas-2026` was a separate, older sibling project with its own git
-history and its own workbook (`financas2026-DataEntry.xlsx` — a different
-data model from `wealthcommand.xlsx`, not a duplicate of it). Two pieces
-were pulled into this project on 2026-08-31; everything else was left in
-place there:
+`financas-2026` was a sibling project with a different workbook model. Pulled
+into this repo on 2026-08-31:
 
-- **`nfce/`** — the NFC-e "personal inflation index" tracker. Its already-
-  computed output (499 receipts, generated 2026-08-19) is now wired into
-  the dashboard as tab **`11 NFC-E`** — see "NFC-E tab" below. The tool
-  itself (`nfce/personal_inflation.py`, 18 passing tests) needs real NFC-e
-  XML receipts under `nfce/notas/NFCE_XML_*/` to recompute; those aren't
-  present here (the raw archive lives elsewhere and wasn't part of the
-  migration — 4 smaller receipt files were also lost in the 2026-08-31
-  merge, see `AI_GUIDE.md`).
-- **`raw/financas2026_import/cancel_tracker.csv`** — turned out to be a full
-  duplicate of data already in `wealthcommand.xlsx` (`CALC!C344:E346`,
-  already on the dashboard as the Subscriptions tab / Alert #3). No import
-  needed — kept only as an old reference copy.
-- **`raw/financas2026_import/weekly_tracker.csv`** — was a frozen Jan–Jun
-  2026 snapshot. Rather than import it as a second, driftable data source,
-  the same rollup is now computed **live** by `regenerate_dashboard.py`
-  straight from `02 CAPITAL FLOWS` (the same rows TX LOG already renders) —
-  see "Weekly rollup" below. The CSV itself is no longer needed; kept for
-  reference only.
+- **`nfce/`** — NFC-e inflation tracker wired into Bloomberg tab **`11 NFC-E`**
+  (see `AI_GUIDE.md` for refresh steps and merge notes).
+- **Reference CSVs removed** — old `cancel_tracker.csv` and `weekly_tracker.csv`
+  duplicates were deleted; data lives in `CALC` and the live WEEKLY ROLLUP.
+
+Handing this to an AI assistant? Point it at **`AI_GUIDE.md`** — picked up
+automatically via `CLAUDE.md` / `AGENTS.md` / `GEMINI.md` / `.cursorrules`.

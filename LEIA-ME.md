@@ -1,35 +1,25 @@
 # Personal_Finance · Fase 1 — Concluída
 
 **Status:** ✅ Operacional · Congelado para manutenção semanal  
-**Dashboard:** `bloomberg-terminal.html` (raiz do repo) → abrir em qualquer navegador
-
----
-
-## O que foi construído
-
-| Componente | Detalhe |
-|---|---|
-| Dashboard HTML | 10 tabs · Bloomberg-terminal dark theme · SVG inline (sem lib) · sem servidor |
-| Overview | KPIs mensais H1 2026 · gráficos MP + contas |
-| Weekly Tracker | Semana a semana · MP Card + Inter · toggle transfers |
-| Card Transactions | 146 txs (MP Cartão completo) · filtro por merchant/categoria |
-| Subscriptions | Decision matrix · Cancel / Keep / Review |
-| Banks | Inter extrato · CCS completo · Pix keys · Câmbio BCB |
-| Online Spend | Breakdown categorizado · ML Purchases itemizados |
-| Cancel Tracker | localStorage · 11 itens · status persistido |
-| Cash Bridge | Waterfall R$122K gap explicado |
-
-**Período:** Jan–Jun 2026 · **Contas:** Mercado Pago · Banco Inter · BB Brasil · BCB Registrato
+**Dashboards:** `bloomberg-terminal.html` (patrimônio) · `command-center.html` (ops iMac)
 
 ---
 
 ## Ritual semanal (Domingo 20h — lembrete no Calendar.app)
 
-1. Exportar extrato MP → PDF ou CSV, salvar em `raw/mercado_pago/`
-2. Screenshots de transações (BB, Inter) se houver, salvar em `raw/<banco>/screenshots/`
-3. Atualizar as linhas correspondentes em `data/wealthcommand.xlsx` (aba CALC = fonte única)
-4. Rodar `make open` (regenera o dashboard e abre no navegador)
-5. Conferir os KPIs no topo de cada aba
+Ordem recomendada — **dois workbooks, não sincronizam sozinhos**:
+
+1. Exportar extratos (MP, Inter, BB, BCB, assinaturas) → salvar em `raw/`
+2. **Patrimônio** — atualizar `data/wealthcommand.xlsx` (aba **CALC** = fonte única)
+3. Rodar `make open` — confirmar `[ok] all N spot-checks passed`
+4. **Command center** — atualizar células de input em `data/command-center.xlsx`
+   (BALANCES, FX_OPS, TRANSACTIONS, PIX, SUBSCRIPTIONS, REPOS, PROJECTS, CONFIG)
+5. Rodar `python3 scripts/generate_command_center.py` — confirmar `[ok] wrote command-center.html`
+6. Conferir ambos os dashboards; divergências entre eles → investigar, **não forçar igual**
+
+Detalhe completo (EN): `USER_GUIDE.md` §4 · prompts para IA: `AI_GUIDE.md` → Weekly workflows
+
+**Sincronizar nos dois workbooks** quando mudar: assinaturas, transações de cartão, saldos.
 
 ---
 
@@ -37,15 +27,27 @@
 
 ```
 Personal_Finance/
-├── bloomberg-terminal.html       dashboard — abrir direto no navegador
-├── Makefile                      make regen / make open / make clean
-├── data/wealthcommand.xlsx       workbook · aba CALC = fonte única
-├── scripts/regenerate_dashboard.py
-├── reports/                      snapshots pontuais (docx), não auto-atualizados
-└── raw/                          extratos brutos por instituição (MP, Inter, BB, BCB, ML/iFood, NFC-e)
+├── bloomberg-terminal.html       dashboard patrimônio
+├── command-center.html           dashboard ops
+├── Makefile                      make regen / check / workspace / open / clean
+├── data/
+│   ├── wealthcommand.xlsx        patrimônio · aba CALC = fonte única
+│   └── command-center.xlsx       ops · 11 abas
+├── scripts/
+│   ├── regenerate_dashboard.py
+│   ├── generate_command_center.py
+│   ├── check_integrity.py
+│   └── backup.sh
+├── reports/                      snapshots pontuais (docx)
+└── raw/                          extratos brutos por instituição
 ```
 
+**Local canônico:** `~/Documents/GitHub/Personal_Finance` (fora do iCloud).
+
 Ver `README.md` para o detalhe de cada pasta e a resposta de "qual é a fonte da verdade".
+
+**NFC-e (aba 11):** snapshot de 2026-08-19 — `nfce/notas/` está vazio; refresh
+só depois de recuperar os XMLs (Time Machine, manual).
 
 ---
 
