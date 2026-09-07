@@ -647,6 +647,35 @@ window.DATA = {data_json};
 </body>
 </html>
 """
+    # Spot-checks: confirm the CURRENT workbook values actually landed in the
+    # HTML. Tag-balance alone cannot catch a wrong number that still balances.
+    checks = [
+        ("source line", "Source: data/command-center.xlsx"),
+        ("Est. Net Worth KPI",
+         f'<div class="kpi-lbl">Est. Net Worth</div><div class="kpi-val orange">{brl(net_worth)}</div>'),
+        ("Total Liquidity KPI",
+         f'<div class="kpi-lbl">Total Liquidity</div><div class="kpi-val yellow">{brl(liquid)}</div>'),
+        ("Card Spend H1 KPI",
+         f'<div class="kpi-lbl">Card Spend H1</div><div class="kpi-val red">{brl(card_h1)}</div>'),
+        ("Sub Stack/mo KPI",
+         f'<div class="kpi-lbl">Sub Stack/mo</div><div class="kpi-val red">{brl(sub_stack, 2)}</div>'),
+        ("PIX Net Flow KPI",
+         f'<div class="kpi-lbl">PIX Net Flow</div><div class="kpi-val blue">{brl(pix_net)}</div>'),
+        ("DATA.nw JSON", f'"nw": {json.dumps(net_worth)}'),
+        ("BALANCES page", 'id="p-bal"'),
+        ("MONTHLY page", 'id="p-mon"'),
+        ("CATEGORIES page", 'id="p-cat"'),
+        ("ALERTS page", 'id="p-alerts"'),
+    ]
+    missing = [name for name, s in checks if s not in doc]
+    if missing:
+        sys.exit(
+            "[WARNING] %d/%d ops spot-check(s) failed — dashboard not in sync with workbook: %s"
+            % (len(missing), len(checks), "; ".join(missing))
+        )
+    print("[ok] all %d ops spot-checks passed — dashboard confirmed in sync with the workbook"
+          % len(checks))
+
     # Atomic: write beside the target, then rename. An interrupted run can no
     # longer leave a half-written dashboard where the good one used to be.
     _tmp = OUT_HTML + ".tmp"
