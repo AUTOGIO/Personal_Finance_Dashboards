@@ -50,7 +50,8 @@ Personal_Finance/
 └── nfce/                         NFC-e personal inflation tracker (Bloomberg tab 11)
 ```
 
-**Location:** `~/Documents/GitHub/Personal_Finance` (not iCloud).
+**Location:** `~/Documents/GitHub/Personal_Finance` (not iCloud).  
+**GitHub:** `AUTOGIO/Personal_Finance_Dashboards` (private).
 
 ## Updating
 
@@ -58,6 +59,7 @@ Personal_Finance/
 ```bash
 make regen     # patch bloomberg-terminal.html from data/wealthcommand.xlsx
 make open      # regen, then open in your browser
+make check     # workbook sheets + irreplaceable nfce/ files
 make clean     # remove .DS_Store / __pycache__
 ```
 

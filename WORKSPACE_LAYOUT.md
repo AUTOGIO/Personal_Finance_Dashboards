@@ -67,8 +67,10 @@ Accessibility**. Without it the script reports
 fresh machine reports `ModuleNotFoundError: No module named 'openpyxl'`:
 
 ```bash
-pip3 install --user openpyxl
+pip3 install --break-system-packages openpyxl
 ```
+
+(On this Mac it is already installed; the flag matches `AI_GUIDE.md` for a fresh machine.)
 
 ## Spencer CLI (one-time setup)
 

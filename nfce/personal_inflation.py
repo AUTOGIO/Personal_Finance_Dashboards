@@ -100,9 +100,9 @@ def load_baseline(baseline_path: str) -> dict:
 def save_baseline(baseline_path: str, metrics: dict) -> None:
     payload = {
         "_note": (
-            "Ground-truth baseline for src/nfce/personal_inflation.py. "
+            "Ground-truth baseline for nfce/personal_inflation.py. "
             "Update via `python3 personal_inflation.py --accept-new-baseline` "
-            "after intentional data additions (see AUDIT-016 in REPOSITORY_AUDIT.md)."
+            "after intentional data additions."
         ),
     }
     payload.update(metrics)

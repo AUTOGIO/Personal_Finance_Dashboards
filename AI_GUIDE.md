@@ -23,11 +23,11 @@ no build step, no external services. Everything runs locally with Python 3.
   (13 tabs). Fully rebuilt by `generate_command_center.py` (dependency-free
   xlsx-as-zip reader — no `openpyxl`).
 
-Canonical clone: **`~/Documents/GitHub/Personal_Finance`**. The private
-GitHub remote for *this* project is **`AUTOGIO/Personal_Finance_Dashboards`**
-(or whatever `origin` points at after cutover). Do **not** treat
-`AUTOGIO/Personal_Finance` as this repo — that name now holds a different
-project. Treat every file as sensitive even when private.
+Canonical clone: **`~/Documents/GitHub/Personal_Finance`**.
+`origin` is **`AUTOGIO/Personal_Finance_Dashboards`** (private).
+The remote named **`archive-edu-price-analysis`** points at
+`AUTOGIO/Personal_Finance` — a different project; do not treat it as this
+repo. Treat every file as sensitive even when private.
 
 **This data is real and sensitive** — bank balances, transaction history,
 personal spending. Treat every file under `data/`, `raw/`, `reports/`, and
@@ -341,9 +341,10 @@ Follow these unless the user explicitly asks otherwise in the moment:
   and removed — there is currently no "soft delete" location, so anything
   removed is gone.)
 - **Don't commit or push** unless the user explicitly asks. Push only to
-  this project's private `origin` (not the archived `Personal_Finance`
-  remote that now holds another project). Never commit secrets
-  (`.env`, credentials) or paste real financial figures into commit messages.
+  private `origin` (`AUTOGIO/Personal_Finance_Dashboards`). Never push to
+  `archive-edu-price-analysis` (`AUTOGIO/Personal_Finance` — other project).
+  Never commit secrets (`.env`, credentials) or paste real financial
+  figures into commit messages.
 - **Keep README.md, LEIA-ME.md, and USER_GUIDE.md in sync** with whatever
   structural changes you make — they've each drifted from reality before
   in this project's history, and catching that drift (twice) took real

@@ -28,7 +28,7 @@ Two parallel analyses from Brazilian NFC-e XMLs. **Do not mix their inputs.**
 ### Run (personal)
 
 ```bash
-cd "$(git rev-parse --show-toplevel)/src/nfce"
+cd "$(git rev-parse --show-toplevel)/nfce"
 python3 personal_inflation.py --verify-ground-truth
 ```
 
@@ -64,7 +64,7 @@ XMLs stay out of git (~330MB+). Symlink your local checkout of the sibling
 `LitoralPriceTracker` repository:
 
 ```bash
-cd "$(git rev-parse --show-toplevel)/src/nfce"
+cd "$(git rev-parse --show-toplevel)/nfce"
 ln -sfn "$HOME/Documents/GitHub/LitoralPriceTracker/data/raw/NOTAS_LITORAL" notas_litoral
 ```
 
@@ -73,7 +73,7 @@ Expected layout under that root: year folders `2020/`…`2026/` with `NFCE_*.xml
 ### Run (Litoral)
 
 ```bash
-cd "$(git rev-parse --show-toplevel)/src/nfce"
+cd "$(git rev-parse --show-toplevel)/nfce"
 python3 litoral_store_prices.py
 ```
 
@@ -101,6 +101,7 @@ Refresh TXT: drop new `NFCE_YYYYMMDDhhmmss.txt` files into `notas_litoral/` (sam
 From repo root:
 
 ```bash
+cd "$(git rev-parse --show-toplevel)/nfce"
 python3 -m unittest tests.test_personal_inflation tests.test_litoral_store_prices
 ```
 
@@ -112,14 +113,14 @@ Litoral coverage: CNPJ filter, YoY eligibility / naming drift, staple match, bas
 Serve the folder and open either app:
 
 ```bash
-cd "$(git rev-parse --show-toplevel)/src/nfce"
+cd "$(git rev-parse --show-toplevel)/nfce"
 python3 -m http.server 8000
 ```
 
 - Personal: [http://127.0.0.1:8000/personal_inflation_index.html](http://127.0.0.1:8000/personal_inflation_index.html)
 - Litoral: [http://127.0.0.1:8000/litoral_store_prices.html](http://127.0.0.1:8000/litoral_store_prices.html)
 
-Opening the HTML files directly also works via the embedded fallback payload written by each pipeline. The main financas dashboard links both under the NFC-e panel.
+Opening the HTML files directly also works via the embedded fallback payload written by each pipeline. Bloomberg tab **11 NFC-E** shows the personal track; open the HTML files in this folder for standalone views.
 
 ## Known gaps / limits
 

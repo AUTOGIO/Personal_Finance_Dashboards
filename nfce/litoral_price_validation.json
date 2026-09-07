@@ -1,16 +1,17 @@
 {
+  "_path_note": "Absolute paths from former home eduardofgiovannini rewritten to repo-relative nfce/notas_litoral; XMLs may not be present on this Mac.",
   "source_of_truth": "XML under notas_litoral/ (20XX/ or NFCE_XML_*) plus optional NFCE_*.txt SEFAZ exports",
   "track": "litoral_store",
   "validation": {
-    "notes_dir": "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral",
+    "notes_dir": "nfce/notas_litoral",
     "xml_directories": [
-      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/2020",
-      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/2021",
-      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/2022",
-      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/2023",
-      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/2024",
-      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/2025",
-      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/2026"
+      "nfce/notas_litoral/2020",
+      "nfce/notas_litoral/2021",
+      "nfce/notas_litoral/2022",
+      "nfce/notas_litoral/2023",
+      "nfce/notas_litoral/2024",
+      "nfce/notas_litoral/2025",
+      "nfce/notas_litoral/2026"
     ],
     "xml_note_files": 13983,
     "unique_xml_keys": 13983,
@@ -35,10 +36,10 @@
     "items_with_nonpositive_qty_or_price": 0,
     "xml_layout": "year_folders",
     "txt_files": [
-      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/NFCE_20260720032329.txt",
-      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/NFCE_20260720032352.txt",
-      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/NFCE_20260720032405.txt",
-      "/Users/eduardofgiovannini/Documents/GitHub/financas-2026/src/nfce/notas_litoral/NFCE_20260720032441.txt"
+      "nfce/notas_litoral/NFCE_20260720032329.txt",
+      "nfce/notas_litoral/NFCE_20260720032352.txt",
+      "nfce/notas_litoral/NFCE_20260720032405.txt",
+      "nfce/notas_litoral/NFCE_20260720032441.txt"
     ],
     "txt_file_count": 4,
     "txt_rows": 599394,

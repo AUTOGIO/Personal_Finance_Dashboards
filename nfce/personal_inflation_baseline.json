@@ -1,5 +1,5 @@
 {
-  "_note": "Ground-truth baseline for src/nfce/personal_inflation.py. Update via `python3 personal_inflation.py --accept-new-baseline` after intentional data additions (see AUDIT-016 in REPOSITORY_AUDIT.md).",
+  "_note": "Ground-truth baseline for nfce/personal_inflation.py. Update via `python3 personal_inflation.py --accept-new-baseline` after intentional data additions.",
   "receipts": 499,
   "cancelled_unique_keys": 4,
   "total_spend": 151275.5,
