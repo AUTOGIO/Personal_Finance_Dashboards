@@ -36,6 +36,7 @@ Usage:
         (explicit paths, e.g. to preview into a scratch file first)
 """
 import argparse
+import os
 import json
 import re
 import sys
@@ -548,7 +549,13 @@ def main():
     wb, decisions = load_calc(str(xlsx_path))
     html = html_in.read_text(encoding="utf-8")
     html = patch(html, wb, decisions)
-    html_out.write_text(html, encoding="utf-8")
+    # bloomberg-terminal.html cannot be rebuilt from the workbook -- this script
+    # only patches an existing copy. So: keep one .bak, and write atomically.
+    if html_out.exists():
+        html_out.with_suffix(".html.bak").write_bytes(html_out.read_bytes())
+    tmp = html_out.with_suffix(".html.tmp")
+    tmp.write_text(html, encoding="utf-8")
+    os.replace(tmp, html_out)
     print(f"[done] wrote {html_out} ({len(html)} bytes)")
 
 

@@ -6,3 +6,7 @@ __pycache__/
 
 # Cowork/Claude desktop app writes deliverables here
 Claude outputs/
+
+# generator safety artifacts
+*.html.bak
+*.html.tmp

@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := help
 PYTHON ?= /usr/bin/python3
 
-.PHONY: help regen regen-all open workspace clean
+.PHONY: help regen regen-all open workspace clean check
 
 help: ## Show this list
 	@grep -E '^[a-zA-Z_-]+:.*## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*## "}; {printf "  %-12s %s\n", $$1, $$2}'
@@ -17,6 +17,9 @@ open: regen ## Regenerate, then open the dashboard in your default browser
 
 workspace: ## Regenerate both dashboards + restore Personal Finance Spencer layout
 	@zsh scripts/restore-personal-finance-layout.zsh
+
+check: ## Verify workbook sheets + irreplaceable data files are intact
+	@$(PYTHON) scripts/check_integrity.py
 
 clean: ## Remove macOS/Python junk files
 	find . -name '.DS_Store' -delete

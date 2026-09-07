@@ -170,7 +170,10 @@ def probe_system():
         "model": run(["sysctl", "-n", "hw.model"]) or "Mac15,5",
         "ncpu": run(["sysctl", "-n", "hw.ncpu"]) or "8",
         "mem": mem_gb,
-        "host": run(["scutil", "--get", "ComputerName"]) or "iMac",
+        # NOTE: deliberately not scutil ComputerName -- on this Mac it is
+        # "<email address>’s iMac", which would be baked into a committed,
+        # shareable HTML file. The machine is identified by model/chip above.
+        "host": "iMac",
     }
 
 
@@ -644,8 +647,12 @@ window.DATA = {data_json};
 </body>
 </html>
 """
-    with open(OUT_HTML, "w", encoding="utf-8") as fh:
+    # Atomic: write beside the target, then rename. An interrupted run can no
+    # longer leave a half-written dashboard where the good one used to be.
+    _tmp = OUT_HTML + ".tmp"
+    with open(_tmp, "w", encoding="utf-8") as fh:
         fh.write(doc)
+    os.replace(_tmp, OUT_HTML)
     return doc, len(pages)
 
 
