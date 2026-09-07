@@ -274,6 +274,20 @@ def kpi(label, value, sub, color="orange"):
 # ────────────────────────────────────────────────────────── build
 def build():
     sheets, names = load_workbook(XLSX)
+
+    REQUIRED_SHEETS = ["BALANCES", "FX_OPS", "TRANSACTIONS", "SUBSCRIPTIONS", "PIX",
+                       "REPOS", "PROJECTS", "CONFIG", "MONTHLY", "CATEGORIES", "ALERTS"]
+    missing = [s for s in REQUIRED_SHEETS if s not in sheets]
+    if missing:
+        sys.exit(
+            "[error] %s\n"
+            "        missing required sheet(s): %s\n"
+            "        found (%d): %s\n"
+            "        This generator needs all %d input sheets. If Excel repaired the\n"
+            "        workbook it may have dropped sheets and left a SUMMARY recovery log.\n"
+            "        Restore with:  git checkout -- data/command-center.xlsx"
+            % (XLSX, ", ".join(missing), len(names), ", ".join(names), len(REQUIRED_SHEETS))
+        )
     sysinfo = probe_system()
     today = date.today().strftime("%d %b %Y")
 

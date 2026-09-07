@@ -3,3 +3,6 @@ __pycache__/
 *.pyc
 ~$*.xlsx
 ~$*.xls
+
+# Cowork/Claude desktop app writes deliverables here
+Claude outputs/
