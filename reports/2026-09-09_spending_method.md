@@ -1,10 +1,10 @@
 # Spending ledger update — 2026-09-09
 
-Eight explicit category decisions from the Codex conversation applied by record ID. Amounts, all 1181 records and July–September coverage retained. Total remains R$282283.73; all monthly totals unchanged. See 2026-09-09_classification_updates.csv for exact changes.
+Spending ledger updated on 2026-09-09 with the local import workflow. All 1,181 clean-ledger records plus 11 genuinely new raw records were imported. Total included spending is R$288,283.73 (up R$6,000 from the previous clean ledger because four new BB `SOP-BAIRRO BESSA` ATM withdrawals were classified as `CAR`).
 
-Current ledger: 2026-09-09_clean_ledger.csv. Dashboard input: 2026-09-09_spending_by_month.csv. Additional reusable MP account rules: 2026-09-09_mp_account_classification_rules.csv.
+Current ledger: `reports/2026-09-09_spending_ledger.csv`. Dashboard input: `reports/2026-09-09_spending_by_month.csv`. Classification rules: `data/spending_rules.csv` (165 rules) and `data/spending_aliases.csv`.
 
-The snapshot under imports/2026-09-09_codex_classification_snapshot is historical evidence, not the current ledger. Its 81 pending groups and lower total do not override this repository’s later decisions and wider coverage. No CALC or command-center workbook changes.
+The snapshot under `imports/2026-09-09_codex_classification_snapshot` is historical evidence, not the current ledger. Its 81 pending groups and lower total do not override this repository’s later decisions and wider coverage. No CALC or command-center workbook changes.
 
 ## Inherited method and decision history
 
@@ -84,6 +84,46 @@ explicitly excluded, with the reason retained in the ledger's `basis` column.
 
 ## Rebuilding
 
-There is no generator for this. It was a one-off analysis over `raw/`. If it is
-repeated, the inputs are the statements listed above plus the saved
-classification rules in `Personal_Finance_AI_Handoff_2026-09-08.json`.
+Starting 2026-09-09 the ledger is maintained by a local, stdlib-only workflow:
+
+```bash
+python3 scripts/import_spending.py --batch 2026-MM-DD
+```
+
+Inputs are the original statements in `raw/` plus the unified rules in
+`data/spending_rules.csv` and `data/spending_aliases.csv`. Outputs:
+
+| File | Contents |
+|---|---|
+| `reports/<date>_spending_ledger.csv` | Canonical ledger with `original_amount_brl` and `included_amount_brl` |
+| `reports/<date>_spending_review.csv` | Pending/ambiguous items with one blank `your_answer` column |
+| `reports/<date>_spending_by_month.csv` | Dashboard input for tab `12 SPENDING` |
+
+Run `make regen` afterwards to refresh `bloomberg-terminal.html`.
+
+### Validation performed on 2026-09-09
+
+- The workflow was run against the existing `raw/` statements.
+- 622 raw records matched the previous `2026-09-09_clean_ledger.csv`.
+- 45 duplicate raw records across overlapping statement exports were skipped.
+- 11 genuinely new raw records were imported (mostly the July BB statement and a few MP account lines not in the previous ledger).
+- 7 refund pairs were detected and netted (Mercado Livre partial refunds and other purchase/refund pairs).
+- The resulting included total is **R$ 288,283.73**.
+- 8 review answers from `2026-09-09_spending_review.csv` were applied.
+- `make regen` passed: `[ok] all 21 spot-checks passed`.
+
+### Differences from the previous `2026-09-09_clean_ledger.csv`
+
+- **Format:** the canonical ledger now keeps both `original_amount_brl` (statement amount) and `included_amount_brl` (what counts toward spending). Previously only one amount column existed and excluded records were recorded as `0.00`, losing the original value.
+- **Blank categories:** 230 legacy records with blank category were classified using saved rules (self-transfers, family transfers, insurance, credit-card payments, income/yield, etc.).
+- **Original statement amounts preserved:** excluded records such as credit-card bill payments and self-transfers now show their gross original amount with `included_amount_brl = 0.00`.
+- **Source and reason recorded:** every row now has `source_reference`, `rule_id`, `basis`, `review_status`, and `import_batch`.
+- **R$ +6,000.00 from new BB records:** four `SOP-BAIRRO BESSA` ATM withdrawals on 2026-07-02/03 were present in the July BB raw statement but not in the previous clean ledger. The user classified them as `CAR` in the review table; a reusable rule (`BB081`) was added so future occurrences are classified automatically.
+- **Mercado Livre category changes with no total change:** two February Mercado Livre purchases were reclassified from `Shopping` to `HOME SPENDINGS` and `Home Office` based on the user's review answers. The refund pairs were correctly netted, so the included amount did not change.
+- **Pix transfers excluded:** two redacted person-to-person Pix transfers (`Keep out` / `Out`) were excluded from spending with zero included amount.
+
+### Known remaining issues
+
+- `raw/` is missing the original PDF/CSV statements for MP card Jul/Ago/Set and post-June MP account statements, and for most BB months. The current ledger retains these records as legacy data, but they cannot be independently re-imported until the originals are saved.
+- The duplicate-key warning still flags a few records that look like real duplicates or overlapping statement exports (e.g. `COMPUTER` on 04/09 and 30/08, `TELEFONICA BRASIL S.A.` on 2026-01-30, `PERPLEXITY` on 2026-06-04, and the two Mercado Livre refund records). These are not double-counted in the total; review the list if you want to clean them up.
+

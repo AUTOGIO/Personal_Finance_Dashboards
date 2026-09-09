@@ -1,0 +1,5 @@
+alias_id,source_description,canonical_description,basis
+ALIAS001,APPLECOMBILL,APPLE.COM/BILL,"Same named merchant, formatting/truncation variant"
+ALIAS002,APPLE.COM/BILL.,APPLE.COM/BILL,"Same named merchant, formatting/truncation variant"
+ALIAS003,DL*STARLINK BRAZ,STARLINK INTERNET,"Same named merchant, formatting/truncation variant"
+ALIAS004,DL *STARLINK BRAZIL,STARLINK INTERNET,"Same named merchant, formatting/truncation variant"
