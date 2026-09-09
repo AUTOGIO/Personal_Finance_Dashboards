@@ -441,6 +441,7 @@ def build():
     top_alerts = render_generic(ALR, 4, 5, 8, num_cols={1, 5}, badge_cols={2})
     pages.append(("cmd", "active",
         panel(f"COMMAND CENTER · {esc(sysinfo['host'])}",
+              f"FROZEN 2026-09-08 — not maintained; the wealth dashboard is the live one · "
               f"Generated {today} · Source: data/command-center.xlsx · Host: iMac M3 / {sysinfo['product']} {sysinfo['version']}",
               cmd_body + sysbar)
         + charts_row
