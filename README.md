@@ -36,7 +36,7 @@ Personal_Finance/
 ├── Makefile                      make regen / check / workspace / open / clean
 ├── WORKSPACE_LAYOUT.md           Spencer 3-display layout
 ├── bloomberg-terminal.html       wealth dashboard — GENERATED
-├── command-center.html           ops dashboard — GENERATED
+├── command-center.html           ops dashboard — GENERATED, FROZEN 2026-09-08
 ├── data/
 │   ├── wealthcommand.xlsx        wealth workbook (CALC = source of truth)
 │   └── command-center.xlsx       ops workbook (11 sheets)
@@ -45,7 +45,9 @@ Personal_Finance/
 │   ├── generate_command_center.py   rebuilds command-center.html from workbook
 │   ├── check_integrity.py        make check — sheet + irreplaceable-file preflight
 │   └── backup.sh                 timestamped backup outside iCloud
-├── reports/                      point-in-time snapshots (docx), not auto-updated
+├── reports/                      point-in-time snapshots (docx/csv/md/json), not auto-updated
+├── docs/                         gitignored audit / plan / execution history
+├── notebooklm/                   gitignored Markdown export (make notebooklm)
 ├── raw/                          bank & receipt exports — feeds workbooks manually
 └── nfce/                         NFC-e personal inflation tracker (Bloomberg tab 11)
 ```
@@ -69,13 +71,37 @@ python3 scripts/generate_command_center.py   # full rebuild from command-center.
 open command-center.html
 ```
 
+**Export for NotebookLM / other notebook tools:**
+```bash
+make notebooklm    # notebooklm/bloomberg.md + notebooklm/command-center.md
+```
+Clean Markdown — tabs, KPI tiles and tables, no CSS or JS (about a third the
+size of the HTML), with e-mail addresses masked. Gitignored: regenerate rather
+than commit.
+
 `make regen` runs `scripts/regenerate_dashboard.py`, which patches
 `bloomberg-terminal.html` in place — it does not rebuild from scratch.
 Confirm `[ok] all N spot-checks passed` after every run.
 
+`python3 scripts/generate_command_center.py` fully rebuilds
+`command-center.html` and performs field-level spot-checks before writing.
+Confirm `[ok] all N ops spot-checks passed` and `[ok] wrote command-center.html`
+with matching tag counts (no MISMATCH).
+
 Requires `openpyxl` for the wealth patcher (system Python on this Mac;
 elsewhere: `pip3 install --break-system-packages openpyxl`). The command
 center generator uses stdlib only. No venv.
+
+**Tested environment:** Python 3.9.6 with openpyxl 3.1.5.
+
+**Regression tests:**
+```bash
+cd ~/Documents/GitHub/Personal_Finance
+python3 -m unittest scripts/tests/test_regenerate_dashboard.py -v   # wealth patcher failure handling
+cd nfce && python3 -m unittest discover -s tests -v                 # NFC-e pipeline
+```
+
+No CI pipeline — verification is intentional, local, and run on demand.
 
 ## Weekly ritual
 
@@ -89,6 +115,22 @@ Short version:
 4. Review both dashboards; reconcile cross-dashboard gaps in the owning workbook
 
 Portuguese checklist: `LEIA-ME.md`.
+
+## Spending ledger (reports/, 2026-09-08)
+
+`reports/2026-09-08_spending_by_month.csv` and `2026-09-08_clean_ledger.csv` hold
+a category-by-month spending view for Jan–Sep 2026, built once from `raw/`
+statements. **Point-in-time — the ledger is not regenerated.** The month/category
+CSV is rendered into bloomberg tab **`12 SPENDING`** on every `make regen`, the
+same way tab 11 renders the NFC-e snapshot. Drop a newer dated CSV in `reports/`
+and re-run `make regen` to refresh the tab.
+
+Method, sources, verification and the classification decisions:
+`reports/2026-09-08_spending_method.md`.
+
+September is partial (BB and MP account cover 01–06 Sep only). This answers
+"what did I spend, by category, month over month" — it is not a reconciliation
+and must not be used to adjust net worth or liquidity figures.
 
 ## NFC-E tab (11 NFC-E)
 

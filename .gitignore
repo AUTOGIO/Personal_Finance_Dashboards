@@ -4,9 +4,15 @@ __pycache__/
 ~$*.xlsx
 ~$*.xls
 
-# Cowork/Claude desktop app writes deliverables here
-Claude outputs/
+# session audit/plan/execution history — kept on disk, deliberately out of git
+# (they quote real figures; the Claude Project holds the canonical copies)
+docs/
 
 # generator safety artifacts
 *.html.bak
 *.html.tmp
+
+# hand-made HTML dumps for external notebook tools — derived, and they carry
+# real figures; regenerate with `make notebooklm` instead of committing them
+*_html_code.txt
+notebooklm/

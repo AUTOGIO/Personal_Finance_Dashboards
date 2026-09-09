@@ -1,6 +1,6 @@
 # Personal Finance — Spencer workspace layout
 
-Three-monitor Spencer layout **Personal Finance** for weekly finance work. Reference screenshots: [`screenshots/3displays.png`](screenshots/3displays.png), [`screenshots/29s.png`](screenshots/29s.png), [`screenshots/iMac.png`](screenshots/iMac.png).
+Three-monitor Spencer layout **Personal Finance** for weekly finance work. The reference screenshots were removed in the 2026-09-08 cleanup (4.8 MB, recoverable with `git checkout HEAD -- screenshots/`); the table below is the authoritative layout.
 
 ## One-liner
 

@@ -34,8 +34,33 @@ personal spending. Treat every file under `data/`, `raw/`, `reports/`, and
 the rendered dashboard as private. Don't paste figures from them into
 shared/public contexts, don't publish the dashboard as a public web page,
 don't send this data to a third-party service the user hasn't already
-connected here, and don't include real values in commit messages, issue
-titles, or anywhere that might get shared beyond this repo.
+connected here, and don't include real values in commit messages, issue titles,
+or anywhere that might get shared beyond this repo.
+
+**Git-history exposure:** Because `data/`, `raw/`, `reports/`, and the
+rendered dashboards are tracked in git, the full financial corpus lives in the
+repository's history. Untracking or deleting a file does **not** remove it from
+previous commits. Do not rewrite history to purge it unless explicitly
+requested — the risks of a force-push or broken clone outweigh the benefit for a
+single-user, private repo. Keep `origin` private and never add collaborators or
+publish the dashboards as public web pages.
+
+**Local file permissions:** On this Mac the sensitive files
+(`data/*.xlsx`, `bloomberg-terminal.html`, `command-center.html`) are mode
+`644` (world-readable). They are protected in practice because the parent
+`/Users/.../Documents` directory is mode `700`, so other local accounts cannot
+traverse into the repo. For defense-in-depth you can tighten the files to
+owner-only (`600`):
+
+```bash
+chmod 600 data/wealthcommand.xlsx data/command-center.xlsx \
+          bloomberg-terminal.html command-center.html
+```
+
+Caveats: Excel may reset workbooks to `644` on save, and the generator's atomic
+write (`os.replace`) creates a new file with the process umask default, so the
+tighter mode would need to be re-applied after each workbook save or dashboard
+regeneration. Do not recursively `chmod` the repo or change ownership.
 
 ## The one rule that matters most
 
@@ -86,7 +111,9 @@ Personal_Finance/
 │   ├── check_integrity.py            sheet-count + irreplaceable-file preflight (make check)
 │   ├── backup.sh                     timestamped bundle + tarball outside iCloud
 │   └── restore-personal-finance-layout.zsh   Spencer "Personal Finance" 3-display restore
-├── reports/                          dated point-in-time snapshots (docx), not auto-updated
+├── reports/                          dated point-in-time snapshots (docx/csv/md/json), not auto-updated
+├── docs/                             gitignored session audit / plan / execution history
+├── notebooklm/                       gitignored Markdown export (make notebooklm)
 ├── raw/                              original bank/receipt exports, by institution — feeds workbooks manually
 └── nfce/                             standalone NFC-e inflation tracker — wired into bloomberg tab 11 only
 ```
@@ -114,6 +141,17 @@ python3 scripts/generate_command_center.py   # full rebuild from data/command-ce
 open command-center.html                      # view (no make target yet)
 ```
 
+**Export for an external notebook tool (NotebookLM etc.):**
+```bash
+make notebooklm    # writes notebooklm/bloomberg.md + command-center.md
+```
+Runs `scripts/export_notebooklm.py` — read-only against the dashboards, stdlib
+only. Strips CSS/JS/markup (~2/3 of each file), keeps tabs, KPI tiles and tables
+as Markdown, and **masks e-mail addresses**. Both outputs are gitignored: they
+are one command away and they carry real figures — don't commit them, and don't
+hand-dump the HTML to `.txt` instead (that ships tag soup and unmasked
+addresses to a third party).
+
 **Both dashboards + Spencer workspace:**
 ```bash
 make regen-all    # bloomberg-terminal.html + command-center.html
@@ -129,6 +167,15 @@ See **`WORKSPACE_LAYOUT.md`** for monitor arrangement, Stream Deck/Shortcut setu
   as zip/XML directly.
 - No venv. Don't add one, and don't add other dependencies unless the task
   genuinely requires them — see "Guardrails" below.
+
+**Tested environment:** Python 3.9.6 with openpyxl 3.1.5. No CI; run checks
+locally when you change the generator or before a big weekly pass.
+
+**Regression tests:**
+```bash
+python3 -m unittest scripts/tests/test_regenerate_dashboard.py -v
+cd nfce && python3 -m unittest discover -s tests -v
+```
 
 ## Weekly workflows
 
@@ -148,9 +195,11 @@ must be updated in **both** workbooks when both dashboards are in use.
    `[ok] wrote command-center.html` with no tag MISMATCH.
 4. **Review** — open both HTML files. Compare cross-dashboard concepts
    (net worth, subscriptions, card spend). **Do not force-match** — see
-   "Known open items".
-5. **Reconcile** — if a gap is real, fix the **owning** workbook using
-   `raw/` statements, then regenerate that dashboard again.
+   "Known open items" and the reconciliation checklist in `USER_GUIDE.md` §4.
+5. **Reconcile** — if a gap is real, use the checklist (source ownership,
+   as-of date, currency, expected differences, disposition of unexplained gaps)
+   to decide which workbook to fix. Fix the **owning** workbook using `raw/`
+   statements, then regenerate only that dashboard again.
 
 **Derived ops sheets:** `MONTHLY`, `CATEGORIES`, and `ALERTS` are usually
 formula-driven from `TRANSACTIONS`, `FX_OPS`, `PIX`, and `CONFIG`.
@@ -241,6 +290,8 @@ more than once in this project's history.
 6. `09 TX LOG` "WEEKLY ROLLUP" table (added 2026-08-31) — same `02 CAPITAL FLOWS` rows as #3, grouped Mon–Sun and totalled live. Replaces financas-2026's old frozen `weekly_tracker.csv` snapshot — don't reintroduce that CSV as a second source; if the grouping logic needs to change, edit `build_weekly_rows()`.
 7. `11 NFC-E` tab (added 2026-08-31) — renders `nfce/personal_inflation_data.json` (KPIs, YoY vs IPCA, top categories, risers/fallers). **Not derived from CALC** — a separate tracker, separate data file, and NOT recomputed on `make regen` (see "Migrated content" above for how to refresh it). If you edit `build_nfce_page()`, keep the "point-in-time, not live" framing in the tab's own text — don't let it start implying it auto-updates.
 
+8. `12 SPENDING` tab (added 2026-09-08) — renders the newest `reports/*_spending_by_month.csv` (month totals, top categories, typical/peak month). **Not derived from CALC** — same shape as #7: separate artefact, separate data file, and NOT rebuilt on `make regen`, which only re-renders whatever that CSV currently says. `load_spending()` picks the newest matching file, so dropping a newer dated CSV in `reports/` is how you refresh it. The last month is always treated as month-to-date (excluded from Typical Month, labelled partial) — that is deliberate, not a hardcoded September. If you edit `build_spending_page()`, keep the "separate from CALC / not a reconciliation" wording in the tab's own text.
+
 **Not yet patched (Tier 2):** the rest of the dashboard's tiles (Net Worth,
 Total Liquidity, IB Deployed, FX Outbound, etc.) were hand-typed in the
 original build. CALC has its own self-declared map for these — see sheet
@@ -292,9 +343,21 @@ ALERTS, REPOS, PROJECTS, CONFIG — plus a generated SYSTEM tab (host probe).
   `drawFX()`, orchestrated by `initCharts()`.
 - Tables are HTML rendered by Python, not drawn by the chart functions.
 
-**Verification today:** tag-balance check only (`table/tr/td/div` counts).
-No field-level spot-checks like the wealth patcher has. If you extend the
-generator, consider adding checks.
+**Verification:** field-level spot-checks first, then tag-balance.
+`generate_command_center.py` confirms that the current workbook values actually
+landed in the HTML before writing anything:
+
+- Source line references `data/command-center.xlsx`.
+- Six KPI strings: Est. Net Worth, Total Liquidity, Card Spend H1, Sub Stack/mo,
+  PIX Net Flow, and the `DATA.nw` JSON value.
+- Four page anchors exist: BALANCES, MONTHLY, CATEGORIES, ALERTS.
+
+If any spot-check fails, the generator prints a `[WARNING] N/M ops spot-check(s)
+failed` message and exits **before** writing `command-center.html` (fail-closed,
+matching the wealth patcher). After all spot-checks pass, it prints
+`[ok] all N ops spot-checks passed` and runs a structural tag-balance check
+(`table/tr/td/div` counts). A MISMATCH there is printed but does not block the
+write today; the spot-checks are the hard gate.
 
 **Keep this approach** unless the user asks to convert command-center to a
 patcher model — the full-rebuild pattern is intentional for a new workbook.
@@ -322,6 +385,90 @@ it. If you resolve it, update both of those docs and the DATA MAP tab.
   center uses the BALANCES-sheet formula directly with no DATA MAP audit
   tab. Do not silently harmonize without reconciling the withdrawal.
 
+## Spending ledger in `reports/` (added 2026-09-08) — not a third dashboard
+
+`reports/2026-09-08_*` holds a classified category-by-month spending view for
+Jan–Sep 2026, built once from `raw/` statements plus the saved classification
+rules in `Personal_Finance_AI_Handoff_2026-09-08.json`. Method, sources,
+verification and the decisions applied are in
+`reports/2026-09-08_spending_method.md` — read that before using or extending it.
+
+Three things to keep straight:
+
+- **It feeds tab `12 SPENDING` and nothing else.** `regenerate_dashboard.py`
+  renders the newest `reports/*_spending_by_month.csv` into that tab on every
+  `make regen`, exactly as tab 11 renders the NFC-e JSON. It does not read `CALC`,
+  it does not read `command-center.xlsx`, and no generator rebuilds the ledger
+  itself. The source-of-truth rules above are unchanged.
+- **Its purpose is spending by category over time, not reconciliation.** Do not
+  use it to "fix" a net-worth or liquidity figure, and do not reconcile it
+  against either dashboard — different question, different data model.
+- **Saved classification rules win over fresh judgement.** Where a proposed
+  category conflicted with a rule the user had already confirmed (lottery,
+  `UBER * PENDING`, revolving interest), the rule was applied and the conflict
+  recorded in the method file. Keep doing that.
+
+If this is ever repeated, extend the method file rather than starting a parallel
+ledger somewhere else.
+
+## Cleanup 2026-09-08 - what was removed and how to get it back
+
+Everything below was **tracked in git before deletion**, so nothing is lost:
+`git checkout HEAD -- <path>` restores any of it.
+
+| Removed | Why | Restore |
+|---|---|---|
+| `screenshots/` (4.8 MB, 3 PNGs) | Referenced only by `WORKSPACE_LAYOUT.md`, whose table is the authoritative layout | `git checkout HEAD -- screenshots/` |
+| `nfce/litoral_*` + its test (1.2 MB) | A store-price tracker that fed nothing here. Analysis outputs live in `edu_price_analysis`; the source has its own `LitoralPriceTracker` repo | `git checkout HEAD -- nfce/` |
+| `.DS_Store` x4, `__pycache__` x3 | Junk, already gitignored | n/a |
+
+Moved, not deleted:
+- `Personal_Finance_AI_Handoff_2026-09-08.json` -> `reports/2026-09-08_ai_handoff_ledger.json`
+  (input to the spending ledger; it belongs beside the method file, not at the repo root)
+- `Claude outputs/` -> `docs/` - still gitignored; the Claude Project holds the canonical copies
+
+**`command-center` is FROZEN as of 2026-09-08.** Workbook, generator and HTML all still
+work and are all still here - they are simply no longer part of the weekly ritual, and
+the dashboard carries a FROZEN banner. `command-center.xlsx` remains the only structured
+record of FX_OPS and PIX, so **do not delete it**. The wealth pipeline
+(`CALC` -> `bloomberg-terminal.html`) is the live system. To un-freeze, remove the banner
+line in `generate_command_center.py` and resume its input-sheet updates.
+
+Deliberately kept, do not "tidy" these away:
+- `bloomberg-terminal.html.bak` - the wealth dashboard cannot be rebuilt from scratch;
+  this is its only rollback.
+- `AGENTS.md` / `CLAUDE.md` / `GEMINI.md` / `.cursorrules` - the user runs several
+  assistants; each is a ~350-byte pointer to this file.
+- `raw/` - upstream truth, never auto-ingested, never deleted without asking.
+
+## Boundary with `edu_price_analysis` — read before comparing totals
+
+Two repos on this Mac read the **same Mercado Pago and Banco do Brasil
+statements** and both look like "personal finance". They measure different
+things, and their totals are *supposed* to differ:
+
+| | This repo (`Personal_Finance`) | `edu_price_analysis` |
+|---|---|---|
+| Question | Where is my money, and what did I spend **by category**? | How much more am I paying **for the same items**? |
+| Unit | A transaction | An item line on a receipt |
+| Source of truth | `CALC` (wealth) + `raw/` statements | `Registro de Compras` ledger |
+| Headline | tab `12 SPENDING`, ~R$282k Jan–Sep 2026, 26 categories | IIP +40.23% cumulative, R$79.7k ledger 2022–2026 |
+
+**Never reconcile one against the other, and never merge them.** A spend total
+and a price index answer different questions from overlapping data; forcing them
+to agree destroys both.
+
+**The naming trap, and what it already cost.** `edu_price_analysis`'s `origin` is
+`AUTOGIO/Personal_Finance`; this repo's `origin` is
+`AUTOGIO/Personal_Finance_Dashboards`, and its *second* remote,
+`archive-edu-price-analysis`, points at `AUTOGIO/Personal_Finance` — the other
+project. The Stage 1 audit read that second remote and reported this repo as
+"behind remote main `29773cae`". **That was wrong**: `29773ca` is an
+`edu_price_analysis` commit ("docs: clarify category budget chart caption"),
+visible here only through the archive remote. Risk **R7 is closed — there was no
+divergence.** Always name the remote explicitly (`git log origin/main`), never
+just `main`.
+
 ## Guardrails
 
 Follow these unless the user explicitly asks otherwise in the moment:
@@ -340,6 +487,12 @@ Follow these unless the user explicitly asks otherwise in the moment:
   exist for exactly this kind of superseded file; it was fully cleaned out
   and removed — there is currently no "soft delete" location, so anything
   removed is gone.)
+- **Anything leaving this repo for an external service gets masked at the
+  export boundary, not by editing the workbooks.** `SUBSCRIPTIONS` legitimately
+  stores which account pays for each service, e-mail addresses included; that
+  belongs in the source of truth. `export_notebooklm.py` masks them on the way
+  out and refuses to write a file if any survive. Add masking there, never a
+  redaction pass over `data/`.
 - **Don't commit or push** unless the user explicitly asks. Push only to
   private `origin` (`AUTOGIO/Personal_Finance_Dashboards`). Never push to
   `archive-edu-price-analysis` (`AUTOGIO/Personal_Finance` — other project).
@@ -396,7 +549,9 @@ Don't declare a change done without checking it:
 3. If Playwright/a headless browser is available, load the file and click
    through the tabs you changed — screenshot and look at it. Don't assume
    a regex substitution rendered correctly without looking.
-4. If you added or changed a Tier 1 patch, re-run the script a second time
+4. Run the regression test after touching the patcher:
+   `python3 -m unittest scripts/tests/test_regenerate_dashboard.py -v`.
+5. If you added or changed a Tier 1 patch, re-run the script a second time
    immediately after. It should report the same fields as "already
    correct" / 0 new substitutions and still pass all spot-checks —
    confirming the patch is idempotent, not something that drifts on repeat

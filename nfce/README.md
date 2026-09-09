@@ -1,11 +1,10 @@
-# NFC-e Personal Inflation + Litoral Store Track
+# NFC-e Personal Inflation
 
 Two parallel analyses from Brazilian NFC-e XMLs. **Do not mix their inputs.**
 
 | Track | Input | Script | Meaning |
 |-------|--------|--------|---------|
 | **Personal** | [`notas/`](notas/) | [`personal_inflation.py`](personal_inflation.py) | Household inflation from *your* receipts |
-| **Litoral store** | [`notas_litoral/`](notas_litoral/) → `LitoralPriceTracker/data/raw/NOTAS_LITORAL` | [`litoral_store_prices.py`](litoral_store_prices.py) | One-day-per-year store price snapshots (Supermercado Litoral) |
 
 ## Personal track — source of truth
 
@@ -48,51 +47,7 @@ fallback if the JSON file is missing.
 
 ### Incremental refresh (personal)
 
-Drop another `NFCE_XML_*` folder into `notas/` and rerun. Dedup is by 44-digit access key. Never drop Litoral store dumps here.
-
----
-
-## Litoral store track
-
-Store-wide NFC-e dumps for **Supermercado Litoral** (CNPJ `08189400000107`, Cabedelo/PB). Each export folder is typically **one calendar day** (26/Dec for 2020–2025; 2026-07-01 naming differs and is excluded from YoY joins).
-
-This is a **local price benchmark**, not household inflation. The macOS app under `Downloads/NOTAS_LITORAL/LitoralPriceTracker` explores the same XMLs interactively.
-
-### Setup notes dir
-
-XMLs stay out of git (~330MB+). Symlink your local checkout of the sibling
-`LitoralPriceTracker` repository:
-
-```bash
-cd "$(git rev-parse --show-toplevel)/nfce"
-ln -sfn "$HOME/Documents/GitHub/LitoralPriceTracker/data/raw/NOTAS_LITORAL" notas_litoral
-```
-
-Expected layout under that root: year folders `2020/`…`2026/` with `NFCE_*.xml` (legacy `NFCE_XML_*` still works), plus optional `NFCE_*.txt` SEFAZ dumps. Refresh = add new XMLs/TXTs there and rerun.
-
-### Run (Litoral)
-
-```bash
-cd "$(git rev-parse --show-toplevel)/nfce"
-python3 litoral_store_prices.py
-```
-
-Optional: `--notes-dir`, `--personal-json` (for the compare panel), `--skip-html`.
-
-### Method (Litoral)
-
-1. Reuse `parse_receipts` for year folders `20XX/` (or legacy `NFCE_XML_*`); also ingest SEFAZ `NFCE_*.txt` pipe exports (no EAN; grouped by emission timestamp)
-2. Keep CNPJ `08189400000107` only (TXT assumed Litoral)
-3. Snapshot price = median unit price within each calendar year, keyed by normalized description + UOM (merges XML+TXT)
-4. Staples matched by product label; equal-weight geometric basket on Dec-eligible years (2026 = naming drift)
-5. Optional compare panel vs `personal_inflation_data.json` by keyword family
-
-Refresh TXT: drop new `NFCE_YYYYMMDDhhmmss.txt` files into `notas_litoral/` (same folder as the XMLs) and rerun.
-
-### Outputs (Litoral)
-
-- `litoral_price_data.json` / `litoral_price_validation.json` (gitignored; rebuild locally)
-- [`litoral_store_prices.html`](litoral_store_prices.html) — overview, vs personal, product table
+Drop another `NFCE_XML_*` folder into `notas/` and rerun. Dedup is by 44-digit access key. 
 
 ---
 
@@ -102,11 +57,10 @@ From repo root:
 
 ```bash
 cd "$(git rev-parse --show-toplevel)/nfce"
-python3 -m unittest tests.test_personal_inflation tests.test_litoral_store_prices
+python3 -m unittest tests.test_personal_inflation
 ```
 
 Personal coverage: product identity, units, medians, log returns, chained weights, dedup.  
-Litoral coverage: CNPJ filter, YoY eligibility / naming drift, staple match, basket rebase.
 
 ## Dashboard use
 
@@ -118,14 +72,75 @@ python3 -m http.server 8000
 ```
 
 - Personal: [http://127.0.0.1:8000/personal_inflation_index.html](http://127.0.0.1:8000/personal_inflation_index.html)
-- Litoral: [http://127.0.0.1:8000/litoral_store_prices.html](http://127.0.0.1:8000/litoral_store_prices.html)
 
 Opening the HTML files directly also works via the embedded fallback payload written by each pipeline. Bloomberg tab **11 NFC-E** shows the personal track; open the HTML files in this folder for standalone views.
 
 ## Known gaps / limits
 
 - IPCA is a rough embedded reference line, not a live fetch.
-- Litoral sampling is directional (≈1 day/year), not continuous monthly inflation.
 - 2026-07 product naming breaks many YoY joins — excluded from staple YoY by design.
 - Dashboards are static local apps, not a compiled frontend.
 - CSV artifacts remain inspection-only and are not source of truth.
+
+## Durability, retention, and recovery
+
+A fresh `git clone` of this repo **fails `make check`** because the four
+irreplaceable derived artifacts below are gitignored. Only the rendered
+snapshot (`personal_inflation_data.json`) is tracked. The rest are backed up
+by `scripts/backup.sh` on the local Mac, but a new machine without that
+backup cannot regenerate them because `nfce/notas/` holds no source XMLs.
+
+| Required artifact | Tracked in git | Backed up locally | Regenerable without source XMLs | Notes |
+|---|---|---|---|---|
+| `personal_inflation_data.json` | Yes | Yes | No | Frozen snapshot rendered on Bloomberg tab 11. |
+| `personal_inflation_validation.json` | No | Yes | No | Validation payload used by `--verify-ground-truth`. |
+| `nfce_all.json` | No | Yes | No | Full parsed receipt corpus. |
+| `nfce_items.csv` | No | Yes | No | Per-item extracted lines. |
+| `nfce_transactions.csv` | No | Yes | No | Per-receipt summary. |
+| `notas/NFCE_XML_*` source XMLs | No | No | n/a | Directory is empty; only 14 partial XMLs recovered from Time Machine (see below). |
+| `inflation_data.json` | No | Yes | Yes | Legacy intermediate; rebuilds from the tracked snapshot. |
+
+**Recovery status of source XMLs.** A Time Machine snapshot on this Mac
+contains one archive with 14 valid NFC-e XMLs (`NFCE_XML_DLJ4REU8NB.zip`, dated
+2026-05-11). These were copied to a private recovery directory for
+inspection:
+
+```
+~/Backups/Personal_Finance/NFCE_recovery_20260907-145513/
+```
+
+- Format: `nfeProc` / `NFe` XML, 44-digit access keys in filenames.
+- Count: 14 unique XML receipts (no duplicates by key prefix).
+- Provenance: user's own Downloads/Archives path in the Time Machine backup.
+- Completeness: **not sufficient** to recompute the current frozen snapshot.
+  The Bloomberg tab 11 snapshot was built from 499 receipts; the recovered
+  archive is only a small May 2026 batch. Two additional `raw/nfce/*.json`
+  summary/pending files exist in the repo but are not full XML sources.
+
+**Decision needed.** Because the four ignored irreplaceable files are already
+backed up locally, `make check` passes on this Mac. A fresh clone fails until
+one of these choices is made:
+
+1. **Track the four ignored irreplaceable files in git** (largest durability
+   gain; increases repo size by ~1.3 MB and adds sensitive receipt-derived
+   artifacts to git history forever).
+2. **Narrow `IRREPLACEABLE` in `scripts/check_integrity.py`** to only the
+   tracked `personal_inflation_data.json` (weaker durability; a fresh clone
+   would then pass `make check` but could never validate or recompute the
+   full pipeline without restoring the local backup).
+3. **Keep the current list and accept that fresh clones need a backup restore**
+   (status quo; document in onboarding).
+
+Do not change this without explicit approval. The current backup verification
+has confirmed all five IRREPLACEABLE files are present in the latest backup.
+
+## Litoral store track — removed 2026-09-08
+
+The Litoral store price tracker (`litoral_store_prices.*`, `litoral_price_*.json`
+and its test) was removed in the 2026-09-08 cleanup. It fed nothing here — its
+analysis outputs live in `edu_price_analysis`, its source in the separate
+`LitoralPriceTracker` repo. Recover if ever needed:
+
+```bash
+git checkout HEAD -- nfce/litoral_store_prices.py nfce/litoral_price_data.json
+```
