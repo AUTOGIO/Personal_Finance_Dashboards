@@ -37,8 +37,10 @@ Usage:
 """
 import argparse
 import os
+import csv
 import json
 import re
+import statistics
 import sys
 from datetime import date, timedelta
 from pathlib import Path
@@ -49,6 +51,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_XLSX = REPO_ROOT / "data" / "wealthcommand.xlsx"
 DEFAULT_HTML = REPO_ROOT / "bloomberg-terminal.html"
 NFCE_DATA = REPO_ROOT / "nfce" / "personal_inflation_data.json"
+REPORTS_DIR = REPO_ROOT / "reports"
 
 
 def load_calc(xlsx_path):
@@ -298,6 +301,118 @@ def build_nfce_page(data):
 '''
 
 
+def load_spending():
+    """Latest reports/*_spending_by_month.csv, or None.
+
+    Like the NFC-E tab, this is a SEPARATE point-in-time artefact -- built once
+    from raw/ statements, NOT derived from CALC and NOT recomputed here. This
+    function only reads whatever the newest CSV in reports/ currently says.
+    Method, sources and the classification decisions live alongside it in
+    reports/<date>_spending_method.md."""
+    files = sorted(REPORTS_DIR.glob("*_spending_by_month.csv"))
+    if not files:
+        return None
+    path = files[-1]
+    rows = [r for r in csv.reader(path.open(encoding="utf-8")) if r and r[0].strip()]
+    months = rows[0][1:-1]
+    cats, monthly = [], None
+    for r in rows[1:]:
+        vals = [float(v or 0) for v in r[1:-1]]
+        if r[0].strip().upper() == "TOTAL":
+            monthly = vals
+            continue
+        cats.append((r[0].strip(), vals, float(r[-1] or 0)))
+    if monthly is None:
+        monthly = [sum(c[1][i] for c in cats) for i in range(len(months))]
+    cats.sort(key=lambda c: -c[2])
+    return {
+        "stem": path.stem.replace("_spending_by_month", ""),
+        "name": path.name,
+        "months": months,
+        "cats": cats,
+        "monthly": monthly,
+        "grand": sum(monthly),
+    }
+
+
+def build_spending_page(d):
+    """Renders the '12 SPENDING' tab from reports/<date>_spending_by_month.csv.
+
+    Point-in-time, exactly like tab 11: `make regen` re-renders whatever the CSV
+    says, it does not rebuild the ledger. The newest month is always treated as
+    incomplete (month-to-date), so it is excluded from the typical-month figure
+    and labelled partial. Do not reconcile these numbers against CALC -- they
+    answer a different question (spending by category over time), from a
+    different source (raw/ statements)."""
+    months, monthly, cats = d["months"], d["monthly"], d["cats"]
+    full = monthly[:-1] if len(monthly) > 1 else monthly
+    typical = statistics.median(full) if full else 0
+    peak_i = max(range(len(monthly)), key=lambda i: monthly[i])
+    peak_lbl = months[peak_i][-2:] + "/" + months[peak_i][2:4]
+    scale = max(monthly) or 1
+
+    def mlabel(m, i):
+        short = m[-2:] + "/" + m[2:4]
+        return short + (' <span class="gray">partial</span>' if i == len(months) - 1 else "")
+
+    month_rows = "\n          ".join(
+        f'<tr><td>{mlabel(m, i)}</td>'
+        f'<td class="num">{fmt_money(monthly[i], 0)}</td>'
+        f'<td><div style="height:8px;background:var(--orange);width:'
+        f'{max(1, round(monthly[i] / scale * 100))}%"></div></td></tr>'
+        for i, m in enumerate(months)
+    )
+
+    cat_rows = "\n          ".join(
+        f'<tr><td>{c[0]}</td><td class="num">{fmt_money(c[2], 0)}</td>'
+        f'<td class="num gray">{c[2] / (d["grand"] or 1) * 100:.1f}%</td></tr>'
+        for c in cats[:12]
+    )
+
+    return f'''<div class="page" id="p-spending">
+  <div class="panel" style="margin-bottom:6px;">
+    <div class="ph">SPENDING BY CATEGORY <span class="ph-sub">Classified ledger built from raw/ statements &mdash; separate from CALC</span></div>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="kpi-lbl">Months Covered</div><div class="kpi-val">{len(months)}</div></div>
+      <div class="kpi"><div class="kpi-lbl">Total Classified</div><div class="kpi-val orange">R$ {fmt_money(d["grand"], 0)}</div></div>
+      <div class="kpi"><div class="kpi-lbl">Typical Month</div><div class="kpi-val green">R$ {fmt_money(typical, 0)}</div></div>
+      <div class="kpi"><div class="kpi-lbl">Peak Month</div><div class="kpi-val red">R$ {fmt_money(monthly[peak_i], 0)} &middot; {peak_lbl}</div></div>
+    </div>
+    <div style="padding:8px 10px 4px;color:var(--gray);font-size:10px;line-height:1.6;">
+      Source <code>reports/{d["name"]}</code> &middot; {months[0]} to {months[-1]} &middot; zero unclassified.
+      This is <strong style="color:var(--white)">separate from CALC</strong> and is
+      <strong style="color:var(--white)">not a reconciliation</strong> &mdash; never use it to adjust a
+      net-worth or liquidity figure. <code>make regen</code> re-renders this tab but does not rebuild the
+      ledger; it is a point-in-time analysis. The last month is month-to-date and is excluded from
+      Typical Month. Method, sources and every classification decision:
+      <code>reports/{d["stem"]}_spending_method.md</code>.
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <div class="panel">
+        <div class="ph">MONTH BY MONTH <span class="ph-sub">total classified spend</span></div>
+        <table class="bt">
+          <tr><th>MONTH</th><th class="num">BRL</th><th>&nbsp;</th></tr>
+          {month_rows}
+        </table>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="panel">
+        <div class="ph">TOP CATEGORIES <span class="ph-sub">whole period</span></div>
+        <table class="bt">
+          <tr><th>CATEGORY</th><th class="num">BRL</th><th class="num">SHARE</th></tr>
+          {cat_rows}
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+'''
+
+
 def patch(html, wb, decisions):
     keep_mo, cancel_mo, review_mo = (
         decisions["KEEP"]["mo"], decisions["CANCEL"]["mo"], decisions["REVIEW"]["mo"]
@@ -460,6 +575,31 @@ def patch(html, wb, decisions):
     else:
         print("[warn] nfce/personal_inflation_data.json not found — skipping NFC-E tab patch")
 
+    # 8c. SPENDING BY CATEGORY tab — NEW (2026-09-08). Like 8b: a separate
+    # point-in-time artefact (reports/<date>_spending_by_month.csv), built once
+    # from raw/ statements. NOT from CALC, NOT rebuilt here — this only
+    # re-renders whatever the newest CSV in reports/ says.
+    spend = load_spending()
+    if spend is not None:
+        spend_tab = '  <div class="tab" onclick="showPage(\'spending\')">12 SPENDING</div>\n'
+        nfce_tab_s = '  <div class="tab" onclick="showPage(\'nfce\')">11 NFC-E</div>\n'
+        if nfce_tab_s in html and spend_tab not in html:
+            html = html.replace(nfce_tab_s, nfce_tab_s + spend_tab, 1)
+
+        spend_page = build_spending_page(spend)
+        content_end = "</div><!-- /content -->"
+        if 'id="p-spending"' in html:
+            html, _ = re.subn(
+                r'<div class="page" id="p-spending">.*?\n</div>\n', spend_page, html,
+                count=1, flags=re.S
+            )
+        elif content_end in html:
+            html = html.replace(content_end, spend_page + content_end, 1)
+        print(f"[patch] SPENDING tab: rendered ({len(spend['months'])} months, "
+              f"{len(spend['cats'])} categories, R$ {fmt_money(spend['grand'], 0)} total)")
+    else:
+        print("[warn] no reports/*_spending_by_month.csv found — skipping SPENDING tab patch")
+
     # 9. Final sync check. Every subn above reports 0/no-op identically
     # whether "already correct" or "anchor broken" — that ambiguity is exactly
     # the kind of bug this whole project exists to catch, so don't ship it in
@@ -521,13 +661,28 @@ def patch(html, wb, decisions):
     else:
         total_checks_nfce = 0
 
-    total_checks = len(checks) + 3 + total_checks_nfce
+    if spend is not None:
+        if 'id="p-spending"' not in html:
+            missing.append("SPENDING tab (p-spending) not found in HTML")
+        else:
+            spend_section = html.split('id="p-spending"', 1)[1].split('</div>\n\n  <div class="row">', 1)[0]
+            if f'R$ {fmt_money(spend["grand"], 0)}' not in spend_section:
+                missing.append("SPENDING total not found in its own tab")
+            if f'<div class="kpi-val">{len(spend["months"])}</div>' not in spend_section:
+                missing.append("SPENDING month count not found in its own tab")
+        if '<div class="tab" onclick="showPage(\'spending\')">12 SPENDING</div>' not in html:
+            missing.append("SPENDING nav tab not found")
+        total_checks_spend = 3
+    else:
+        total_checks_spend = 0
+
+    total_checks = len(checks) + 3 + total_checks_nfce + total_checks_spend
     if missing:
         print(f"[WARNING] {len(missing)}/{total_checks} check(s) failed — something's actually broken, look here: {'; '.join(missing)}")
     else:
         print(f"[ok] all {total_checks} spot-checks passed — dashboard confirmed in sync with the workbook")
 
-    return html
+    return html, missing
 
 
 def main():
@@ -548,7 +703,11 @@ def main():
 
     wb, decisions = load_calc(str(xlsx_path))
     html = html_in.read_text(encoding="utf-8")
-    html = patch(html, wb, decisions)
+    html, missing = patch(html, wb, decisions)
+    if missing:
+        print(f"[error] aborting write because {len(missing)} spot-check(s) failed; {html_out} was not modified")
+        sys.exit(1)
+
     # bloomberg-terminal.html cannot be rebuilt from the workbook -- this script
     # only patches an existing copy. So: keep one .bak, and write atomically.
     if html_out.exists():

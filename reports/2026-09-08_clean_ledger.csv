@@ -1,0 +1,1182 @@
+record_id,source,date,report_month,merchant,category,amount_brl,basis
+MP card-MP-01-001,MP card,2025-12-10,2026-01,Pagamento da fatura de dezembro/2025,Credit-card bill payments,0.00,Avoid counting settlement as additional spending
+MP card-MP-01-002,MP card,2025-12-20,2026-01,Compra internacional em OPENAI *CHATGPT SUBSCR,Home Office,114.27,User classification table 2026-09-08
+MP card-MP-01-003,MP card,2025-12-20,2026-01,MP*LOTERIASONLINERWPC,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-01-004,MP card,2025-12-20,2026-01,MP*LOTERIASONLINESJ0E,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-01-005,MP card,2025-12-22,2026-01,MERCADOLIVRE*2PRODUTOS,Excluded - blank answer,0.00,User returned classification table 2026-09-08: Blank answers explicitly discarded from spending; record retained.
+MP card-MP-01-006,MP card,2025-12-22,2026-01,MP*EDUARDOGIOVAN,Excluded - blank answer,0.00,User returned classification table 2026-09-08: Blank answers explicitly discarded from spending; record retained.
+MP card-MP-01-007,MP card,2025-12-23,2026-01,MERCADOLIVRE*MERCADOLIVRE,Excluded - blank answer,0.00,User returned classification table 2026-09-08: Blank answers explicitly discarded from spending; record retained.
+MP card-MP-01-008,MP card,2025-12-24,2026-01,Compra internacional em MANUS AI,Home Office,224.43,User returned classification table 2026-09-08: Home Office
+MP card-MP-01-009,MP card,2025-12-28,2026-01,MP*LOTERIASONLINE7VWS,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-01-010,MP card,2025-12-28,2026-01,MP*LOTERIASONLINE8B90,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-01-011,MP card,2025-12-31,2026-01,MP*LOTERIASONLINETYCQ,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-01-012,MP card,2025-12-31,2026-01,MP*LOTERIASONLINEV5II,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-01-013,MP card,2026-01-02,2026-01,APPLE.COM/BILL,App purchases,99.90,User confirmed Apple was app purchase on 2026-09-08
+MP card-MP-01-014,MP card,2026-01-02,2026-01,Compra internacional em MANUS AI,Home Office,71.51,User returned classification table 2026-09-08: Home Office
+MP card-MP-01-015,MP card,2026-01-04,2026-01,Compra internacional em MANUS AI,Home Office,61.89,User returned classification table 2026-09-08: Home Office
+MP card-MP-01-016,MP card,2025-11-10,2026-01,APP *RELAXMEDIC Parcela 2 de 3,PERSONAL,1243.41,User returned classification table 2026-09-08: PERSONAL
+MP card-MP-01-017,MP card,2025-11-24,2026-01,GOL LINHAS A*QRFT Parcela 2 de 3,Travel,629.07,User returned classification table 2026-09-08: Travel
+MP card-MP-01-018,MP card,2025-12-05,2026-01,Compra internacional em OPENAI *CHATGPT SUBSCR,Home Office,110.54,User classification table 2026-09-08
+MP card-MP-01-019,MP card,2025-12-06,2026-01,Compra internacional em PADDLE.NET* ONLINETLS,PERSONAL,10.25,User returned classification table 2026-09-08: PERSONAL
+MP card-MP-01-020,MP card,2025-12-06,2026-01,CONTA VIVO,PERSONAL / HOME,65.97,User classification table 2026-09-08
+MP card-MP-01-021,MP card,2025-12-06,2026-01,MP*LOTERIASONLINEZ2L8,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-01-022,MP card,2025-12-08,2026-01,APPLE.COM/BILL,App purchases,21.90,User confirmed Apple was app purchase on 2026-09-08
+MP card-MP-01-023,MP card,2025-12-09,2026-01,SUPERMERCADOS BOA,HOME - market,11.26,User returned classification table 2026-09-08: HOME - market
+MP card-MP-01-024,MP card,2025-12-09,2026-01,"Compra internacional em GITHUB, INC.",Home Office,56.10,User classification table 2026-09-08
+MP card-MP-01-025,MP card,2025-12-10,2026-01,APPLE.COM/BILL,App purchases,19.90,User confirmed Apple was app purchase on 2026-09-08
+MP card-MP-01-026,MP card,2025-12-14,2026-01,Compra internacional em AI-PRO.ORG 8882139008,Home Office,117.99,User returned classification table 2026-09-08: Home Office
+MP card-MP-01-027,MP card,2025-12-16,2026-01,MERCADOLIVRE*MERCADOLIVRE Parcela 1 de 3,PERSONAL,399.98,User returned classification table 2026-09-08: PERSONAL
+MP card-MP-01-028,MP card,2025-12-18,2026-01,BODYTECH IGUATEMI,PERSONAL,16.89,User returned classification table 2026-09-08: PERSONAL
+MP card-MP-01-029,MP card,2025-12-19,2026-01,EmersonSMendes,Excluded - blank answer,0.00,User returned classification table 2026-09-08: Blank answers explicitly discarded from spending; record retained.
+MP card-MP-02-001,MP card,2026-01-08,2026-02,Pagamento da fatura de janeiro/2026,Credit-card bill payments,0.00,Avoid counting settlement as additional spending
+MP card-MP-02-002,MP card,2025-11-10,2026-02,APP *RELAXMEDIC Parcela 3 de 3,PERSONAL,1243.41,User returned classification table 2026-09-08: PERSONAL
+MP card-MP-02-003,MP card,2025-11-24,2026-02,GOL LINHAS A*QRFT Parcela 3 de 3,Travel,629.07,User returned classification table 2026-09-08: Travel
+MP card-MP-02-004,MP card,2025-12-16,2026-02,MERCADOLIVRE*MERCADOLIVRE Parcela 2 de 3,PERSONAL,399.96,User returned classification table 2026-09-08: PERSONAL
+MP card-MP-02-005,MP card,2026-01-06,2026-02,IFD*PIZZA NOW INTERMARES,Restaurants,173.79,Restaurant descriptor and supplied iFood order history; category inferred consistently with June. Order values not added separately.
+MP card-MP-02-006,MP card,2026-01-08,2026-02,Compra internacional em OPENAI *CHATGPT SUBSCR,Home Office,111.58,User classification table 2026-09-08
+MP card-MP-02-007,MP card,2026-01-08,2026-02,APPLE.COM/BILL,App purchases,21.90,User confirmed Apple was app purchase on 2026-09-08
+MP card-MP-02-008,MP card,2026-01-10,2026-02,IFD*34531468 EDWIN LEI,Restaurants,111.60,Restaurant descriptor and supplied iFood order history; category inferred consistently with June. Order values not added separately.
+MP card-MP-02-009,MP card,2026-01-10,2026-02,APPLE.COM/BILL,App purchases,19.90,User confirmed Apple was app purchase on 2026-09-08
+MP card-MP-02-010,MP card,2026-01-13,2026-02,MP*EDUARDOGIOVAN,Excluded - blank answer,0.00,User returned classification table 2026-09-08: Blank answers explicitly discarded from spending; record retained.
+MP card-MP-02-011,MP card,2026-01-14,2026-02,Compra internacional em MANUS AI,Home Office,25.79,User returned classification table 2026-09-08: Home Office
+MP card-MP-02-012,MP card,2026-01-15,2026-02,DL*Starlink Braz,HOME SPENDINGS,235.52,User classification table 2026-09-08; verified merchant spelling alias
+MP card-MP-02-013,MP card,2026-01-16,2026-02,MP*LOTERIASONLINEU1AQ,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-02-014,MP card,2026-01-16,2026-02,IFD*FORMAGGIO RESTAURANTE,Restaurants,191.80,Restaurant descriptor and supplied iFood order history; category inferred consistently with June. Order values not added separately.
+MP card-MP-02-015,MP card,2026-01-17,2026-02,Compra internacional em OPENAI *CHATGPT SUBSCR,Home Office,111.37,User classification table 2026-09-08
+MP card-MP-02-016,MP card,2026-01-17,2026-02,MP*LOTERIASONLINE542V,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-02-017,MP card,2026-01-19,2026-02,Compra internacional em LEMSQZY* PINEAPPLE-APP,Home Office,111.11,User returned classification table 2026-09-08: Home Office
+MP card-MP-02-018,MP card,2026-01-21,2026-02,Compra internacional em CLAUDE.AI SUBSCRIPTION,Home Office,1138.50,User classification table 2026-09-08
+MP card-MP-02-019,MP card,2026-01-21,2026-02,Compra internacional em MANUS AI,Home Office,556.83,User returned classification table 2026-09-08: Home Office
+MP card-MP-02-020,MP card,2026-01-27,2026-02,Compra internacional em RAYCAST.COM,Home Office,524.63,User returned classification table 2026-09-08: Home Office
+MP card-MP-02-021,MP card,2026-01-28,2026-02,IFD*34531468 EDWIN LEI,Restaurants,55.80,Restaurant descriptor and supplied iFood order history; category inferred consistently with June. Order values not added separately.
+MP card-MP-02-022,MP card,2026-01-30,2026-02,APPLE.COM/BILL,App purchases,99.90,User confirmed Apple was app purchase on 2026-09-08
+MP card-MP-02-023,MP card,2026-02-03,2026-02,Compra internacional em DESKTOP COMMANDER,Home Office,272.21,User returned classification table 2026-09-08: Home Office
+MP card-MP-02-024,MP card,2026-02-04,2026-02,MP*LOTERIASONLINEM4UQ,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-02-025,MP card,2026-02-05,2026-02,MP*LOTERIASONLINEYY48,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-03-001,MP card,2026-02-11,2026-03,Pagamento da fatura de fevereiro/2026,Credit-card bill payments,0.00,Avoid counting settlement as additional spending
+MP card-MP-03-002,MP card,2026-03-03,2026-03,Pagamento da fatura de março/2026,Credit-card bill payments,0.00,Avoid counting settlement as additional spending
+MP card-MP-03-003,MP card,2026-03-06,2026-03,Multa por atraso,Excluded - blank answer,0.00,User returned classification table 2026-09-08: Blank answers explicitly discarded from spending; record retained.
+MP card-MP-03-004,MP card,2026-03-06,2026-03,Juros de mora,Excluded - blank answer,0.00,User returned classification table 2026-09-08: Blank answers explicitly discarded from spending; record retained.
+MP card-MP-03-005,MP card,2026-03-06,2026-03,IOF do rotativo,Excluded - blank answer,0.00,User returned classification table 2026-09-08: Blank answers explicitly discarded from spending; record retained.
+MP card-MP-03-006,MP card,2026-03-06,2026-03,Juros do rotativo,Excluded - blank answer,0.00,User returned classification table 2026-09-08: Blank answers explicitly discarded from spending; record retained.
+MP card-MP-03-007,MP card,2025-12-16,2026-03,MERCADOLIVRE*MERCADOLIVRE Parcela 3 de 3,PERSONAL,399.96,User returned classification table 2026-09-08: PERSONAL
+MP card-MP-03-008,MP card,2026-02-05,2026-03,Compra internacional em OPENAI *CHATGPT SUBSCR,Home Office,108.89,User classification table 2026-09-08
+MP card-MP-03-009,MP card,2026-02-08,2026-03,APPLECOMBILL,App purchases,21.90,User confirmed Apple was app purchase on 2026-09-08; verified merchant spelling alias
+MP card-MP-03-010,MP card,2026-02-09,2026-03,INSIDER COME*Insi Parcela 1 de 2,PERSONAL,227.01,User returned classification table 2026-09-08: PERSONAL
+MP card-MP-03-011,MP card,2026-02-09,2026-03,MP*LOTERIASONLINEBFN5,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-03-012,MP card,2026-02-10,2026-03,APPLECOMBILL,App purchases,19.90,User confirmed Apple was app purchase on 2026-09-08; verified merchant spelling alias
+MP card-MP-03-013,MP card,2026-02-11,2026-03,MERCADOLIVRE*3PRODUTOS,Home Office - automation,6282.36,User returned classification table 2026-09-08: Home Office - automation
+MP card-MP-03-014,MP card,2026-02-14,2026-03,Compra internacional em ANTHROPIC,Home Office,51.75,User classification table 2026-09-08
+MP card-MP-03-015,MP card,2026-02-14,2026-03,MERCADOLIVRE*KF Parcela 1 de 4,HOME SPENDINGS,449.50,User confirmed HOME SPENDINGS for Novastar purchase
+MP card-MP-03-016,MP card,2026-02-14,2026-03,MP*LOTERIASONLINEO4M4,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-03-017,MP card,2026-02-14,2026-03,MP*LOTERIASONLINEOBUG,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-03-018,MP card,2026-02-16,2026-03,DL *Starlink Brazil,HOME SPENDINGS,235.52,User classification table 2026-09-08; verified merchant spelling alias
+MP card-MP-03-019,MP card,2026-02-17,2026-03,Compra internacional em OPENAI *CHATGPT SUBSCR,Home Office,108.27,User classification table 2026-09-08
+MP card-MP-03-020,MP card,2026-02-17,2026-03,MERCADOLIVRE*MERCADOLIVRE Parcela 1 de 4,Home Office,397.50,User confirmed Home Office for Logitech mouse
+MP card-MP-03-021,MP card,2026-02-18,2026-03,MP*LOTERIASONLINEFEG2,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-03-022,MP card,2026-02-21,2026-03,MP*LOTERIASONLINEU2WR,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-03-023,MP card,2026-02-21,2026-03,MP*LOTERIASONLINEQXFX,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-03-024,MP card,2026-02-21,2026-03,Compra internacional em MANUS AI,Home Office,538.20,User returned classification table 2026-09-08: Home Office
+MP card-MP-03-025,MP card,2026-02-23,2026-03,MP*LOTERIASONLINEEIG7,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-03-026,MP card,2026-02-26,2026-03,MP*LOTERIASONLINEI4Q9,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-03-027,MP card,2026-02-26,2026-03,MP*GALAPAGOSOUTDOOR Parcela 1 de 2,PERSONAL - clothes,169.00,User returned classification table 2026-09-08: PERSONAL - clothes
+MP card-MP-03-028,MP card,2026-02-27,2026-03,MP*LOTERIASONLINEYYRE,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-03-029,MP card,2026-02-28,2026-03,APPLECOMBILL,App purchases,99.90,User confirmed Apple was app purchase on 2026-09-08; verified merchant spelling alias
+MP card-MP-03-030,MP card,2026-03-04,2026-03,MP*LOTERIASONLINEFL2P,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-04-001,MP card,2026-03-10,2026-04,Pagamento da fatura de março/2026,Credit-card bill payments,0.00,Avoid counting settlement as additional spending
+MP card-MP-04-002,MP card,2026-03-10,2026-04,Pagamento da fatura de março/2026,Credit-card bill payments,0.00,Avoid counting settlement as additional spending
+MP card-MP-04-003,MP card,2026-03-10,2026-04,Pagamento da fatura de março/2026,Credit-card bill payments,0.00,Avoid counting settlement as additional spending
+MP card-MP-04-004,MP card,2026-03-16,2026-04,Pagamento da fatura de março/2026,Credit-card bill payments,0.00,Avoid counting settlement as additional spending
+MP card-MP-04-005,MP card,2026-03-30,2026-04,Pagamento da fatura de março/2026,Credit-card bill payments,0.00,Avoid counting settlement as additional spending
+MP card-MP-04-006,MP card,2026-02-09,2026-04,INSIDER COME*Insi Parcela 2 de 2,PERSONAL,227.01,User returned classification table 2026-09-08: PERSONAL
+MP card-MP-04-007,MP card,2026-02-14,2026-04,MERCADOLIVRE*KF Parcela 2 de 4,HOME SPENDINGS,449.50,User confirmed HOME SPENDINGS for Novastar purchase
+MP card-MP-04-008,MP card,2026-02-17,2026-04,MERCADOLIVRE*MERCADOLIVRE Parcela 2 de 4,Home Office,397.50,User confirmed Home Office for Logitech mouse
+MP card-MP-04-009,MP card,2026-02-26,2026-04,MP*GALAPAGOSOUTDOOR Parcela 2 de 2,PERSONAL - clothes,169.00,User returned classification table 2026-09-08: PERSONAL - clothes
+MP card-MP-04-010,MP card,2026-03-05,2026-04,Compra internacional em OPENAI *CHATGPT SUBSCR,Home Office,108.47,User classification table 2026-09-08
+MP card-MP-04-011,MP card,2026-03-07,2026-04,MP*LOTERIASONLINEQPEZ,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-04-012,MP card,2026-03-07,2026-04,MP*LOTERIASONLINEQTKS,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-04-013,MP card,2026-03-08,2026-04,APPLECOMBILL,App purchases,21.90,User confirmed Apple was app purchase on 2026-09-08; verified merchant spelling alias
+MP card-MP-04-014,MP card,2026-03-08,2026-04,MERCADOLIVRE*MERCADOLI Parcela 1 de 3,PERSONAL,1678.30,User identified CPAP; category follows prior user CPAP decision
+MP card-MP-04-015,MP card,2026-03-08,2026-04,MERCADOLIVRE*7PRODUTOS Parcela 1 de 2,PERSONAL - TENNIS,804.84,User returned classification table 2026-09-08: PERSONAL - TENNIS
+MP card-MP-04-016,MP card,2026-03-08,2026-04,MERCADOLIVRE*7PRODUTOS,Excluded - blank answer,0.00,User returned classification table 2026-09-08: Blank answers explicitly discarded from spending; record retained.
+MP card-MP-04-017,MP card,2026-03-08,2026-04,"Compra internacional em GITHUB, INC.",Home Office,54.76,User classification table 2026-09-08
+MP card-MP-04-018,MP card,2026-03-09,2026-04,Compra internacional em GUMROAD* GUI RAMBO,PERSONAL,10.90,User returned classification table 2026-09-08: PERSONAL
+MP card-MP-04-019,MP card,2026-03-10,2026-04,Compra internacional em LAN AIRLINE,Travel,9036.83,User returned classification table 2026-09-08: Travel
+MP card-MP-04-020,MP card,2026-03-10,2026-04,APPLECOMBILL,App purchases,19.90,User confirmed Apple was app purchase on 2026-09-08; verified merchant spelling alias
+MP card-MP-04-021,MP card,2026-03-10,2026-04,"Compra internacional em OPENROUTER, INC",Home Office,113.78,User returned classification table 2026-09-08: Home Office
+MP card-MP-04-022,MP card,2026-03-11,2026-04,IFD*iFood,Restaurants,7.95,User confirmed LUNCH / DINNER on 2026-09-08
+MP card-MP-04-023,MP card,2026-03-12,2026-04,MP*LOTERIASONLINEP6LJ,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-04-024,MP card,2026-03-12,2026-04,MP*LOTERIASONLINEPA19,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-04-025,MP card,2026-03-13,2026-04,MP*LOTERIASONLINEJSZ1,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-04-026,MP card,2026-03-13,2026-04,MP*LOTERIASONLINEJX1C,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-04-027,MP card,2026-03-14,2026-04,STARLINK INTERNET,HOME SPENDINGS,235.52,User classification table 2026-09-08
+MP card-MP-04-028,MP card,2026-03-15,2026-04,MERCADOLIVRE*3PRODUTOS,Excluded - blank answer,0.00,User returned classification table 2026-09-08: Blank answers explicitly discarded from spending; record retained.
+MP card-MP-04-029,MP card,2026-03-16,2026-04,Compra internacional em ALLIANZ EVENT INS,Travel,478.17,User returned classification table 2026-09-08: Travel
+MP card-MP-04-030,MP card,2026-03-17,2026-04,Compra internacional em OPENAI *CHATGPT SUBSCR,Home Office,108.89,User classification table 2026-09-08
+MP card-MP-04-031,MP card,2026-03-18,2026-04,MP*LOTERIASONLINENI9I,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-04-032,MP card,2026-03-19,2026-04,Compra internacional em INTERNET ARCHIVE,Excluded - blank answer,0.00,User returned classification table 2026-09-08: Blank answers explicitly discarded from spending; record retained.
+MP card-MP-04-033,MP card,2026-03-19,2026-04,MP*LOTERIASONLINEU38A,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-04-034,MP card,2026-03-20,2026-04,EC*GOOGLEBRASILPAGAMEN,HOME SPENDINGS,96.99,User returned classification table 2026-09-08: HOME SPENDINGS
+MP card-MP-04-035,MP card,2026-03-21,2026-04,MERCADOLIVRE*5PRODUTOS,HOME SPENDINGS,119.73,User returned classification table 2026-09-08: HOME SPENDINGS
+MP card-MP-04-036,MP card,2026-03-21,2026-04,MERCADOLIVRE*5PRODUTOS Parcela 1 de 3,HOME SPENDINGS,553.38,User classification table 2026-09-08
+MP card-MP-04-037,MP card,2026-03-21,2026-04,Compra internacional em MANUS AI,Home Office,546.48,User returned classification table 2026-09-08: Home Office
+MP card-MP-04-038,MP card,2026-03-23,2026-04,MP*LOTERIASONLINE12Q6,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-04-039,MP card,2026-03-26,2026-04,MP*LOTERIASONLINEWM4R,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-04-040,MP card,2026-03-28,2026-04,MP*LOTERIASONLINEKBE8,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-04-041,MP card,2026-03-28,2026-04,MP*LOTERIASONLINEKJOW,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-04-042,MP card,2026-03-30,2026-04,Compra internacional em GROK XAI,Home Office,81.36,User returned classification table 2026-09-08: Home Office
+MP card-MP-04-043,MP card,2026-03-30,2026-04,APPLECOMBILL,App purchases,99.90,User confirmed Apple was app purchase on 2026-09-08; verified merchant spelling alias
+MP card-MP-04-044,MP card,2026-04-01,2026-04,"Compra internacional em CURSOR, AI POWERED IDE",Home Office,111.81,User classification table 2026-09-08
+MP card-MP-04-045,MP card,2026-04-03,2026-04,STARLINK INTERNET,HOME SPENDINGS,235.52,User classification table 2026-09-08
+MP card-MP-04-046,MP card,2026-04-03,2026-04,MP*LOTERIASONLINEDVRW,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-04-047,MP card,2026-04-03,2026-04,IFD*MATTERELLO PIZZARI,Restaurants,165.69,Restaurant descriptor and supplied iFood order history; category inferred consistently with June. Order values not added separately.
+MP card-MP-04-048,MP card,2026-04-03,2026-04,MERCADOLIVRE*3PRODUTOS,HOME - DOGS,602.90,User returned classification table 2026-09-08: HOME - DOGS
+MP card-MP-04-049,MP card,2026-04-04,2026-04,MP*LOTERIASONLINE9CYW,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-05-001,MP card,2026-05-06,2026-05,Pagamento da fatura de maio/2026,Credit-card bill payments,0.00,Avoid counting settlement as additional spending
+MP card-MP-05-002,MP card,2026-05-06,2026-05,Pagamento da fatura de maio/2026,Credit-card bill payments,0.00,Avoid counting settlement as additional spending
+MP card-MP-05-003,MP card,2026-05-06,2026-05,IOF do rotativo,Excluded - blank answer,0.00,User returned classification table 2026-09-08: Blank answers explicitly discarded from spending; record retained.
+MP card-MP-05-004,MP card,2026-05-06,2026-05,Juros do rotativo,Excluded - blank answer,0.00,User returned classification table 2026-09-08: Blank answers explicitly discarded from spending; record retained.
+MP card-MP-05-005,MP card,2026-02-14,2026-05,MERCADOLIVRE*KF Parcela 3 de 4,HOME SPENDINGS,449.50,User confirmed HOME SPENDINGS for Novastar purchase
+MP card-MP-05-006,MP card,2026-02-17,2026-05,MERCADOLIVRE*MERCADOLIVRE Parcela 3 de 4,Home Office,397.50,User confirmed Home Office for Logitech mouse
+MP card-MP-05-007,MP card,2026-03-08,2026-05,MERCADOLIVRE*MERCADOLI Parcela 2 de 3,PERSONAL,1678.30,User identified CPAP; category follows prior user CPAP decision
+MP card-MP-05-008,MP card,2026-03-08,2026-05,MERCADOLIVRE*7PRODUTOS Parcela 2 de 2,PERSONAL - TENNIS,804.84,User returned classification table 2026-09-08: PERSONAL - TENNIS
+MP card-MP-05-009,MP card,2026-03-21,2026-05,MERCADOLIVRE*5PRODUTOS Parcela 2 de 3,HOME SPENDINGS,553.38,User classification table 2026-09-08
+MP card-MP-05-010,MP card,2026-04-05,2026-05,Compra internacional em OPENAI *CHATGPT SUBSCR,Home Office,107.02,User classification table 2026-09-08
+MP card-MP-05-011,MP card,2026-04-08,2026-05,APPLECOMBILL,App purchases,21.90,User confirmed Apple was app purchase on 2026-09-08; verified merchant spelling alias
+MP card-MP-05-012,MP card,2026-04-08,2026-05,"Compra internacional em GITHUB, INC.",Home Office,53.41,User classification table 2026-09-08
+MP card-MP-05-013,MP card,2026-04-10,2026-05,APPLECOMBILL,App purchases,19.90,User confirmed Apple was app purchase on 2026-09-08; verified merchant spelling alias
+MP card-MP-05-014,MP card,2026-04-11,2026-05,IFD*iFood,Restaurants,7.95,User confirmed LUNCH / DINNER on 2026-09-08
+MP card-MP-05-015,MP card,2026-04-16,2026-05,MP*LOTERIASONLINE2FE1,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-05-016,MP card,2026-04-16,2026-05,MP*LOTERIASONLINE34H0,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-05-017,MP card,2026-04-16,2026-05,MERCADOLIVRE*MERCADOLI,Excluded - blank answer,0.00,User returned classification table 2026-09-08: Blank answers explicitly discarded from spending; record retained.
+MP card-MP-05-018,MP card,2026-04-17,2026-05,Compra internacional em OPENAI *CHATGPT SUBSCR,Home Office,103.50,User classification table 2026-09-08
+MP card-MP-05-019,MP card,2026-04-20,2026-05,IFD*JURASSIC PIZZA BES,Restaurants,74.88,Restaurant descriptor and supplied iFood order history; category inferred consistently with June. Order values not added separately.
+MP card-MP-05-020,MP card,2026-04-20,2026-05,MICROSOFT*STORE,Home Office,509.00,User returned classification table 2026-09-08: Home Office
+MP card-MP-05-021,MP card,2026-04-21,2026-05,MERCADOLIVRE*PKFLEXLTDA,Home Office,111.83,User returned classification table 2026-09-08: Home Office
+MP card-MP-05-022,MP card,2026-04-21,2026-05,Compra internacional em MANUS AI,Home Office,515.43,User returned classification table 2026-09-08: Home Office
+MP card-MP-05-023,MP card,2026-04-22,2026-05,MP*EDUARDOGIOVAN,Excluded - blank answer,0.00,User returned classification table 2026-09-08: Blank answers explicitly discarded from spending; record retained.
+MP card-MP-05-024,MP card,2026-04-23,2026-05,Compra internacional em CLOUDFLARE,Home Office,107.61,User classification table 2026-09-08
+MP card-MP-05-025,MP card,2026-04-23,2026-05,UBER * PENDING,Excluded - user instructed,0.00,User classification table 2026-09-08
+MP card-MP-05-026,MP card,2026-04-23,2026-05,MP*LOTERIASONLINE72W6,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-05-027,MP card,2026-04-24,2026-05,APPLE.COM/BILL.,App purchases,31.90,User confirmed Apple was app purchase on 2026-09-08; verified merchant spelling alias
+MP card-MP-05-028,MP card,2026-04-24,2026-05,UBER * PENDING,Excluded - user instructed,0.00,User classification table 2026-09-08
+MP card-MP-05-029,MP card,2026-04-25,2026-05,MP*LOTERIASONLINEN7GJ,Lottery - group payments,0.00,User confirmed lottery purchases are group payments
+MP card-MP-05-030,MP card,2026-04-27,2026-05,Compra internacional em WWW.PERPLEXITY.AI,Home Office,103.71,User classification table 2026-09-08
+MP card-MP-05-031,MP card,2026-04-27,2026-05,MERCADOLIVRE*LINA,HOME SPENDINGS,106.98,User returned classification table 2026-09-08: HOME SPENDINGS
+MP card-MP-05-032,MP card,2026-04-27,2026-05,MERCADOLIVRE*MERCADOLIVRE,Excluded - blank answer,0.00,User returned classification table 2026-09-08: Blank answers explicitly discarded from spending; record retained.
+MP card-MP-05-033,MP card,2026-04-27,2026-05,IFD*BIANCA DOS SANTOS,Restaurants,92.89,Restaurant descriptor and supplied iFood order history; category inferred consistently with June. Order values not added separately.
+MP card-MP-05-034,MP card,2026-04-30,2026-05,Compra internacional em WWW.PERPLEXITY.AI,Home Office,155.25,User classification table 2026-09-08
+MP card-MP-05-035,MP card,2026-04-30,2026-05,APPLE.COM/BILL.,App purchases,99.90,User confirmed Apple was app purchase on 2026-09-08; verified merchant spelling alias
+MP card-MP-05-036,MP card,2026-04-30,2026-05,UBER * PENDING,Excluded - user instructed,0.00,User classification table 2026-09-08
+MP card-MP-05-037,MP card,2026-05-01,2026-05,"Compra internacional em CURSOR, AI POWERED IDE",Home Office,111.81,User classification table 2026-09-08
+MP card-MP-05-038,MP card,2026-05-01,2026-05,Compra internacional em OPENAI* CHATGPT CREDIT,Home Office,206.59,User classification table 2026-09-08
+MP card-MP-05-039,MP card,2026-05-02,2026-05,IFD*BIANCA DOS SANTOS,Restaurants,96.99,Restaurant descriptor and supplied iFood order history; category inferred consistently with June. Order values not added separately.
+MP card-MP-05-040,MP card,2026-05-03,2026-05,STARLINK INTERNET,HOME SPENDINGS,235.52,User classification table 2026-09-08
+MP card-MP-06-001,MP card,2026-02-14,2026-06,MERCADOLIVRE*KF Parcela 4 de 4,HOME SPENDINGS,449.50,User confirmed HOME SPENDINGS for Novastar purchase in Q&A.
+MP card-MP-06-002,MP card,2026-02-17,2026-06,MERCADOLIVRE*MERCADOLIVRE Parcela 4 de 4,Home Office,397.50,"User confirmed Home Office for Logitech mouse. Purchase identification is a probable amount/installment match, without shared order ID."
+MP card-MP-06-003,MP card,2026-03-08,2026-06,MERCADOLIVRE*MERCADOLI Parcela 3 de 3,PERSONAL,1678.30,User identified purchase as CPAP; PERSONAL follows earlier user CPAP classification.
+MP card-MP-06-004,MP card,2026-03-21,2026-06,MERCADOLIVRE*5PRODUTOS Parcela 3 de 3,HOME SPENDINGS,553.38,User provided classification table 2026-09-08.
+MP card-MP-06-005,MP card,2026-05-05,2026-06,UBER * PENDING,Excluded - user instructed,0.00,User provided classification table 2026-09-08. Out means excluded; no reason inferred.
+MP card-MP-06-006,MP card,2026-05-05,2026-06,UBER * PENDING,Excluded - user instructed,0.00,User provided classification table 2026-09-08. Out means excluded; no reason inferred.
+MP card-MP-06-007,MP card,2026-05-05,2026-06,MP*LOTERIASONLINEJOSJ,Lottery - group payments,0.00,User confirmed lottery is group payments; exclude from personal spending.
+MP card-MP-06-008,MP card,2026-05-06,2026-06,Compra internacional em OPENAI *CHATGPT SUBSCR,Home Office,101.85,User provided classification table 2026-09-08.
+MP card-MP-06-009,MP card,2026-05-08,2026-06,"Compra internacional em GITHUB, INC.",Home Office,50.93,User provided classification table 2026-09-08.
+MP card-MP-06-010,MP card,2026-05-09,2026-06,MP*LOTERIASONLINEDB7Z,Lottery - group payments,0.00,User confirmed lottery is group payments; exclude from personal spending.
+MP card-MP-06-011,MP card,2026-05-10,2026-06,APPLE.COM/BILL,App purchases,19.90,User confirmed Apple charges were app purchases on 2026-09-08; supersedes provisional subscription interpretation.
+MP card-MP-06-012,MP card,2026-05-11,2026-06,IFD*iFood,Restaurants,7.95,User confirmed LUNCH / DINNER on 2026-09-08; mapped to existing Restaurants category.
+MP card-MP-06-013,MP card,2026-05-16,2026-06,Compra internacional em WWW.PERPLEXITY.AI,Home Office,78.72,User provided classification table 2026-09-08.
+MP card-MP-06-014,MP card,2026-05-16,2026-06,IFD*34.531.468 EDWIN LEIB,Restaurants,73.03,Category inferred from food-order evidence; merchant link provisional.
+MP card-MP-06-015,MP card,2026-05-17,2026-06,Compra internacional em OPENAI *CHATGPT SUBSCR,Home Office,104.95,User provided classification table 2026-09-08.
+MP card-MP-06-016,MP card,2026-05-18,2026-06,Compra internacional em CLOUDFLARE,Home Office,83.44,User provided classification table 2026-09-08.
+MP card-MP-06-017,MP card,2026-05-18,2026-06,MP*LOTERIASONLINE281Q,Lottery - group payments,0.00,User confirmed lottery is group payments; exclude from personal spending.
+MP card-MP-06-018,MP card,2026-05-19,2026-06,IFD*PIPA SUSHI E TEMAK,Restaurants,67.31,Restaurant classification supported by merchant and order record.
+MP card-MP-06-019,MP card,2026-05-19,2026-06,DL*GOOGLE YouTub,Home Office,269.00,User provided classification table 2026-09-08.
+MP card-MP-06-020,MP card,2026-05-19,2026-06,MP*LOTERIASONLINEAPI5,Lottery - group payments,0.00,User confirmed lottery is group payments; exclude from personal spending.
+MP card-MP-06-021,MP card,2026-05-20,2026-06,Compra internacional em OPENAI* CHATGPT CREDIT,Home Office,208.66,User provided classification table 2026-09-08.
+MP card-MP-06-022,MP card,2026-05-22,2026-06,MP*LOTERIASONLINEPXMF,Lottery - group payments,0.00,User confirmed lottery is group payments; exclude from personal spending.
+MP card-MP-06-023,MP card,2026-05-23,2026-06,Compra internacional em OPENAI* CHATGPT CREDIT,Home Office,207.42,User provided classification table 2026-09-08.
+MP card-MP-06-024,MP card,2026-05-24,2026-06,APPLE.COM/BILL,App purchases,31.90,User confirmed Apple charges were app purchases on 2026-09-08; supersedes provisional subscription interpretation.
+MP card-MP-06-025,MP card,2026-05-28,2026-06,Compra internacional em ANTHROPIC,Home Office,103.50,User provided classification table 2026-09-08.
+MP card-MP-06-026,MP card,2026-05-29,2026-06,UBER * PENDING,Excluded - user instructed,0.00,User provided classification table 2026-09-08. Out means excluded; no reason inferred.
+MP card-MP-06-027,MP card,2026-05-30,2026-06,APPLE.COM/BILL,App purchases,99.90,User confirmed Apple charges were app purchases on 2026-09-08; supersedes provisional subscription interpretation.
+MP card-MP-06-028,MP card,2026-05-30,2026-06,Compra internacional em CLAUDE.AI SUBSCRIPTION,Home Office,113.85,User provided classification table 2026-09-08.
+MP card-MP-06-029,MP card,2026-05-30,2026-06,IFD*PIPA SUSHI E TEMAK,Restaurants,90.29,Restaurant classification supported by merchant and order record.
+MP card-MP-06-030,MP card,2026-06-01,2026-06,Compra internacional em WWW.PERPLEXITY.AI,Home Office,78.56,User provided classification table 2026-09-08.
+MP card-MP-06-031,MP card,2026-06-01,2026-06,"Compra internacional em CURSOR, AI POWERED IDE",Home Office,111.81,User provided classification table 2026-09-08.
+MP card-MP-06-032,MP card,2026-06-02,2026-06,UBER * PENDING,Excluded - user instructed,0.00,User provided classification table 2026-09-08. Out means excluded; no reason inferred.
+MP card-MP-06-033,MP card,2026-06-02,2026-06,MP*LOTERIASONLINEJEPS,Lottery - group payments,0.00,User confirmed lottery is group payments; exclude from personal spending.
+MP card-MP-06-034,MP card,2026-06-03,2026-06,STARLINK INTERNET,HOME SPENDINGS,235.52,User provided classification table 2026-09-08.
+MP card-MP-06-035,MP card,2026-06-03,2026-06,DL*UberRides,PERSONAL,11.98,User provided classification table 2026-09-08.
+MP card-MP-06-036,MP card,2026-06-03,2026-06,CONTA VIVO,PERSONAL / HOME,74.43,User provided classification table 2026-09-08. Mixed PERSONAL / HOME label retained; no allocation assumed.
+MP card-MP-06-037,MP card,2026-06-03,2026-06,UBER * PENDING,Excluded - user instructed,0.00,User provided classification table 2026-09-08. Out means excluded; no reason inferred.
+MP card-MP-06-038,MP card,2026-06-03,2026-06,MP*LOTERIASONLINESPC2,Lottery - group payments,0.00,User confirmed lottery is group payments; exclude from personal spending.
+MP card-MP-06-039,MP card,2026-06-03,2026-06,UBER * PENDING,Excluded - user instructed,0.00,User provided classification table 2026-09-08. Out means excluded; no reason inferred.
+MP card-MP-06-040,MP card,2026-06-04,2026-06,Compra internacional em WWW.PERPLEXITY.AI,Home Office,78.25,User provided classification table 2026-09-08.
+MP card-MP-06-041,MP card,2026-06-04,2026-06,Compra internacional em WWW.PERPLEXITY.AI,Home Office,78.25,User provided classification table 2026-09-08.
+MP card-MP-06-042,MP card,2026-06-05,2026-06,Compra internacional em WWW.PERPLEXITY.AI,Home Office,78.25,User provided classification table 2026-09-08.
+BB-E0000000020260108134521670887646,BB,2026-01-08,2026-01,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260108134927792467614,BB,2026-01-08,2026-01,ALINE SALES VENANCIO DA S,Family transfer - brother,0.00,User confirmed; User confirmed payment to brother; explicitly exclude from spending.
+BB-E0000000020260114145907573875314,BB,2026-01-14,2026-01,JOSEMAR TEIXEIRA DE LIMA,HOME SPENDINGS,200.00,User confirmed; 
+BB-E0000000020260114231433113763746,BB,2026-01-14,2026-01,POSTO INTERMARES,Transport/fuel,28.50,Medium; Transport merchant inference; fuel stations may include convenience purchases and ride apps may offer other services.
+BB-E0000000020260114231543811940160,BB,2026-01-14,2026-01,HORA H,Groceries,11.50,User confirmed; 
+BB-E0000000020260115162822924558311,BB,2026-01-15,2026-01,CACAU SHOW,Groceries,19.99,Medium; Provisional food retail; confirm groceries versus prepared meal or other goods.
+BB-E0000000020260115175034747215296,BB,2026-01-15,2026-01,ESTAPAR,Transport/fuel,11.00,Medium; Transport merchant inference; fuel stations may include convenience purchases and ride apps may offer other services.
+BB-E0000000020260116025241768635241,BB,2026-01-15,2026-01,EDNA DA SILVA ROCHA,Other,34.00,decision-C
+BB-E0000000020260117014801964198701,BB,2026-01-16,2026-01,UBER DO BRASIL TECNOLOGIA,PERSONAL,42.98,User confirmed; 
+BB-E0000000020260117020706013935298,BB,2026-01-16,2026-01,POSTO INTERMARES,Transport/fuel,28.50,Medium; Transport merchant inference; fuel stations may include convenience purchases and ride apps may offer other services.
+BB-E0000000020260117020734871535090,BB,2026-01-16,2026-01,HORA H,Groceries,59.49,User confirmed; 
+BB-E0000000020260117124521081981495,BB,2026-01-17,2026-01,CRISTIANO BORBA DA SILVA,JohnnyBravo,100.00,User confirmed; 
+BB-E0000000020260117191422960154270,BB,2026-01-17,2026-01,VALDEBAM PROCOPIO DE ARAU,HOME SPENDINGS,104.00,User confirmed; 
+BB-E0000000020260117202816269839138,BB,2026-01-17,2026-01,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E13935893202601181227U4Momzp89F7,BB,2026-01-18,2026-01,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260118125012207417690,BB,2026-01-18,2026-01,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260119113952190003147,BB,2026-01-19,2026-01,55 551 537 JAMYLLE KEYLA,Other,7.00,decision-C
+BB-E0000000020260119175725668192398,BB,2026-01-19,2026-01,JACARE COMERCIO DE COMBUS,CAR,20.96,User confirmed; 
+BB-E90400888202601201449YL088379618,BB,2026-01-20,2026-01,CAIXA SEGUROS,,0.00,"; Confirm income, family transfer, insurance proceeds, or other purpose; not consumption."
+BB-E0000000020260123143901346609450,BB,2026-01-23,2026-01,NAILSON DA SILVA OLIVEIRA,HOME SPENDINGS,4800.00,User confirmed; 
+BB-E0000000020260124213248652993539,BB,2026-01-24,2026-01,EWERTON DE SOUSA EMERI,JohnnyBravo,1000.00,User confirmed; 
+BB-E0000000020260125142712282992695,BB,2026-01-25,2026-01,TUNA PAGAMENTOS,Other,354.46,decision-C
+BB-E0000000020260125191326125246174,BB,2026-01-25,2026-01,UBER DO BRASIL TECNOLOGIA,PERSONAL,0.00,User confirmed; Category confirmed PERSONAL; existing inferred full refund match preserved.
+BB-E0000000020260125192749328108578,BB,2026-01-25,2026-01,99 TECNOLOGIA LTDA,Transport/fuel,24.20,Medium; Transport merchant inference; fuel stations may include convenience purchases and ride apps may offer other services.
+BB-D1479660620260125203109758220002,BB,2026-01-25,2026-01,UBER DO BRASIL TECNOLOGIA,PERSONAL,0.00,Medium; Category confirmed PERSONAL; existing inferred refund match preserved.
+BB-E0000000020260128214624572692836,BB,2026-01-28,2026-01,EVA BEZERRA DA SILVA,JohnnyBravo-eva,2080.00,User confirmed; 
+BB-E0000000020260130182846352304266,BB,2026-01-30,2026-01,MARINALDO DOMINGOS DE SOU,HOME SPENDINGS,460.00,User confirmed; 
+BB-E0000000020260211104027518224369,BB,2026-02-11,2026-02,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260214175413609489795,BB,2026-02-14,2026-02,COMPANHIA DE AGUA E ESGOT,Bills/utilities,548.24,High; 
+BB-E0000000020260214175515256937788,BB,2026-02-14,2026-02,COMPANHIA DE AGUA E ESGOT,Bills/utilities,294.84,High; 
+BB-E0000000020260216210728053192114,BB,2026-02-16,2026-02,EVA BEZERRA DA SILVA,JohnnyBravo-eva,1550.00,User confirmed; 
+BB-E0000000020260217121645774147616,BB,2026-02-17,2026-02,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260218164128248214510,BB,2026-02-18,2026-02,BANCO DAYCOVAL S/A - 3079,Physical US dollar purchase,0.00,User confirmed; User confirmed purchase of physical US dollars; currency exchange excluded from spending calculations.
+BB-E0000000020260219195048251422138,BB,2026-02-19,2026-02,BANCO DAYCOVAL S/A - 3079,Physical US dollar purchase,0.00,User confirmed; User confirmed purchase of physical US dollars; currency exchange excluded from spending calculations.
+BB-E0000000020260219212131904688015,BB,2026-02-19,2026-02,EDUARDO SILVA DOS SANTOS,UNKNOWN - CHECK,0,excluded-B
+BB-E0000000020260306231154460589403,BB,2026-03-06,2026-03,MATIAS ALEJANDRO SANCHEZ,CAR,88.00,User confirmed; 
+BB-E0000000020260307160452039174861,BB,2026-03-07,2026-03,EWERTON DE SOUSA EMERI,JohnnyBravo,1000.00,User confirmed; 
+BB-E0000000020260310183047453091196,BB,2026-03-10,2026-03,DEBORAH RIBEIRO DE MORAIS,PERSONAL,350.00,User confirmed; 
+BB-E0000000020260311135128926412330,BB,2026-03-11,2026-03,BANCO DAYCOVAL S/A - 3079,Physical US dollar purchase,0.00,User confirmed; User confirmed purchase of physical US dollars; currency exchange excluded from spending calculations.
+BB-E0000000020260312001717466257153,BB,2026-03-11,2026-03,REDE MENOR PRECO,Groceries,1243.74,High; 
+BB-E0000000020260313004508430838234,BB,2026-03-12,2026-03,EVA BEZERRA DA SILVA,JohnnyBravo-eva,1000.00,User confirmed; 
+BB-E0000000020260318154329759607025,BB,2026-03-18,2026-03,BANCO DAYCOVAL S/A - 3079,Physical US dollar purchase,0.00,User confirmed; User confirmed purchase of physical US dollars; currency exchange excluded from spending calculations.
+BB-E0000000020260324174651527438036,BB,2026-03-24,2026-03,EWERTON DE SOUSA EMERI,JohnnyBravo,500.00,User confirmed; 
+BB-E0000000020260326005404508518196,BB,2026-03-25,2026-03,POSTO INTERMARES,Transport/fuel,29.50,Medium; Transport merchant inference; fuel stations may include convenience purchases and ride apps may offer other services.
+BB-E0000000020260326152925419718799,BB,2026-03-26,2026-03,GLEUDSON SILVA FARIAS,CAR RENTAL local,900.00,User confirmed; 
+BB-E0000000020260326153051405664749,BB,2026-03-26,2026-03,KLEBER KERSTING FILHO,kite surf equip.,1320.00,User confirmed; 
+BB-E0000000020260326211404129913062,BB,2026-03-26,2026-03,MARIA DA LUZ ASSIS DA SIL,HOME SPENDINGS,200.00,User confirmed; 
+BB-E0000000020260327151225056718824,BB,2026-03-27,2026-03,LOJAO CASA E CONDOMINIO,HOME SPENDINGS,269.79,User confirmed; 
+BB-E0000000020260327151630035292699,BB,2026-03-27,2026-03,COMGEL,Household/staff,192.30,Medium; Provisional hardware/household goods; confirm item and household purpose. Not staff wages.
+BB-E0000000020260327214324766713931,BB,2026-03-27,2026-03,LG PIZZA,Restaurants,145.00,High; 
+BB-E0000000020260327231841520815937,BB,2026-03-27,2026-03,PIPA SUSHI E TEMAKERIA LT,Restaurants,111.14,High; 
+BB-E0000000020260328173444904747527,BB,2026-03-28,2026-03,LACANTO MERCADINHO E CONV,Groceries,151.34,High; 
+BB-E0000000020260328224727283150049,BB,2026-03-28,2026-03,THALES JERONIMO DO NASCIM,PERSONAL,78.00,User confirmed; 
+BB-E0000000020260328234603413915015,BB,2026-03-28,2026-03,EDUARDO SILVA DOS SANTOS,UNKNOWN - CHECK,0,excluded-B
+BB-E0000000020260329163719462595218,BB,2026-03-29,2026-03,FABRICA DE BOLO VO ALZIRA,Groceries,75.30,Medium; Provisional food retail; confirm groceries versus prepared meal or other goods.
+BB-E0000000020260329194330107155576,BB,2026-03-29,2026-03,REDE MENOR PRECO,Groceries,88.30,High; 
+BB-E0000000020260329194433389518738,BB,2026-03-29,2026-03,REDE MENOR PRECO,Groceries,29.50,High; 
+BB-E0000000020260330140704875958189,BB,2026-03-30,2026-03,FARMACIA ESPERANCA,Health/pharmacy,252.65,High; 
+BB-E0000000020260402144649264533180,BB,2026-04-02,2026-04,STAR SHOP,HOME SPENDINGS,42.49,User confirmed; 
+BB-E0000000020260402144932654124193,BB,2026-04-02,2026-04,STAR SHOP,HOME SPENDINGS,13.50,User confirmed; 
+BB-E0000000020260402150208125706566,BB,2026-04-02,2026-04,ELDORADO,Groceries,36.59,User-confirmed purpose; category inferred; User confirmed bakery; grouped under Groceries using the existing bakery convention.
+BB-E0000000020260402153611883399321,BB,2026-04-02,2026-04,CARAJAS,HOME SPENDINGS,671.78,User confirmed; 
+BB-E0000000020260408091450193393286,BB,2026-04-08,2026-04,SUB INTERX LANCHONETE LTD,Restaurants,91.00,High; 
+BB-E0000000020260412183043208359881,BB,2026-04-12,2026-04,IATA INTERNATIONAL AIR TR,Travel,2280.15,High; 
+BB-E0000000020260413214325737091441,BB,2026-04-13,2026-04,BUTIQUIM DO FORTAO,Restaurants,97.02,High; 
+BB-E0000000020260416164910697844062,BB,2026-04-16,2026-04,VITOR ROCHA GOUVEIA,CAR,250.00,User confirmed; 
+BB-E0000000020260416185438538236469,BB,2026-04-16,2026-04,LACANTO MERCADINHO E CONV,Groceries,135.46,High; 
+BB-E0000000020260416192838622799352,BB,2026-04-16,2026-04,ELINALDO BENTO DA SILVA,HOME SPENDINGS,127.00,User confirmed; 
+BB-E0000000020260416194826745761437,BB,2026-04-16,2026-04,REALITY BIO SANEANTES,HOME SPENDINGS,300.00,User confirmed; 
+BB-E0000000020260416203055679767346,BB,2026-04-16,2026-04,PAGAR ME PAGAMENTOS,UNKNOWN - CHECK,0,excluded-B
+BB-E0000000020260416234745475523521,BB,2026-04-16,2026-04,FORTE FRUTOS COMERCIAL LT,HOME SPENDINGS,526.54,User confirmed; 
+BB-E0000000020260416235511783540167,BB,2026-04-16,2026-04,ELSE LUDIMILLA CAVALCANTE,Other,26.00,decision-C
+BB-E0000000020260417122704175481506,BB,2026-04-17,2026-04,OKX SERVICOS DIGITAIS LTD,Cryptocurrency,0.00,User confirmed; User confirmed cryptocurrency; explicitly exclude from spending.
+BB-E0000000020260417144523690114276,BB,2026-04-17,2026-04,REI DAS CARNES,Groceries,815.78,High; 
+BB-E0000000020260417154050627652585,BB,2026-04-17,2026-04,REDE MENOR PRECO,Groceries,1958.15,High; 
+BB-E0000000020260417165926793574866,BB,2026-04-17,2026-04,ALESSANDRA DE OLIVEIRA SI,Other,220.00,decision-C
+BB-E0000000020260418140742454629692,BB,2026-04-18,2026-04,FORTE FRUTOS COMERCIAL LT,HOME SPENDINGS,138.56,User confirmed; 
+BB-E0000000020260418143102018656869,BB,2026-04-18,2026-04,REDE MENOR PRECO,Groceries,179.22,High; 
+BB-E0000000020260418144537551446415,BB,2026-04-18,2026-04,SUPERMERCADO LITORAL,Groceries,76.93,High; 
+BB-E0000000020260418145535663724856,BB,2026-04-18,2026-04,MARIA JOSE BEZERRA SALVAD,Other,90.00,decision-C
+BB-E0000000020260418150000278571182,BB,2026-04-18,2026-04,EDNA DA SILVA ROCHA,Other,120.00,decision-C
+BB-E0000000020260419210404884028726,BB,2026-04-19,2026-04,VITOR ROCHA GOUVEIA,CAR,375.00,User confirmed; 
+BB-E0000000020260420135015239683398,BB,2026-04-20,2026-04,LACANTO MERCADINHO E CONV,Groceries,52.49,High; 
+BB-E0000000020260420222641252856081,BB,2026-04-20,2026-04,EWERTON DE SOUSA EMERI,JohnnyBravo,750.00,User confirmed; 
+BB-E0000000020260421160010676845138,BB,2026-04-21,2026-04,JACARE COMERCIO DE COMBUS,CAR,271.19,User confirmed; 
+BB-E0000000020260423192919096326295,BB,2026-04-23,2026-04,ALL TIME 24H,Restaurants,76.55,User confirmed; 
+BB-E0000000020260423195400121406259,BB,2026-04-23,2026-04,VB INTERMARES,CAR,1822.86,User confirmed; 
+BB-E0000000020260423202911776439545,BB,2026-04-23,2026-04,DEBORAH RIBEIRO DE MORAIS,PERSONAL,350.00,User confirmed; 
+BB-E0000000020260424134602499586477,BB,2026-04-24,2026-04,PEDRO HENRIQUE ALMEIDA DA,CAR,1290.00,User confirmed; 
+BB-E0000000020260424141508920756338,BB,2026-04-24,2026-04,NOBRE CARNES,Groceries,305.47,High; 
+BB-E0000000020260424143237008309976,BB,2026-04-24,2026-04,FARMACIA PAGUE MENOS,Health/pharmacy,106.04,High; 
+BB-E0000000020260427155700897340282,BB,2026-04-27,2026-04,EVA BEZERRA DA SILVA,JohnnyBravo-eva,1645.00,User confirmed; 
+BB-E0000000020260428131944446632775,BB,2026-04-28,2026-04,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260428133049871286830,BB,2026-04-28,2026-04,CASA DOS CRIADORES,HOME SPENDINGS,281.00,User confirmed; 
+BB-E0000000020260428153851796178892,BB,2026-04-28,2026-04,99 TECNOLOGIA LTDA,Transport/fuel,14.80,Medium; Transport merchant inference; fuel stations may include convenience purchases and ride apps may offer other services.
+BB-E0000000020260430144724525055440,BB,2026-04-30,2026-04,SUPERMERCADO ARRUDA LTDA,Groceries,109.47,High; 
+BB-E0000000020260430145543915421352,BB,2026-04-30,2026-04,LACANTO MERCADINHO E CONV,Groceries,98.46,High; 
+BB-E0000000020260430171247537490849,BB,2026-04-30,2026-04,BANCO TOPAZIO,Transfers abroad,0.00,User confirmed; User confirmed money sent abroad; exclude from spending calculations.
+BB-E6070119020260430225491735588650,BB,2026-04-30,2026-04,ARTUR FORSTER GIOVANNINI,,0.00,"; Confirm income, family transfer, insurance proceeds, or other purpose; not consumption."
+BB-E0000000020260507161107160261093,BB,2026-05-07,2026-05,PIX MARKETPLACE,Shopping,129.90,Medium; Marketplace payment; item receipt needed to refine category.
+BB-E0000000020260507173223284995918,BB,2026-05-07,2026-05,EDUARDO SILVA DOS SANTOS,UNKNOWN - CHECK,0,excluded-B
+BB-E0000000020260508145429809253314,BB,2026-05-08,2026-05,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260509142323740148175,BB,2026-05-09,2026-05,FERNANDO MARIO MAGNAGHI,PERSONAL,3200.00,User-confirmed purpose; category inferred; Rock festival ticket confirmed by user; grouped under PERSONAL / entertainment.
+BB-E0000000020260511135851868019115,BB,2026-05-11,2026-05,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260513201610035752925,BB,2026-05-13,2026-05,SUNBAY HOTEIS E RESTAURAN,Restaurants,204.60,User confirmed; 
+BB-E0000000020260515200054608176773,BB,2026-05-15,2026-05,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260518161432952519790,BB,2026-05-18,2026-05,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260518180303946683389,BB,2026-05-18,2026-05,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260519152759311031849,BB,2026-05-19,2026-05,BANCO TOPAZIO,Transfers abroad,0.00,User confirmed; User confirmed money sent abroad; exclude from spending calculations.
+BB-E0000000020260519190137100628953,BB,2026-05-19,2026-05,BANCO TOPAZIO,Transfers abroad,0.00,User confirmed; User confirmed money sent abroad; exclude from spending calculations.
+BB-E0000000020260522165852378699974,BB,2026-05-22,2026-05,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260528151117118009778,BB,2026-05-28,2026-05,BANCO TOPAZIO,Transfers abroad,0.00,User confirmed; User confirmed money sent abroad; exclude from spending calculations.
+BB-E0000000020260528152007051246977,BB,2026-05-28,2026-05,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260603203407948273211,BB,2026-06-03,2026-06,ALL TIME 24H,Restaurants,52.90,User confirmed; 
+BB-E0000000020260603224306140582080,BB,2026-06-03,2026-06,FARMACIA ESPERANCA,Health/pharmacy,132.94,High; 
+BB-E0000000020260603225519274896062,BB,2026-06-03,2026-06,LACANTO MERCADINHO E CONV,Groceries,184.44,High; 
+BB-E0000000020260605144815474667384,BB,2026-06-05,2026-06,ARKO NETWORK LTD LLC,Transfers abroad,0.00,User confirmed; User confirmed money sent abroad; exclude from spending calculations.
+BB-E0000000020260605165744393641231,BB,2026-06-05,2026-06,WISE BRASIL CORRETORA DE,Transfers abroad,0.00,User confirmed; User confirmed money sent abroad; exclude from spending calculations.
+BB-E0000000020260605190144611498597,BB,2026-06-05,2026-06,FARMACIA ESPERANCA,Health/pharmacy,100.89,High; 
+BB-E0000000020260605212606141383200,BB,2026-06-05,2026-06,AIRBNB PLATAFORMA DIGITAL,Travel,2650.04,High; 
+BB-E0000000020260605235311885294574,BB,2026-06-05,2026-06,MARILEIDE BENTO DE LIMA,PERSONAL,480.00,User-confirmed purpose; category inferred; User confirmed foot/nail treatment; grouped under PERSONAL / foot and nail care.
+BB-E0000000020260615190338493576657,BB,2026-06-15,2026-06,CSRA BRASIL SERVICOS DE T,HOME SPENDINGS,962.00,decision-B
+BB-E0000000020260615223837922785031,BB,2026-06-15,2026-06,LACANTO MERCADINHO E CONV,Groceries,151.45,High; 
+BB-E0000000020260616014836377179938,BB,2026-06-15,2026-06,ESTACAO 89 COMERCIO VAREJ,Groceries,112.00,Medium; Provisional food retail; confirm groceries versus prepared meal or other goods.
+BB-E0000000020260616015200976716375,BB,2026-06-15,2026-06,NOMAD FINTECH INC,Transfers abroad,0.00,User confirmed; User confirmed money sent abroad; exclude from spending calculations.
+BB-E0000000020260616145800206009324,BB,2026-06-16,2026-06,KLEITON MENDES DA SILVA,Other,23.00,decision-C
+BB-E0000000020260616152424703497231,BB,2026-06-16,2026-06,EDR PARK SERVICOS LTDA,Transport/fuel,13.00,Medium; Transport merchant inference; fuel stations may include convenience purchases and ride apps may offer other services.
+BB-E0000000020260616154538680897984,BB,2026-06-16,2026-06,39.936.344 OLIVIO PEREIRA,HOME SPENDINGS,169.50,User confirmed; 
+BB-E0000000020260616155013974686841,BB,2026-06-16,2026-06,ROBERTO KHALIL SOURI,Other,8.00,decision-C
+BB-E0000000020260616161606541003825,BB,2026-06-16,2026-06,ALL TIME 24H,Restaurants,45.86,User confirmed; 
+BB-E0000000020260616184156837269215,BB,2026-06-16,2026-06,MESSIAS CONCEICAO DE LIMA,Other,350.00,decision-C
+BB-E0000000020260616193901778414159,BB,2026-06-16,2026-06,17.077.282 VALDENIS DE LI,HOME SPENDINGS,1100.00,User confirmed; 
+BB-E0000000020260617054622522131675,BB,2026-06-17,2026-06,POSTO EXPRESSAO,HOME SPENDINGS,43.10,User confirmed; 
+BB-E0000000020260617122410998377429,BB,2026-06-17,2026-06,JOãO BATISTA PEREIRA DOS,Other,100.00,decision-C
+BB-E0000000020260617160523822320625,BB,2026-06-17,2026-06,LACANTO MERCADINHO E CONV,Groceries,163.42,High; 
+BB-E0000000020260617161502394009806,BB,2026-06-17,2026-06,ESTACAO 89 COMERCIO VAREJ,Groceries,50.00,Medium; Provisional food retail; confirm groceries versus prepared meal or other goods.
+BB-E0000000020260617211531483750482,BB,2026-06-17,2026-06,SUPERMERCADO LITORAL,Groceries,623.22,High; 
+BB-E0000000020260617220951521392480,BB,2026-06-17,2026-06,BRENDA MACEDO GOMES RIBEI,Other,120.00,decision-C
+BB-E0000000020260618154158457650799,BB,2026-06-18,2026-06,UNIAO PET PARTICIPACOES S,Other,240.70,Medium; Provisional pet expense; confirm goods or service.
+BB-E0000000020260618155838942994701,BB,2026-06-18,2026-06,STAR SHOP,HOME SPENDINGS,34.97,User confirmed; 
+BB-E0000000020260618160030626507934,BB,2026-06-18,2026-06,POSTO DOIS IRMAOS,CAR,347.02,User confirmed; 
+BB-E0000000020260618160755617113741,BB,2026-06-18,2026-06,GRANFER,Household/staff,76.00,Medium; Provisional hardware/household goods; confirm item and household purpose. Not staff wages.
+BB-E0000000020260619005027424149425,BB,2026-06-18,2026-06,SEU JERONIMO O REI DA PRO,PERSONAL,56.00,User confirmed; 
+BB-E0000000020260619182401291531674,BB,2026-06-19,2026-06,ARKO NETWORK LTD LLC,Transfers abroad,0.00,User confirmed; User confirmed money sent abroad; exclude from spending calculations.
+BB-E0000000020260619203136473470316,BB,2026-06-19,2026-06,MáRIO SéRGIO SOLANO DE MA,UNKNOWN - CHECK,0,excluded-B
+BB-E0000000020260620125153827149995,BB,2026-06-20,2026-06,EDUARDO GIOVANNINI,,0.00,High; 
+BB-E0000000020260620201817435675319,BB,2026-06-20,2026-06,ESTACAO 89 COMERCIO VAREJ,Groceries,120.00,Medium; Provisional food retail; confirm groceries versus prepared meal or other goods.
+BB-E0000000020260622034839326536854,BB,2026-06-22,2026-06,PAUTA DISTRIBUIDORA,Groceries,794.16,User confirmed; 
+BB-E0000000020260622125837091891109,BB,2026-06-22,2026-06,ALL TIME 24H,Restaurants,47.44,User confirmed; 
+BB-E0000000020260622141417081910401,BB,2026-06-22,2026-06,WISE BRASIL CORRETORA DE,Transfers abroad,0.00,User confirmed; User confirmed money sent abroad; exclude from spending calculations.
+BB-E0000000020260622155540302755768,BB,2026-06-22,2026-06,AA FRIGELAR SA,HOME SPENDINGS,1599.00,User confirmed; 
+BB-E0000000020260622170427167396903,BB,2026-06-22,2026-06,MASTERBOI,HOME SPENDINGS,2749.00,User confirmed; 
+BB-E0000000020260622232350713292160,BB,2026-06-22,2026-06,EDR PARK SERVICOS LTDA,Transport/fuel,13.00,Medium; Transport merchant inference; fuel stations may include convenience purchases and ride apps may offer other services.
+BB-E0000000020260623133737977140675,BB,2026-06-23,2026-06,LACANTO MERCADINHO E CONV,Groceries,83.93,High; 
+BB-E0000000020260623145752349597570,BB,2026-06-23,2026-06,ELDORADO,Groceries,76.42,User-confirmed purpose; category inferred; User confirmed bakery; grouped under Groceries using the existing bakery convention.
+BB-E0000000020260623205709443097010,BB,2026-06-23,2026-06,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260625020555750946101,BB,2026-06-24,2026-06,MERCADO PAGO INSTITUICAO,Credit-card bill payment,0.00,User confirmed; User confirmed credit-card payment; exclude settlement from spending to avoid double counting underlying purchases.
+BB-E0000000020260625033942845175007,BB,2026-06-25,2026-06,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260625191754011728713,BB,2026-06-25,2026-06,EWERTON DE SOUSA EMERI,JohnnyBravo,1000.00,User confirmed; 
+BB-E0000000020260626113958149705224,BB,2026-06-26,2026-06,MARIA DA LUZ ASSIS DA SIL,HOME SPENDINGS,100.00,User confirmed; 
+BB-E0000000020260626144354226604843,BB,2026-06-26,2026-06,LACANTO MERCADINHO E CONV,Groceries,215.72,High; 
+BB-E0000000020260627153932592775123,BB,2026-06-27,2026-06,BIANCA MIKAELLA NASCIMENT,JohnnyBravo,440.00,User confirmed; 
+BB-E0000000020260627155548353334454,BB,2026-06-27,2026-06,LACANTO MERCADINHO E CONV,Groceries,64.48,High; 
+BB-E0000000020260628213313812167976,BB,2026-06-28,2026-06,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260629122737685750633,BB,2026-06-29,2026-06,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260702233313151938650,BB,2026-07-02,2026-07,SUPERMERCADO LITORAL,Groceries,1251.60,High; 
+BB-E0000000020260714040211428523263,BB,2026-07-14,2026-07,NOMAD FINTECH INC,Transfers abroad,0.00,User confirmed; User confirmed money sent abroad; exclude from spending calculations.
+BB-E0000000020260714040452983732946,BB,2026-07-14,2026-07,ARKO NETWORK LTD LLC,Transfers abroad,0.00,User confirmed; User confirmed money sent abroad; exclude from spending calculations.
+BB-E0000000020260714041449279551321,BB,2026-07-14,2026-07,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260714212144090351741,BB,2026-07-14,2026-07,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260714212215966540168,BB,2026-07-14,2026-07,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260714213155074421740,BB,2026-07-14,2026-07,WISE BRASIL CORRETORA DE,Transfers abroad,0.00,User confirmed; User confirmed money sent abroad; exclude from spending calculations.
+BB-E0000000020260724010859968364400,BB,2026-07-23,2026-07,ARKO NETWORK LTD LLC,Transfers abroad,0.00,User confirmed; User confirmed money sent abroad; exclude from spending calculations.
+BB-E0000000020260724011219180537838,BB,2026-07-23,2026-07,WISE BRASIL CORRETORA DE,Transfers abroad,0.00,User confirmed; User confirmed money sent abroad; exclude from spending calculations.
+BB-E0000000020260724204212756434145,BB,2026-07-24,2026-07,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260810124052340235868,BB,2026-08-10,2026-08,ENERGISA PB,Bills/utilities,1103.59,High; 
+BB-E0000000020260810133931828430231,BB,2026-08-10,2026-08,ESTACAO 89 COMERCIO VAREJ,Groceries,106.00,Medium; Provisional food retail; confirm groceries versus prepared meal or other goods.
+BB-E0000000020260810145514188002399,BB,2026-08-10,2026-08,EVA BEZERRA DA SILVA,JohnnyBravo-eva,2540.00,User confirmed; 
+BB-E0000000020260812065519228440451,BB,2026-08-12,2026-08,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260814163158709016004,BB,2026-08-14,2026-08,JOSE CARLOS GIOVANNINI,,0.00,"; Confirm income, family transfer, insurance proceeds, or other purpose; not consumption."
+BB-E0000000020260814172638729756872,BB,2026-08-14,2026-08,CONFIDENCE CORRETORA DE C,Transfers abroad,0.00,User confirmed; User confirmed money sent abroad; exclude from spending calculations.
+BB-E0000000020260814174340323264526,BB,2026-08-14,2026-08,GABIONETA COMERCIO DE ALI,PERSONAL,34.00,User confirmed; 
+BB-E0000000020260814175133964425121,BB,2026-08-14,2026-08,GABIONETA COMERCIO DE ALI,PERSONAL,19.00,User confirmed; 
+BB-E0000000020260814205556748922228,BB,2026-08-14,2026-08,EMPRESA CINEMAS S LUIZ SA,Other,74.00,High; Cinema/entertainment expense.
+BB-E0000000020260814215821815193711,BB,2026-08-14,2026-08,EMPRESA CINEMAS S LUIZ SA,Other,72.00,High; Cinema/entertainment expense.
+BB-E0000000020260814222912371066080,BB,2026-08-14,2026-08,NOMAD FINTECH INC,Transfers abroad,0.00,User confirmed; User confirmed money sent abroad; exclude from spending calculations.
+BB-E0000000020260814223707279759936,BB,2026-08-14,2026-08,LUIS FERNANDO CRUZ,Other,39.57,decision-C
+BB-E0000000020260814234840843106387,BB,2026-08-14,2026-08,INDIGO,Other,24.00,decision-C
+BB-E0000000020260815150821214340067,BB,2026-08-15,2026-08,MARIA DA LUZ ASSIS DA SIL,HOME SPENDINGS,200.00,User confirmed; 
+BB-E0000000020260815214538358632253,BB,2026-08-15,2026-08,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260816145022926211924,BB,2026-08-16,2026-08,BONELLI RESTAURANTE LTDA,Restaurants,76.27,High; 
+BB-E0000000020260817194502150175447,BB,2026-08-17,2026-08,POSTO VILA NOVA LTDA,Transport/fuel,84.48,Medium; Transport merchant inference; fuel stations may include convenience purchases and ride apps may offer other services.
+BB-E0000000020260819193810133601161,BB,2026-08-19,2026-08,CONSTRUIR UTILIDADES,HOME SPENDINGS,460.00,User confirmed; 
+BB-E0000000020260819195055387750489,BB,2026-08-19,2026-08,LACANTO MERCADINHO E CONV,Groceries,6.97,High; 
+BB-E0000000020260820143045862168349,BB,2026-08-20,2026-08,CABEDELO GABINETE PREFEIT,Taxes/government,6932.31,High; 
+BB-E0000000020260820143509377393412,BB,2026-08-20,2026-08,CABEDELO GABINETE PREFEIT,Taxes/government,992.04,High; 
+BB-E0000000020260821033325477126607,BB,2026-08-21,2026-08,POSTO EXPRESSAO,HOME SPENDINGS,216.55,User confirmed; 
+BB-E0000000020260821185820074235714,BB,2026-08-21,2026-08,BIANCA MIKAELLA NASCIMENT,JohnnyBravo,350.00,User confirmed; 
+BB-E0000000020260824075401095209879,BB,2026-08-24,2026-08,PIX MARKETPLACE,Shopping,999.00,Medium; Marketplace payment; item receipt needed to refine category.
+BB-E0000000020260824145305763791467,BB,2026-08-24,2026-08,REALITY BIO SANEANTES,HOME SPENDINGS,228.00,User confirmed; 
+BB-E0000000020260824153150968238827,BB,2026-08-24,2026-08,LACANTO MERCADINHO E CONV,Groceries,240.86,High; 
+BB-E0000000020260824173101134509779,BB,2026-08-24,2026-08,VINDI PAGAMENTOS ONLINE,Restaurants,157.77,User confirmed; 
+BB-E0000000020260825215518384892463,BB,2026-08-25,2026-08,BIANCA MIKAELLA NASCIMENT,JohnnyBravo,1000.00,User confirmed; 
+BB-E0000000020260825232618210085258,BB,2026-08-25,2026-08,ESTACAO 89 COMERCIO VAREJ,Groceries,124.40,Medium; Provisional food retail; confirm groceries versus prepared meal or other goods.
+BB-E0000000020260825232908028379468,BB,2026-08-25,2026-08,ESTACAO 89 COMERCIO VAREJ,Groceries,19.00,Medium; Provisional food retail; confirm groceries versus prepared meal or other goods.
+BB-E0000000020260826134457599240555,BB,2026-08-26,2026-08,LACANTO MERCADINHO E CONV,Groceries,238.42,High; 
+BB-E0000000020260826150302495697401,BB,2026-08-26,2026-08,MARILEIDE BENTO DE LIMA,PERSONAL,90.00,User-confirmed purpose; category inferred; User confirmed foot/nail treatment; grouped under PERSONAL / foot and nail care.
+BB-E0000000020260826152259444079278,BB,2026-08-26,2026-08,ELDORADO,Groceries,40.18,User-confirmed purpose; category inferred; User confirmed bakery; grouped under Groceries using the existing bakery convention.
+BB-E0000000020260826182722744306572,BB,2026-08-26,2026-08,CARAJAS,HOME SPENDINGS,372.25,User confirmed; 
+BB-E0000000020260828094159354035507,BB,2026-08-28,2026-08,RECEITA FEDERAL,Taxes/government,7787.51,High; 
+BB-E0000000020260828134442384323492,BB,2026-08-28,2026-08,HS PETROLEO COMERCIO DE C,CAR,35.98,User confirmed; 
+BB-E0000000020260828194412235564096,BB,2026-08-28,2026-08,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260829212331064956301,BB,2026-08-29,2026-08,BIANCA MIKAELLA NASCIMENT,JohnnyBravo,450.00,User confirmed; 
+BB-E0000000020260829212407232957791,BB,2026-08-29,2026-08,ANNE KAROLINA PEREIRA RIB,Other,20.00,decision-C
+BB-E0000000020260830222847024098609,BB,2026-08-30,2026-08,PIZZA ELEVE,Restaurants,560.51,High; 
+BB-E0000000020260831195116136436508,BB,2026-08-31,2026-08,EWERTON DE SOUSA EMERI,JohnnyBravo,2000.00,User confirmed; 
+BB-E0000000020260901124557141896792,BB,2026-09-01,2026-09,EVA BEZERRA DA SILVA,JohnnyBravo-eva,1577.13,User confirmed; 
+BB-E0000000020260901172446792344861,BB,2026-09-01,2026-09,ENERGISA PB,Bills/utilities,967.05,High; 
+BB-E0000000020260901172532207751360,BB,2026-09-01,2026-09,ENERGISA PB,Bills/utilities,1023.52,High; 
+BB-E0000000020260905150239838293409,BB,2026-09-05,2026-09,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260905151033386393245,BB,2026-09-05,2026-09,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260905151106297398847,BB,2026-09-05,2026-09,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E0000000020260905151357334288394,BB,2026-09-05,2026-09,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+BB-E004169682026090622278RqfU2stfIN,BB,2026-09-06,2026-09,EDUARDO FORSTER GIOVANNIN,,0.00,High; 
+Inter-2026-07-09-REDMART,Inter,2026-07-09,2026-07,REDMART,Other,24.75,decision-C
+MP account-1,MP account,2026-01-02,2026-01,MERCADINHO LACANTO LTDA,Groceries,64.50,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-2,MP account,2026-01-02,2026-01,MERCADINHO LACANTO LTDA,Groceries,32.45,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-3,MP account,2026-01-02,2026-01,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-4,MP account,2026-01-02,2026-01,Compra de Kit Cabo+espelho Odontológico Inox Para Dentista Mercado Livre,Health/pharmacy,21.85,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-5,MP account,2026-01-02,2026-01,Compra de Kit Odontológico Inox De Limpeza Removedor De Tártaro Prateado Mercado L...,Health/pharmacy,26.29,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-6,MP account,2026-01-02,2026-01,Maria da Luz Assis da Silva,HOME SPENDINGS,1340.00,decision-A
+MP account-7,MP account,2026-01-03,2026-01,AUTO POSTO INTERMARES LTDA,Transport/fuel,28.50,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-8,MP account,2026-01-03,2026-01,COMERCIAL DE ALIMENTOS HORA H LTDA,Groceries,40.00,decision-B
+MP account-9,MP account,2026-01-04,2026-01,COMERCIAL DE ALIMENTOS HORA H LTDA,Groceries,78.00,decision-B
+MP account-10,MP account,2026-01-04,2026-01,AUTO POSTO INTERMARES LTDA,Transport/fuel,28.50,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-11,MP account,2026-01-05,2026-01,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-12,MP account,2026-01-05,2026-01,Veronica Freitas Lira,Other,50.00,decision-C
+MP account-13,MP account,2026-01-05,2026-01,Maria da Luz Assis da Silva,HOME SPENDINGS,30.00,decision-A
+MP account-14,MP account,2026-01-05,2026-01,CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTDA,Groceries,19.99,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-15,MP account,2026-01-05,2026-01,"ALLPARK EMPREENDIMENTOS, PARTICIPACOES E SERVICOS S.A.",Transport/fuel,11.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-16,MP account,2026-01-05,2026-01,NOBRE CARNES COMERCIO VAREJISTA DE CARNES LTDA,Groceries,77.93,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-17,MP account,2026-01-05,2026-01,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,69.50,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-18,MP account,2026-01-05,2026-01,Maria da Luz Assis da Silva,HOME SPENDINGS,40.00,decision-A
+MP account-19,MP account,2026-01-05,2026-01,DROGARIA DROGAVISTA LTDA,Health/pharmacy,123.98,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-20,MP account,2026-01-06,2026-01,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-21,MP account,2026-01-06,2026-01,CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTDA,Groceries,16.99,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-22,MP account,2026-01-06,2026-01,"ALLPARK EMPREENDIMENTOS, PARTICIPACOES E SERVICOS S.A.",Transport/fuel,11.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-23,MP account,2026-01-06,2026-01,NOBRE CARNES COMERCIO VAREJISTA DE CARNES LTDA,Groceries,44.41,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-24,MP account,2026-01-06,2026-01,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,78.49,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-25,MP account,2026-01-07,2026-01,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-26,MP account,2026-01-07,2026-01,POSTO EXPRESSAO - COMBUSTIVEIS E CONVENIENCIAS LTDA,HOME SPENDINGS,194.58,decision-A
+MP account-27,MP account,2026-01-08,2026-01,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-28,MP account,2026-01-08,2026-01,Transferência Pix recebida EDUARDO F GIOVANNINI,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-29,MP account,2026-01-08,2026-01,CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTDA,Groceries,26.10,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-30,MP account,2026-01-08,2026-01,COFFEE COVE CAFETERIA LTDA,Restaurants,8.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-31,MP account,2026-01-08,2026-01,Cartão de crédito,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-32,MP account,2026-01-08,2026-01,Eva Bezerra da Silva Brandao,JohnnyBravo-eva,1310.00,decision-A
+MP account-33,MP account,2026-01-08,2026-01,"ALLPARK EMPREENDIMENTOS, PARTICIPACOES E SERVICOS S.A.",Transport/fuel,11.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-34,MP account,2026-01-08,2026-01,Transferência cancelada PAGALEVE INSTITUICAO DE PAGAMENTO LTDA.,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-35,MP account,2026-01-08,2026-01,AUTO POSTO INTERMARES LTDA,Transport/fuel,28.50,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-36,MP account,2026-01-08,2026-01,COMERCIAL DE ALIMENTOS HORA H LTDA,Groceries,115.00,decision-B
+MP account-37,MP account,2026-01-08,2026-01,AUTO POSTO INTERMARES LTDA,Transport/fuel,240.75,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-38,MP account,2026-01-09,2026-01,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-39,MP account,2026-01-09,2026-01,Marinaldo Domingos de Souza,HOME SPENDINGS,440.00,decision-A
+MP account-40,MP account,2026-01-09,2026-01,Cristiano Borba da Silva,JohnnyBravo,200.00,decision-A
+MP account-41,MP account,2026-01-10,2026-01,Eva Bezerra da Silva Brandao,JohnnyBravo-eva,340.00,decision-A
+MP account-42,MP account,2026-01-10,2026-01,AUTO POSTO INTERMARES LTDA,Transport/fuel,38.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-43,MP account,2026-01-10,2026-01,COMERCIAL DE ALIMENTOS HORA H LTDA,Groceries,64.00,decision-B
+MP account-44,MP account,2026-01-11,2026-01,REDE MENOR PRECO SUPERMERCADO LTDA,Groceries,509.77,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-45,MP account,2026-01-12,2026-01,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-46,MP account,2026-01-12,2026-01,DROGARIA DROGAVISTA LTDA,Health/pharmacy,8.97,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-47,MP account,2026-01-12,2026-01,EMILY SILVA FARIAS,Other,8.00,decision-C
+MP account-48,MP account,2026-01-12,2026-01,Veronica Freitas Lira,Other,40.00,decision-C
+MP account-49,MP account,2026-01-12,2026-01,CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTDA,Groceries,16.99,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-50,MP account,2026-01-12,2026-01,Maria Gorete Ferreira da Costa,Other,100.00,decision-C
+MP account-51,MP account,2026-01-12,2026-01,RFC CHOCOLATES CIA LTDA,Groceries,10.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-52,MP account,2026-01-12,2026-01,"ALLPARK EMPREENDIMENTOS, PARTICIPACOES E SERVICOS S.A.",Transport/fuel,11.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-53,MP account,2026-01-12,2026-01,COMERCIAL DE ALIMENTOS HORA H LTDA,Groceries,30.00,decision-B
+MP account-54,MP account,2026-01-12,2026-01,AUTO POSTO INTERMARES LTDA,Transport/fuel,28.50,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-55,MP account,2026-01-13,2026-01,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-56,MP account,2026-01-13,2026-01,SUPERMERCADO LITORAL LTDA,Groceries,1407.74,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-57,MP account,2026-01-13,2026-01,Leandro Vital da Costa,Other,30.00,decision-C
+MP account-58,MP account,2026-01-13,2026-01,"Cursor, ai powered ide",Home Office,333.85,Saved user classification for named Cursor software; account descriptor alias
+MP account-59,MP account,2026-01-13,2026-01,Deborah Ribeiro de Morais Tenorio,PERSONAL,350.00,decision-A
+MP account-60,MP account,2026-01-13,2026-01,AUTO POSTO INTERMARES LTDA,Transport/fuel,41.77,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-61,MP account,2026-01-14,2026-01,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-62,MP account,2026-01-17,2026-01,Transferência Pix recebida EDUARDO F GIOVANNINI,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-63,MP account,2026-01-17,2026-01,Cristiano Borba da Silva,UNKNOWN - CHECK,0,excluded-overlap
+MP account-64,MP account,2026-01-18,2026-01,Valdebam Procopio de Araujo,HOME SPENDINGS,39.00,decision-A
+MP account-65,MP account,2026-01-18,2026-01,Eva Bezerra da Silva Brandao,JohnnyBravo-eva,1440.00,decision-A
+MP account-66,MP account,2026-01-18,2026-01,Valdebam Procopio de Araujo,HOME SPENDINGS,113.00,decision-A
+MP account-67,MP account,2026-01-18,2026-01,ALIEDSON BEZERRA SALVADOR,Other,89.00,decision-C
+MP account-68,MP account,2026-01-18,2026-01,ELSE LUDIMILLA CAVALCANTE DREYER DINN,Other,77.00,decision-C
+MP account-69,MP account,2026-01-18,2026-01,Mauricio Bandeira Pereira,Other,216.00,decision-C
+MP account-70,MP account,2026-01-19,2026-01,Veronica Freitas Lira,Other,20.00,decision-C
+MP account-71,MP account,2026-01-19,2026-01,CAVALCANTE COMERCIO DE CHOCOLATES FINOS LTDA,Groceries,16.99,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-72,MP account,2026-01-19,2026-01,"ALLPARK EMPREENDIMENTOS, PARTICIPACOES E SERVICOS S.A.",Transport/fuel,11.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-73,MP account,2026-01-20,2026-01,Transferência Pix recebida Eduardo Forster Giovannini,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-74,MP account,2026-01-20,2026-01,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-75,MP account,2026-01-20,2026-01,GOOGLE BRASIL PAGAMENTOS LTDA.,Subscriptions/software,96.99,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-76,MP account,2026-01-20,2026-01,Maria da Luz Assis da Silva,HOME SPENDINGS,100.00,decision-A
+MP account-77,MP account,2026-01-20,2026-01,AUTO POSTO INTERMARES LTDA,Transport/fuel,28.50,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-78,MP account,2026-01-20,2026-01,COMERCIAL DE ALIMENTOS HORA H LTDA,Groceries,2.00,decision-B
+MP account-79,MP account,2026-01-21,2026-01,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-80,MP account,2026-01-21,2026-01,EDGLEY DE SOUSA FORMIGA,Other,278.22,decision-C
+MP account-81,MP account,2026-01-22,2026-01,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-82,MP account,2026-01-22,2026-01,Nailson da Silva Oliveira,HOME SPENDINGS,288.88,decision-A
+MP account-83,MP account,2026-01-22,2026-01,Veronica Freitas Lira,Other,30.00,decision-C
+MP account-84,MP account,2026-01-22,2026-01,NOBRE CARNES COMERCIO VAREJISTA DE CARNES LTDA,Groceries,221.43,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-85,MP account,2026-01-22,2026-01,Cristiano Borba da Silva,JohnnyBravo,100.00,decision-A
+MP account-86,MP account,2026-01-23,2026-01,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-87,MP account,2026-01-23,2026-01,Banco Topazio,Transfers abroad,0,excluded-A-transfer
+MP account-88,MP account,2026-01-23,2026-01,AUTO POSTO INTERMARES LTDA,Transport/fuel,28.50,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-89,MP account,2026-01-23,2026-01,COMERCIAL DE ALIMENTOS HORA H LTDA,Groceries,109.50,decision-B
+MP account-90,MP account,2026-01-24,2026-01,REDE MENOR PRECO SUPERMERCADO LTDA,Groceries,194.79,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-91,MP account,2026-01-24,2026-01,REDE MENOR PRECO SUPERMERCADO LTDA,Groceries,5.29,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-92,MP account,2026-01-25,2026-01,UBER DO BRASIL TECNOLOGIA LTDA.,PERSONAL,21.97,decision-A
+MP account-93,MP account,2026-01-25,2026-01,UBER DO BRASIL TECNOLOGIA LTDA.,PERSONAL,20.99,decision-A
+MP account-94,MP account,2026-01-26,2026-01,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-95,MP account,2026-01-26,2026-01,Maria da Luz Assis da Silva,HOME SPENDINGS,40.00,decision-A
+MP account-96,MP account,2026-01-26,2026-01,RFC CHOCOLATES CIA LTDA,Groceries,10.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-97,MP account,2026-01-26,2026-01,"ALLPARK EMPREENDIMENTOS, PARTICIPACOES E SERVICOS S.A.",Transport/fuel,11.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-98,MP account,2026-01-27,2026-01,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-99,MP account,2026-01-27,2026-01,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,78.30,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-100,MP account,2026-01-27,2026-01,DROGAMAR MEDICAMENTOS E PERFUMARIA LTDA,Health/pharmacy,99.95,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-101,MP account,2026-01-28,2026-01,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-102,MP account,2026-01-29,2026-01,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-103,MP account,2026-01-30,2026-01,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-104,MP account,2026-01-30,2026-01,Transferência recebida EDUARDO FORSTER GIOVANNINI,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-105,MP account,2026-01-30,2026-01,Maria da Luz Assis da Silva,HOME SPENDINGS,1340.00,decision-A
+MP account-106,MP account,2026-01-30,2026-01,TELEFONICA BRASIL S.A.,Bills/utilities,65.97,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-107,MP account,2026-01-30,2026-01,TELEFONICA BRASIL S.A.,Bills/utilities,65.97,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-108,MP account,2026-01-31,2026-01,Valdebam Procopio de Araujo,HOME SPENDINGS,123.00,decision-A
+MP account-109,MP account,2026-01-31,2026-01,Alisson Cleiton Cunha Monteiro,Other,199.99,decision-C
+MP account-110,MP account,2026-01-31,2026-01,Eduardo Silva dos Santos,UNKNOWN - CHECK,0,excluded-B
+MP account-111,MP account,2026-01-31,2026-01,Transferência enviada Alisson Cleiton Cunha Monteiro,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-112,MP account,2026-02-01,2026-02,Irineu Das Neves Amorim,Other,30.00,decision-C
+MP account-113,MP account,2026-02-01,2026-02,CAPPTA INSTITUICAO DE PAGAMENTO S.A,Other,62.70,decision-C
+MP account-114,MP account,2026-02-01,2026-02,COMERCIAL DE ALIMENTOS HORA H LTDA,Groceries,21.00,decision-B
+MP account-115,MP account,2026-02-01,2026-02,AUTO POSTO INTERMARES LTDA,Transport/fuel,28.50,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-116,MP account,2026-02-01,2026-02,AUTO POSTO INTERMARES LTDA,Transport/fuel,363.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-117,MP account,2026-02-02,2026-02,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-118,MP account,2026-02-02,2026-02,RESTAURANTE MINERIM LTDA,Restaurants,120.30,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-119,MP account,2026-02-02,2026-02,L A BIKE COMERCIO E REPARACAO LTDA,Transport/fuel,43.55,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-120,MP account,2026-02-02,2026-02,Cristiano Borba da Silva,JohnnyBravo,150.00,decision-A
+MP account-121,MP account,2026-02-03,2026-02,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-122,MP account,2026-02-03,2026-02,Eduardo Forster Giovannini,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-123,MP account,2026-02-03,2026-02,Jrba Cabedelo Aluguel de Maquinas e Equipamentos Ltda,Other,182.00,decision-C
+MP account-124,MP account,2026-02-03,2026-02,MERCADINHO LACANTO LTDA,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-125,MP account,2026-02-03,2026-02,Transferência cancelada MERCADINHO LACANTO LTDA,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-126,MP account,2026-02-03,2026-02,MERCADINHO LACANTO LTDA,Groceries,246.43,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-127,MP account,2026-02-03,2026-02,Eduardo Silva dos Santos,UNKNOWN - CHECK,0,excluded-B
+MP account-128,MP account,2026-02-03,2026-02,Cursor usage mid jan,Home Office,217.71,Saved user classification for named Cursor software; account descriptor alias
+MP account-129,MP account,2026-02-04,2026-02,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-130,MP account,2026-02-04,2026-02,Valdebam Procopio de Araujo,HOME SPENDINGS,60.00,decision-A
+MP account-131,MP account,2026-02-04,2026-02,Cristiano Borba da Silva,JohnnyBravo,150.00,decision-A
+MP account-132,MP account,2026-02-04,2026-02,Eduardo Silva dos Santos,UNKNOWN - CHECK,0,excluded-B
+MP account-133,MP account,2026-02-04,2026-02,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,138.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-134,MP account,2026-02-05,2026-02,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-135,MP account,2026-02-05,2026-02,REDE MENOR PRECO SUPERMERCADO LTDA,Groceries,408.47,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-136,MP account,2026-02-05,2026-02,REDE MENOR PRECO SUPERMERCADO LTDA,Groceries,29.50,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-137,MP account,2026-02-05,2026-02,REDE MENOR PRECO SUPERMERCADO LTDA,Groceries,149.90,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-138,MP account,2026-02-05,2026-02,THALES JERONIMO DO NASCIMENTO SEIXAS,PERSONAL,46.00,decision-A
+MP account-139,MP account,2026-02-06,2026-02,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-140,MP account,2026-02-07,2026-02,POSTO EXPRESSAO - COMBUSTIVEIS E CONVENIENCIAS LTDA,HOME SPENDINGS,48.99,decision-A
+MP account-141,MP account,2026-02-07,2026-02,Eva Bezerra da Silva Brandao,JohnnyBravo-eva,1320.00,decision-A
+MP account-142,MP account,2026-02-08,2026-02,PANIFICADORA SAO GONCALO LTDA,Groceries,72.59,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-143,MP account,2026-02-08,2026-02,MERCADINHO LACANTO LTDA,Groceries,164.45,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-144,MP account,2026-02-09,2026-02,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-145,MP account,2026-02-09,2026-02,POSTO EXPRESSAO - COMBUSTIVEIS E CONVENIENCIAS LTDA,HOME SPENDINGS,48.20,decision-A
+MP account-146,MP account,2026-02-10,2026-02,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-147,MP account,2026-02-10,2026-02,MERCADINHO LACANTO LTDA,Groceries,249.21,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-148,MP account,2026-02-11,2026-02,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-149,MP account,2026-02-11,2026-02,Compra de 4 produtos Mercado Livre,Shopping,1239.80,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-150,MP account,2026-02-11,2026-02,Cartão de crédito,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-151,MP account,2026-02-12,2026-02,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-152,MP account,2026-02-13,2026-02,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-153,MP account,2026-02-13,2026-02,"Cursor, ai powered ide",Home Office,320.89,Saved user classification for named Cursor software; account descriptor alias
+MP account-154,MP account,2026-02-13,2026-02,Deborah Ribeiro de Morais Tenorio,PERSONAL,350.00,decision-A
+MP account-155,MP account,2026-02-16,2026-02,MERCADINHO LACANTO LTDA,Groceries,245.33,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-156,MP account,2026-02-17,2026-02,Pix recebido EDUARDO F GIOVANNINI,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-157,MP account,2026-02-18,2026-02,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-158,MP account,2026-02-19,2026-02,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-159,MP account,2026-02-19,2026-02,Compra de 5 produtos Mercado Livre,Shopping,1200.05,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-160,MP account,2026-02-20,2026-02,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-161,MP account,2026-02-20,2026-02,GOOGLE BRASIL PAGAMENTOS LTDA.,Subscriptions/software,96.99,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-162,MP account,2026-02-21,2026-02,MERCADINHO LACANTO LTDA,Groceries,490.44,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-163,MP account,2026-02-21,2026-02,Maria da Luz Assis da Silva,HOME SPENDINGS,35.00,decision-A
+MP account-164,MP account,2026-02-21,2026-02,Cristiano Borba da Silva,JohnnyBravo,100.00,decision-A
+MP account-165,MP account,2026-02-21,2026-02,MOMAN RESTAURANTE COMERCIO DE ALIMENTOS LTDA,Restaurants,85.70,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-166,MP account,2026-02-22,2026-02,Reembolso Compra de 5 produtos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-167,MP account,2026-02-22,2026-02,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,115.88,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-168,MP account,2026-02-23,2026-02,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-169,MP account,2026-02-23,2026-02,Batista e Almeida Comercio Varejista de Pecas e Acessorios Para Veicul...,Transport/fuel,680.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-170,MP account,2026-02-23,2026-02,REDE MENOR PRECO SUPERMERCADO LTDA,Groceries,88.66,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-171,MP account,2026-02-23,2026-02,Eduardo Silva dos Santos,UNKNOWN - CHECK,0,excluded-B
+MP account-172,MP account,2026-02-23,2026-02,Eduardo Carlos de Medeiros Ferreira,Other,12.00,decision-C
+MP account-173,MP account,2026-02-23,2026-02,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,74.39,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-174,MP account,2026-02-24,2026-02,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-175,MP account,2026-02-25,2026-02,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-176,MP account,2026-02-25,2026-02,PANIFICADORA SAO GONCALO LTDA,Groceries,89.77,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-177,MP account,2026-02-25,2026-02,AUTO POSTO INTERMARES LTDA,Transport/fuel,29.50,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-178,MP account,2026-02-25,2026-02,COMERCIAL DE ALIMENTOS HORA H LTDA,Groceries,59.50,decision-B
+MP account-179,MP account,2026-02-25,2026-02,AUTO POSTO INTERMARES LTDA,Transport/fuel,240.02,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-180,MP account,2026-02-26,2026-02,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-181,MP account,2026-02-26,2026-02,IATA INTERNATIONAL AIR TRANSPORT ASSOCIATION,Travel,2557.99,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-182,MP account,2026-02-26,2026-02,PAGALI SERVICOS DE PAGAMENTO S.A.,Other,520.02,decision-C
+MP account-183,MP account,2026-02-26,2026-02,Eva Bezerra da Silva Brandao,JohnnyBravo-eva,1000.00,decision-A
+MP account-184,MP account,2026-02-27,2026-02,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-185,MP account,2026-02-27,2026-02,Reembolso Compra de 4 produtos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-186,MP account,2026-02-27,2026-02,Transferência recebida EDUARDO FORSTER GIOVANNINI,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-187,MP account,2026-02-27,2026-02,Eduardo Carlos de Medeiros Ferreira,Other,6.00,decision-C
+MP account-188,MP account,2026-02-27,2026-02,FABIO MARQUES JERONIMO,Other,131.40,decision-C
+MP account-189,MP account,2026-02-27,2026-02,MERCADINHO LACANTO LTDA,Groceries,288.90,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-190,MP account,2026-02-27,2026-02,MERCADINHO LACANTO LTDA,Groceries,18.99,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-191,MP account,2026-02-27,2026-02,THALES JERONIMO DO NASCIMENTO SEIXAS,PERSONAL,88.00,decision-A
+MP account-192,MP account,2026-02-28,2026-02,Cristiano Borba da Silva,JohnnyBravo,200.00,decision-A
+MP account-193,MP account,2026-02-28,2026-02,THF RESTAURANTES LTDA,Restaurants,60.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-194,MP account,2026-02-28,2026-02,Maria da Luz Assis da Silva,HOME SPENDINGS,140.00,decision-A
+MP account-195,MP account,2026-02-28,2026-02,UBER DO BRASIL TECNOLOGIA LTDA.,PERSONAL,106.51,decision-A
+MP account-196,MP account,2026-02-28,2026-02,Transferência enviada UBER DO BRASIL TECNOLOGIA LTDA.,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-197,MP account,2026-02-28,2026-02,RAIA DROGASIL S A,Health/pharmacy,24.84,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-198,MP account,2026-02-28,2026-02,IATA INTERNATIONAL AIR TRANSPORT ASSOCIATION,Travel,1513.04,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-199,MP account,2026-03-01,2026-03,REDE INTEGRADA DE LOJAS DE CONVENIENCIA E PROXIMIDADE S.A.,Groceries,17.10,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-200,MP account,2026-03-01,2026-03,MP LANCHES LTDA,Restaurants,58.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-201,MP account,2026-03-01,2026-03,B L SERVICE ADMINISTRADORA DE SERVICOS LTDA,Other,243.36,decision-C
+MP account-202,MP account,2026-03-02,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-203,MP account,2026-03-02,2026-03,HORA PARK SISTEMA DE ESTACIONAMENTO ROTATIVO LTDA,Transport/fuel,120.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-204,MP account,2026-03-02,2026-03,Eduardo Silva dos Santos,UNKNOWN - CHECK,0,excluded-B
+MP account-205,MP account,2026-03-02,2026-03,AUTO POSTO INTERMARES LTDA,Transport/fuel,29.50,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-206,MP account,2026-03-03,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-207,MP account,2026-03-03,2026-03,Eduardo Carlos de Medeiros Ferreira,Other,12.00,decision-C
+MP account-208,MP account,2026-03-03,2026-03,MERCADINHO LACANTO LTDA,Groceries,201.70,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-209,MP account,2026-03-03,2026-03,Maria da Luz Assis da Silva,HOME SPENDINGS,1360.00,decision-A
+MP account-210,MP account,2026-03-03,2026-03,Marinaldo Domingos de Souza,HOME SPENDINGS,470.00,decision-A
+MP account-211,MP account,2026-03-03,2026-03,CAIXA LOTERIAS S.A,Lottery - group payments,0.00,User stated lottery is group payments and outside spending
+MP account-212,MP account,2026-03-03,2026-03,CAIXA LOTERIAS S.A,Lottery - group payments,0.00,User stated lottery is group payments and outside spending
+MP account-213,MP account,2026-03-03,2026-03,Cartão de crédito,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-214,MP account,2026-03-03,2026-03,IFOOD.COM AGENCIA DE RESTAURANTES ONLINE S.A.,Restaurants,57.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-215,MP account,2026-03-03,2026-03,Marinez Silva Sogliani,Other,200.00,decision-C
+MP account-216,MP account,2026-03-04,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-217,MP account,2026-03-04,2026-03,Eva Bezerra da Silva Brandao,JohnnyBravo-eva,1320.00,decision-A
+MP account-218,MP account,2026-03-04,2026-03,Compra Mercado Libre,Shopping,999.51,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-219,MP account,2026-03-04,2026-03,OSVALDO LUIZ DE MEDEIROS,Other,33.00,decision-C
+MP account-220,MP account,2026-03-04,2026-03,MERCADINHO LACANTO LTDA,Groceries,162.48,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-221,MP account,2026-03-04,2026-03,Maria da Luz Assis da Silva,HOME SPENDINGS,1700.00,decision-A
+MP account-222,MP account,2026-03-04,2026-03,THALES JERONIMO DO NASCIMENTO SEIXAS,PERSONAL,46.00,decision-A
+MP account-223,MP account,2026-03-04,2026-03,COMERCIAL DE ALIMENTOS HORA H LTDA,Groceries,76.50,decision-B
+MP account-224,MP account,2026-03-04,2026-03,AUTO POSTO INTERMARES LTDA,Transport/fuel,101.72,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-225,MP account,2026-03-05,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-226,MP account,2026-03-05,2026-03,PANIFICADORA SAO GONCALO LTDA,Groceries,94.67,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-227,MP account,2026-03-05,2026-03,THALES JERONIMO DO NASCIMENTO SEIXAS,PERSONAL,14.00,decision-A
+MP account-228,MP account,2026-03-06,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-229,MP account,2026-03-06,2026-03,PANIFICADORA SAO GONCALO LTDA,Groceries,65.41,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-230,MP account,2026-03-06,2026-03,MERCADINHO LACANTO LTDA,Groceries,102.44,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-231,MP account,2026-03-06,2026-03,Matias Alejandro Sanchez Suarez,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-232,MP account,2026-03-06,2026-03,Pix - Cancelado Matias Alejandro Sanchez Suarez,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-233,MP account,2026-03-06,2026-03,DROGAMAR MEDICAMENTOS E PERFUMARIA LTDA,Health/pharmacy,65.23,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-234,MP account,2026-03-07,2026-03,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,159.39,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-235,MP account,2026-03-08,2026-03,COMERCIAL DE ALIMENTOS HORA H LTDA,Groceries,112.30,decision-B
+MP account-236,MP account,2026-03-08,2026-03,AUTO POSTO INTERMARES LTDA,Transport/fuel,29.50,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-237,MP account,2026-03-08,2026-03,COMERCIAL DE ALIMENTOS HORA H LTDA,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-238,MP account,2026-03-08,2026-03,Reembolso de transferência enviada COMERCIAL DE ALIMENTOS HORA H LTDA,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-239,MP account,2026-03-09,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-240,MP account,2026-03-09,2026-03,PANIFICADORA SAO GONCALO LTDA,Groceries,108.33,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-241,MP account,2026-03-09,2026-03,MERCADINHO LACANTO LTDA,Groceries,243.22,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-242,MP account,2026-03-10,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-243,MP account,2026-03-10,2026-03,Cartão de crédito,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-244,MP account,2026-03-10,2026-03,Cartão de crédito,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-245,MP account,2026-03-10,2026-03,Cartão de crédito,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-246,MP account,2026-03-10,2026-03,Eduardo Carlos de Medeiros Ferreira,Other,18.00,decision-C
+MP account-247,MP account,2026-03-10,2026-03,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,94.69,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-248,MP account,2026-03-11,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-249,MP account,2026-03-11,2026-03,MM SERVICOS DE ALIMENTOS LTDA,Other,29.00,decision-C
+MP account-250,MP account,2026-03-11,2026-03,STAR SHOP CONVENIENCIAS LTDA,HOME SPENDINGS,45.99,decision-A
+MP account-251,MP account,2026-03-12,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-252,MP account,2026-03-12,2026-03,AUTO POSTO INTERMARES LTDA,Transport/fuel,43.75,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-253,MP account,2026-03-12,2026-03,COMERCIAL DE ALIMENTOS HORA H LTDA,Groceries,12.00,decision-B
+MP account-254,MP account,2026-03-12,2026-03,SUPERMERCADO LITORAL LTDA,Groceries,212.03,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-255,MP account,2026-03-13,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-256,MP account,2026-03-13,2026-03,HS PETROLEO COMERCIO DE COMBUSTIVEL LTDA,CAR,20.73,decision-A
+MP account-257,MP account,2026-03-13,2026-03,NIVE NUCLEO DE INSPECAO E VISTORIA VEICULAR LTDA,Transport/fuel,106.43,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-258,MP account,2026-03-13,2026-03,Geovane Ribeiro das Neves,Other,100.00,decision-C
+MP account-259,MP account,2026-03-13,2026-03,"Cursor, ai powered ide",Home Office,323.24,Saved user classification for named Cursor software; account descriptor alias
+MP account-260,MP account,2026-03-13,2026-03,Eva Bezerra da Silva Brandao,JohnnyBravo-eva,790.00,decision-A
+MP account-261,MP account,2026-03-13,2026-03,THALES JERONIMO DO NASCIMENTO SEIXAS,PERSONAL,91.00,decision-A
+MP account-262,MP account,2026-03-13,2026-03,AUTO POSTO INTERMARES LTDA,Transport/fuel,29.50,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-263,MP account,2026-03-13,2026-03,COMERCIAL DE ALIMENTOS HORA H LTDA,Groceries,27.00,decision-B
+MP account-264,MP account,2026-03-14,2026-03,Eduardo Silva dos Santos,UNKNOWN - CHECK,0,excluded-B
+MP account-265,MP account,2026-03-15,2026-03,EDNA DA SILVA ROCHA,Other,37.00,decision-C
+MP account-266,MP account,2026-03-15,2026-03,Mercado Libre,Shopping,409.43,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-267,MP account,2026-03-15,2026-03,Cursor usage feb,Home Office,213.72,Saved user classification for named Cursor software; account descriptor alias
+MP account-268,MP account,2026-03-15,2026-03,BRENA DA TRINDADE BEZERRA,Other,70.00,decision-C
+MP account-269,MP account,2026-03-15,2026-03,Pp*ticketfulfi,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-270,MP account,2026-03-15,2026-03,Reembolso de pagamento Pp*ticketfulfi,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-271,MP account,2026-03-16,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-272,MP account,2026-03-17,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-273,MP account,2026-03-17,2026-03,Eduardo Carlos de Medeiros Ferreira,Other,12.00,decision-C
+MP account-274,MP account,2026-03-17,2026-03,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,110.69,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-275,MP account,2026-03-18,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-276,MP account,2026-03-18,2026-03,UBER DO BRASIL TECNOLOGIA LTDA.,PERSONAL,16.54,decision-A
+MP account-277,MP account,2026-03-18,2026-03,Mercado Livre,Shopping,285.95,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-278,MP account,2026-03-19,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-279,MP account,2026-03-20,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-280,MP account,2026-03-23,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-281,MP account,2026-03-24,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-282,MP account,2026-03-25,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-283,MP account,2026-03-26,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-284,MP account,2026-03-27,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-285,MP account,2026-03-29,2026-03,Mercado Livre,Shopping,52.89,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-286,MP account,2026-03-30,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-287,MP account,2026-03-30,2026-03,Transferência recebida EDUARDO FORSTER GIOVANNINI,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-288,MP account,2026-03-30,2026-03,Cartão de crédito,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-289,MP account,2026-03-30,2026-03,MERCADINHO LACANTO LTDA,Groceries,198.34,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-290,MP account,2026-03-30,2026-03,COMGEL COMERCIL DE FERRAGENS GUEDES LTDA,Household/staff,20.50,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-291,MP account,2026-03-30,2026-03,Eduardo Silva dos Santos,UNKNOWN - CHECK,0,excluded-B
+MP account-292,MP account,2026-03-30,2026-03,Maria da Luz Assis da Silva,HOME SPENDINGS,1000.00,decision-A
+MP account-293,MP account,2026-03-31,2026-03,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-294,MP account,2026-03-31,2026-03,PANIFICADORA PAIVA LTDA,Groceries,96.85,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-295,MP account,2026-03-31,2026-03,Maria da Luz Assis da Silva,HOME SPENDINGS,330.00,decision-A
+MP account-296,MP account,2026-03-31,2026-03,CARAJAS MATERIAL DE CONSTRUCAO LTDA,Household/staff,640.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-297,MP account,2026-03-31,2026-03,JACARE COMERCIO DE COMBUSTIVEIS LTDA,CAR,41.47,decision-A
+MP account-298,MP account,2026-04-01,2026-04,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-299,MP account,2026-04-01,2026-04,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,113.80,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-300,MP account,2026-04-01,2026-04,EDGLEY DE SOUSA FORMIGA,Other,53.93,decision-C
+MP account-301,MP account,2026-04-01,2026-04,Eva Bezerra da Silva Brandao,JohnnyBravo-eva,2080.00,decision-A
+MP account-302,MP account,2026-04-01,2026-04,Marinaldo Domingos de Souza,HOME SPENDINGS,700.00,decision-A
+MP account-303,MP account,2026-04-02,2026-04,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-304,MP account,2026-04-02,2026-04,IATA INTERNATIONAL AIR TRANSPORT ASSOCIATION,Travel,1422.71,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-305,MP account,2026-04-02,2026-04,COMPANHIA DE AGUA E ESGOTOS DA PARAIBA CAGEPA,Bills/utilities,227.03,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-306,MP account,2026-04-02,2026-04,REDE BOM COMERCIO LTDA,Other,112.27,decision-C
+MP account-307,MP account,2026-04-02,2026-04,Eduardo Silva dos Santos,UNKNOWN - CHECK,0,excluded-B
+MP account-308,MP account,2026-04-02,2026-04,Vivo Móvel SP,Bills/utilities,67.79,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-309,MP account,2026-04-02,2026-04,REDE MENOR PRECO SUPERMERCADO LTDA,Groceries,253.88,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-310,MP account,2026-04-02,2026-04,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,75.50,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-311,MP account,2026-04-03,2026-04,Tambau Jampa Comercio de Bolos Ltda,Groceries,76.40,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-312,MP account,2026-04-06,2026-04,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-313,MP account,2026-04-06,2026-04,Marinaldo Domingos de Souza,HOME SPENDINGS,170.00,decision-A
+MP account-314,MP account,2026-04-06,2026-04,MERCADINHO LACANTO LTDA,Groceries,319.32,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-315,MP account,2026-04-07,2026-04,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-316,MP account,2026-04-07,2026-04,Gleudson Silva Farias,CAR RENTAL local,1260.00,decision-A
+MP account-317,MP account,2026-04-07,2026-04,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,124.70,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-318,MP account,2026-04-07,2026-04,Gleudson Silva Farias,CAR RENTAL local,198.00,decision-A
+MP account-319,MP account,2026-04-07,2026-04,Eva Bezerra da Silva Brandao,JohnnyBravo-eva,480.00,decision-A
+MP account-320,MP account,2026-04-07,2026-04,UBER DO BRASIL TECNOLOGIA LTDA.,PERSONAL,78.99,decision-A
+MP account-321,MP account,2026-04-08,2026-04,THF RESTAURANTES LTDA,Restaurants,49.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-322,MP account,2026-04-08,2026-04,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-323,MP account,2026-04-08,2026-04,Gerson Botasso,Other,22.00,decision-C
+MP account-324,MP account,2026-04-08,2026-04,CHOPERIA GIOVANETTI DO CAMBUI LTDA,Restaurants,222.97,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-325,MP account,2026-04-09,2026-04,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-326,MP account,2026-04-09,2026-04,NICO PANIFICADORA DO CASTELO LTDA,Groceries,73.70,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-327,MP account,2026-04-09,2026-04,Gabriel Resende Firmino,CAR,3235.00,decision-B
+MP account-328,MP account,2026-04-09,2026-04,Br Brake Comercio e Servicos Automotivos Ltda,Transport/fuel,3200.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-329,MP account,2026-04-09,2026-04,Williams Firmino dos Santos,CAR,2085.00,decision-B
+MP account-330,MP account,2026-04-09,2026-04,COVABRA SUPERMERCADOS LTDA,Groceries,713.40,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-331,MP account,2026-04-09,2026-04,COVABRA SUPERMERCADOS LTDA,Groceries,97.19,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-332,MP account,2026-04-10,2026-04,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-333,MP account,2026-04-11,2026-04,BUTIQUIM DO FORTAO LTDA,Restaurants,170.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-334,MP account,2026-04-12,2026-04,BUTIQUIM DO FORTAO LTDA,Restaurants,196.13,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-335,MP account,2026-04-13,2026-04,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-336,MP account,2026-04-14,2026-04,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-337,MP account,2026-04-14,2026-04,B L SERVICE ADMINISTRADORA DE SERVICOS LTDA,Other,208.00,decision-C
+MP account-338,MP account,2026-04-14,2026-04,Eduardo Silva dos Santos,UNKNOWN - CHECK,0,excluded-B
+MP account-339,MP account,2026-04-14,2026-04,GF4 PARTICIPACOES LTDA,Other,114.77,decision-C
+MP account-340,MP account,2026-04-14,2026-04,Bessa Express Loja De Proximidade Ltda,Groceries,46.98,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-341,MP account,2026-04-14,2026-04,Vilberto Pessoa Soares,Other,125.00,decision-C
+MP account-342,MP account,2026-04-15,2026-04,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-343,MP account,2026-04-15,2026-04,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,175.40,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-344,MP account,2026-04-16,2026-04,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-345,MP account,2026-04-16,2026-04,TELEFONICA BRASIL S.A.,Bills/utilities,70.97,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-346,MP account,2026-04-16,2026-04,Marinaldo Domingos de Souza,HOME SPENDINGS,1200.00,decision-A
+MP account-347,MP account,2026-04-16,2026-04,COMPANHIA DE AGUA E ESGOTOS DA PARAIBA CAGEPA,Bills/utilities,90.22,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-348,MP account,2026-04-17,2026-04,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-349,MP account,2026-04-20,2026-04,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-350,MP account,2026-04-20,2026-04,GOOGLE BRASIL PAGAMENTOS LTDA.,Subscriptions/software,96.99,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-351,MP account,2026-04-22,2026-04,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-352,MP account,2026-04-22,2026-04,Pix recebido EDIMILSON RAMOS DE OLIVEIRA JUNIOR,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-353,MP account,2026-04-22,2026-04,55.103.928 MARIA EDUARDA CARDOSO DA COSTA,Other,35.00,decision-C
+MP account-354,MP account,2026-04-23,2026-04,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-355,MP account,2026-04-23,2026-04,Amanda Gabrielle Freire De Souza,Other,131.00,decision-C
+MP account-356,MP account,2026-04-24,2026-04,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-357,MP account,2026-04-27,2026-04,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-358,MP account,2026-04-28,2026-04,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-359,MP account,2026-04-29,2026-04,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-360,MP account,2026-04-30,2026-04,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-361,MP account,2026-04-30,2026-04,Transferência recebida EDUARDO FORSTER GIOVANNINI,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-362,MP account,2026-05-01,2026-05,Maria da Luz Assis da Silva,HOME SPENDINGS,1190.00,decision-A
+MP account-363,MP account,2026-05-01,2026-05,Eduardo Forster Giovannini,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-364,MP account,2026-05-03,2026-05,Eduardo Silva dos Santos,UNKNOWN - CHECK,0,excluded-B
+MP account-365,MP account,2026-05-04,2026-05,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-366,MP account,2026-05-04,2026-05,Marinaldo Domingos de Souza,HOME SPENDINGS,180.00,decision-A
+MP account-367,MP account,2026-05-05,2026-05,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-368,MP account,2026-05-05,2026-05,SALUTARE MEDICINA E SAUDE,Health/pharmacy,130.91,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-369,MP account,2026-05-05,2026-05,Eduardo Silva dos Santos,UNKNOWN - CHECK,0,excluded-B
+MP account-370,MP account,2026-05-05,2026-05,Cartão de crédito,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-371,MP account,2026-05-05,2026-05,Cartão de crédito,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-372,MP account,2026-05-06,2026-05,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-373,MP account,2026-05-06,2026-05,MERCADINHO LACANTO LTDA,Groceries,232.44,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-374,MP account,2026-05-06,2026-05,EDGLEY DE SOUSA FORMIGA,Other,198.35,decision-C
+MP account-375,MP account,2026-05-06,2026-05,Gleudson Silva Farias,CAR RENTAL local,1260.00,decision-A
+MP account-376,MP account,2026-05-06,2026-05,Casa dos Criadores Comercio Ltda,HOME SPENDINGS,281.00,decision-A
+MP account-377,MP account,2026-05-06,2026-05,Casa dos Criadores Comercio Ltda,HOME SPENDINGS,15.00,decision-A
+MP account-378,MP account,2026-05-07,2026-05,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-379,MP account,2026-05-07,2026-05,VINDI PAGAMENTOS SA,Other,494.80,decision-C
+MP account-380,MP account,2026-05-08,2026-05,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-381,MP account,2026-05-08,2026-05,Vivo Móvel SP,Bills/utilities,251.43,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-382,MP account,2026-05-08,2026-05,PANIFICADORA SAO GONCALO LTDA,Groceries,78.91,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-383,MP account,2026-05-08,2026-05,SUPERMERCADO LITORAL LTDA,Groceries,430.42,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-384,MP account,2026-05-08,2026-05,Eva Bezerra da Silva Brandao,JohnnyBravo-eva,1040.00,decision-A
+MP account-385,MP account,2026-05-08,2026-05,Mercado Libre,Shopping,390.69,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-386,MP account,2026-05-09,2026-05,Mercado Libre,Shopping,379.98,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-387,MP account,2026-05-09,2026-05,Eduardo Silva dos Santos,UNKNOWN - CHECK,0,excluded-B
+MP account-388,MP account,2026-05-10,2026-05,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,97.10,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-389,MP account,2026-05-11,2026-05,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-390,MP account,2026-05-11,2026-05,MEGA BYTE COMPUTADORES,Shopping,386.91,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-391,MP account,2026-05-11,2026-05,SECRETARIA DE ESTADO DA FAZENDA SEFAZ PB,Taxes/government,1342.74,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-392,MP account,2026-05-12,2026-05,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-393,MP account,2026-05-12,2026-05,Eduardo Silva dos Santos,UNKNOWN - CHECK,0,excluded-B
+MP account-394,MP account,2026-05-12,2026-05,Maria da Luz Assis da Silva,HOME SPENDINGS,200.00,decision-A
+MP account-395,MP account,2026-05-12,2026-05,ATLANTICO SUL HOTELARIA E RESTAURANTES L,Other,110.00,decision-C
+MP account-396,MP account,2026-05-12,2026-05,LINDEMBERG FRANCISCO DA SILVA,Other,22.85,decision-C
+MP account-397,MP account,2026-05-13,2026-05,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-398,MP account,2026-05-14,2026-05,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-399,MP account,2026-05-14,2026-05,Gleudson Silva Farias,CAR RENTAL local,1080.00,decision-A
+MP account-400,MP account,2026-05-15,2026-05,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-401,MP account,2026-05-15,2026-05,EDNA DA SILVA ROCHA,Other,36.00,decision-C
+MP account-402,MP account,2026-05-15,2026-05,LUMIAR HEALTH BUILDERS EQUIPAMENTOS HOSPITALARES LTDA,Health/pharmacy,554.92,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-403,MP account,2026-05-15,2026-05,Eduardo Silva dos Santos,UNKNOWN - CHECK,0,excluded-B
+MP account-404,MP account,2026-05-15,2026-05,Matias Alejandro Sanchez Suarez,CAR,86.00,decision-A
+MP account-405,MP account,2026-05-16,2026-05,JACARE COMERCIO DE COMBUSTIVEIS LTDA,CAR,62.92,decision-A
+MP account-406,MP account,2026-05-16,2026-05,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,225.28,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-407,MP account,2026-05-17,2026-05,MERCADINHO LACANTO LTDA,Groceries,225.95,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-408,MP account,2026-05-17,2026-05,UMI SUSHI BAR LTDA,Restaurants,85.80,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-409,MP account,2026-05-18,2026-05,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-410,MP account,2026-05-18,2026-05,MERCADINHO LACANTO LTDA,Groceries,144.44,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-411,MP account,2026-05-18,2026-05,Ewerton de Sousa Emeri,JohnnyBravo,1000.00,decision-A
+MP account-412,MP account,2026-05-19,2026-05,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-413,MP account,2026-05-20,2026-05,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-414,MP account,2026-05-20,2026-05,GOOGLE BRASIL PAGAMENTOS LTDA.,Subscriptions/software,96.99,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-415,MP account,2026-05-21,2026-05,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-416,MP account,2026-05-22,2026-05,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-417,MP account,2026-05-25,2026-05,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-418,MP account,2026-05-25,2026-05,Maria da Luz Assis da Silva,HOME SPENDINGS,150.00,decision-A
+MP account-419,MP account,2026-05-26,2026-05,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-420,MP account,2026-05-26,2026-05,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,128.90,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-421,MP account,2026-05-27,2026-05,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-422,MP account,2026-05-27,2026-05,Gleudson Silva Farias,CAR RENTAL local,180.00,decision-A
+MP account-423,MP account,2026-05-28,2026-05,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-424,MP account,2026-05-28,2026-05,Pix recebido EDUARDO F GIOVANNINI,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-425,MP account,2026-05-28,2026-05,Marinaldo Domingos de Souza,HOME SPENDINGS,168.00,decision-A
+MP account-426,MP account,2026-05-28,2026-05,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,154.90,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-427,MP account,2026-05-29,2026-05,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-428,MP account,2026-05-29,2026-05,MERCADINHO LACANTO LTDA,Groceries,118.94,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-429,MP account,2026-05-29,2026-05,Erasmo Luiz Travassos De Souza,Other,10.00,decision-C
+MP account-430,MP account,2026-05-29,2026-05,VIRGINIA BARROS VIEIRA,Other,10.00,decision-C
+MP account-431,MP account,2026-05-29,2026-05,Maria Edilza de Souza,Other,17.00,decision-C
+MP account-432,MP account,2026-05-30,2026-05,ENERGISA PARAIBA - DISTRIBUIDORA DE ENERGIA S.A,Bills/utilities,144.65,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-433,MP account,2026-05-30,2026-05,ENERGISA PARAIBA - DISTRIBUIDORA DE ENERGIA S.A,Bills/utilities,720.01,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-434,MP account,2026-05-31,2026-05,Eva Bezerra da Silva Brandao,JohnnyBravo-eva,1110.00,decision-A
+MP account-435,MP account,2026-05-31,2026-05,Mercado Livre,Shopping,249.99,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-436,MP account,2026-05-31,2026-05,Mercado Libre,Shopping,547.64,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-437,MP account,2026-05-31,2026-05,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,155.40,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-438,MP account,2026-06-01,2026-06,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-439,MP account,2026-06-01,2026-06,EDGLEY DE SOUSA FORMIGA,Other,48.72,decision-C
+MP account-440,MP account,2026-06-01,2026-06,MERCADINHO LACANTO LTDA,Groceries,165.90,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-441,MP account,2026-06-01,2026-06,EDGLEY DE SOUSA FORMIGA,Other,55.71,decision-C
+MP account-442,MP account,2026-06-02,2026-06,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-443,MP account,2026-06-02,2026-06,Ewerton de Sousa Emeri,JohnnyBravo,1000.00,decision-A
+MP account-444,MP account,2026-06-02,2026-06,Jonathan Borba da Silva,Other,100.00,decision-C
+MP account-445,MP account,2026-06-02,2026-06,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,119.40,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-446,MP account,2026-06-03,2026-06,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-447,MP account,2026-06-03,2026-06,PEDRO HENRIQUE ALMEIDA DANTAS,CAR,1200.00,decision-A
+MP account-448,MP account,2026-06-03,2026-06,Eduardo Silva dos Santos,UNKNOWN - CHECK,0,excluded-B
+MP account-449,MP account,2026-06-04,2026-06,PANIFICADORA SAO GONCALO LTDA,Groceries,103.08,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-450,MP account,2026-06-04,2026-06,MERCADINHO LACANTO LTDA,Groceries,36.48,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-451,MP account,2026-06-04,2026-06,AUTO POSTO INTERMARES LTDA,Transport/fuel,29.50,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-452,MP account,2026-06-04,2026-06,COMERCIAL DE ALIMENTOS HORA H LTDA,Groceries,11.50,decision-B
+MP account-453,MP account,2026-06-04,2026-06,DROGARIA DROGAVISTA LTDA,Health/pharmacy,16.99,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-454,MP account,2026-06-04,2026-06,ELSE LUDIMILLA CAVALCANTE DREYER DINN,Other,50.00,decision-C
+MP account-455,MP account,2026-06-05,2026-06,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-456,MP account,2026-06-05,2026-06,PANIFICADORA SAO GONCALO LTDA,Groceries,34.33,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-457,MP account,2026-06-05,2026-06,MERCADINHO LACANTO LTDA,Groceries,83.49,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-458,MP account,2026-06-05,2026-06,Veronica Freitas Lira,Other,500.00,decision-C
+MP account-459,MP account,2026-06-06,2026-06,DROGAMAR MEDICAMENTOS E PERFUMARIA LTDA,Health/pharmacy,13.49,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-460,MP account,2026-06-06,2026-06,SUPERMERCADO LITORAL LTDA,Groceries,124.59,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-461,MP account,2026-06-06,2026-06,Maria da Luz Assis da Silva,HOME SPENDINGS,2130.00,decision-A
+MP account-462,MP account,2026-06-06,2026-06,MFT - MADEIRA FERMELA TRENDS FOODS LTDA,Other,15.00,decision-C
+MP account-463,MP account,2026-06-06,2026-06,THF RESTAURANTES LTDA,Restaurants,32.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-464,MP account,2026-06-06,2026-06,BBP GASTRONOMIA LTDA,Restaurants,94.70,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-465,MP account,2026-06-08,2026-06,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-466,MP account,2026-06-08,2026-06,Marinaldo Domingos de Souza,HOME SPENDINGS,180.00,decision-A
+MP account-467,MP account,2026-06-09,2026-06,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-468,MP account,2026-06-10,2026-06,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-469,MP account,2026-06-10,2026-06,Cartão de crédito,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-470,MP account,2026-06-11,2026-06,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-471,MP account,2026-06-12,2026-06,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-472,MP account,2026-06-13,2026-06,Maria da Luz Assis da Silva,HOME SPENDINGS,150.00,decision-A
+MP account-473,MP account,2026-06-14,2026-06,Eva Bezerra da Silva Brandao,JohnnyBravo-eva,590.00,decision-A
+MP account-474,MP account,2026-06-15,2026-06,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-475,MP account,2026-06-16,2026-06,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-476,MP account,2026-06-17,2026-06,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-477,MP account,2026-06-18,2026-06,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-478,MP account,2026-06-19,2026-06,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-479,MP account,2026-06-19,2026-06,JACARE COMERCIO DE COMBUSTIVEIS LTDA,CAR,32.99,decision-A
+MP account-480,MP account,2026-06-21,2026-06,JACARE COMERCIO DE COMBUSTIVEIS LTDA,CAR,26.95,decision-A
+MP account-481,MP account,2026-06-22,2026-06,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-482,MP account,2026-06-29,2026-06,Pix recebido EDUARDO F GIOVANNINI,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-483,MP account,2026-06-30,2026-06,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-484,MP account,2026-06-30,2026-06,Transferência recebida EDUARDO FORSTER GIOVANNINI,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-485,MP account,2026-07-01,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-486,MP account,2026-07-01,2026-07,Eduardo Forster Giovannini,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-487,MP account,2026-07-01,2026-07,Bianca Mikaella Nascimento Lima,JohnnyBravo,350.00,decision-A
+MP account-488,MP account,2026-07-01,2026-07,Pix recebido TATIANA MORIMOTO,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-489,MP account,2026-07-01,2026-07,Maria da Luz Assis da Silva,HOME SPENDINGS,1180.00,decision-A
+MP account-490,MP account,2026-07-02,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-491,MP account,2026-07-03,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-492,MP account,2026-07-03,2026-07,Eva Bezerra da Silva Brandao,JohnnyBravo-eva,2760.00,decision-A
+MP account-493,MP account,2026-07-04,2026-07,BANCO XP S.A,Travel,9377.49,decision-B
+MP account-494,MP account,2026-07-05,2026-07,TELEFONICA BRASIL S.A.,Bills/utilities,74.02,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-495,MP account,2026-07-06,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-496,MP account,2026-07-06,2026-07,TIM S A,Bills/utilities,47.99,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-497,MP account,2026-07-06,2026-07,TIM S A,Bills/utilities,288.58,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-498,MP account,2026-07-06,2026-07,Cartão de crédito,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-499,MP account,2026-07-06,2026-07,Bianca Mikaella Nascimento Lima,JohnnyBravo,350.00,decision-A
+MP account-500,MP account,2026-07-07,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-501,MP account,2026-07-07,2026-07,Mercado Libre,Shopping,66.60,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-502,MP account,2026-07-07,2026-07,Gleudson Silva Farias,CAR RENTAL local,55.00,decision-A
+MP account-503,MP account,2026-07-08,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-504,MP account,2026-07-08,2026-07,Eva Bezerra da Silva Brandao,JohnnyBravo-eva,695.00,decision-A
+MP account-505,MP account,2026-07-09,2026-07,ROMA VAREJO LTDA,Shopping,9.19,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-506,MP account,2026-07-09,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-507,MP account,2026-07-10,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-508,MP account,2026-07-10,2026-07,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,66.50,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-509,MP account,2026-07-11,2026-07,Marinaldo Domingos de Souza,HOME SPENDINGS,450.00,decision-A
+MP account-510,MP account,2026-07-12,2026-07,MULTIDISPLAY COMERCIO E SERVICOS TECNOLOGICOS LTDA.,Shopping,25.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-511,MP account,2026-07-13,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-512,MP account,2026-07-13,2026-07,RENTAL PROJECTA SERVICOS E LOCACAO LTDA,Other,413.11,decision-C
+MP account-513,MP account,2026-07-13,2026-07,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,120.90,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-514,MP account,2026-07-14,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-515,MP account,2026-07-14,2026-07,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,79.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-516,MP account,2026-07-15,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-517,MP account,2026-07-16,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-518,MP account,2026-07-17,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-519,MP account,2026-07-17,2026-07,MERCADINHO LACANTO LTDA,Groceries,272.86,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-520,MP account,2026-07-18,2026-07,Maria da Luz Assis da Silva,HOME SPENDINGS,200.00,decision-A
+MP account-521,MP account,2026-07-18,2026-07,THALES JERONIMO DO NASCIMENTO SEIXAS,PERSONAL,78.00,decision-A
+MP account-522,MP account,2026-07-19,2026-07,Mercado Livre,Shopping,289.94,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-523,MP account,2026-07-20,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-524,MP account,2026-07-20,2026-07,GOOGLE BRASIL PAGAMENTOS LTDA.,Subscriptions/software,96.99,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-525,MP account,2026-07-21,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-526,MP account,2026-07-21,2026-07,Eva Bezerra da Silva Brandao,JohnnyBravo-eva,1605.00,decision-A
+MP account-527,MP account,2026-07-21,2026-07,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,89.50,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-528,MP account,2026-07-22,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-529,MP account,2026-07-22,2026-07,MERCADINHO LACANTO LTDA,Groceries,46.49,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-530,MP account,2026-07-22,2026-07,Bianca Mikaella Nascimento Lima,JohnnyBravo,570.00,decision-A
+MP account-531,MP account,2026-07-23,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-532,MP account,2026-07-23,2026-07,Kleiton Mendes da Silva,Other,59.00,decision-C
+MP account-533,MP account,2026-07-23,2026-07,EDR PARK SERVICOS LTDA,Transport/fuel,13.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-534,MP account,2026-07-23,2026-07,POSTO EXPRESSAO COMBUSTIVEIS E CONVENIENCIAS LTDA,HOME SPENDINGS,34.00,decision-A
+MP account-535,MP account,2026-07-23,2026-07,POSTO EXPRESSAO COMBUSTIVEIS E CONVENIENCIAS LTDA,HOME SPENDINGS,174.12,decision-A
+MP account-536,MP account,2026-07-24,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-537,MP account,2026-07-24,2026-07,Kleiton Mendes da Silva,Other,86.00,decision-C
+MP account-538,MP account,2026-07-24,2026-07,EDR PARK SERVICOS LTDA,Transport/fuel,13.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-539,MP account,2026-07-24,2026-07,Pix recebido EDUARDO F GIOVANNINI,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-540,MP account,2026-07-25,2026-07,Marinaldo Domingos de Souza,HOME SPENDINGS,172.20,decision-A
+MP account-541,MP account,2026-07-27,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-542,MP account,2026-07-27,2026-07,Edney Geovany Florencio da Silva,Other,130.13,decision-C
+MP account-543,MP account,2026-07-27,2026-07,CROSSBORDER TECHNOLOGIES S.A.,Other,322.80,decision-C
+MP account-544,MP account,2026-07-28,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-545,MP account,2026-07-28,2026-07,Carpediem Homes,Other,146.99,decision-C
+MP account-546,MP account,2026-07-29,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-547,MP account,2026-07-30,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-548,MP account,2026-07-31,2026-07,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-549,MP account,2026-07-31,2026-07,Mercado Libre,Shopping,689.88,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-550,MP account,2026-07-31,2026-07,Marileide Bento de Lima,PERSONAL,960.00,decision-A
+MP account-551,MP account,2026-07-31,2026-07,MERCADINHO LACANTO LTDA,Groceries,308.84,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-552,MP account,2026-07-31,2026-07,GRANFER - IMPORTADORA E DISTRIBUIDORA DE FERRAGENS LTDA,Household/staff,188.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-553,MP account,2026-07-31,2026-07,Marinaldo Domingos de Souza,HOME SPENDINGS,310.00,decision-A
+MP account-554,MP account,2026-08-01,2026-08,Express 24h Mercado E Loja De Proximidade Ltda,Groceries,41.38,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-555,MP account,2026-08-03,2026-08,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-556,MP account,2026-08-03,2026-08,MERCADINHO LACANTO LTDA,Groceries,166.93,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-557,MP account,2026-08-04,2026-08,Mercado Libre,Shopping,584.99,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-558,MP account,2026-08-04,2026-08,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-559,MP account,2026-08-04,2026-08,Bianca Mikaella Nascimento Lima,JohnnyBravo,450.00,decision-A
+MP account-560,MP account,2026-08-05,2026-08,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-561,MP account,2026-08-06,2026-08,POSTO EXPRESSAO COMBUSTIVEIS E CONVENIENCIAS LTDA,HOME SPENDINGS,80.72,decision-A
+MP account-562,MP account,2026-08-06,2026-08,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-563,MP account,2026-08-06,2026-08,GLOBAL DISTRIBUICAO DE BENS DE CONSUMO LTDA,Other,400.00,decision-C
+MP account-564,MP account,2026-08-06,2026-08,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,118.90,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-565,MP account,2026-08-07,2026-08,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-566,MP account,2026-08-07,2026-08,Mercado Livre,Shopping,1090.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-567,MP account,2026-08-07,2026-08,REDE MENOR PRECO SUPERMERCADO LTDA,Groceries,281.43,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-568,MP account,2026-08-08,2026-08,MERCADINHO LACANTO LTDA,Groceries,162.91,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-569,MP account,2026-08-09,2026-08,THALES JERONIMO DO NASCIMENTO SEIXAS,PERSONAL,88.00,decision-A
+MP account-570,MP account,2026-08-10,2026-08,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-571,MP account,2026-08-10,2026-08,Oficina Wr Mecanica Em Geral Ltda,Transport/fuel,140.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-572,MP account,2026-08-11,2026-08,POSTO EXPRESSAO COMBUSTIVEIS E CONVENIENCIAS LTDA,HOME SPENDINGS,19.56,decision-A
+MP account-573,MP account,2026-08-11,2026-08,POSTO EXPRESSAO COMBUSTIVEIS E CONVENIENCIAS LTDA,HOME SPENDINGS,154.12,decision-A
+MP account-574,MP account,2026-08-11,2026-08,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-575,MP account,2026-08-11,2026-08,Pix recebido EDUARDO FORSTER GIOVANNINI,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-576,MP account,2026-08-12,2026-08,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-577,MP account,2026-08-12,2026-08,THF RESTAURANTES LTDA,Restaurants,43.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-578,MP account,2026-08-12,2026-08,MFT - MADEIRA FERMELA TRENDS FOODS LTDA,Other,13.00,decision-C
+MP account-579,MP account,2026-08-12,2026-08,Pix recebido EDUARDO F GIOVANNINI,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-580,MP account,2026-08-12,2026-08,Cartão de crédito,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-581,MP account,2026-08-12,2026-08,DOM HENRIQUE CHOPERIA E RESTAURANTE LTDA,Restaurants,168.10,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-582,MP account,2026-08-13,2026-08,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-583,MP account,2026-08-13,2026-08,RAIA DROGASIL S A,Health/pharmacy,98.58,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-584,MP account,2026-08-14,2026-08,Dinheiro retido Bloqueio por ordem judicial,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-585,MP account,2026-08-14,2026-08,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-586,MP account,2026-08-14,2026-08,Dinheiro retido Bloqueio por ordem judicial,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-587,MP account,2026-08-15,2026-08,Pix recebido EDUARDO F GIOVANNINI,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-588,MP account,2026-08-15,2026-08,VAI DE PROMO VIAGENS E TURISMO LTDA,Travel,2106.60,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-589,MP account,2026-08-16,2026-08,BUTIQUIM DO FORTAO LTDA,Restaurants,160.38,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-590,MP account,2026-08-16,2026-08,IFOOD.COM AGENCIA DE RESTAURANTES ONLINE S.A.,Restaurants,116.82,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-591,MP account,2026-08-16,2026-08,Mercado Livre,Shopping,223.75,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-592,MP account,2026-08-17,2026-08,Mercado Livre,Shopping,27.04,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-593,MP account,2026-08-17,2026-08,Bianca Mikaella Nascimento Lima,JohnnyBravo,850.00,decision-A
+MP account-594,MP account,2026-08-17,2026-08,NP COMERCIO DE ALIMENTOS LTDA,Other,171.50,decision-C
+MP account-595,MP account,2026-08-17,2026-08,OLIVIA A. DA SILVA COMERCIO E EQUIPAMENTOS,Other,40.00,decision-C
+MP account-596,MP account,2026-08-17,2026-08,GSS EMPREENDIMENTOS ALIMENTICIOS LTDA,Other,32.00,decision-C
+MP account-597,MP account,2026-08-17,2026-08,DUFRY DO BRASIL DUTY FREE SHOP LTDA.,Shopping,5.50,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-598,MP account,2026-08-18,2026-08,HORA PARK SISTEMA DE ESTACIONAMENTO ROTATIVO LTDA,Transport/fuel,320.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-599,MP account,2026-08-18,2026-08,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-600,MP account,2026-08-18,2026-08,Bessa Express Loja De Proximidade Ltda,Groceries,22.47,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-601,MP account,2026-08-18,2026-08,ESTACAO 89 COMERCIO VAREJISTA DE ALIMENTOS LTDA,Groceries,92.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-602,MP account,2026-08-19,2026-08,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-603,MP account,2026-08-19,2026-08,COMPANHIA DE AGUA E ESGOTOS DA PARAIBA CAGEPA,Bills/utilities,118.54,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-604,MP account,2026-08-19,2026-08,THALES JERONIMO DO NASCIMENTO SEIXAS,PERSONAL,41.00,decision-A
+MP account-605,MP account,2026-08-20,2026-08,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-606,MP account,2026-08-20,2026-08,GOOGLE BRASIL PAGAMENTOS LTDA.,Subscriptions/software,96.99,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-607,MP account,2026-08-21,2026-08,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-608,MP account,2026-08-22,2026-08,ELSE LUDIMILLA CAVALCANTE DREYER DINN,Other,108.00,decision-C
+MP account-609,MP account,2026-08-22,2026-08,Mercado Libre,Shopping,154.99,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-610,MP account,2026-08-23,2026-08,REDE MENOR PRECO SUPERMERCADO LTDA,Groceries,106.70,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-611,MP account,2026-08-24,2026-08,POSTO EXPRESSAO COMBUSTIVEIS E CONVENIENCIAS LTDA,HOME SPENDINGS,59.98,decision-A
+MP account-612,MP account,2026-08-24,2026-08,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-613,MP account,2026-08-24,2026-08,Mercado Livre,Shopping,109.90,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-614,MP account,2026-08-25,2026-08,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-615,MP account,2026-08-25,2026-08,ONR,Other,7.62,decision-C
+MP account-616,MP account,2026-08-26,2026-08,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-617,MP account,2026-08-26,2026-08,PANIFICADORA SAO GONCALO LTDA,Groceries,13.78,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-618,MP account,2026-08-27,2026-08,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-619,MP account,2026-08-28,2026-08,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-620,MP account,2026-08-28,2026-08,Pix recebido EDUARDO F GIOVANNINI,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-621,MP account,2026-08-28,2026-08,THALES JERONIMO DO NASCIMENTO SEIXAS,PERSONAL,112.00,decision-A
+MP account-622,MP account,2026-08-31,2026-08,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-623,MP account,2026-08-31,2026-08,Valdebam Procopio de Araujo,HOME SPENDINGS,73.00,decision-A
+MP account-624,MP account,2026-09-01,2026-09,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-625,MP account,2026-09-01,2026-09,GOOGLE BRASIL PAGAMENTOS LTDA.,Subscriptions/software,120.90,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-626,MP account,2026-09-02,2026-09,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-627,MP account,2026-09-02,2026-09,Bupitanga Hotel,Travel,2290.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-628,MP account,2026-09-02,2026-09,Bianca Mikaella Nascimento Lima,JohnnyBravo,600.00,decision-A
+MP account-629,MP account,2026-09-02,2026-09,SUPERMERCADO LITORAL LTDA,Groceries,1453.05,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-630,MP account,2026-09-03,2026-09,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-631,MP account,2026-09-03,2026-09,Marinaldo Domingos de Souza,HOME SPENDINGS,230.00,decision-A
+MP account-632,MP account,2026-09-03,2026-09,Thadeu Goes Vieira de Mello,Other,161.52,decision-C
+MP account-633,MP account,2026-09-03,2026-09,MASTERBOI LTDA.,HOME SPENDINGS,753.17,decision-A
+MP account-634,MP account,2026-09-04,2026-09,Rendimentos,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-635,MP account,2026-09-04,2026-09,ONR,Other,30.00,decision-C
+MP account-636,MP account,2026-09-04,2026-09,ONR,Other,7.77,decision-C
+MP account-637,MP account,2026-09-04,2026-09,Bianca Mikaella Nascimento Lima,JohnnyBravo,350.00,decision-A
+MP account-638,MP account,2026-09-04,2026-09,Farmácia Pague Menos,Health/pharmacy,61.48,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-639,MP account,2026-09-05,2026-09,Marinaldo Domingos de Souza,HOME SPENDINGS,475.00,decision-A
+MP account-640,MP account,2026-09-05,2026-09,Maria da Luz Assis da Silva,HOME SPENDINGS,1240.00,decision-A
+MP account-641,MP account,2026-09-05,2026-09,Pix recebido EDUARDO FORSTER GIOVANNINI,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-642,MP account,2026-09-05,2026-09,de fatura Cartão de crédito,,0.00,"Initial statement analysis; merchant category inferred, not user-confirmed"
+MP account-643,MP account,2026-09-06,2026-09,JACARE COMERCIO DE COMBUSTIVEIS LTDA,CAR,40.49,decision-A
+MPCARD-NEW-001,MP card,04/06,2026-07,Compra internacional em LAN AIRLINE,Travel,3198.70,invoice jul-set 2026
+MPCARD-NEW-002,MP card,05/06,2026-07,Compra internacional em WWW.NOMADESIM.COM,Travel,73.14,invoice jul-set 2026
+MPCARD-NEW-003,MP card,08/06,2026-07,"Compra internacional em GITHUB, INC.",Home Office,53.00,invoice jul-set 2026
+MPCARD-NEW-004,MP card,10/06,2026-07,APPLE.COM/BILL,App purchases,19.90,invoice jul-set 2026
+MPCARD-NEW-005,MP card,11/06,2026-07,Compra internacional em UBER *TRIP,Transport/fuel,63.75,invoice jul-set 2026
+MPCARD-NEW-006,MP card,11/06,2026-07,IFD*iFood,Restaurants,7.95,invoice jul-set 2026
+MPCARD-NEW-007,MP card,14/06,2026-07,MP*LOTERIASONLINEZO3R,Lottery - group payments,0,invoice jul-set 2026
+MPCARD-NEW-008,MP card,14/06,2026-07,APPLE.COM/BILL,App purchases,149.90,invoice jul-set 2026
+MPCARD-NEW-009,MP card,15/06,2026-07,Google One,Home Office,23.99,invoice jul-set 2026
+MPCARD-NEW-010,MP card,16/06,2026-07,flexpag   *CAGEPA,Bills/utilities,1621.83,invoice jul-set 2026
+MPCARD-NEW-011,MP card,16/06,2026-07,MERCADOLIVRE*MERCADOLIVRE,Shopping,144.00,invoice jul-set 2026
+MPCARD-NEW-012,MP card,17/06,2026-07,Compra internacional em OPENAI *CHATGPT SUBSCR,Home Office,105.16,invoice jul-set 2026
+MPCARD-NEW-013,MP card,18/06,2026-07,Compra internacional em COMPUTER,Home Office,78.56,invoice jul-set 2026
+MPCARD-NEW-014,MP card,20/06,2026-07,MP*GOOGLEBRASILPAGAMEN,Other,96.99,invoice jul-set 2026
+MPCARD-NEW-015,MP card,20/06,2026-07,APPLE.COM/BILL,App purchases,509.00,invoice jul-set 2026
+MPCARD-NEW-016,MP card,21/06,2026-07,MP*LOTERIASONLINE4OPI,Lottery - group payments,0,invoice jul-set 2026
+MPCARD-NEW-017,MP card,23/06,2026-07,UBER * PENDING,Excluded - user instructed,0,invoice jul-set 2026
+MPCARD-NEW-018,MP card,24/06,2026-07,APPLE.COM/BILL,App purchases,31.90,invoice jul-set 2026
+MPCARD-NEW-019,MP card,25/06,2026-07,Compra internacional em DESKTOP COMMANDER,Home Office,39.26,invoice jul-set 2026
+MPCARD-NEW-020,MP card,26/06,2026-07,CONTA VIVO,PERSONAL / HOME,70.97,invoice jul-set 2026
+MPCARD-NEW-021,MP card,29/06,2026-07,MERCADOLIVRE*MERCADOLIVRE,Shopping,2040.78,invoice jul-set 2026
+MPCARD-NEW-022,MP card,30/06,2026-07,APPLE.COM/BILL,App purchases,99.90,invoice jul-set 2026
+MPCARD-NEW-023,MP card,30/06,2026-07,Compra internacional em ANTHROPIC* CLAUDE SUB,Home Office,113.85,invoice jul-set 2026
+MPCARD-NEW-024,MP card,01/07,2026-07,MERCADOLIVRE*EVOELETRONIC,Shopping,681.57,invoice jul-set 2026
+MPCARD-NEW-025,MP card,01/07,2026-07,MERCADOLIVRE*MERCADOLI,Shopping,289.52,invoice jul-set 2026
+MPCARD-NEW-026,MP card,01/07,2026-07,Compra internacional em ANTHROPIC,Home Office,107.23,invoice jul-set 2026
+MPCARD-NEW-027,MP card,01/07,2026-07,"Compra internacional em CURSOR, AI POWERED IDE",Home Office,111.81,invoice jul-set 2026
+MPCARD-NEW-028,MP card,03/07,2026-07,STARLINK INTERNET,HOME SPENDINGS,249.00,invoice jul-set 2026
+MPCARD-NEW-029,MP card,06/07,2026-08,APPLE.COM/BILL,App purchases,21.90,invoice jul-set 2026
+MPCARD-NEW-030,MP card,07/07,2026-08,Hotel at Booking.com,Travel,733.76,invoice jul-set 2026
+MPCARD-NEW-031,MP card,07/07,2026-08,IFD*34.531.468 EDWIN LEIB,Restaurants,46.92,invoice jul-set 2026
+MPCARD-NEW-032,MP card,09/07,2026-08,UBER * PENDING,Excluded - user instructed,0,invoice jul-set 2026
+MPCARD-NEW-033,MP card,09/07,2026-08,UBER * PENDING,Excluded - user instructed,0,invoice jul-set 2026
+MPCARD-NEW-034,MP card,09/07,2026-08,UBER * PENDING,Excluded - user instructed,0,invoice jul-set 2026
+MPCARD-NEW-035,MP card,09/07,2026-08,UBER * PENDING,Excluded - user instructed,0,invoice jul-set 2026
+MPCARD-NEW-036,MP card,10/07,2026-08,APPLE.COM/BILL,App purchases,19.90,invoice jul-set 2026
+MPCARD-NEW-037,MP card,10/07,2026-08,UBER * PENDING,Excluded - user instructed,0,invoice jul-set 2026
+MPCARD-NEW-038,MP card,10/07,2026-08,Compra internacional em OPENAI,Home Office,132.74,invoice jul-set 2026
+MPCARD-NEW-039,MP card,11/07,2026-08,IFD*iFood,Restaurants,7.95,invoice jul-set 2026
+MPCARD-NEW-040,MP card,11/07,2026-08,UBER * PENDING,Excluded - user instructed,0,invoice jul-set 2026
+MPCARD-NEW-041,MP card,12/07,2026-08,UBER * PENDING,Excluded - user instructed,0,invoice jul-set 2026
+MPCARD-NEW-042,MP card,13/07,2026-08,MERCADOLIVRE*VIVAHSHOP,Shopping,143.19,invoice jul-set 2026
+MPCARD-NEW-043,MP card,13/07,2026-08,APPLE.COM/BILL,App purchases,10.99,invoice jul-set 2026
+MPCARD-NEW-044,MP card,14/07,2026-08,MERCADOLIVRE*MERCADOLI,Shopping,19.88,invoice jul-set 2026
+MPCARD-NEW-045,MP card,14/07,2026-08,MERCADOLIVRE*MERCADOLI,Shopping,1993.99,invoice jul-set 2026
+MPCARD-NEW-046,MP card,14/07,2026-08,MERCADOLIVRE*MERCADOLIVRE,Shopping,122.85,invoice jul-set 2026
+MPCARD-NEW-047,MP card,14/07,2026-08,MERCADOLIVRE*MERCADOLIVRE,Shopping,86.16,invoice jul-set 2026
+MPCARD-NEW-048,MP card,14/07,2026-08,Compra internacional em DESKTOP COMMANDER,Home Office,264.96,invoice jul-set 2026
+MPCARD-NEW-049,MP card,15/07,2026-08,UBER * PENDING,Excluded - user instructed,0,invoice jul-set 2026
+MPCARD-NEW-050,MP card,15/07,2026-08,UBER * PENDING,Excluded - user instructed,0,invoice jul-set 2026
+MPCARD-NEW-051,MP card,15/07,2026-08,UBER * PENDING,Excluded - user instructed,0,invoice jul-set 2026
+MPCARD-NEW-052,MP card,16/07,2026-08,DL*GOOGLE Google,Home Office,969.90,invoice jul-set 2026
+MPCARD-NEW-053,MP card,16/07,2026-08,Compra internacional em DESKTOP COMMANDER,Home Office,273.24,invoice jul-set 2026
+MPCARD-NEW-054,MP card,16/07,2026-08,UBER * PENDING,Excluded - user instructed,0,invoice jul-set 2026
+MPCARD-NEW-055,MP card,16/07,2026-08,UBER * PENDING,Excluded - user instructed,0,invoice jul-set 2026
+MPCARD-NEW-056,MP card,17/07,2026-08,Compra internacional em OPENAI *CHATGPT SUBSCR,Home Office,105.57,invoice jul-set 2026
+MPCARD-NEW-057,MP card,29/07,2026-08,Compra internacional em ANTHROPIC,Home Office,105.99,invoice jul-set 2026
+MPCARD-NEW-058,MP card,29/07,2026-08,Compra internacional em CURSOR USAGE MID JUL,Home Office,105.99,invoice jul-set 2026
+MPCARD-NEW-059,MP card,29/07,2026-08,MP*LOTERIASONLINELOM5,Lottery - group payments,0,invoice jul-set 2026
+MPCARD-NEW-060,MP card,30/07,2026-08,APPLE.COM/BILL,App purchases,99.90,invoice jul-set 2026
+MPCARD-NEW-061,MP card,30/07,2026-08,Compra internacional em ANTHROPIC* CLAUDE SUB,Home Office,113.85,invoice jul-set 2026
+MPCARD-NEW-062,MP card,01/08,2026-08,"Compra internacional em CURSOR, AI POWERED IDE",Home Office,111.81,invoice jul-set 2026
+MPCARD-NEW-063,MP card,03/08,2026-08,STARLINK INTERNET,HOME SPENDINGS,249.00,invoice jul-set 2026
+MPCARD-NEW-064,MP card,04/08,2026-08,MP*LOTERIASONLINEPLO1,Lottery - group payments,0,invoice jul-set 2026
+MPCARD-NEW-065,MP card,04/08,2026-08,VAI DE PROMO*PROM,Travel,2328.15,invoice jul-set 2026
+MPCARD-NEW-066,MP card,06/09,2026-09,Juros do rotativo,Finance charge,0,invoice jul-set 2026
+MPCARD-NEW-067,MP card,06/09,2026-09,IOF do rotativo,Finance charge,0,invoice jul-set 2026
+MPCARD-NEW-068,MP card,06/09,2026-09,Juros de mora,Finance charge,0,invoice jul-set 2026
+MPCARD-NEW-069,MP card,06/09,2026-09,Multa por atraso,Finance charge,0,invoice jul-set 2026
+MPCARD-NEW-070,MP card,03/09,2026-09,STARLINK INTERNET,HOME SPENDINGS,249.00,invoice jul-set 2026
+MPCARD-NEW-071,MP card,03/09,2026-09,Compra internacional em CURSOR USAGE AUG,Home Office,38.24,invoice jul-set 2026
+MPCARD-NEW-072,MP card,04/09,2026-09,Compra internacional em COMPUTER,Home Office,79.18,invoice jul-set 2026
+MPCARD-NEW-073,MP card,04/09,2026-09,Compra internacional em COMPUTER,Home Office,79.18,invoice jul-set 2026
+MPCARD-NEW-074,MP card,04/09,2026-09,Compra internacional em COMPUTER,Home Office,79.18,invoice jul-set 2026
+MPCARD-NEW-075,MP card,05/08,2026-09,APPLE.COM/BILL,App purchases,21.90,invoice jul-set 2026
+MPCARD-NEW-076,MP card,09/08,2026-09,Compra internacional em COMPUTER,Home Office,79.03,invoice jul-set 2026
+MPCARD-NEW-077,MP card,10/08,2026-09,Compra internacional em EMERGENT,Home Office,79.03,invoice jul-set 2026
+MPCARD-NEW-078,MP card,10/08,2026-09,APPLE.COM/BILL,App purchases,19.90,invoice jul-set 2026
+MPCARD-NEW-079,MP card,11/08,2026-09,APPLE.COM/BILL,App purchases,49.90,invoice jul-set 2026
+MPCARD-NEW-080,MP card,11/08,2026-09,IFD*iFood,Restaurants,7.95,invoice jul-set 2026
+MPCARD-NEW-081,MP card,12/08,2026-09,UBER * PENDING,Excluded - user instructed,0,invoice jul-set 2026
+MPCARD-NEW-082,MP card,13/08,2026-09,APPLE.COM/BILL,App purchases,10.99,invoice jul-set 2026
+MPCARD-NEW-083,MP card,17/08,2026-09,Compra internacional em OPENAI *CHATGPT SUBSCR,Home Office,108.06,invoice jul-set 2026
+MPCARD-NEW-084,MP card,17/08,2026-09,AZUL LINHAS QGLS5,Travel,80.00,invoice jul-set 2026
+MPCARD-NEW-085,MP card,17/08,2026-09,UBER * PENDING,Excluded - user instructed,0,invoice jul-set 2026
+MPCARD-NEW-086,MP card,17/08,2026-09,DL*UberRides,PERSONAL,5.00,invoice jul-set 2026
+MPCARD-NEW-087,MP card,22/08,2026-09,MP*LOTERIASONLINEG43H,Lottery - group payments,0,invoice jul-set 2026
+MPCARD-NEW-088,MP card,22/08,2026-09,MP*LOTERIASONLINEGCM3,Lottery - group payments,0,invoice jul-set 2026
+MPCARD-NEW-089,MP card,23/08,2026-09,APPLE.COM/BILL,App purchases,124.90,invoice jul-set 2026
+MPCARD-NEW-090,MP card,25/08,2026-09,IFD*TRATTORIA DE ORIGE,Restaurants,157.49,invoice jul-set 2026
+MPCARD-NEW-091,MP card,29/08,2026-09,MP*LOTERIASONLINE346M,Lottery - group payments,0,invoice jul-set 2026
+MPCARD-NEW-092,MP card,30/08,2026-09,APPLE.COM/BILL,App purchases,99.90,invoice jul-set 2026
+MPCARD-NEW-093,MP card,30/08,2026-09,Compra internacional em COMPUTER,Home Office,80.73,invoice jul-set 2026
+MPCARD-NEW-094,MP card,30/08,2026-09,Compra internacional em COMPUTER,Home Office,80.73,invoice jul-set 2026
+MPCARD-NEW-095,MP card,30/08,2026-09,Compra internacional em ANTHROPIC* CLAUDE SUB,Home Office,113.85,invoice jul-set 2026
+MPCARD-NEW-096,MP card,31/08,2026-09,Compra internacional em PADDLE.NET* BETTERTOUC,Home Office,139.73,invoice jul-set 2026
+MPCARD-NEW-097,MP card,31/08,2026-09,Compra internacional em LEMSQZY* PINEAPPLE-APP,Home Office,123.74,invoice jul-set 2026
+MPCARD-NEW-098,MP card,01/09,2026-09,"Compra internacional em CURSOR, AI POWERED IDE",Home Office,111.81,invoice jul-set 2026

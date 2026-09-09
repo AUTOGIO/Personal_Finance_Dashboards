@@ -296,6 +296,7 @@
   <div class="tab" onclick="showPage('txlog')">09 TX LOG</div>
   <div class="tab" onclick="showPage('datamap')">10 DATA MAP</div>
   <div class="tab" onclick="showPage('nfce')">11 NFC-E</div>
+  <div class="tab" onclick="showPage('spending')">12 SPENDING</div>
 </div>
 
 <!-- CONTENT -->
@@ -1404,6 +1405,66 @@
           <tr><td>HUGG LC UMED HIG 48U</td><td class="num green">-17.4%</td></tr>
           <tr><td>Macarrao Vitarella Speciale 40</td><td class="num green">-14.9%</td></tr>
           <tr><td>Arroz Urbano Parboilizado 1Kg</td><td class="num green">-14.4%</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page" id="p-spending">
+  <div class="panel" style="margin-bottom:6px;">
+    <div class="ph">SPENDING BY CATEGORY <span class="ph-sub">Classified ledger built from raw/ statements &mdash; separate from CALC</span></div>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="kpi-lbl">Months Covered</div><div class="kpi-val">9</div></div>
+      <div class="kpi"><div class="kpi-lbl">Total Classified</div><div class="kpi-val orange">R$ 282,284</div></div>
+      <div class="kpi"><div class="kpi-lbl">Typical Month</div><div class="kpi-val green">R$ 29,496</div></div>
+      <div class="kpi"><div class="kpi-lbl">Peak Month</div><div class="kpi-val red">R$ 52,455 &middot; 04/26</div></div>
+    </div>
+    <div style="padding:8px 10px 4px;color:var(--gray);font-size:10px;line-height:1.6;">
+      Source <code>reports/2026-09-08_spending_by_month.csv</code> &middot; 2026-01 to 2026-09 &middot; zero unclassified.
+      This is <strong style="color:var(--white)">separate from CALC</strong> and is
+      <strong style="color:var(--white)">not a reconciliation</strong> &mdash; never use it to adjust a
+      net-worth or liquidity figure. <code>make regen</code> re-renders this tab but does not rebuild the
+      ledger; it is a point-in-time analysis. The last month is month-to-date and is excluded from
+      Typical Month. Method, sources and every classification decision:
+      <code>reports/2026-09-08_spending_method.md</code>.
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <div class="panel">
+        <div class="ph">MONTH BY MONTH <span class="ph-sub">total classified spend</span></div>
+        <table class="bt">
+          <tr><th>MONTH</th><th class="num">BRL</th><th>&nbsp;</th></tr>
+          <tr><td>01/26</td><td class="num">26,421</td><td><div style="height:8px;background:var(--orange);width:50%"></div></td></tr>
+          <tr><td>02/26</td><td class="num">24,988</td><td><div style="height:8px;background:var(--orange);width:48%"></div></td></tr>
+          <tr><td>03/26</td><td class="num">30,815</td><td><div style="height:8px;background:var(--orange);width:59%"></div></td></tr>
+          <tr><td>04/26</td><td class="num">52,455</td><td><div style="height:8px;background:var(--orange);width:100%"></div></td></tr>
+          <tr><td>05/26</td><td class="num">26,469</td><td><div style="height:8px;background:var(--orange);width:50%"></div></td></tr>
+          <tr><td>06/26</td><td class="num">28,177</td><td><div style="height:8px;background:var(--orange);width:54%"></div></td></tr>
+          <tr><td>07/26</td><td class="num">34,523</td><td><div style="height:8px;background:var(--orange);width:66%"></div></td></tr>
+          <tr><td>08/26</td><td class="num">45,035</td><td><div style="height:8px;background:var(--orange);width:86%"></div></td></tr>
+          <tr><td>09/26 <span class="gray">partial</span></td><td class="num">13,400</td><td><div style="height:8px;background:var(--orange);width:26%"></div></td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="panel">
+        <div class="ph">TOP CATEGORIES <span class="ph-sub">whole period</span></div>
+        <table class="bt">
+          <tr><th>CATEGORY</th><th class="num">BRL</th><th class="num">SHARE</th></tr>
+          <tr><td>HOME SPENDINGS</td><td class="num">43,958</td><td class="num gray">15.6%</td></tr>
+          <tr><td>Travel</td><td class="num">41,385</td><td class="num gray">14.7%</td></tr>
+          <tr><td>JohnnyBravo-eva</td><td class="num">28,272</td><td class="num gray">10.0%</td></tr>
+          <tr><td>Groceries</td><td class="num">26,686</td><td class="num gray">9.5%</td></tr>
+          <tr><td>Taxes/government</td><td class="num">17,055</td><td class="num gray">6.0%</td></tr>
+          <tr><td>PERSONAL</td><td class="num">16,440</td><td class="num gray">5.8%</td></tr>
+          <tr><td>Home Office</td><td class="num">16,383</td><td class="num gray">5.8%</td></tr>
+          <tr><td>Shopping</td><td class="num">16,070</td><td class="num gray">5.7%</td></tr>
+          <tr><td>JohnnyBravo</td><td class="num">15,010</td><td class="num gray">5.3%</td></tr>
+          <tr><td>CAR</td><td class="num">11,333</td><td class="num gray">4.0%</td></tr>
+          <tr><td>Other</td><td class="num">9,481</td><td class="num gray">3.4%</td></tr>
+          <tr><td>Bills/utilities</td><td class="num">7,792</td><td class="num gray">2.8%</td></tr>
         </table>
       </div>
     </div>
