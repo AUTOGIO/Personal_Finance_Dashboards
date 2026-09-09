@@ -126,9 +126,9 @@ overwrite formula cells for age, risk, or counts.
     ```
     cd ~/Documents/GitHub/Personal_Finance && python3 scripts/generate_command_center.py
     ```
-    Confirm `[ok] wrote command-center.html` with matching tag counts (no
-    MISMATCH). Open with `open command-center.html` if the browser did
-    not open automatically.
+    Confirm `[ok] all N ops spot-checks passed` and `[ok] wrote command-center.html`
+    with matching tag counts (no MISMATCH). Open with `open command-center.html`
+    if the browser did not open automatically.
 
 There is no `make` shortcut for the command center — use the Python command
 above. **`make open` is for the wealth dashboard only.**
@@ -144,6 +144,23 @@ These concepts exist in **both** notebooks. Update both when they change:
 | Balances / net worth | `CALC` (+ portfolio sheets) | `BALANCES` sheet |
 
 Updating only one notebook leaves the other dashboard stale.
+
+### Reconciliation checklist (cross-dashboard gaps)
+
+The two dashboards intentionally do **not** sync automatically. Before treating a
+difference as an error, run through this checklist for each overlapping concept:
+
+| Check | What to verify | Why it matters |
+|---|---|---|
+| **Source ownership** | Which workbook owns the field? | `wealthcommand.xlsx`/`CALC` owns wealth KPIs; `command-center.xlsx`/`BALANCES` owns the ops view. Fix the owner, never the generated HTML. |
+| **As-of date** | When was each value last refreshed? | A balance updated yesterday in one book and last week in the other is a timing gap, not a bug. |
+| **Currency** | Is the number BRL, USD, or a mixed total? | `BALANCES` may show USD accounts separately; `CALC` may combine or convert them differently. |
+| **Expected differences** | Are there known formula differences? | Net worth and IB Deployed differ by design until the IB→Wise withdrawal treatment is reconciled — see `AI_GUIDE.md` "Known open items" and Bloomberg tab `10 DATA MAP`. |
+| **Disposition of unexplained gaps** | If the gap remains after the above, what action is required? | Investigate the **owning** workbook using the relevant `raw/` statements, then regenerate only that dashboard. Do not force the other dashboard to match. |
+
+Use this checklist for **balances**, **subscriptions**, **card spending**, and
+**net worth** every week. Document any gap that cannot be resolved on the spot
+and feed it back into the next weekly pass.
 
 ### Using AI help (optional)
 

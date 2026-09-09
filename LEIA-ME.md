@@ -14,12 +14,14 @@ Ordem recomendada — **dois workbooks, não sincronizam sozinhos**:
 3. Rodar `make open` — confirmar `[ok] all N spot-checks passed`
 4. **Command center** — atualizar células de input em `data/command-center.xlsx`
    (BALANCES, FX_OPS, TRANSACTIONS, PIX, SUBSCRIPTIONS, REPOS, PROJECTS, CONFIG)
-5. Rodar `python3 scripts/generate_command_center.py` — confirmar `[ok] wrote command-center.html`
+5. Rodar `python3 scripts/generate_command_center.py` — confirmar `[ok] all N ops spot-checks passed` e `[ok] wrote command-center.html` (sem MISMATCH)
 6. Conferir ambos os dashboards; divergências entre eles → investigar, **não forçar igual**
 
 Detalhe completo (EN): `USER_GUIDE.md` §4 · prompts para IA: `AI_GUIDE.md` → Weekly workflows
 
 **Sincronizar nos dois workbooks** quando mudar: assinaturas, transações de cartão, saldos.
+Divergências entre dashboards → usar checklist de reconciliação em `USER_GUIDE.md` §4
+(source ownership, data "as-of", moeda, diferenças esperadas, disposição de gaps).
 
 ---
 
