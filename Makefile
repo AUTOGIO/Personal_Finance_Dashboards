@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := help
 PYTHON ?= /usr/bin/python3
 
-.PHONY: help regen regen-all open workspace clean check
+.PHONY: notebooklm help regen regen-all open workspace clean check
 
 help: ## Show this list
 	@grep -E '^[a-zA-Z_-]+:.*## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*## "}; {printf "  %-12s %s\n", $$1, $$2}'
@@ -20,6 +20,9 @@ workspace: ## Regenerate both dashboards + restore Personal Finance Spencer layo
 
 check: ## Verify workbook sheets + irreplaceable data files are intact
 	@$(PYTHON) scripts/check_integrity.py
+
+notebooklm: ## Export both dashboards as clean Markdown for NotebookLM
+	$(PYTHON) scripts/export_notebooklm.py
 
 clean: ## Remove macOS/Python junk files
 	find . -name '.DS_Store' -delete
