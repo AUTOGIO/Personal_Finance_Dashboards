@@ -1,0 +1,50 @@
+﻿statement_month,category,treatment,charges,amount_brl
+2026-01,App purchases,Included spending,3,141.70
+2026-01,Credit-card bill payments,Excluded card payment,1,5002.46
+2026-01,Excluded - blank answer,Excluded by user,4,2678.21
+2026-01,HOME - market,Included spending,1,11.26
+2026-01,Home Office,Included spending,7,756.73
+2026-01,Lottery - group payments,Excluded by saved rule,7,815.50
+2026-01,PERSONAL,Included spending,4,1670.53
+2026-01,PERSONAL / HOME,Included spending,1,65.97
+2026-01,Travel,Included spending,1,629.07
+2026-02,App purchases,Included spending,3,141.70
+2026-02,Credit-card bill payments,Excluded card payment,1,6768.97
+2026-02,Excluded - blank answer,Excluded by user,1,0.78
+2026-02,HOME SPENDINGS,Included spending,1,235.52
+2026-02,Home Office,Included spending,8,2852.02
+2026-02,Lottery - group payments,Excluded by saved rule,4,506.60
+2026-02,PERSONAL,Included spending,2,1643.37
+2026-02,Restaurants,Included spending,4,532.99
+2026-02,Travel,Included spending,1,629.07
+2026-03,App purchases,Included spending,3,141.70
+2026-03,Credit-card bill payments,Excluded card payment,2,17176.71
+2026-03,Excluded - blank answer,Excluded by user,4,197.48
+2026-03,HOME SPENDINGS,Included spending,2,685.02
+2026-03,Home Office,Included spending,5,1204.61
+2026-03,Home Office - automation,Included spending,1,6282.36
+2026-03,Lottery - group payments,Excluded by saved rule,10,1746.00
+2026-03,PERSONAL,Included spending,2,626.97
+2026-03,PERSONAL - clothes,Included spending,1,169.00
+2026-04,App purchases,Included spending,3,141.70
+2026-04,Credit-card bill payments,Excluded card payment,5,18527.22
+2026-04,Excluded - blank answer,Excluded by user,3,1017.94
+2026-04,HOME - DOGS,Included spending,1,602.90
+2026-04,HOME SPENDINGS,Included spending,6,1690.64
+2026-04,Home Office,Included spending,8,1523.05
+2026-04,Lottery - group payments,Excluded by saved rule,14,2276.50
+2026-04,PERSONAL,Included spending,3,1916.21
+2026-04,PERSONAL - TENNIS,Included spending,1,804.84
+2026-04,PERSONAL - clothes,Included spending,1,169.00
+2026-04,Restaurants,Included spending,2,173.64
+2026-04,Travel,Included spending,2,9515.00
+2026-05,App purchases,Included spending,4,173.60
+2026-05,Credit-card bill payments,Excluded card payment,2,10350.03
+2026-05,Excluded - blank answer,Excluded by user,5,1025.65
+2026-05,Excluded - user instructed,Excluded by saved rule,3,34.87
+2026-05,HOME SPENDINGS,Included spending,4,1345.38
+2026-05,Home Office,Included spending,12,2482.66
+2026-05,Lottery - group payments,Excluded by saved rule,4,772.50
+2026-05,PERSONAL,Included spending,1,1678.30
+2026-05,PERSONAL - TENNIS,Included spending,1,804.84
+2026-05,Restaurants,Included spending,4,272.71

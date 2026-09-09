@@ -1,0 +1,9 @@
+record_id,previous_category,category,amount_brl,basis
+MP account-123,Other,HOME SPENDINGS,182.00,"User returned ALL-045: HONME. Applied to original full record-ID group, not truncated pasted IDs."
+MP account-306,Other,HOME - market,112.27,"User returned ALL-057: HOME- MARKET. Applied to original full record-ID group, not truncated pasted IDs."
+MP account-395,Other,Travel,110.00,"User returned ALL-058: TRAVEL;. Applied to original full record-ID group, not truncated pasted IDs."
+MP account-512,Other,HOME SPENDINGS,413.11,"User returned ALL-029: HOME. Applied to original full record-ID group, not truncated pasted IDs."
+MP account-543,Other,Home Office,322.80,"User returned ALL-034: HOME OFFICE. Applied to original full record-ID group, not truncated pasted IDs."
+MP account-545,Other,HOME SPENDINGS,146.99,"User returned ALL-049: HOME. Applied to original full record-ID group, not truncated pasted IDs."
+MP account-563,Other,HOME SPENDINGS,400.00,"User returned ALL-031: HOME. Applied to original full record-ID group, not truncated pasted IDs."
+MP account-596,Other,FOOD,32.00,"User returned ALL-077: FOOD. Applied to original full record-ID group, not truncated pasted IDs."

@@ -1,0 +1,72 @@
+﻿counterparty,normalized_name,counterparty_identifier,category,action,basis,note
+ARKO NETWORK LTD LLC,ARKO NETWORK LTD LLC,58.416.081/0001-95,Transfers abroad,exclude,user-confirmed category,User confirmed money sent abroad. Do not compute as spending.
+BANCO TOPAZIO,BANCO TOPAZIO,07.679.404/0001-00,Transfers abroad,exclude,user-confirmed category,User confirmed money sent abroad. Do not compute as spending.
+WISE BRASIL CORRETORA DE,WISE BRASIL CORRETORA DE,36.588.217/0001-01,Transfers abroad,exclude,user-confirmed category,User confirmed money sent abroad. Do not compute as spending.
+CONFIDENCE CORRETORA DE C,CONFIDENCE CORRETORA DE C,04.913.129/0001-41,Transfers abroad,exclude,user-confirmed category,User confirmed money sent abroad. Do not compute as spending.
+BANCO DAYCOVAL S/A - 3079,BANCO DAYCOVAL S/A - 3079,62.232.889/0001-90,Physical US dollar purchase,exclude,user-confirmed category,User confirmed physical US dollars. Currency exchange excluded from spending calculations.
+NOMAD FINTECH INC,NOMAD FINTECH INC,57.646.942/0001-69,Transfers abroad,exclude,user-confirmed category,User confirmed money sent abroad. Do not compute as spending.
+EVA BEZERRA DA SILVA,EVA BEZERRA DA SILVA,***.486.528-**,JohnnyBravo-eva,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+ALINE SALES VENANCIO DA S,ALINE SALES VENANCIO DA S,***.358.244-**,Family transfer - brother,exclude,user-confirmed category,User confirmed payment to brother; keep out of spending. Supersedes earlier defer decision.
+MERCADO PAGO INSTITUICAO,MERCADO PAGO INSTITUICAO,10.573.521/0001-91,Credit-card bill payment,exclude,user-confirmed category,User confirmed credit card; settlement excluded from spending.
+EWERTON DE SOUSA EMERI,EWERTON DE SOUSA EMERI,***.574.704-**,JohnnyBravo,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+NAILSON DA SILVA OLIVEIRA,NAILSON DA SILVA OLIVEIRA,***.977.024-**,HOME SPENDINGS,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+FERNANDO MARIO MAGNAGHI,FERNANDO MARIO MAGNAGHI,***.625.908-**,PERSONAL,include,user-confirmed purpose; assistant mapped category,User confirmed rock festival ticket. Grouped under PERSONAL / entertainment by assistant.
+BIANCA MIKAELLA NASCIMENT,BIANCA MIKAELLA NASCIMENT,***.148.994-**,JohnnyBravo,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+VB INTERMARES,VB INTERMARES,51.389.630/0001-30,CAR,include,user-confirmed category,User confirmed car maintenance.
+AA FRIGELAR SA,AA FRIGELAR SA,92.660.406/0001-19,HOME SPENDINGS,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+KLEBER KERSTING FILHO,KLEBER KERSTING FILHO,***.909.499-**,kite surf equip.,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+PEDRO HENRIQUE ALMEIDA DA,PEDRO HENRIQUE ALMEIDA DA,***.465.634-**,CAR,include,user-confirmed category,User confirmed car sound/audio.
+17.077.282 VALDENIS DE LI,17.077.282 VALDENIS DE LI,17.077.282/0001-28,HOME SPENDINGS,include,user-confirmed category,User confirmed home furniture.
+GLEUDSON SILVA FARIAS,GLEUDSON SILVA FARIAS,***.508.264-**,CAR RENTAL local,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+MáRIO SéRGIO SOLANO DE MA,MARIO SERGIO SOLANO DE MA,***.205.204-**,,defer,user deferred,User will check later; defer this question. Keep pending and excluded from identified spending.
+PAUTA DISTRIBUIDORA,PAUTA DISTRIBUIDORA,83.064.741/0001-63,Groceries,include,user-confirmed category,User confirmed supermarket.
+DEBORAH RIBEIRO DE MORAIS,DEBORAH RIBEIRO DE MORAIS,***.549.674-**,PERSONAL,include,user-confirmed category,User confirmed CPAP breathing-equipment rental (personal); original wording: CEPAP Breath rent ( personal ).
+VITOR ROCHA GOUVEIA,VITOR ROCHA GOUVEIA,***.282.744-**,CAR,include,user-confirmed category,User confirmed CAR.
+MARILEIDE BENTO DE LIMA,MARILEIDE BENTO DE LIMA,***.214.784-**,PERSONAL,include,user-confirmed purpose; assistant mapped category,User confirmed foot/nail treatment. Grouped under PERSONAL / foot and nail care by assistant.
+MARIA DA LUZ ASSIS DA SIL,MARIA DA LUZ ASSIS DA SIL,***.848.084-**,HOME SPENDINGS,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+MARINALDO DOMINGOS DE SOU,MARINALDO DOMINGOS DE SOU,***.018.114-**,HOME SPENDINGS,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+CASA DOS CRIADORES,CASA DOS CRIADORES,10.523.089/0001-24,HOME SPENDINGS,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+JOSEMAR TEIXEIRA DE LIMA,JOSEMAR TEIXEIRA DE LIMA,***.737.374-**,HOME SPENDINGS,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+VALDEBAM PROCOPIO DE ARAU,VALDEBAM PROCOPIO DE ARAU,***.860.504-**,HOME SPENDINGS,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+CRISTIANO BORBA DA SILVA,CRISTIANO BORBA DA SILVA,***.283.054-**,JohnnyBravo,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+THALES JERONIMO DO NASCIM,THALES JERONIMO DO NASCIM,***.794.304-**,PERSONAL,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+SEU JERONIMO O REI DA PRO,SEU JERONIMO O REI DA PRO,53.694.727/0001-82,PERSONAL,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+GABIONETA COMERCIO DE ALI,GABIONETA COMERCIO DE ALI,38.062.440/0001-46,PERSONAL,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+MASTERBOI,MASTERBOI,03.721.769/0002-78,HOME SPENDINGS,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+CARAJAS,CARAJAS,03.656.804/0007-27,HOME SPENDINGS,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+FORTE FRUTOS COMERCIAL LT,FORTE FRUTOS COMERCIAL LT,13.752.178/0003-00,HOME SPENDINGS,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+REALITY BIO SANEANTES,REALITY BIO SANEANTES,36.972.476/0001-31,HOME SPENDINGS,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+CONSTRUIR UTILIDADES,CONSTRUIR UTILIDADES,19.324.855/0001-04,HOME SPENDINGS,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+POSTO DOIS IRMAOS,POSTO DOIS IRMAOS,09.352.634/0002-69,CAR,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+JACARE COMERCIO DE COMBUS,JACARE COMERCIO DE COMBUS,24.547.414/0001-01,CAR,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+LOJAO CASA E CONDOMINIO,LOJAO CASA E CONDOMINIO,09.236.474/0001-01,HOME SPENDINGS,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+POSTO EXPRESSAO,POSTO EXPRESSAO,02.561.589/0001-22,HOME SPENDINGS,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+UBER DO BRASIL TECNOLOGIA,UBER DO BRASIL TECNOLOGIA,17.895.646/0001-87,PERSONAL,include,user-confirmed category,User confirmed PERSONAL. Existing refund remains excluded.
+HS PETROLEO COMERCIO DE C,HS PETROLEO COMERCIO DE C,23.019.447/0001-08,CAR,include,user-confirmed category,Category and inclusion in spending confirmed by user.
+OKX SERVICOS DIGITAIS LTD,OKX SERVICOS DIGITAIS LTD,50.459.025/0001-26,Cryptocurrency,exclude,user-confirmed category,User confirmed cryptocurrency; keep out of spending.
+ALL TIME 24H,ALL TIME 24H,64.397.092/0001-78,Restaurants,include,user-confirmed category,User confirmed restaurant.
+SUNBAY HOTEIS E RESTAURAN,SUNBAY HOTEIS E RESTAURAN,19.307.711/0001-31,Restaurants,include,user-confirmed category,User confirmed lunch/dinner.
+39.936.344 OLIVIO PEREIRA,39.936.344 OLIVIO PEREIRA,39.936.344/0001-42,HOME SPENDINGS,include,user-confirmed category,User confirmed home spending.
+VINDI PAGAMENTOS ONLINE,VINDI PAGAMENTOS ONLINE,14.338.304/0001-78,Restaurants,include,user-confirmed category,User confirmed lunch/dinner. Match exact saved recipient name and identifier; do not generalize to other Vindi recipients.
+ELDORADO,ELDORADO,41.149.030/0001-41,Groceries,include,user-confirmed purpose; assistant mapped category,User confirmed bakery; grouped under Groceries using the existing bakery convention.
+ELINALDO BENTO DA SILVA,ELINALDO BENTO DA SILVA,***.499.164-**,HOME SPENDINGS,include,user-confirmed category,User confirmed home spending.
+JOãO BATISTA PEREIRA DOS,JOAO BATISTA PEREIRA DOS,***.848.304-**,,defer,user deferred,User will check later; defer this question. Keep pending and excluded from identified spending.
+STAR SHOP,STAR SHOP,03.610.973/0001-30,HOME SPENDINGS,include,user-confirmed category,User confirmed home spending.
+MATIAS ALEJANDRO SANCHEZ,MATIAS ALEJANDRO SANCHEZ,***.446.741-**,CAR,include,user-confirmed category,User confirmed CAR (typed casr).
+HORA H,HORA H,04.284.834/0001-27,Groceries,include,user-confirmed category,User confirmed groceries.
+EDUARDO SILVA DOS SANTOS,EDUARDO SILVA DOS SANTOS,***.380.614-**,UNKNOWN - CHECK,defer,User confirmed review category,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+CSRA BRASIL SERVICOS DE T,CSRA BRASIL SERVICOS DE T,26.328.218/0001-63,UNKNOWN - CHECK,defer,User confirmed review category,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+PAGAR ME PAGAMENTOS,PAGAR ME PAGAMENTOS,18.727.053/0001-74,UNKNOWN - CHECK,defer,User confirmed review category,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+TUNA PAGAMENTOS,TUNA PAGAMENTOS,43.098.655/0001-57,UNKNOWN - CHECK,defer,User confirmed review category,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+MESSIAS CONCEICAO DE LIMA,MESSIAS CONCEICAO DE LIMA,***.030.804-**,UNKNOWN - CHECK,defer,User confirmed review category,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+ALESSANDRA DE OLIVEIRA SI,ALESSANDRA DE OLIVEIRA SI,33.985.958/0001-38,UNKNOWN - CHECK,defer,User confirmed review category,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+EDNA DA SILVA ROCHA,EDNA DA SILVA ROCHA,***.400.744-**,UNKNOWN - CHECK,defer,User confirmed review category,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+BRENDA MACEDO GOMES RIBEI,BRENDA MACEDO GOMES RIBEI,***.043.564-**,UNKNOWN - CHECK,defer,User confirmed review category,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+MARIA JOSE BEZERRA SALVAD,MARIA JOSE BEZERRA SALVAD,***.516.644-**,UNKNOWN - CHECK,defer,User confirmed review category,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+LUIS FERNANDO CRUZ,LUIS FERNANDO CRUZ,***.287.628-**,UNKNOWN - CHECK,defer,User confirmed review category,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+ELSE LUDIMILLA CAVALCANTE,ELSE LUDIMILLA CAVALCANTE,***.806.034-**,UNKNOWN - CHECK,defer,User confirmed review category,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+INDIGO,INDIGO,86.862.208/0001-35,UNKNOWN - CHECK,defer,User confirmed review category,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+KLEITON MENDES DA SILVA,KLEITON MENDES DA SILVA,***.469.454-**,UNKNOWN - CHECK,defer,User confirmed review category,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+ANNE KAROLINA PEREIRA RIB,ANNE KAROLINA PEREIRA RIB,***.996.304-**,UNKNOWN - CHECK,defer,User confirmed review category,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+ROBERTO KHALIL SOURI,ROBERTO KHALIL SOURI,***.792.088-**,UNKNOWN - CHECK,defer,User confirmed review category,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+55 551 537 JAMYLLE KEYLA,55 551 537 JAMYLLE KEYLA,55.551.537/0001-31,UNKNOWN - CHECK,defer,User confirmed review category,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.

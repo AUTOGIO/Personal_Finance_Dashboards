@@ -1,0 +1,2 @@
+﻿payment_id,refund_id,date,counterparty,payment_time,refund_time,amount_brl,match_basis
+E0000000020260125191326125246174,D1479660620260125203109758220002,2026-01-25,UBER DO BRASIL TECNOLOGIA,16:13,16:31,20.97,"Probable refund pair: unique same-day prior payment, same counterparty identifier and exact amount; IDs differ."

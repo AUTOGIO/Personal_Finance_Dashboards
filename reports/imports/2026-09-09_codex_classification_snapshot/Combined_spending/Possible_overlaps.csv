@@ -1,0 +1,2 @@
+﻿mp_row,bb_transaction_id,date,mp_merchant,bb_merchant,gross_brl,mp_refund_brl,mp_net_withheld_brl,resolution
+63,E0000000020260117124521081981495,2026-01-17,Cristiano Borba da Silva,CRISTIANO BORBA DA SILVA,100.00,0.00,100.00,"Unconfirmed duplicate; MP copy withheld, BB retained"

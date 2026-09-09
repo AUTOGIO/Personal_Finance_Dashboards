@@ -1,0 +1,2 @@
+﻿bank,date,recipient,amount_brl,category,treatment,included_spending_brl,source,note
+Banco Inter,2026-07-09,REDMART,24.75,UNKNOWN - CHECK,Pending classification,0.00,Extrato-07-07-2026-a-13-07-2026-CSV.csv; Extrato-07-07-2026-a-13-07-2026-PDF.pdf,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.

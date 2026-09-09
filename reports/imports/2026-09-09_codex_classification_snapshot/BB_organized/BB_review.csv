@@ -1,0 +1,90 @@
+﻿counterparty,counterparty_identifier,treatment,proposed_category,transactions,net_spending_brl,pending_brl,gross_amount_brl,question,rows,user_category,user_note
+ARKO NETWORK LTD LLC,58.416.081/0001-95,Excluded international transfer,Transfers abroad,4,0.00,0.00,214338.78,,117;144;168;173,Transfers abroad,User confirmed money sent abroad. Do not compute as spending.
+BANCO TOPAZIO,07.679.404/0001-00,Excluded international transfer,Transfers abroad,4,0.00,0.00,140578.05,,98;109;110;112,Transfers abroad,User confirmed money sent abroad. Do not compute as spending.
+WISE BRASIL CORRETORA DE,36.588.217/0001-01,Excluded international transfer,Transfers abroad,4,0.00,0.00,107632.82,,118;150;172;174,Transfers abroad,User confirmed money sent abroad. Do not compute as spending.
+CONFIDENCE CORRETORA DE C,04.913.129/0001-41,Excluded international transfer,Transfers abroad,1,0.00,0.00,68578.00,,181,Transfers abroad,User confirmed money sent abroad. Do not compute as spending.
+BANCO DAYCOVAL S/A - 3079,62.232.889/0001-90,Excluded currency exchange,Physical US dollar purchase,4,0.00,0.00,59999.60,,33;34;39;42,Physical US dollar purchase,User confirmed physical US dollars. Currency exchange excluded from spending calculations.
+NOMAD FINTECH INC,57.646.942/0001-69,Excluded international transfer,Transfers abroad,3,0.00,0.00,55590.00,,125;167;186,Transfers abroad,User confirmed money sent abroad. Do not compute as spending.
+EVA BEZERRA DA SILVA,***.486.528-**,Included spending,JohnnyBravo-eva,6,10392.13,0.00,10392.13,,26;31;41;92;178;217,JohnnyBravo-eva,Category and inclusion in spending confirmed by user.
+ALINE SALES VENANCIO DA S,***.358.244-**,Excluded family transfer,Family transfer - brother,1,0.00,0.00,9372.00,,2,Family transfer - brother,User confirmed payment to brother; keep out of spending. Supersedes earlier defer decision.
+MERCADO PAGO INSTITUICAO,10.573.521/0001-91,Excluded credit-card bill payment,Credit-card bill payment,1,0.00,0.00,6719.76,,157,Credit-card bill payment,User confirmed credit card; settlement excluded from spending.
+EWERTON DE SOUSA EMERI,***.574.704-**,Included spending,JohnnyBravo,6,6250.00,0.00,6250.00,,21;37;43;84;159;216,JohnnyBravo,Category and inclusion in spending confirmed by user.
+NAILSON DA SILVA OLIVEIRA,***.977.024-**,Included spending,HOME SPENDINGS,1,4800.00,0.00,4800.00,,20,HOME SPENDINGS,Category and inclusion in spending confirmed by user.
+FERNANDO MARIO MAGNAGHI,***.625.908-**,Included spending,PERSONAL,1,3200.00,0.00,3200.00,,103,,User confirmed rock festival ticket. Grouped under PERSONAL / entertainment by assistant.
+BIANCA MIKAELLA NASCIMENT,***.148.994-**,Included spending,JohnnyBravo,4,2240.00,0.00,2240.00,,162;198;203;213,JohnnyBravo,Category and inclusion in spending confirmed by user.
+VB INTERMARES,51.389.630/0001-30,Included spending,CAR,1,1822.86,0.00,1822.86,,87,CAR,User confirmed car maintenance.
+AA FRIGELAR SA,92.660.406/0001-19,Included spending,HOME SPENDINGS,1,1599.00,0.00,1599.00,,151,HOME SPENDINGS,Category and inclusion in spending confirmed by user.
+KLEBER KERSTING FILHO,***.909.499-**,Included spending,kite surf equip.,1,1320.00,0.00,1320.00,,46,kite surf equip.,Category and inclusion in spending confirmed by user.
+EDUARDO SILVA DOS SANTOS,***.380.614-**,Pending classification,UNKNOWN - CHECK,3,0.00,1300.00,1300.00,,35;54;101,UNKNOWN - CHECK,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+PEDRO HENRIQUE ALMEIDA DA,***.465.634-**,Included spending,CAR,1,1290.00,0.00,1290.00,,89,CAR,User confirmed car sound/audio.
+17.077.282 VALDENIS DE LI,17.077.282/0001-28,Included spending,HOME SPENDINGS,1,1100.00,0.00,1100.00,,132,HOME SPENDINGS,User confirmed home furniture.
+CSRA BRASIL SERVICOS DE T,26.328.218/0001-63,Pending classification,UNKNOWN - CHECK,1,0.00,962.00,962.00,,122,UNKNOWN - CHECK,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+GLEUDSON SILVA FARIAS,***.508.264-**,Included spending,CAR RENTAL local,1,900.00,0.00,900.00,,45,CAR RENTAL local,Category and inclusion in spending confirmed by user.
+MáRIO SéRGIO SOLANO DE MA,***.205.204-**,Pending classification,Unclassified,1,0.00,900.00,900.00,Recipient name is insufficient: confirm purpose and category; do not assume personal names are staff or own-account transfers.,145,,User will check later; defer this question. Keep pending and excluded from identified spending.
+PAGAR ME PAGAMENTOS,18.727.053/0001-74,Pending classification,UNKNOWN - CHECK,1,0.00,802.49,802.49,,70,UNKNOWN - CHECK,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+PAUTA DISTRIBUIDORA,83.064.741/0001-63,Included spending,Groceries,1,794.16,0.00,794.16,,148,Groceries,User confirmed supermarket.
+DEBORAH RIBEIRO DE MORAIS,***.549.674-**,Included spending,PERSONAL,2,700.00,0.00,700.00,,38;88,PERSONAL,User confirmed CPAP breathing-equipment rental (personal); original wording: CEPAP Breath rent ( personal ).
+VITOR ROCHA GOUVEIA,***.282.744-**,Included spending,CAR,2,625.00,0.00,625.00,,66;82,CAR,User confirmed CAR.
+MARILEIDE BENTO DE LIMA,***.214.784-**,Included spending,PERSONAL,2,570.00,0.00,570.00,,121;207,,User confirmed foot/nail treatment. Grouped under PERSONAL / foot and nail care by assistant.
+MARIA DA LUZ ASSIS DA SIL,***.848.084-**,Included spending,HOME SPENDINGS,3,500.00,0.00,500.00,,47;160;189,HOME SPENDINGS,Category and inclusion in spending confirmed by user.
+MARINALDO DOMINGOS DE SOU,***.018.114-**,Included spending,HOME SPENDINGS,1,460.00,0.00,460.00,,27,HOME SPENDINGS,Category and inclusion in spending confirmed by user.
+TUNA PAGAMENTOS,43.098.655/0001-57,Pending classification,UNKNOWN - CHECK,1,0.00,354.46,354.46,,22,UNKNOWN - CHECK,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+MESSIAS CONCEICAO DE LIMA,***.030.804-**,Pending classification,UNKNOWN - CHECK,1,0.00,350.00,350.00,,131,UNKNOWN - CHECK,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+CASA DOS CRIADORES,10.523.089/0001-24,Included spending,HOME SPENDINGS,1,281.00,0.00,281.00,,94,HOME SPENDINGS,Category and inclusion in spending confirmed by user.
+OKX SERVICOS DIGITAIS LTD,50.459.025/0001-26,Excluded cryptocurrency,Cryptocurrency,1,0.00,0.00,250.00,,73,Cryptocurrency,User confirmed cryptocurrency; keep out of spending.
+ALL TIME 24H,64.397.092/0001-78,Included spending,Restaurants,4,222.75,0.00,222.75,,86;114;130;149,Restaurants,User confirmed restaurant.
+ALESSANDRA DE OLIVEIRA SI,33.985.958/0001-38,Pending classification,UNKNOWN - CHECK,1,0.00,220.00,220.00,,76,UNKNOWN - CHECK,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+SUNBAY HOTEIS E RESTAURAN,19.307.711/0001-31,Included spending,Restaurants,1,204.60,0.00,204.60,,105,Restaurants,User confirmed lunch/dinner.
+JOSEMAR TEIXEIRA DE LIMA,***.737.374-**,Included spending,HOME SPENDINGS,1,200.00,0.00,200.00,,3,HOME SPENDINGS,Category and inclusion in spending confirmed by user.
+39.936.344 OLIVIO PEREIRA,39.936.344/0001-42,Included spending,HOME SPENDINGS,1,169.50,0.00,169.50,,128,HOME SPENDINGS,User confirmed home spending.
+VINDI PAGAMENTOS ONLINE,14.338.304/0001-78,Included spending,Restaurants,1,157.77,0.00,157.77,,202,Restaurants,User confirmed lunch/dinner.
+EDNA DA SILVA ROCHA,***.400.744-**,Pending classification,UNKNOWN - CHECK,2,0.00,154.00,154.00,,8;81,UNKNOWN - CHECK,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+ELDORADO,41.149.030/0001-41,Included spending,Groceries,3,153.19,0.00,153.19,,61;155;208,,User confirmed bakery; assistant grouped under Groceries using the existing bakery convention.
+ELINALDO BENTO DA SILVA,***.499.164-**,Included spending,HOME SPENDINGS,1,127.00,0.00,127.00,,68,HOME SPENDINGS,User confirmed home spending.
+BRENDA MACEDO GOMES RIBEI,***.043.564-**,Pending classification,UNKNOWN - CHECK,1,0.00,120.00,120.00,,138,UNKNOWN - CHECK,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+VALDEBAM PROCOPIO DE ARAU,***.860.504-**,Included spending,HOME SPENDINGS,1,104.00,0.00,104.00,,13,HOME SPENDINGS,Category and inclusion in spending confirmed by user.
+CRISTIANO BORBA DA SILVA,***.283.054-**,Included spending,JohnnyBravo,1,100.00,0.00,100.00,,12,JohnnyBravo,Category and inclusion in spending confirmed by user.
+JOãO BATISTA PEREIRA DOS,***.848.304-**,Pending classification,Unclassified,1,0.00,100.00,100.00,Recipient name is insufficient: confirm purpose and category; do not assume personal names are staff or own-account transfers.,134,,User will check later; defer this question. Keep pending and excluded from identified spending.
+STAR SHOP,03.610.973/0001-30,Included spending,HOME SPENDINGS,3,90.96,0.00,90.96,,59;60;140,HOME SPENDINGS,User confirmed home spending.
+MARIA JOSE BEZERRA SALVAD,***.516.644-**,Pending classification,UNKNOWN - CHECK,1,0.00,90.00,90.00,,80,UNKNOWN - CHECK,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+MATIAS ALEJANDRO SANCHEZ,***.446.741-**,Included spending,CAR,1,88.00,0.00,88.00,,36,CAR,User confirmed CAR (typed casr).
+THALES JERONIMO DO NASCIM,***.794.304-**,Included spending,PERSONAL,1,78.00,0.00,78.00,,53,PERSONAL,Category and inclusion in spending confirmed by user.
+HORA H,04.284.834/0001-27,Included spending,Groceries,2,70.99,0.00,70.99,,5;11,Groceries,User confirmed groceries.
+SEU JERONIMO O REI DA PRO,53.694.727/0001-82,Included spending,PERSONAL,1,56.00,0.00,56.00,,143,PERSONAL,Category and inclusion in spending confirmed by user.
+GABIONETA COMERCIO DE ALI,38.062.440/0001-46,Included spending,PERSONAL,2,53.00,0.00,53.00,,182;183,PERSONAL,Category and inclusion in spending confirmed by user.
+LUIS FERNANDO CRUZ,***.287.628-**,Pending classification,UNKNOWN - CHECK,1,0.00,39.57,39.57,,187,UNKNOWN - CHECK,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+ELSE LUDIMILLA CAVALCANTE,***.806.034-**,Pending classification,UNKNOWN - CHECK,1,0.00,26.00,26.00,,72,UNKNOWN - CHECK,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+INDIGO,86.862.208/0001-35,Pending classification,UNKNOWN - CHECK,1,0.00,24.00,24.00,,188,UNKNOWN - CHECK,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+KLEITON MENDES DA SILVA,***.469.454-**,Pending classification,UNKNOWN - CHECK,1,0.00,23.00,23.00,,126,UNKNOWN - CHECK,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+ANNE KAROLINA PEREIRA RIB,***.996.304-**,Pending classification,UNKNOWN - CHECK,1,0.00,20.00,20.00,,214,UNKNOWN - CHECK,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+ROBERTO KHALIL SOURI,***.792.088-**,Pending classification,UNKNOWN - CHECK,1,0.00,8.00,8.00,,129,UNKNOWN - CHECK,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+55 551 537 JAMYLLE KEYLA,55.551.537/0001-31,Pending classification,UNKNOWN - CHECK,1,0.00,7.00,7.00,,17,UNKNOWN - CHECK,User assigned all 19 remaining recipients to UNKNOWN - CHECK; retain outside confirmed spending pending review.
+CAIXA SEGUROS,03.730.204/0001-76,Other inflow,,1,0.00,0.00,364730.92,"Confirm income, family transfer, insurance proceeds, or other purpose; not consumption.",19,,
+JOSE CARLOS GIOVANNINI,***.824.258-**,Other inflow,,1,0.00,0.00,250000.00,"Confirm income, family transfer, insurance proceeds, or other purpose; not consumption.",180,,
+MASTERBOI,03.721.769/0002-78,Included spending,HOME SPENDINGS,1,2749.00,0.00,2749.00,,152,HOME SPENDINGS,Category and inclusion in spending confirmed by user.
+PIX MARKETPLACE,10.573.521/0001-91,Included spending,Shopping,2,1128.90,0.00,1128.90,Marketplace payment; item receipt needed to refine category.,100;199,,
+CARAJAS,03.656.804/0007-27,Included spending,HOME SPENDINGS,2,1044.03,0.00,1044.03,,62;209,HOME SPENDINGS,Category and inclusion in spending confirmed by user.
+FORTE FRUTOS COMERCIAL LT,13.752.178/0003-00,Included spending,HOME SPENDINGS,2,665.10,0.00,665.10,,71;77,HOME SPENDINGS,Category and inclusion in spending confirmed by user.
+ESTACAO 89 COMERCIO VAREJ,18.623.764/0001-07,Included spending,Groceries,6,531.40,0.00,531.40,Provisional food retail; confirm groceries versus prepared meal or other goods.,124;136;147;177;204;205,,
+REALITY BIO SANEANTES,36.972.476/0001-31,Included spending,HOME SPENDINGS,2,528.00,0.00,528.00,,69;200,HOME SPENDINGS,Category and inclusion in spending confirmed by user.
+CONSTRUIR UTILIDADES,19.324.855/0001-04,Included spending,HOME SPENDINGS,1,460.00,0.00,460.00,,193,HOME SPENDINGS,Category and inclusion in spending confirmed by user.
+POSTO DOIS IRMAOS,09.352.634/0002-69,Included spending,CAR,1,347.02,0.00,347.02,,141,CAR,Category and inclusion in spending confirmed by user.
+JACARE COMERCIO DE COMBUS,24.547.414/0001-01,Included spending,CAR,2,292.15,0.00,292.15,,18;85,CAR,Category and inclusion in spending confirmed by user.
+LOJAO CASA E CONDOMINIO,09.236.474/0001-01,Included spending,HOME SPENDINGS,1,269.79,0.00,269.79,,48,HOME SPENDINGS,Category and inclusion in spending confirmed by user.
+POSTO EXPRESSAO,02.561.589/0001-22,Included spending,HOME SPENDINGS,2,259.65,0.00,259.65,,133;197,HOME SPENDINGS,Category and inclusion in spending confirmed by user.
+UNIAO PET PARTICIPACOES S,53.153.938/0001-08,Included spending,Other,1,240.70,0.00,240.70,Provisional pet expense; confirm goods or service.,139,,
+COMGEL,35.487.354/0001-97,Included spending,Household/staff,1,192.30,0.00,192.30,Provisional hardware/household goods; confirm item and household purpose. Not staff wages.,49,,
+EMPRESA CINEMAS S LUIZ SA,33.497.660/0001-89,Included spending,Other,2,146.00,0.00,146.00,Cinema/entertainment expense.,184;185,,
+POSTO INTERMARES,41.198.466/0001-20,Included spending,Transport/fuel,3,86.50,0.00,86.50,Transport merchant inference; fuel stations may include convenience purchases and ride apps may offer other services.,4;10;44,,
+POSTO VILA NOVA LTDA,55.940.947/0001-74,Included spending,Transport/fuel,1,84.48,0.00,84.48,Transport merchant inference; fuel stations may include convenience purchases and ride apps may offer other services.,192,,
+GRANFER,11.358.671/0001-45,Included spending,Household/staff,1,76.00,0.00,76.00,Provisional hardware/household goods; confirm item and household purpose. Not staff wages.,142,,
+FABRICA DE BOLO VO ALZIRA,50.546.904/0001-95,Included spending,Groceries,1,75.30,0.00,75.30,Provisional food retail; confirm groceries versus prepared meal or other goods.,55,,
+UBER DO BRASIL TECNOLOGIA,17.895.646/0001-87,Included spending,PERSONAL,1,42.98,0.00,42.98,,9,PERSONAL,User confirmed PERSONAL. Existing refund remains excluded.
+99 TECNOLOGIA LTDA,18.033.552/0001-61,Included spending,Transport/fuel,2,39.00,0.00,39.00,Transport merchant inference; fuel stations may include convenience purchases and ride apps may offer other services.,24;95,,
+HS PETROLEO COMERCIO DE C,23.019.447/0001-08,Included spending,CAR,1,35.98,0.00,35.98,,211,CAR,Category and inclusion in spending confirmed by user.
+EDR PARK SERVICOS LTDA,56.086.540/0001-94,Included spending,Transport/fuel,2,26.00,0.00,26.00,Transport merchant inference; fuel stations may include convenience purchases and ride apps may offer other services.,127;153,,
+UBER DO BRASIL TECNOLOGIA,17.895.646/0001-87,Fully refunded payment,PERSONAL,1,0.00,0.00,20.97,,23,PERSONAL,User confirmed PERSONAL. Existing refund remains excluded.
+UBER DO BRASIL TECNOLOGIA,17.895.646/0001-87,Refund credit,PERSONAL,1,0.00,0.00,20.97,,25,PERSONAL,User confirmed PERSONAL. Existing refund remains excluded.
+CACAU SHOW,36.333.522/0001-52,Included spending,Groceries,1,19.99,0.00,19.99,Provisional food retail; confirm groceries versus prepared meal or other goods.,6,,
+ESTAPAR,60.537.263/1327-47,Included spending,Transport/fuel,1,11.00,0.00,11.00,Transport merchant inference; fuel stations may include convenience purchases and ride apps may offer other services.,7,,
+ARTUR FORSTER GIOVANNINI,***.565.918-**,Other inflow,,1,0.00,0.00,0.68,"Confirm income, family transfer, insurance proceeds, or other purpose; not consumption.",99,,

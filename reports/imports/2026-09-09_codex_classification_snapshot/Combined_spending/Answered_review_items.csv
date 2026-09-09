@@ -1,0 +1,15 @@
+﻿Item_ID,Source,Recipient_or_purchase,Transactions,Amount_BRL,Suggested_category,Review_reason,Your_answer,Record_ids
+ALL-003,MP account,BANCO XP S.A,1,9377.49,Other,Pending classification,Travel,MP account-493
+ALL-008,MP account,Gabriel Resende Firmino,1,3235.00,Other,Pending classification,CAR,MP account-327
+ALL-009,MP account,Williams Firmino dos Santos,1,2085.00,Other,Pending classification,CAR,MP account-329
+ALL-012,MP account,PEDRO HENRIQUE ALMEIDA DANTAS,1,1200.00,CAR,Review cross-bank rule match,CAR,MP account-447
+ALL-013,MP account,Banco Topazio,1,1088.90,Transfers abroad,Review cross-bank rule match,US dollar transfer - excluded,MP account-87
+ALL-015,MP account,Marileide Bento de Lima,1,960.00,PERSONAL,Review cross-bank rule match,PERSONAL,MP account-550
+ALL-029,MP account,RENTAL PROJECTA SERVICOS E LOCACAO LTDA,1,413.11,Other,Pending classification,HOME SPENDINGS,MP account-512
+ALL-031,MP account,GLOBAL DISTRIBUICAO DE BENS DE CONSUMO LTDA,1,400.00,Other,Pending classification,HOME SPENDINGS,MP account-563
+ALL-034,MP account,CROSSBORDER TECHNOLOGIES S.A.,1,322.80,Other,Pending classification,Home Office,MP account-543
+ALL-045,MP account,Jrba Cabedelo Aluguel de Maquinas e Equipamentos Ltda,1,182.00,Other,Pending classification,HOME SPENDINGS,MP account-123
+ALL-049,MP account,Carpediem Homes,1,146.99,Other,Pending classification,HOME SPENDINGS,MP account-545
+ALL-057,MP account,REDE BOM COMERCIO LTDA,1,112.27,Other,Pending classification,HOME - market,MP account-306
+ALL-058,MP account,ATLANTICO SUL HOTELARIA E RESTAURANTES L,1,110.00,Other,Pending classification,Travel,MP account-395
+ALL-077,MP account,GSS EMPREENDIMENTOS ALIMENTICIOS LTDA,1,32.00,Other,Pending classification,FOOD,MP account-596

@@ -1,0 +1,82 @@
+﻿Item_ID,Source,Recipient_or_purchase,Transactions,Amount_BRL,Suggested_category,Review_reason,Your_answer,Record_ids
+ALL-001,MP account,Eva Bezerra da Silva Brandao,15,17880.00,JohnnyBravo-eva,Review cross-bank rule match,,MP account-32; MP account-41; MP account-65; MP account-141; MP account-183; MP account-217; MP account-260; MP account-301; MP account-319; MP account-384; MP account-434; MP account-473; MP account-492; MP account-504; MP account-526
+ALL-002,MP account,Maria da Luz Assis da Silva,20,13895.00,HOME SPENDINGS,Review cross-bank rule match,,MP account-6; MP account-13; MP account-18; MP account-76; MP account-95; MP account-105; MP account-163; MP account-194; MP account-209; MP account-221; MP account-292; MP account-295; MP account-362; MP account-394; MP account-418; MP account-461; MP account-472; MP account-489; MP account-520; MP account-640
+ALL-004,MP account,Eduardo Silva dos Santos,15,7030.00,UNKNOWN - CHECK,Review cross-bank rule match,,MP account-110; MP account-127; MP account-132; MP account-171; MP account-204; MP account-264; MP account-291; MP account-307; MP account-338; MP account-364; MP account-369; MP account-387; MP account-393; MP account-403; MP account-448
+ALL-005,MP account,Marinaldo Domingos de Souza,13,5145.20,HOME SPENDINGS,Review cross-bank rule match,,MP account-39; MP account-210; MP account-302; MP account-313; MP account-346; MP account-366; MP account-425; MP account-466; MP account-509; MP account-540; MP account-553; MP account-631; MP account-639
+ALL-006,MP account,Gleudson Silva Farias,6,4033.00,CAR RENTAL local,Review cross-bank rule match,,MP account-316; MP account-318; MP account-375; MP account-399; MP account-422; MP account-502
+ALL-007,MP account,Bianca Mikaella Nascimento Lima,7,3520.00,JohnnyBravo,Review cross-bank rule match,,MP account-487; MP account-499; MP account-530; MP account-559; MP account-593; MP account-628; MP account-637
+ALL-010,MP account,Ewerton de Sousa Emeri,2,2000.00,JohnnyBravo,Review cross-bank rule match,,MP account-411; MP account-443
+ALL-011,BB,EDUARDO SILVA DOS SANTOS,3,1300.00,,Pending classification,,BB-E0000000020260219212131904688015; BB-E0000000020260328234603413915015; BB-E0000000020260507173223284995918
+ALL-014,BB,CSRA BRASIL SERVICOS DE T,1,962.00,,Pending classification,,BB-E0000000020260615190338493576657
+ALL-016,BB,MáRIO SéRGIO SOLANO DE MA,1,900.00,,Pending classification,,BB-E0000000020260619203136473470316
+ALL-017,MP account,Cristiano Borba da Silva,6,900.00,JohnnyBravo,Review cross-bank rule match,,MP account-40; MP account-85; MP account-120; MP account-131; MP account-164; MP account-192
+ALL-018,BB,PAGAR ME PAGAMENTOS,1,802.49,,Pending classification,,BB-E0000000020260416203055679767346
+ALL-019,MP account,COMERCIAL DE ALIMENTOS HORA H LTDA,14,758.30,Other,Pending classification,,MP account-8; MP account-9; MP account-36; MP account-43; MP account-53; MP account-78; MP account-89; MP account-114; MP account-178; MP account-223; MP account-235; MP account-253; MP account-263; MP account-452
+ALL-020,MP account,MASTERBOI LTDA.,1,753.17,HOME SPENDINGS,Review cross-bank rule match,,MP account-633
+ALL-021,MP account,Deborah Ribeiro de Morais Tenorio,2,700.00,PERSONAL,Review cross-bank rule match,,MP account-59; MP account-154
+ALL-022,MP account,Veronica Freitas Lira,5,640.00,Other,Pending classification,,MP account-12; MP account-48; MP account-70; MP account-83; MP account-458
+ALL-023,MP account,EDGLEY DE SOUSA FORMIGA,5,634.93,Other,Pending classification,,MP account-80; MP account-300; MP account-374; MP account-439; MP account-441
+ALL-024,MP account,THALES JERONIMO DO NASCIMENTO SEIXAS,9,604.00,PERSONAL,Review cross-bank rule match,,MP account-138; MP account-191; MP account-222; MP account-227; MP account-261; MP account-521; MP account-569; MP account-604; MP account-621
+ALL-025,MP account,POSTO EXPRESSAO COMBUSTIVEIS E CONVENIENCIAS LTDA,6,522.50,HOME SPENDINGS,Review cross-bank rule match,,MP account-534; MP account-535; MP account-561; MP account-572; MP account-573; MP account-611
+ALL-026,MP account,PAGALI SERVICOS DE PAGAMENTO S.A.,1,520.02,Other,Pending classification,,MP account-182
+ALL-027,MP account,VINDI PAGAMENTOS SA,1,494.80,Other,Pending classification,,MP account-379
+ALL-028,MP account,B L SERVICE ADMINISTRADORA DE SERVICOS LTDA,2,451.36,Other,Pending classification,,MP account-201; MP account-337
+ALL-030,MP account,Valdebam Procopio de Araujo,5,408.00,HOME SPENDINGS,Review cross-bank rule match,,MP account-64; MP account-66; MP account-108; MP account-130; MP account-623
+ALL-032,BB,TUNA PAGAMENTOS,1,354.46,,Pending classification,,BB-E0000000020260125142712282992695
+ALL-033,BB,MESSIAS CONCEICAO DE LIMA,1,350.00,,Pending classification,,BB-E0000000020260616184156837269215
+ALL-035,MP account,Casa dos Criadores Comercio Ltda,2,296.00,HOME SPENDINGS,Review cross-bank rule match,,MP account-376; MP account-377
+ALL-036,MP account,POSTO EXPRESSAO - COMBUSTIVEIS E CONVENIENCIAS LTDA,3,291.77,HOME SPENDINGS,Review cross-bank rule match,,MP account-26; MP account-140; MP account-145
+ALL-037,MP account,Nailson da Silva Oliveira,1,288.88,HOME SPENDINGS,Review cross-bank rule match,,MP account-82
+ALL-038,MP account,UBER DO BRASIL TECNOLOGIA LTDA.,5,245.00,PERSONAL,Review cross-bank rule match,,MP account-92; MP account-93; MP account-195; MP account-276; MP account-320
+ALL-039,MP account,ELSE LUDIMILLA CAVALCANTE DREYER DINN,3,235.00,UNKNOWN - CHECK,Review cross-bank rule match,,MP account-68; MP account-454; MP account-608
+ALL-040,BB,ALESSANDRA DE OLIVEIRA SI,1,220.00,,Pending classification,,BB-E0000000020260417165926793574866
+ALL-041,MP account,Mauricio Bandeira Pereira,1,216.00,Other,Pending classification,,MP account-69
+ALL-042,MP account,JACARE COMERCIO DE COMBUSTIVEIS LTDA,5,204.82,CAR,Review cross-bank rule match,,MP account-297; MP account-405; MP account-479; MP account-480; MP account-643
+ALL-043,MP account,Marinez Silva Sogliani,1,200.00,Other,Pending classification,,MP account-215
+ALL-044,MP account,Alisson Cleiton Cunha Monteiro,1,199.99,Other,Pending classification,,MP account-109
+ALL-046,MP account,NP COMERCIO DE ALIMENTOS LTDA,1,171.50,Other,Pending classification,,MP account-594
+ALL-047,MP account,Thadeu Goes Vieira de Mello,1,161.52,Other,Pending classification,,MP account-632
+ALL-048,BB,EDNA DA SILVA ROCHA,2,154.00,,Pending classification,,BB-E0000000020260116025241768635241; BB-E0000000020260418150000278571182
+ALL-050,MP account,Kleiton Mendes da Silva,2,145.00,UNKNOWN - CHECK,Review cross-bank rule match,,MP account-532; MP account-537
+ALL-051,MP account,FABIO MARQUES JERONIMO,1,131.40,Other,Pending classification,,MP account-188
+ALL-052,MP account,Amanda Gabrielle Freire De Souza,1,131.00,Other,Pending classification,,MP account-355
+ALL-053,MP account,Edney Geovany Florencio da Silva,1,130.13,Other,Pending classification,,MP account-542
+ALL-054,MP account,Vilberto Pessoa Soares,1,125.00,Other,Pending classification,,MP account-341
+ALL-055,BB,BRENDA MACEDO GOMES RIBEI,1,120.00,,Pending classification,,BB-E0000000020260617220951521392480
+ALL-056,MP account,GF4 PARTICIPACOES LTDA,1,114.77,Other,Pending classification,,MP account-339
+ALL-059,BB,JOãO BATISTA PEREIRA DOS,1,100.00,,Pending classification,,BB-E0000000020260617122410998377429
+ALL-060,MP account,Maria Gorete Ferreira da Costa,1,100.00,Other,Pending classification,,MP account-50
+ALL-061,MP account,Cristiano Borba da Silva,1,100.00,JohnnyBravo,Potential overlap - withheld,,MP account-63
+ALL-062,MP account,Geovane Ribeiro das Neves,1,100.00,Other,Pending classification,,MP account-258
+ALL-063,MP account,Jonathan Borba da Silva,1,100.00,Other,Pending classification,,MP account-444
+ALL-064,BB,MARIA JOSE BEZERRA SALVAD,1,90.00,,Pending classification,,BB-E0000000020260418145535663724856
+ALL-065,MP account,ALIEDSON BEZERRA SALVADOR,1,89.00,Other,Pending classification,,MP account-67
+ALL-066,MP account,Matias Alejandro Sanchez Suarez,1,86.00,CAR,Review cross-bank rule match,,MP account-404
+ALL-067,MP account,EDNA DA SILVA ROCHA,2,73.00,UNKNOWN - CHECK,Review cross-bank rule match,,MP account-265; MP account-401
+ALL-068,MP account,BRENA DA TRINDADE BEZERRA,1,70.00,Other,Pending classification,,MP account-268
+ALL-069,MP account,CAPPTA INSTITUICAO DE PAGAMENTO S.A,1,62.70,Other,Pending classification,,MP account-113
+ALL-070,MP account,Eduardo Carlos de Medeiros Ferreira,5,60.00,Other,Pending classification,,MP account-172; MP account-187; MP account-207; MP account-246; MP account-273
+ALL-071,MP account,STAR SHOP CONVENIENCIAS LTDA,1,45.99,HOME SPENDINGS,Review cross-bank rule match,,MP account-250
+ALL-072,MP account,ONR,3,45.39,Other,Pending classification,,MP account-615; MP account-635; MP account-636
+ALL-073,MP account,OLIVIA A. DA SILVA COMERCIO E EQUIPAMENTOS,1,40.00,Other,Pending classification,,MP account-595
+ALL-074,BB,LUIS FERNANDO CRUZ,1,39.57,,Pending classification,,BB-E0000000020260814223707279759936
+ALL-075,MP account,55.103.928 MARIA EDUARDA CARDOSO DA COSTA,1,35.00,Other,Pending classification,,MP account-353
+ALL-076,MP account,OSVALDO LUIZ DE MEDEIROS,1,33.00,Other,Pending classification,,MP account-219
+ALL-078,MP account,Leandro Vital da Costa,1,30.00,Other,Pending classification,,MP account-57
+ALL-079,MP account,Irineu Das Neves Amorim,1,30.00,Other,Pending classification,,MP account-112
+ALL-080,MP account,MM SERVICOS DE ALIMENTOS LTDA,1,29.00,Other,Pending classification,,MP account-249
+ALL-081,MP account,MFT - MADEIRA FERMELA TRENDS FOODS LTDA,2,28.00,Other,Pending classification,,MP account-462; MP account-578
+ALL-082,BB,ELSE LUDIMILLA CAVALCANTE,1,26.00,,Pending classification,,BB-E0000000020260416235511783540167
+ALL-083,Inter,REDMART,1,24.75,,Pending classification,,Inter-2026-07-09-REDMART
+ALL-084,BB,INDIGO,1,24.00,,Pending classification,,BB-E0000000020260814234840843106387
+ALL-085,BB,KLEITON MENDES DA SILVA,1,23.00,,Pending classification,,BB-E0000000020260616145800206009324
+ALL-086,MP account,LINDEMBERG FRANCISCO DA SILVA,1,22.85,Other,Pending classification,,MP account-396
+ALL-087,MP account,Gerson Botasso,1,22.00,Other,Pending classification,,MP account-323
+ALL-088,MP account,HS PETROLEO COMERCIO DE COMBUSTIVEL LTDA,1,20.73,CAR,Review cross-bank rule match,,MP account-256
+ALL-089,BB,ANNE KAROLINA PEREIRA RIB,1,20.00,,Pending classification,,BB-E0000000020260829212407232957791
+ALL-090,MP account,Maria Edilza de Souza,1,17.00,Other,Pending classification,,MP account-431
+ALL-091,MP account,Erasmo Luiz Travassos De Souza,1,10.00,Other,Pending classification,,MP account-429
+ALL-092,MP account,VIRGINIA BARROS VIEIRA,1,10.00,Other,Pending classification,,MP account-430
+ALL-093,BB,ROBERTO KHALIL SOURI,1,8.00,,Pending classification,,BB-E0000000020260616155013974686841
+ALL-094,MP account,EMILY SILVA FARIAS,1,8.00,Other,Pending classification,,MP account-47
+ALL-095,BB,55 551 537 JAMYLLE KEYLA,1,7.00,,Pending classification,,BB-E0000000020260119113952190003147

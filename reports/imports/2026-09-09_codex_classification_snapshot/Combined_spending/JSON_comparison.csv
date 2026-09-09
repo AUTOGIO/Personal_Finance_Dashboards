@@ -1,0 +1,620 @@
+﻿json_section,json_row,canonical_record,match_basis,description_difference,action
+card,1,MP-02-005,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,2,MP-02-006,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,3,MP-02-007,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,4,MP-02-008,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,5,MP-02-009,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,6,MP-02-010,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,7,MP-02-011,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,8,MP-02-012,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,9,MP-02-013,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,10,MP-02-014,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,11,MP-02-015,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,12,MP-02-016,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,13,MP-02-017,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,14,MP-02-018,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,15,MP-02-019,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,16,MP-02-020,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,17,MP-02-021,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,18,MP-02-022,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,19,MP-02-023,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,20,MP-02-024,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,21,MP-02-025,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,22,MP-03-008,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,23,MP-03-009,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,24,MP-03-011,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,25,MP-03-012,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,26,MP-03-013,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,27,MP-03-014,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,28,MP-03-016,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,29,MP-03-017,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,30,MP-03-018,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,31,MP-03-019,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,32,MP-03-021,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,33,MP-03-022,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,34,MP-03-023,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,35,MP-03-024,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,36,MP-03-025,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,37,MP-03-026,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,38,MP-03-028,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,39,MP-03-029,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,40,MP-03-030,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,41,MP-04-010,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,42,MP-04-011,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,43,MP-04-012,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,44,MP-04-013,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,45,MP-04-016,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,46,MP-04-017,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,47,MP-04-018,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,48,MP-04-019,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,49,MP-04-020,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,50,MP-04-021,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,51,MP-04-022,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,52,MP-04-023,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,53,MP-04-024,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,54,MP-04-025,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,55,MP-04-026,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,56,MP-04-027,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,57,MP-04-028,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,58,MP-04-029,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,59,MP-04-030,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,60,MP-04-031,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,61,MP-04-032,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,62,MP-04-033,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,63,MP-04-034,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,64,MP-04-035,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,65,MP-04-037,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,66,MP-04-038,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,67,MP-04-039,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,68,MP-04-040,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,69,MP-04-041,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,70,MP-04-042,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,71,MP-04-043,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,72,MP-04-044,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,73,MP-04-045,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,74,MP-04-046,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,75,MP-04-047,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,76,MP-04-048,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,77,MP-04-049,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,78,MP-05-010,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,79,MP-05-011,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,80,MP-05-012,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,81,MP-05-013,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,82,MP-05-014,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,83,MP-05-015,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,84,MP-05-016,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,85,MP-05-017,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,86,MP-05-018,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,87,MP-05-019,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,88,MP-05-020,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,89,MP-05-021,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,90,MP-05-022,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,91,MP-05-023,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,92,MP-05-024,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,93,MP-05-025,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,94,MP-05-026,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,95,MP-05-027,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,96,MP-05-028,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,97,MP-05-029,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,98,MP-05-030,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,99,MP-05-031,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,100,MP-05-032,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,101,MP-05-033,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,102,MP-05-034,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,103,MP-05-035,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,104,MP-05-036,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,105,MP-05-037,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,106,MP-05-038,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,107,MP-05-039,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,108,MP-05-040,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,109,MP-06-005,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,110,MP-06-006,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,111,MP-06-007,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,112,MP-06-008,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,113,MP-06-009,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,114,MP-06-010,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,115,MP-06-011,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,116,MP-06-012,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,117,MP-06-013,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,118,MP-06-014,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,119,MP-06-015,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,120,MP-06-016,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,121,MP-06-017,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,122,MP-06-018,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,123,MP-06-019,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,124,MP-06-020,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,125,MP-06-021,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,126,MP-06-022,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,127,MP-06-023,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,128,MP-06-024,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,129,MP-06-025,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,130,MP-06-026,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,131,MP-06-027,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,132,MP-06-028,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,133,MP-06-029,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,134,MP-06-030,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,135,MP-06-031,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,136,MP-06-032,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,137,MP-06-033,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,138,MP-06-034,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,139,MP-06-035,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,140,MP-06-036,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,141,MP-06-037,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,142,MP-06-038,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,143,MP-06-039,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,144,MP-06-040,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,145,MP-06-041,Invoice/date/normalized merchant/amount,no,Already represented; not added
+card,146,MP-06-042,Invoice/date/normalized merchant/amount,no,Already represented; not added
+account,1,MP-account-1,Operation ID/date/signed amount,no,Already represented; not added
+account,2,MP-account-2,Operation ID/date/signed amount,no,Already represented; not added
+account,3,MP-account-3,Operation ID/date/signed amount,no,Already represented; not added
+account,4,MP-account-4,Operation ID/date/signed amount,no,Already represented; not added
+account,5,MP-account-5,Operation ID/date/signed amount,yes,Already represented; not added
+account,6,MP-account-6,Operation ID/date/signed amount,no,Already represented; not added
+account,7,MP-account-7,Operation ID/date/signed amount,no,Already represented; not added
+account,8,MP-account-8,Operation ID/date/signed amount,no,Already represented; not added
+account,9,MP-account-9,Operation ID/date/signed amount,no,Already represented; not added
+account,10,MP-account-10,Operation ID/date/signed amount,no,Already represented; not added
+account,11,MP-account-11,Operation ID/date/signed amount,no,Already represented; not added
+account,12,MP-account-12,Operation ID/date/signed amount,no,Already represented; not added
+account,13,MP-account-13,Operation ID/date/signed amount,no,Already represented; not added
+account,14,MP-account-14,Operation ID/date/signed amount,no,Already represented; not added
+account,15,MP-account-15,Operation ID/date/signed amount,no,Already represented; not added
+account,16,MP-account-16,Operation ID/date/signed amount,no,Already represented; not added
+account,17,MP-account-17,Operation ID/date/signed amount,no,Already represented; not added
+account,18,MP-account-18,Operation ID/date/signed amount,no,Already represented; not added
+account,19,MP-account-19,Operation ID/date/signed amount,no,Already represented; not added
+account,20,MP-account-20,Operation ID/date/signed amount,no,Already represented; not added
+account,21,MP-account-21,Operation ID/date/signed amount,no,Already represented; not added
+account,22,MP-account-22,Operation ID/date/signed amount,no,Already represented; not added
+account,23,MP-account-23,Operation ID/date/signed amount,no,Already represented; not added
+account,24,MP-account-24,Operation ID/date/signed amount,no,Already represented; not added
+account,25,MP-account-25,Operation ID/date/signed amount,no,Already represented; not added
+account,26,MP-account-26,Operation ID/date/signed amount,no,Already represented; not added
+account,27,MP-account-27,Operation ID/date/signed amount,no,Already represented; not added
+account,28,MP-account-28,Operation ID/date/signed amount,no,Already represented; not added
+account,29,MP-account-29,Operation ID/date/signed amount,no,Already represented; not added
+account,30,MP-account-30,Operation ID/date/signed amount,no,Already represented; not added
+account,31,MP-account-31,Operation ID/date/signed amount,no,Already represented; not added
+account,32,MP-account-32,Operation ID/date/signed amount,no,Already represented; not added
+account,33,MP-account-33,Operation ID/date/signed amount,no,Already represented; not added
+account,34,MP-account-34,Operation ID/date/signed amount,no,Already represented; not added
+account,35,MP-account-35,Operation ID/date/signed amount,no,Already represented; not added
+account,36,MP-account-36,Operation ID/date/signed amount,no,Already represented; not added
+account,37,MP-account-37,Operation ID/date/signed amount,no,Already represented; not added
+account,38,MP-account-38,Operation ID/date/signed amount,no,Already represented; not added
+account,39,MP-account-39,Operation ID/date/signed amount,no,Already represented; not added
+account,40,MP-account-40,Operation ID/date/signed amount,no,Already represented; not added
+account,41,MP-account-41,Operation ID/date/signed amount,no,Already represented; not added
+account,42,MP-account-42,Operation ID/date/signed amount,no,Already represented; not added
+account,43,MP-account-43,Operation ID/date/signed amount,no,Already represented; not added
+account,44,MP-account-44,Operation ID/date/signed amount,no,Already represented; not added
+account,45,MP-account-45,Operation ID/date/signed amount,no,Already represented; not added
+account,46,MP-account-46,Operation ID/date/signed amount,no,Already represented; not added
+account,47,MP-account-47,Operation ID/date/signed amount,no,Already represented; not added
+account,48,MP-account-48,Operation ID/date/signed amount,no,Already represented; not added
+account,49,MP-account-49,Operation ID/date/signed amount,no,Already represented; not added
+account,50,MP-account-50,Operation ID/date/signed amount,no,Already represented; not added
+account,51,MP-account-51,Operation ID/date/signed amount,no,Already represented; not added
+account,52,MP-account-52,Operation ID/date/signed amount,no,Already represented; not added
+account,53,MP-account-53,Operation ID/date/signed amount,no,Already represented; not added
+account,54,MP-account-54,Operation ID/date/signed amount,no,Already represented; not added
+account,55,MP-account-55,Operation ID/date/signed amount,no,Already represented; not added
+account,56,MP-account-56,Operation ID/date/signed amount,no,Already represented; not added
+account,57,MP-account-57,Operation ID/date/signed amount,no,Already represented; not added
+account,58,MP-account-58,Operation ID/date/signed amount,no,Already represented; not added
+account,59,MP-account-59,Operation ID/date/signed amount,no,Already represented; not added
+account,60,MP-account-60,Operation ID/date/signed amount,no,Already represented; not added
+account,61,MP-account-61,Operation ID/date/signed amount,no,Already represented; not added
+account,62,MP-account-62,Operation ID/date/signed amount,no,Already represented; not added
+account,63,MP-account-63,Operation ID/date/signed amount,no,Already represented; not added
+account,64,MP-account-64,Operation ID/date/signed amount,no,Already represented; not added
+account,65,MP-account-65,Operation ID/date/signed amount,no,Already represented; not added
+account,66,MP-account-66,Operation ID/date/signed amount,no,Already represented; not added
+account,67,MP-account-67,Operation ID/date/signed amount,no,Already represented; not added
+account,68,MP-account-68,Operation ID/date/signed amount,no,Already represented; not added
+account,69,MP-account-69,Operation ID/date/signed amount,no,Already represented; not added
+account,70,MP-account-70,Operation ID/date/signed amount,no,Already represented; not added
+account,71,MP-account-71,Operation ID/date/signed amount,no,Already represented; not added
+account,72,MP-account-72,Operation ID/date/signed amount,no,Already represented; not added
+account,73,MP-account-73,Operation ID/date/signed amount,yes,Already represented; not added
+account,74,MP-account-74,Operation ID/date/signed amount,no,Already represented; not added
+account,75,MP-account-75,Operation ID/date/signed amount,no,Already represented; not added
+account,76,MP-account-76,Operation ID/date/signed amount,no,Already represented; not added
+account,77,MP-account-77,Operation ID/date/signed amount,no,Already represented; not added
+account,78,MP-account-78,Operation ID/date/signed amount,no,Already represented; not added
+account,79,MP-account-79,Operation ID/date/signed amount,no,Already represented; not added
+account,80,MP-account-80,Operation ID/date/signed amount,no,Already represented; not added
+account,81,MP-account-81,Operation ID/date/signed amount,no,Already represented; not added
+account,82,MP-account-82,Operation ID/date/signed amount,no,Already represented; not added
+account,83,MP-account-83,Operation ID/date/signed amount,no,Already represented; not added
+account,84,MP-account-84,Operation ID/date/signed amount,no,Already represented; not added
+account,85,MP-account-85,Operation ID/date/signed amount,no,Already represented; not added
+account,86,MP-account-86,Operation ID/date/signed amount,no,Already represented; not added
+account,87,MP-account-87,Operation ID/date/signed amount,no,Already represented; not added
+account,88,MP-account-88,Operation ID/date/signed amount,no,Already represented; not added
+account,89,MP-account-89,Operation ID/date/signed amount,no,Already represented; not added
+account,90,MP-account-90,Operation ID/date/signed amount,no,Already represented; not added
+account,91,MP-account-91,Operation ID/date/signed amount,no,Already represented; not added
+account,92,MP-account-92,Operation ID/date/signed amount,no,Already represented; not added
+account,93,MP-account-93,Operation ID/date/signed amount,no,Already represented; not added
+account,94,MP-account-94,Operation ID/date/signed amount,no,Already represented; not added
+account,95,MP-account-95,Operation ID/date/signed amount,no,Already represented; not added
+account,96,MP-account-96,Operation ID/date/signed amount,no,Already represented; not added
+account,97,MP-account-97,Operation ID/date/signed amount,no,Already represented; not added
+account,98,MP-account-98,Operation ID/date/signed amount,no,Already represented; not added
+account,99,MP-account-99,Operation ID/date/signed amount,no,Already represented; not added
+account,100,MP-account-100,Operation ID/date/signed amount,no,Already represented; not added
+account,101,MP-account-101,Operation ID/date/signed amount,no,Already represented; not added
+account,102,MP-account-102,Operation ID/date/signed amount,no,Already represented; not added
+account,103,MP-account-103,Operation ID/date/signed amount,no,Already represented; not added
+account,104,MP-account-104,Operation ID/date/signed amount,no,Already represented; not added
+account,105,MP-account-105,Operation ID/date/signed amount,no,Already represented; not added
+account,106,MP-account-106,Operation ID/date/signed amount,no,Already represented; not added
+account,107,MP-account-107,Operation ID/date/signed amount,no,Already represented; not added
+account,108,MP-account-108,Operation ID/date/signed amount,no,Already represented; not added
+account,109,MP-account-109,Operation ID/date/signed amount,no,Already represented; not added
+account,110,MP-account-110,Operation ID/date/signed amount,no,Already represented; not added
+account,111,MP-account-112,Operation ID/date/signed amount,no,Already represented; not added
+account,112,MP-account-113,Operation ID/date/signed amount,no,Already represented; not added
+account,113,MP-account-114,Operation ID/date/signed amount,no,Already represented; not added
+account,114,MP-account-115,Operation ID/date/signed amount,no,Already represented; not added
+account,115,MP-account-116,Operation ID/date/signed amount,no,Already represented; not added
+account,116,MP-account-117,Operation ID/date/signed amount,no,Already represented; not added
+account,117,MP-account-118,Operation ID/date/signed amount,no,Already represented; not added
+account,118,MP-account-119,Operation ID/date/signed amount,no,Already represented; not added
+account,119,MP-account-120,Operation ID/date/signed amount,no,Already represented; not added
+account,120,MP-account-121,Operation ID/date/signed amount,no,Already represented; not added
+account,121,MP-account-122,Operation ID/date/signed amount,yes,Already represented; not added
+account,122,MP-account-123,Operation ID/date/signed amount,no,Already represented; not added
+account,123,MP-account-124,Operation ID/date/signed amount,no,Already represented; not added
+account,124,MP-account-126,Operation ID/date/signed amount,no,Already represented; not added
+account,125,MP-account-127,Operation ID/date/signed amount,no,Already represented; not added
+account,126,MP-account-128,Operation ID/date/signed amount,no,Already represented; not added
+account,127,MP-account-129,Operation ID/date/signed amount,no,Already represented; not added
+account,128,MP-account-130,Operation ID/date/signed amount,no,Already represented; not added
+account,129,MP-account-131,Operation ID/date/signed amount,no,Already represented; not added
+account,130,MP-account-132,Operation ID/date/signed amount,no,Already represented; not added
+account,131,MP-account-133,Operation ID/date/signed amount,no,Already represented; not added
+account,132,MP-account-134,Operation ID/date/signed amount,no,Already represented; not added
+account,133,MP-account-135,Operation ID/date/signed amount,no,Already represented; not added
+account,134,MP-account-136,Operation ID/date/signed amount,no,Already represented; not added
+account,135,MP-account-137,Operation ID/date/signed amount,no,Already represented; not added
+account,136,MP-account-138,Operation ID/date/signed amount,no,Already represented; not added
+account,137,MP-account-139,Operation ID/date/signed amount,no,Already represented; not added
+account,138,MP-account-140,Operation ID/date/signed amount,no,Already represented; not added
+account,139,MP-account-141,Operation ID/date/signed amount,no,Already represented; not added
+account,140,MP-account-142,Operation ID/date/signed amount,no,Already represented; not added
+account,141,MP-account-143,Operation ID/date/signed amount,no,Already represented; not added
+account,142,MP-account-144,Operation ID/date/signed amount,no,Already represented; not added
+account,143,MP-account-145,Operation ID/date/signed amount,no,Already represented; not added
+account,144,MP-account-146,Operation ID/date/signed amount,no,Already represented; not added
+account,145,MP-account-147,Operation ID/date/signed amount,no,Already represented; not added
+account,146,MP-account-148,Operation ID/date/signed amount,no,Already represented; not added
+account,147,MP-account-149,Operation ID/date/signed amount,no,Already represented; not added
+account,148,MP-account-150,Operation ID/date/signed amount,no,Already represented; not added
+account,149,MP-account-151,Operation ID/date/signed amount,no,Already represented; not added
+account,150,MP-account-152,Operation ID/date/signed amount,no,Already represented; not added
+account,151,MP-account-153,Operation ID/date/signed amount,no,Already represented; not added
+account,152,MP-account-154,Operation ID/date/signed amount,no,Already represented; not added
+account,153,MP-account-155,Operation ID/date/signed amount,no,Already represented; not added
+account,154,MP-account-156,Operation ID/date/signed amount,no,Already represented; not added
+account,155,MP-account-157,Operation ID/date/signed amount,no,Already represented; not added
+account,156,MP-account-158,Operation ID/date/signed amount,no,Already represented; not added
+account,157,MP-account-159,Operation ID/date/signed amount,no,Already represented; not added
+account,158,MP-account-160,Operation ID/date/signed amount,no,Already represented; not added
+account,159,MP-account-161,Operation ID/date/signed amount,no,Already represented; not added
+account,160,MP-account-162,Operation ID/date/signed amount,no,Already represented; not added
+account,161,MP-account-163,Operation ID/date/signed amount,no,Already represented; not added
+account,162,MP-account-164,Operation ID/date/signed amount,no,Already represented; not added
+account,163,MP-account-165,Operation ID/date/signed amount,no,Already represented; not added
+account,164,MP-account-167,Operation ID/date/signed amount,no,Already represented; not added
+account,165,MP-account-168,Operation ID/date/signed amount,no,Already represented; not added
+account,166,MP-account-169,Operation ID/date/signed amount,yes,Already represented; not added
+account,167,MP-account-170,Operation ID/date/signed amount,no,Already represented; not added
+account,168,MP-account-171,Operation ID/date/signed amount,no,Already represented; not added
+account,169,MP-account-172,Operation ID/date/signed amount,no,Already represented; not added
+account,170,MP-account-173,Operation ID/date/signed amount,no,Already represented; not added
+account,171,MP-account-174,Operation ID/date/signed amount,no,Already represented; not added
+account,172,MP-account-175,Operation ID/date/signed amount,no,Already represented; not added
+account,173,MP-account-176,Operation ID/date/signed amount,no,Already represented; not added
+account,174,MP-account-177,Operation ID/date/signed amount,no,Already represented; not added
+account,175,MP-account-178,Operation ID/date/signed amount,no,Already represented; not added
+account,176,MP-account-179,Operation ID/date/signed amount,no,Already represented; not added
+account,177,MP-account-180,Operation ID/date/signed amount,no,Already represented; not added
+account,178,MP-account-181,Operation ID/date/signed amount,no,Already represented; not added
+account,179,MP-account-182,Operation ID/date/signed amount,no,Already represented; not added
+account,180,MP-account-183,Operation ID/date/signed amount,no,Already represented; not added
+account,181,MP-account-184,Operation ID/date/signed amount,no,Already represented; not added
+account,182,MP-account-186,Operation ID/date/signed amount,no,Already represented; not added
+account,183,MP-account-187,Operation ID/date/signed amount,no,Already represented; not added
+account,184,MP-account-188,Operation ID/date/signed amount,no,Already represented; not added
+account,185,MP-account-189,Operation ID/date/signed amount,no,Already represented; not added
+account,186,MP-account-190,Operation ID/date/signed amount,no,Already represented; not added
+account,187,MP-account-191,Operation ID/date/signed amount,no,Already represented; not added
+account,188,MP-account-192,Operation ID/date/signed amount,no,Already represented; not added
+account,189,MP-account-193,Operation ID/date/signed amount,no,Already represented; not added
+account,190,MP-account-194,Operation ID/date/signed amount,no,Already represented; not added
+account,191,MP-account-195,Operation ID/date/signed amount,no,Already represented; not added
+account,192,MP-account-197,Operation ID/date/signed amount,no,Already represented; not added
+account,193,MP-account-198,Operation ID/date/signed amount,no,Already represented; not added
+account,194,MP-account-199,Operation ID/date/signed amount,no,Already represented; not added
+account,195,MP-account-200,Operation ID/date/signed amount,no,Already represented; not added
+account,196,MP-account-201,Operation ID/date/signed amount,no,Already represented; not added
+account,197,MP-account-202,Operation ID/date/signed amount,no,Already represented; not added
+account,198,MP-account-203,Operation ID/date/signed amount,no,Already represented; not added
+account,199,MP-account-204,Operation ID/date/signed amount,no,Already represented; not added
+account,200,MP-account-205,Operation ID/date/signed amount,no,Already represented; not added
+account,201,MP-account-206,Operation ID/date/signed amount,no,Already represented; not added
+account,202,MP-account-207,Operation ID/date/signed amount,no,Already represented; not added
+account,203,MP-account-208,Operation ID/date/signed amount,no,Already represented; not added
+account,204,MP-account-209,Operation ID/date/signed amount,no,Already represented; not added
+account,205,MP-account-210,Operation ID/date/signed amount,no,Already represented; not added
+account,206,MP-account-211,Operation ID/date/signed amount,no,Already represented; not added
+account,207,MP-account-212,Operation ID/date/signed amount,no,Already represented; not added
+account,208,MP-account-213,Operation ID/date/signed amount,no,Already represented; not added
+account,209,MP-account-214,Operation ID/date/signed amount,no,Already represented; not added
+account,210,MP-account-215,Operation ID/date/signed amount,no,Already represented; not added
+account,211,MP-account-216,Operation ID/date/signed amount,no,Already represented; not added
+account,212,MP-account-217,Operation ID/date/signed amount,no,Already represented; not added
+account,213,MP-account-218,Operation ID/date/signed amount,no,Already represented; not added
+account,214,MP-account-219,Operation ID/date/signed amount,no,Already represented; not added
+account,215,MP-account-220,Operation ID/date/signed amount,no,Already represented; not added
+account,216,MP-account-221,Operation ID/date/signed amount,no,Already represented; not added
+account,217,MP-account-222,Operation ID/date/signed amount,no,Already represented; not added
+account,218,MP-account-223,Operation ID/date/signed amount,no,Already represented; not added
+account,219,MP-account-224,Operation ID/date/signed amount,no,Already represented; not added
+account,220,MP-account-225,Operation ID/date/signed amount,no,Already represented; not added
+account,221,MP-account-226,Operation ID/date/signed amount,no,Already represented; not added
+account,222,MP-account-227,Operation ID/date/signed amount,no,Already represented; not added
+account,223,MP-account-228,Operation ID/date/signed amount,no,Already represented; not added
+account,224,MP-account-229,Operation ID/date/signed amount,no,Already represented; not added
+account,225,MP-account-230,Operation ID/date/signed amount,no,Already represented; not added
+account,226,MP-account-231,Operation ID/date/signed amount,no,Already represented; not added
+account,227,MP-account-233,Operation ID/date/signed amount,no,Already represented; not added
+account,228,MP-account-234,Operation ID/date/signed amount,no,Already represented; not added
+account,229,MP-account-235,Operation ID/date/signed amount,no,Already represented; not added
+account,230,MP-account-236,Operation ID/date/signed amount,no,Already represented; not added
+account,231,MP-account-237,Operation ID/date/signed amount,no,Already represented; not added
+account,232,MP-account-239,Operation ID/date/signed amount,no,Already represented; not added
+account,233,MP-account-240,Operation ID/date/signed amount,no,Already represented; not added
+account,234,MP-account-241,Operation ID/date/signed amount,no,Already represented; not added
+account,235,MP-account-242,Operation ID/date/signed amount,no,Already represented; not added
+account,236,MP-account-243,Operation ID/date/signed amount,no,Already represented; not added
+account,237,MP-account-244,Operation ID/date/signed amount,no,Already represented; not added
+account,238,MP-account-245,Operation ID/date/signed amount,no,Already represented; not added
+account,239,MP-account-246,Operation ID/date/signed amount,no,Already represented; not added
+account,240,MP-account-247,Operation ID/date/signed amount,no,Already represented; not added
+account,241,MP-account-248,Operation ID/date/signed amount,no,Already represented; not added
+account,242,MP-account-249,Operation ID/date/signed amount,no,Already represented; not added
+account,243,MP-account-250,Operation ID/date/signed amount,no,Already represented; not added
+account,244,MP-account-251,Operation ID/date/signed amount,no,Already represented; not added
+account,245,MP-account-252,Operation ID/date/signed amount,no,Already represented; not added
+account,246,MP-account-253,Operation ID/date/signed amount,no,Already represented; not added
+account,247,MP-account-254,Operation ID/date/signed amount,no,Already represented; not added
+account,248,MP-account-255,Operation ID/date/signed amount,no,Already represented; not added
+account,249,MP-account-256,Operation ID/date/signed amount,no,Already represented; not added
+account,250,MP-account-257,Operation ID/date/signed amount,no,Already represented; not added
+account,251,MP-account-258,Operation ID/date/signed amount,no,Already represented; not added
+account,252,MP-account-259,Operation ID/date/signed amount,no,Already represented; not added
+account,253,MP-account-260,Operation ID/date/signed amount,no,Already represented; not added
+account,254,MP-account-261,Operation ID/date/signed amount,no,Already represented; not added
+account,255,MP-account-262,Operation ID/date/signed amount,no,Already represented; not added
+account,256,MP-account-263,Operation ID/date/signed amount,no,Already represented; not added
+account,257,MP-account-264,Operation ID/date/signed amount,no,Already represented; not added
+account,258,MP-account-265,Operation ID/date/signed amount,no,Already represented; not added
+account,259,MP-account-266,Operation ID/date/signed amount,no,Already represented; not added
+account,260,MP-account-267,Operation ID/date/signed amount,no,Already represented; not added
+account,261,MP-account-268,Operation ID/date/signed amount,no,Already represented; not added
+account,262,MP-account-269,Operation ID/date/signed amount,no,Already represented; not added
+account,263,MP-account-271,Operation ID/date/signed amount,no,Already represented; not added
+account,264,MP-account-272,Operation ID/date/signed amount,no,Already represented; not added
+account,265,MP-account-273,Operation ID/date/signed amount,no,Already represented; not added
+account,266,MP-account-274,Operation ID/date/signed amount,no,Already represented; not added
+account,267,MP-account-275,Operation ID/date/signed amount,no,Already represented; not added
+account,268,MP-account-276,Operation ID/date/signed amount,no,Already represented; not added
+account,269,MP-account-277,Operation ID/date/signed amount,no,Already represented; not added
+account,270,MP-account-278,Operation ID/date/signed amount,no,Already represented; not added
+account,271,MP-account-279,Operation ID/date/signed amount,no,Already represented; not added
+account,272,MP-account-280,Operation ID/date/signed amount,no,Already represented; not added
+account,273,MP-account-281,Operation ID/date/signed amount,no,Already represented; not added
+account,274,MP-account-282,Operation ID/date/signed amount,no,Already represented; not added
+account,275,MP-account-283,Operation ID/date/signed amount,no,Already represented; not added
+account,276,MP-account-284,Operation ID/date/signed amount,no,Already represented; not added
+account,277,MP-account-285,Operation ID/date/signed amount,no,Already represented; not added
+account,278,MP-account-286,Operation ID/date/signed amount,no,Already represented; not added
+account,279,MP-account-287,Operation ID/date/signed amount,no,Already represented; not added
+account,280,MP-account-288,Operation ID/date/signed amount,no,Already represented; not added
+account,281,MP-account-289,Operation ID/date/signed amount,no,Already represented; not added
+account,282,MP-account-290,Operation ID/date/signed amount,no,Already represented; not added
+account,283,MP-account-291,Operation ID/date/signed amount,no,Already represented; not added
+account,284,MP-account-292,Operation ID/date/signed amount,no,Already represented; not added
+account,285,MP-account-293,Operation ID/date/signed amount,no,Already represented; not added
+account,286,MP-account-294,Operation ID/date/signed amount,no,Already represented; not added
+account,287,MP-account-295,Operation ID/date/signed amount,no,Already represented; not added
+account,288,MP-account-296,Operation ID/date/signed amount,no,Already represented; not added
+account,289,MP-account-297,Operation ID/date/signed amount,no,Already represented; not added
+account,290,MP-account-298,Operation ID/date/signed amount,no,Already represented; not added
+account,291,MP-account-299,Operation ID/date/signed amount,no,Already represented; not added
+account,292,MP-account-300,Operation ID/date/signed amount,no,Already represented; not added
+account,293,MP-account-301,Operation ID/date/signed amount,no,Already represented; not added
+account,294,MP-account-302,Operation ID/date/signed amount,no,Already represented; not added
+account,295,MP-account-303,Operation ID/date/signed amount,no,Already represented; not added
+account,296,MP-account-304,Operation ID/date/signed amount,no,Already represented; not added
+account,297,MP-account-305,Operation ID/date/signed amount,no,Already represented; not added
+account,298,MP-account-306,Operation ID/date/signed amount,no,Already represented; not added
+account,299,MP-account-307,Operation ID/date/signed amount,no,Already represented; not added
+account,300,MP-account-308,Operation ID/date/signed amount,no,Already represented; not added
+account,301,MP-account-309,Operation ID/date/signed amount,no,Already represented; not added
+account,302,MP-account-310,Operation ID/date/signed amount,no,Already represented; not added
+account,303,MP-account-311,Operation ID/date/signed amount,no,Already represented; not added
+account,304,MP-account-312,Operation ID/date/signed amount,no,Already represented; not added
+account,305,MP-account-313,Operation ID/date/signed amount,no,Already represented; not added
+account,306,MP-account-314,Operation ID/date/signed amount,no,Already represented; not added
+account,307,MP-account-315,Operation ID/date/signed amount,no,Already represented; not added
+account,308,MP-account-316,Operation ID/date/signed amount,no,Already represented; not added
+account,309,MP-account-317,Operation ID/date/signed amount,no,Already represented; not added
+account,310,MP-account-318,Operation ID/date/signed amount,no,Already represented; not added
+account,311,MP-account-319,Operation ID/date/signed amount,no,Already represented; not added
+account,312,MP-account-320,Operation ID/date/signed amount,no,Already represented; not added
+account,313,MP-account-321,Operation ID/date/signed amount,no,Already represented; not added
+account,314,MP-account-322,Operation ID/date/signed amount,no,Already represented; not added
+account,315,MP-account-323,Operation ID/date/signed amount,no,Already represented; not added
+account,316,MP-account-324,Operation ID/date/signed amount,no,Already represented; not added
+account,317,MP-account-325,Operation ID/date/signed amount,no,Already represented; not added
+account,318,MP-account-326,Operation ID/date/signed amount,no,Already represented; not added
+account,319,MP-account-327,Operation ID/date/signed amount,no,Already represented; not added
+account,320,MP-account-328,Operation ID/date/signed amount,no,Already represented; not added
+account,321,MP-account-329,Operation ID/date/signed amount,no,Already represented; not added
+account,322,MP-account-330,Operation ID/date/signed amount,no,Already represented; not added
+account,323,MP-account-331,Operation ID/date/signed amount,no,Already represented; not added
+account,324,MP-account-332,Operation ID/date/signed amount,no,Already represented; not added
+account,325,MP-account-333,Operation ID/date/signed amount,no,Already represented; not added
+account,326,MP-account-334,Operation ID/date/signed amount,no,Already represented; not added
+account,327,MP-account-335,Operation ID/date/signed amount,no,Already represented; not added
+account,328,MP-account-336,Operation ID/date/signed amount,no,Already represented; not added
+account,329,MP-account-337,Operation ID/date/signed amount,no,Already represented; not added
+account,330,MP-account-338,Operation ID/date/signed amount,no,Already represented; not added
+account,331,MP-account-339,Operation ID/date/signed amount,no,Already represented; not added
+account,332,MP-account-340,Operation ID/date/signed amount,no,Already represented; not added
+account,333,MP-account-341,Operation ID/date/signed amount,no,Already represented; not added
+account,334,MP-account-342,Operation ID/date/signed amount,no,Already represented; not added
+account,335,MP-account-343,Operation ID/date/signed amount,no,Already represented; not added
+account,336,MP-account-344,Operation ID/date/signed amount,no,Already represented; not added
+account,337,MP-account-345,Operation ID/date/signed amount,no,Already represented; not added
+account,338,MP-account-346,Operation ID/date/signed amount,no,Already represented; not added
+account,339,MP-account-347,Operation ID/date/signed amount,no,Already represented; not added
+account,340,MP-account-348,Operation ID/date/signed amount,no,Already represented; not added
+account,341,MP-account-349,Operation ID/date/signed amount,no,Already represented; not added
+account,342,MP-account-350,Operation ID/date/signed amount,no,Already represented; not added
+account,343,MP-account-351,Operation ID/date/signed amount,no,Already represented; not added
+account,344,MP-account-352,Operation ID/date/signed amount,no,Already represented; not added
+account,345,MP-account-353,Operation ID/date/signed amount,no,Already represented; not added
+account,346,MP-account-354,Operation ID/date/signed amount,no,Already represented; not added
+account,347,MP-account-355,Operation ID/date/signed amount,no,Already represented; not added
+account,348,MP-account-356,Operation ID/date/signed amount,no,Already represented; not added
+account,349,MP-account-357,Operation ID/date/signed amount,no,Already represented; not added
+account,350,MP-account-358,Operation ID/date/signed amount,no,Already represented; not added
+account,351,MP-account-359,Operation ID/date/signed amount,no,Already represented; not added
+account,352,MP-account-360,Operation ID/date/signed amount,no,Already represented; not added
+account,353,MP-account-361,Operation ID/date/signed amount,no,Already represented; not added
+account,354,MP-account-362,Operation ID/date/signed amount,no,Already represented; not added
+account,355,MP-account-363,Operation ID/date/signed amount,yes,Already represented; not added
+account,356,MP-account-364,Operation ID/date/signed amount,no,Already represented; not added
+account,357,MP-account-365,Operation ID/date/signed amount,no,Already represented; not added
+account,358,MP-account-366,Operation ID/date/signed amount,no,Already represented; not added
+account,359,MP-account-367,Operation ID/date/signed amount,no,Already represented; not added
+account,360,MP-account-368,Operation ID/date/signed amount,no,Already represented; not added
+account,361,MP-account-369,Operation ID/date/signed amount,no,Already represented; not added
+account,362,MP-account-370,Operation ID/date/signed amount,no,Already represented; not added
+account,363,MP-account-371,Operation ID/date/signed amount,no,Already represented; not added
+account,364,MP-account-372,Operation ID/date/signed amount,no,Already represented; not added
+account,365,MP-account-373,Operation ID/date/signed amount,no,Already represented; not added
+account,366,MP-account-374,Operation ID/date/signed amount,no,Already represented; not added
+account,367,MP-account-375,Operation ID/date/signed amount,no,Already represented; not added
+account,368,MP-account-376,Operation ID/date/signed amount,no,Already represented; not added
+account,369,MP-account-377,Operation ID/date/signed amount,no,Already represented; not added
+account,370,MP-account-378,Operation ID/date/signed amount,no,Already represented; not added
+account,371,MP-account-379,Operation ID/date/signed amount,no,Already represented; not added
+account,372,MP-account-380,Operation ID/date/signed amount,no,Already represented; not added
+account,373,MP-account-381,Operation ID/date/signed amount,no,Already represented; not added
+account,374,MP-account-382,Operation ID/date/signed amount,no,Already represented; not added
+account,375,MP-account-383,Operation ID/date/signed amount,no,Already represented; not added
+account,376,MP-account-384,Operation ID/date/signed amount,no,Already represented; not added
+account,377,MP-account-385,Operation ID/date/signed amount,no,Already represented; not added
+account,378,MP-account-386,Operation ID/date/signed amount,no,Already represented; not added
+account,379,MP-account-387,Operation ID/date/signed amount,no,Already represented; not added
+account,380,MP-account-388,Operation ID/date/signed amount,no,Already represented; not added
+account,381,MP-account-389,Operation ID/date/signed amount,no,Already represented; not added
+account,382,MP-account-390,Operation ID/date/signed amount,no,Already represented; not added
+account,383,MP-account-391,Operation ID/date/signed amount,no,Already represented; not added
+account,384,MP-account-392,Operation ID/date/signed amount,no,Already represented; not added
+account,385,MP-account-393,Operation ID/date/signed amount,no,Already represented; not added
+account,386,MP-account-394,Operation ID/date/signed amount,no,Already represented; not added
+account,387,MP-account-395,Operation ID/date/signed amount,no,Already represented; not added
+account,388,MP-account-396,Operation ID/date/signed amount,no,Already represented; not added
+account,389,MP-account-397,Operation ID/date/signed amount,no,Already represented; not added
+account,390,MP-account-398,Operation ID/date/signed amount,no,Already represented; not added
+account,391,MP-account-399,Operation ID/date/signed amount,no,Already represented; not added
+account,392,MP-account-400,Operation ID/date/signed amount,no,Already represented; not added
+account,393,MP-account-401,Operation ID/date/signed amount,no,Already represented; not added
+account,394,MP-account-402,Operation ID/date/signed amount,no,Already represented; not added
+account,395,MP-account-403,Operation ID/date/signed amount,no,Already represented; not added
+account,396,MP-account-404,Operation ID/date/signed amount,no,Already represented; not added
+account,397,MP-account-405,Operation ID/date/signed amount,no,Already represented; not added
+account,398,MP-account-406,Operation ID/date/signed amount,no,Already represented; not added
+account,399,MP-account-407,Operation ID/date/signed amount,no,Already represented; not added
+account,400,MP-account-408,Operation ID/date/signed amount,no,Already represented; not added
+account,401,MP-account-409,Operation ID/date/signed amount,no,Already represented; not added
+account,402,MP-account-410,Operation ID/date/signed amount,no,Already represented; not added
+account,403,MP-account-411,Operation ID/date/signed amount,no,Already represented; not added
+account,404,MP-account-412,Operation ID/date/signed amount,no,Already represented; not added
+account,405,MP-account-413,Operation ID/date/signed amount,no,Already represented; not added
+account,406,MP-account-414,Operation ID/date/signed amount,no,Already represented; not added
+account,407,MP-account-415,Operation ID/date/signed amount,no,Already represented; not added
+account,408,MP-account-416,Operation ID/date/signed amount,no,Already represented; not added
+account,409,MP-account-417,Operation ID/date/signed amount,no,Already represented; not added
+account,410,MP-account-418,Operation ID/date/signed amount,no,Already represented; not added
+account,411,MP-account-419,Operation ID/date/signed amount,no,Already represented; not added
+account,412,MP-account-420,Operation ID/date/signed amount,no,Already represented; not added
+account,413,MP-account-421,Operation ID/date/signed amount,no,Already represented; not added
+account,414,MP-account-422,Operation ID/date/signed amount,no,Already represented; not added
+account,415,MP-account-423,Operation ID/date/signed amount,no,Already represented; not added
+account,416,MP-account-424,Operation ID/date/signed amount,no,Already represented; not added
+account,417,MP-account-425,Operation ID/date/signed amount,no,Already represented; not added
+account,418,MP-account-426,Operation ID/date/signed amount,no,Already represented; not added
+account,419,MP-account-427,Operation ID/date/signed amount,no,Already represented; not added
+account,420,MP-account-428,Operation ID/date/signed amount,no,Already represented; not added
+account,421,MP-account-429,Operation ID/date/signed amount,no,Already represented; not added
+account,422,MP-account-430,Operation ID/date/signed amount,no,Already represented; not added
+account,423,MP-account-431,Operation ID/date/signed amount,no,Already represented; not added
+account,424,MP-account-432,Operation ID/date/signed amount,no,Already represented; not added
+account,425,MP-account-433,Operation ID/date/signed amount,no,Already represented; not added
+account,426,MP-account-434,Operation ID/date/signed amount,no,Already represented; not added
+account,427,MP-account-435,Operation ID/date/signed amount,no,Already represented; not added
+account,428,MP-account-436,Operation ID/date/signed amount,no,Already represented; not added
+account,429,MP-account-437,Operation ID/date/signed amount,no,Already represented; not added
+account,430,MP-account-438,Operation ID/date/signed amount,no,Already represented; not added
+account,431,MP-account-439,Operation ID/date/signed amount,no,Already represented; not added
+account,432,MP-account-440,Operation ID/date/signed amount,no,Already represented; not added
+account,433,MP-account-441,Operation ID/date/signed amount,no,Already represented; not added
+account,434,MP-account-442,Operation ID/date/signed amount,no,Already represented; not added
+account,435,MP-account-443,Operation ID/date/signed amount,no,Already represented; not added
+account,436,MP-account-444,Operation ID/date/signed amount,no,Already represented; not added
+account,437,MP-account-445,Operation ID/date/signed amount,no,Already represented; not added
+account,438,MP-account-446,Operation ID/date/signed amount,no,Already represented; not added
+account,439,MP-account-447,Operation ID/date/signed amount,no,Already represented; not added
+account,440,MP-account-448,Operation ID/date/signed amount,no,Already represented; not added
+account,441,MP-account-449,Operation ID/date/signed amount,no,Already represented; not added
+account,442,MP-account-450,Operation ID/date/signed amount,no,Already represented; not added
+account,443,MP-account-451,Operation ID/date/signed amount,no,Already represented; not added
+account,444,MP-account-452,Operation ID/date/signed amount,no,Already represented; not added
+account,445,MP-account-453,Operation ID/date/signed amount,no,Already represented; not added
+account,446,MP-account-454,Operation ID/date/signed amount,no,Already represented; not added
+account,447,MP-account-455,Operation ID/date/signed amount,no,Already represented; not added
+account,448,MP-account-456,Operation ID/date/signed amount,no,Already represented; not added
+account,449,MP-account-457,Operation ID/date/signed amount,no,Already represented; not added
+account,450,MP-account-458,Operation ID/date/signed amount,no,Already represented; not added
+account,451,MP-account-459,Operation ID/date/signed amount,no,Already represented; not added
+account,452,MP-account-460,Operation ID/date/signed amount,no,Already represented; not added
+account,453,MP-account-461,Operation ID/date/signed amount,no,Already represented; not added
+account,454,MP-account-462,Operation ID/date/signed amount,no,Already represented; not added
+account,455,MP-account-463,Operation ID/date/signed amount,no,Already represented; not added
+account,456,MP-account-464,Operation ID/date/signed amount,no,Already represented; not added
+account,457,MP-account-465,Operation ID/date/signed amount,no,Already represented; not added
+account,458,MP-account-466,Operation ID/date/signed amount,no,Already represented; not added
+account,459,MP-account-467,Operation ID/date/signed amount,no,Already represented; not added
+account,460,MP-account-468,Operation ID/date/signed amount,no,Already represented; not added
+account,461,MP-account-469,Operation ID/date/signed amount,no,Already represented; not added
+account,462,MP-account-470,Operation ID/date/signed amount,no,Already represented; not added
+account,463,MP-account-471,Operation ID/date/signed amount,no,Already represented; not added
+account,464,MP-account-472,Operation ID/date/signed amount,no,Already represented; not added
+account,465,MP-account-473,Operation ID/date/signed amount,no,Already represented; not added
+account,466,MP-account-474,Operation ID/date/signed amount,no,Already represented; not added
+account,467,MP-account-475,Operation ID/date/signed amount,no,Already represented; not added
+account,468,MP-account-476,Operation ID/date/signed amount,no,Already represented; not added
+account,469,MP-account-477,Operation ID/date/signed amount,no,Already represented; not added
+account,470,MP-account-478,Operation ID/date/signed amount,no,Already represented; not added
+account,471,MP-account-479,Operation ID/date/signed amount,no,Already represented; not added
+account,472,MP-account-480,Operation ID/date/signed amount,no,Already represented; not added
+account,473,MP-account-481,Operation ID/date/signed amount,no,Already represented; not added
