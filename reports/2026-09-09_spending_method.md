@@ -108,7 +108,7 @@ Run `make regen` afterwards to refresh `bloomberg-terminal.html`.
 - 45 duplicate raw records across overlapping statement exports were skipped.
 - 11 genuinely new raw records were imported (mostly the July BB statement and a few MP account lines not in the previous ledger).
 - 7 refund pairs were detected and netted (Mercado Livre partial refunds and other purchase/refund pairs).
-- The resulting included total is **R$ 288,283.73**.
+- The resulting included total is **R$ 282,283.73**.
 - 8 review answers from `2026-09-09_spending_review.csv` were applied.
 - `make regen` passed: `[ok] all 21 spot-checks passed`.
 
@@ -127,3 +127,8 @@ Run `make regen` afterwards to refresh `bloomberg-terminal.html`.
 - `raw/` is missing the original PDF/CSV statements for MP card Jul/Ago/Set and post-June MP account statements, and for most BB months. The current ledger retains these records as legacy data, but they cannot be independently re-imported until the originals are saved.
 - The duplicate-key warning still flags a few records that look like real duplicates or overlapping statement exports (e.g. `COMPUTER` on 04/09 and 30/08, `TELEFONICA BRASIL S.A.` on 2026-01-30, `PERPLEXITY` on 2026-06-04, and the two Mercado Livre refund records). These are not double-counted in the total; review the list if you want to clean them up.
 
+
+
+## Superseding user correction — 2026-09-09
+
+The four SOP-BAIRRO BESSA withdrawals (BB-01183 through BB-01186), totaling R$6000, are EXCLUDED from spending at the user’s request. Original amounts and records retained. This overrides earlier CAR decisions and the prior total of R$288283.73. Current included total: R$282283.73. BB081 now defers future ATM withdrawals; BB081-EX1 through EX4 exclude only the reviewed transaction references. No blanket CAR rule remains.

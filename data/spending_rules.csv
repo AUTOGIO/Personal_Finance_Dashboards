@@ -163,4 +163,8 @@ BB080,BB,counterparty_contains,JOSE CARLOS GIOVANNINI,Family transfer - excluded
 MPA022,MP account,description_contains,CARTAO DE CREDITO,Credit-card bill payment,exclude,"Credit card settlement, not additional spending",MP account card bill payment (short form)
 MPA023,MP account,description_contains,PIX RECEBIDA EDUARDO F GIOVANNINI,Self-transfer - excluded,exclude,Own-account transfer; not consumption,Inbound self-transfer to MP account
 MPA024,MP account,description_contains,TRANSFERENCIA PIX RECEBIDA EDUARDO F GIOVANNINI,Self-transfer - excluded,exclude,Own-account transfer; not consumption,Inbound self-transfer to MP account (long form)
-BB081,BB,description_contains,SOP-BAIRRO BESSA,CAR,include,user-confirmed category via review REV-001..REV-004,Gas station/car expenses confirmed by user in review table
+BB081-EX1,BB,identifier_contains,21601589999999,ATM withdrawals - excluded,exclude,User correction 2026-09-09: keep these four withdrawals out,Specific original transaction reference only; supersedes CAR classification.
+BB081-EX2,BB,identifier_contains,21604159999999,ATM withdrawals - excluded,exclude,User correction 2026-09-09: keep these four withdrawals out,Specific original transaction reference only; supersedes CAR classification.
+BB081-EX3,BB,identifier_contains,21607029999999,ATM withdrawals - excluded,exclude,User correction 2026-09-09: keep these four withdrawals out,Specific original transaction reference only; supersedes CAR classification.
+BB081-EX4,BB,identifier_contains,31320249999999,ATM withdrawals - excluded,exclude,User correction 2026-09-09: keep these four withdrawals out,Specific original transaction reference only; supersedes CAR classification.
+BB081,BB,description_contains,SOP-BAIRRO BESSA,UNKNOWN - CHECK,defer,No automatic CAR inference for future ATM withdrawals,Only four reviewed withdrawals excluded by specific reference rules; future withdrawals require purpose confirmation.

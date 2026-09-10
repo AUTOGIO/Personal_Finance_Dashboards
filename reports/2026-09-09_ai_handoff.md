@@ -61,7 +61,7 @@ new dated ledger/review/monthly CSVs.
 - 11 genuinely new raw records imported (mostly July BB statement).
 - 7 refund pairs detected and netted (including Mercado Livre partial refunds).
 - 8 review answers applied from `reports/2026-09-09_spending_review.csv`.
-- Included total: **R$ 288,283.73** (up R$6,000 from the previous clean ledger due to four new BB `SOP-BAIRRO BESSA` `CAR` records; all other changes were category reclassifications or exclusions with no total change).
+- Included total after the superseding ATM correction below: **R$ 282,283.73**. The four new BB withdrawals remain in the ledger with zero included spending.
 - `make regen` passed: `[ok] all 21 spot-checks passed`.
 
 ## Known open items
@@ -73,7 +73,7 @@ new dated ledger/review/monthly CSVs.
 - A few duplicate-key warnings remain for records that look like overlapping
   statement exports (e.g. `COMPUTER` on 04/09 and 30/08, `TELEFONICA BRASIL
   S.A.` on 2026-01-30, `PERPLEXITY` on 2026-06-04, and the two Mercado Livre
-  refund records). They are not double-counted in the total.
+  refund records). These warnings are not proof of duplication. The records remain included or excluded according to their saved classifications; their economic uniqueness has not been certified.
 
 ## Next task for another AI
 
@@ -90,3 +90,8 @@ If the user asks to continue, the next step is typically one of:
 
 Always run `make regen` after workflow changes and confirm the spot-checks pass.
 
+
+
+## Superseding user correction — 2026-09-09
+
+The four SOP-BAIRRO BESSA withdrawals (BB-01183 through BB-01186), totaling R$6000, are EXCLUDED from spending at the user’s request. Original amounts and records retained. This overrides earlier CAR decisions and the prior total of R$288283.73. Current included total: R$282283.73. BB081 now defers future ATM withdrawals; BB081-EX1 through EX4 exclude only the reviewed transaction references. No blanket CAR rule remains.

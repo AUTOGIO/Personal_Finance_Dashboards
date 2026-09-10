@@ -152,6 +152,22 @@ def fingerprint(tx):
     return "|".join(parts)
 
 
+def unique_raw_occurrences(txs):
+    """Deduplicate repeated exports, preserving multiplicity within each file."""
+    counts = Counter()
+    seen = set()
+    result = []
+    for tx in txs:
+        fp = fingerprint(tx)
+        file_key = (tx.get("source_reference", ""), fp)
+        counts[file_key] += 1
+        key = (fp, counts[file_key])
+        if key not in seen:
+            seen.add(key)
+            result.append(tx)
+    return result
+
+
 def merchants_match(a, b):
     """True if one stripped merchant contains the other (case-insensitive)."""
     a = strip_transaction_prefixes(a)
@@ -203,21 +219,23 @@ def ledger_row_matches_raw(tx, r):
         existing_amt = ddec(str(r.get("original_amount_brl", r.get("included_amount_brl", r.get("amount_brl", "0")))))
     except Exception:
         return False
-    amount_ok = abs(existing_amt - tx["original_amount_brl"]) <= Decimal("0.05")
-
-    # Pass 1: strict date + merchant + amount
-    if r.get("date") == tx.get("date") and amount_ok and merchants_match(r.get("merchant", ""), tx.get("merchant", "")):
-        return True
-
-    # Pass 2: excluded records by date + merchant (ignore amount)
-    if is_excluded_legacy(r) and r.get("date") == tx.get("date") and merchants_match(r.get("merchant", ""), tx.get("merchant", "")):
-        return True
-
-    # Pass 3: MP card by report_month + merchant + amount
-    if tx["source"] == "MP card" and r.get("report_month") == (tx.get("report_month") or invoice_month_from_date(tx.get("date"))):
-        if (amount_ok or is_excluded_legacy(r)) and merchants_match(r.get("merchant", ""), tx.get("merchant", "")):
-            return True
-    return False
+    amount_ok = existing_amt == tx["original_amount_brl"]
+    if tx["source"] == "MP card" and r.get("report_month") != tx.get("report_month"):
+        return False
+    old_ref = (r.get("_fingerprint") or "").rsplit("|", 1)[-1]
+    new_ref = tx.get("reference") or ""
+    if old_ref and new_ref and old_ref != new_ref:
+        return False
+    # A placeholder is not a recipient identity. Require an operation reference.
+    redacted = "REDACTED" in normalise_merchant(tx.get("merchant", ""))
+    if redacted and not (old_ref and new_ref and old_ref == new_ref):
+        return False
+    if r.get("date") != tx.get("date"):
+        return False
+    if not merchants_match(r.get("merchant", ""), tx.get("merchant", "")):
+        return False
+    # Legacy zero-valued exclusions lost their original amounts; recover once.
+    return amount_ok or (existing_amt == 0 and is_excluded_legacy(r))
 
 
 def find_matching_ledger_row(tx, existing_rows, allow_matched=False):
@@ -502,12 +520,17 @@ def match_rule(tx, rules):
     merchant = tx.get("merchant_norm", "")
     nm = normalise_merchant(merchant)
     for rule in rules:
+        if "REDACTED" in nm:
+            if (rule["match_type"] != "identifier_contains"
+                    or not tx.get("reference")
+                    or rule["match_value"] != tx["reference"]):
+                continue
         if rule["source"] != src and rule["source"] != "any":
             continue
         mt = rule["match_type"]
         mv = rule["match_value"]
         if mt == "exact_recipient":
-            if mv.upper() == nm or mv.upper() in nm:
+            if mv.upper() == nm:
                 return rule
         elif mt == "counterparty_contains":
             if mv.upper() in nm:
@@ -752,10 +775,11 @@ def main():
     if review_path_prev:
         print(f"[info] loaded previous review table: {review_path_prev.name}")
 
-    known_fps = {r["_fingerprint"] for r in canonical_existing if r["_fingerprint"]}
+    initial_record_ids = {r["record_id"] for r in canonical_existing}
 
     # Discover and parse raw transactions
-    raw_txs = discover_raw_transactions()
+    discovered_txs = discover_raw_transactions()
+    raw_txs = unique_raw_occurrences(discovered_txs)
     print(f"[info] discovered {len(raw_txs)} raw transactions")
     by_source = Counter(t["source"] for t in raw_txs)
     for src, n in sorted(by_source.items()):
@@ -764,13 +788,14 @@ def main():
     # Apply aliases and match against existing ledger rows to avoid duplicates
     new_txs = []
     matched_count = 0
-    duplicate_raw_count = 0
+    duplicate_raw_count = len(discovered_txs) - len(raw_txs)
     for tx in raw_txs:
         tx["merchant_norm"] = apply_aliases(tx["merchant"], aliases)
         tx["_fingerprint"] = fingerprint(tx)
         existing = find_matching_ledger_row(tx, canonical_existing)
         if existing:
             existing["_raw_matched"] = True
+            existing["_fingerprint"] = tx["_fingerprint"]
             existing["source_reference"] = tx.get("source_reference", "")
             # Preserve the original statement amount when the legacy ledger only
             # stored the included amount (0.00 for exclusions).
@@ -785,19 +810,11 @@ def main():
                 existing["merchant"] = tx["merchant_norm"]
             matched_count += 1
             continue
-        if tx["_fingerprint"] in known_fps:
-            matched_count += 1
-            continue
-        # Duplicate raw records: same transaction appears in more than one statement/
-        # export. Skip if it would match an already-matched ledger row.
-        if find_matching_ledger_row(tx, canonical_existing, allow_matched=True):
-            duplicate_raw_count += 1
-            continue
         new_txs.append(tx)
 
     print(f"[info] raw transactions matching existing ledger: {matched_count}")
     print(f"[info] duplicate raw records skipped: {duplicate_raw_count}")
-    print(f"[info] genuinely new raw transactions: {len(new_txs)}")
+    print(f"[info] raw candidates requiring refund/classification handling: {len(new_txs)}")
 
     # Refund detection on ALL raw transactions before matching to ledger,
     # because legacy clean_ledger does not preserve refund counterpart records.
@@ -879,6 +896,8 @@ def main():
 
             # Add each refund record (refund counterpart records are new raw data).
             for refund in refunds:
+                if find_matching_ledger_row(refund, canonical_existing, allow_matched=True):
+                    continue
                 refund_record = {
                     "record_id": make_record_id(refund["source"], seq),
                     "source": refund["source"],
@@ -955,8 +974,9 @@ def main():
     if args.legacy_fallback and existing_path.name != CURRENT_LEDGER_FALLBACK.name:
         clean_rows = load_current_clean_ledger()
         legacy = merge_legacy_ledger(clean_rows)
+        existing_ids = {r["record_id"] for r in canonical_existing}
         for r in legacy:
-            if r["_fingerprint"] not in known_fps:
+            if r["record_id"] not in existing_ids:
                 canonical_existing.append(r)
 
     # Apply answers from the previous review table now that all records exist.
@@ -992,7 +1012,7 @@ def main():
     # Report
     print("\n[summary]")
     print(f"  canonical ledger rows: {len(canonical_existing)}")
-    print(f"  new raw rows imported: {len(new_txs)}")
+    print(f"  new ledger rows added: {len({r['record_id'] for r in canonical_existing} - initial_record_ids)}")
     print(f"  new pending review items this batch: {len(review_items)}")
     print(f"  refund pairs detected: {len(raw_refund_pairs)}")
     print(f"  duplicate keys:        {len(duplicates)}")
