@@ -23,3 +23,6 @@ backups/
 data/finances.db
 reports/
 *.png
+
+# Duplicate rule file at repo root (canonical copy lives in .cursor/)
+/finance.mdc
