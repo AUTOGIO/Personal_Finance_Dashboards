@@ -1,4 +1,64 @@
 rule_id,source,match_type,match_value,category,action,basis,note
+USR0911-ALL-004,MP account,exact_recipient,EDUARDO SILVA DOS SANTOS,Excluded - user instructed,exclude,User review 2026-09-11 ALL-004,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-011,BB,exact_recipient,EDUARDO SILVA DOS SANTOS,Excluded - user instructed,exclude,User review 2026-09-11 ALL-011,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-014,BB,exact_recipient,CSRA BRASIL SERVICOS DE T,Excluded - user instructed,exclude,User review 2026-09-11 ALL-014,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-019,MP account,exact_recipient,COMERCIAL DE ALIMENTOS HORA H LTDA,Groceries,include,User review 2026-09-11 ALL-019,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-022,MP account,exact_recipient,VERONICA FREITAS LIRA,Excluded - user instructed,exclude,User review 2026-09-11 ALL-022,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-023,MP account,exact_recipient,EDGLEY DE SOUSA FORMIGA,Excluded - user instructed,exclude,User review 2026-09-11 ALL-023,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-039,MP account,exact_recipient,ELSE LUDIMILLA CAVALCANTE DREYER DINN,Excluded - user instructed,exclude,User review 2026-09-11 ALL-039,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-043,MP account,exact_recipient,MARINEZ SILVA SOGLIANI,HOME SPENDINGS,include,User review 2026-09-11 ALL-043,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-044,MP account,exact_recipient,ALISSON CLEITON CUNHA MONTEIRO,HOME SPENDINGS,include,User review 2026-09-11 ALL-044,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-046,MP account,exact_recipient,NP COMERCIO DE ALIMENTOS LTDA,HOME SPENDINGS,include,User review 2026-09-11 ALL-046,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-047,MP account,exact_recipient,THADEU GOES VIEIRA DE MELLO,HOME SPENDINGS,include,User review 2026-09-11 ALL-047,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-048,BB,exact_recipient,EDNA DA SILVA ROCHA,HOME SPENDINGS,include,User review 2026-09-11 ALL-048,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-050,MP account,exact_recipient,KLEITON MENDES DA SILVA,HOME SPENDINGS,include,User review 2026-09-11 ALL-050,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-051,MP account,exact_recipient,FABIO MARQUES JERONIMO,HOME SPENDINGS,include,User review 2026-09-11 ALL-051,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-052,MP account,exact_recipient,AMANDA GABRIELLE FREIRE DE SOUZA,HOME SPENDINGS,include,User review 2026-09-11 ALL-052,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-053,MP account,exact_recipient,EDNEY GEOVANY FLORENCIO DA SILVA,HOME SPENDINGS,include,User review 2026-09-11 ALL-053,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-054,MP account,exact_recipient,VILBERTO PESSOA SOARES,HOME SPENDINGS,include,User review 2026-09-11 ALL-054,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-055,BB,exact_recipient,BRENDA MACEDO GOMES RIBEI,HOME SPENDINGS,include,User review 2026-09-11 ALL-055,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-056,MP account,exact_recipient,GF4 PARTICIPACOES LTDA,HOME SPENDINGS,include,User review 2026-09-11 ALL-056,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-059,BB,exact_recipient,JOAO BATISTA PEREIRA DOS,HOME SPENDINGS,include,User review 2026-09-11 ALL-059,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-060,MP account,exact_recipient,MARIA GORETE FERREIRA DA COSTA,HOME SPENDINGS,include,User review 2026-09-11 ALL-060,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-069-1,MP account,identifier_contains,144415427910,HOME SPENDINGS,include,User review 2026-09-11 ALL-069,Operation-only exception; do not generalize merchant.
+USR0911-ALL-070,MP account,exact_recipient,EDUARDO CARLOS DE MEDEIROS FERREIRA,HOME SPENDINGS,include,User review 2026-09-11 ALL-070,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-076,MP account,exact_recipient,OSVALDO LUIZ DE MEDEIROS,Excluded - user instructed,exclude,User review 2026-09-11 ALL-076,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-078,MP account,exact_recipient,LEANDRO VITAL DA COSTA,Excluded - user instructed,exclude,User review 2026-09-11 ALL-078,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-079,MP account,exact_recipient,IRINEU DAS NEVES AMORIM,Excluded - user instructed,exclude,User review 2026-09-11 ALL-079,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-080,MP account,exact_recipient,MM SERVICOS DE ALIMENTOS LTDA,Excluded - user instructed,exclude,User review 2026-09-11 ALL-080,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-087,MP account,exact_recipient,GERSON BOTASSO,Groceries,include,User review 2026-09-11 ALL-087,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-088-1,MP account,identifier_contains,149468159617,Groceries,include,User review 2026-09-11 ALL-088,Operation-only exception; do not generalize merchant.
+USR0911-ALL-089,BB,exact_recipient,ANNE KAROLINA PEREIRA RIB,Groceries,include,User review 2026-09-11 ALL-089,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-090,MP account,exact_recipient,MARIA EDILZA DE SOUZA,Groceries,include,User review 2026-09-11 ALL-090,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-091,MP account,exact_recipient,ERASMO LUIZ TRAVASSOS DE SOUZA,Groceries,include,User review 2026-09-11 ALL-091,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-092,MP account,exact_recipient,VIRGINIA BARROS VIEIRA,Groceries,include,User review 2026-09-11 ALL-092,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-093,BB,exact_recipient,ROBERTO KHALIL SOURI,Groceries,include,User review 2026-09-11 ALL-093,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-094,MP account,exact_recipient,EMILY SILVA FARIAS,Groceries,include,User review 2026-09-11 ALL-094,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-095,BB,exact_recipient,55 551 537 JAMYLLE KEYLA,Groceries,include,User review 2026-09-11 ALL-095,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-004-RAW1,MP account,exact_recipient,PIX ENVIADO EDUARDO SILVA DOS SANTOS,Excluded - user instructed,exclude,User review 2026-09-11 ALL-004,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-004-RAW2,MP account,exact_recipient,TRANSFERENCIA PIX ENVIADA EDUARDO SILVA DOS SANTOS,Excluded - user instructed,exclude,User review 2026-09-11 ALL-004,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-019-RAW1,MP account,exact_recipient,PAGAMENTO COM QR PIX COMERCIAL DE ALIMENTOS HORA H LTDA,Groceries,include,User review 2026-09-11 ALL-019,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-022-RAW1,MP account,exact_recipient,PIX ENVIADO VERONICA FREITAS LIRA,Excluded - user instructed,exclude,User review 2026-09-11 ALL-022,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-022-RAW2,MP account,exact_recipient,TRANSFERENCIA PIX ENVIADA VERONICA FREITAS LIRA,Excluded - user instructed,exclude,User review 2026-09-11 ALL-022,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-023-RAW1,MP account,exact_recipient,PAGAMENTO COM QR PIX EDGLEY DE SOUSA FORMIGA,Excluded - user instructed,exclude,User review 2026-09-11 ALL-023,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-039-RAW1,MP account,exact_recipient,PAGAMENTO COM QR PIX ELSE LUDIMILLA CAVALCANTE DREYER DINN,Excluded - user instructed,exclude,User review 2026-09-11 ALL-039,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-043-RAW1,MP account,exact_recipient,PIX ENVIADO MARINEZ SILVA SOGLIANI,HOME SPENDINGS,include,User review 2026-09-11 ALL-043,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-044-RAW1,MP account,exact_recipient,TRANSFERENCIA PIX ENVIADA ALISSON CLEITON CUNHA MONTEIRO,HOME SPENDINGS,include,User review 2026-09-11 ALL-044,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-051-RAW1,MP account,exact_recipient,PAGAMENTO COM QR PIX FABIO MARQUES JERONIMO,HOME SPENDINGS,include,User review 2026-09-11 ALL-051,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-052-RAW1,MP account,exact_recipient,PAGAMENTO COM QR PIX AMANDA GABRIELLE FREIRE DE SOUZA,HOME SPENDINGS,include,User review 2026-09-11 ALL-052,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-054-RAW1,MP account,exact_recipient,PIX ENVIADO VILBERTO PESSOA SOARES,HOME SPENDINGS,include,User review 2026-09-11 ALL-054,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-056-RAW1,MP account,exact_recipient,PAGAMENTO COM QR PIX GF4 PARTICIPACOES LTDA,HOME SPENDINGS,include,User review 2026-09-11 ALL-056,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-060-RAW1,MP account,exact_recipient,TRANSFERENCIA PIX ENVIADA MARIA GORETE FERREIRA DA COSTA,HOME SPENDINGS,include,User review 2026-09-11 ALL-060,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-070-RAW1,MP account,exact_recipient,PIX ENVIADO EDUARDO CARLOS DE MEDEIROS FERREIRA,HOME SPENDINGS,include,User review 2026-09-11 ALL-070,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-076-RAW1,MP account,exact_recipient,PAGAMENTO COM QR PIX OSVALDO LUIZ DE MEDEIROS,Excluded - user instructed,exclude,User review 2026-09-11 ALL-076,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-078-RAW1,MP account,exact_recipient,PAGAMENTO COM QR PIX LEANDRO VITAL DA COSTA,Excluded - user instructed,exclude,User review 2026-09-11 ALL-078,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-079-RAW1,MP account,exact_recipient,PAGAMENTO COM QR PIX IRINEU DAS NEVES AMORIM,Excluded - user instructed,exclude,User review 2026-09-11 ALL-079,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-080-RAW1,MP account,exact_recipient,PAGAMENTO COM QR PIX MM SERVICOS DE ALIMENTOS LTDA,Excluded - user instructed,exclude,User review 2026-09-11 ALL-080,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-087-RAW1,MP account,exact_recipient,PIX ENVIADO GERSON BOTASSO,Groceries,include,User review 2026-09-11 ALL-087,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-090-RAW1,MP account,exact_recipient,PIX ENVIADO MARIA EDILZA DE SOUZA,Groceries,include,User review 2026-09-11 ALL-090,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-091-RAW1,MP account,exact_recipient,PAGAMENTO COM CODIGO QR ERASMO LUIZ TRAVASSOS DE SOUZA,Groceries,include,User review 2026-09-11 ALL-091,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-092-RAW1,MP account,exact_recipient,PAGAMENTO COM QR PIX VIRGINIA BARROS VIEIRA,Groceries,include,User review 2026-09-11 ALL-092,Apply to this exact recipient and source; latest explicit user answer.
+USR0911-ALL-094-RAW1,MP account,exact_recipient,PAGAMENTO COM QR PIX EMILY SILVA FARIAS,Groceries,include,User review 2026-09-11 ALL-094,Apply to this exact recipient and source; latest explicit user answer.
 BB001,BB,identifier_contains,58.416.081/0001-95,Transfers abroad,exclude,user-confirmed category,User confirmed money sent abroad. Do not compute as spending.
 BB002,BB,identifier_contains,07.679.404/0001-00,Transfers abroad,exclude,user-confirmed category,User confirmed money sent abroad. Do not compute as spending.
 BB003,BB,identifier_contains,36.588.217/0001-01,Transfers abroad,exclude,user-confirmed category,User confirmed money sent abroad. Do not compute as spending.

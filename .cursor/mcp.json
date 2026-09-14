@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "finance-sqlite": {
+      "command": "/opt/homebrew/bin/npx",
+      "args": [
+        "-y",
+        "mcp-sqlite",
+        "${workspaceFolder}/data/finances.db"
+      ]
+    },
+    "finance-filesystem": {
+      "command": "/opt/homebrew/bin/npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "${userHome}/Downloads",
+        "${userHome}/Documents/Reviews",
+        "${workspaceFolder}"
+      ]
+    }
+  }
+}

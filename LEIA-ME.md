@@ -107,3 +107,17 @@ Banco Inter · Mercado Pago · BIPA · Celcoin · Wise Brasil
 ---
 
 *Fase 1 concluída Jul 2026*
+
+
+## Fontes por seção e projeto de inflação
+
+| Dashboard section | Source actually read |
+|---|---|
+| Wealth controls and subscription decisions | `data/wealthcommand.xlsx` → `CALC` |
+| Transaction log and weekly rollup | `data/wealthcommand.xlsx` → `02 CAPITAL FLOWS` |
+| Lifestyle table | `data/wealthcommand.xlsx` → `05 LIFESTYLE` |
+| NFC-e tab | `nfce/personal_inflation_data.json` — frozen snapshot |
+| Spending tab | Newest `reports/*_spending_by_month.csv` |
+| Separate command-center dashboard | `data/command-center.xlsx` through its own generator |
+
+`make regen` apenas renderiza as fontes salvas. Para novos extratos, execute o importador de gastos antes; para classificações de produtos, use o arquivo v3 em `../edu_price_analysis/02_Models/personal_inflation_tracker-v3_classificacao.xlsx` e depois `make refresh-categories` naquele projeto. As regras de produtos e de pagamentos são independentes; não some os dois totais.

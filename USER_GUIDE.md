@@ -1,230 +1,148 @@
-# User Guide — How This Money Tracker Works
+# Guia do Usuário — Ecossistema de Finanças Pessoais (USER_GUIDE)
 
-This explains the whole project in plain language. If you can double-click
-an icon and copy-paste a line of text, you can use this.
+> **Resumo Executivo:** Este guia prático e sem jargões explica o funcionamento do ecossistema de finanças pessoais local, composto por **duas planilhas Excel** e **dois dashboards HTML estáticos**, além do ritual semanal de manutenção, comandos essenciais do terminal, modelos de prompts para IA e dicas operacionais.
 
-## 1. What even is this?
+---
 
-This is a personal money tracker. It has **two notebook + poster pairs** —
-same spy-movie look, different jobs:
+## 1. Visão Geral do Sistema
 
-| Pair | Notebook (spreadsheet) | Poster (dashboard) | Best for |
-|---|---|---|---|
-| **Wealth dashboard** | `data/wealthcommand.xlsx` | `bloomberg-terminal.html` | Weekly wealth ritual — net worth, subscriptions, NFC-e inflation, data audit |
-| **Command center** | `data/command-center.xlsx` | `command-center.html` | iMac ops board — repos, projects, config thresholds, host info |
+O ecossistema opera com a filosofia de **dois pares de planilha + painel visual**:
 
-The important rule for **both**: **the poster is made FROM the notebook.**
-You never write numbers directly on the poster — you write in the notebook,
-then print a new poster from it.
+| Par | Planilha (Fonte) | Dashboard (Poster) | Foco Principal |
+| :--- | :--- | :--- | :--- |
+| **Dashboard de Patrimônio** | `data/wealthcommand.xlsx` | `bloomberg-terminal.html` | Acompanhamento global do patrimônio líquido, investimentos, fluxo de capital internacional, assinaturas gerais e inflação pessoal (NFC-e). |
+| **Dashboard Operacional (iMac Ops)** | `data/command-center.xlsx` | `command-center.html` | Gestão operacional do ecossistema, status de repositórios git, projetos ativos, limites de alertas e métricas de hardware. |
 
-## 2. How to look at the dashboards
+### Regra de Ouro da Fonte da Verdade
+* **Os painéis HTML são gerados a partir das planilhas.** Nunca edite valores diretamente nos arquivos `.html`, pois qualquer alteração manual será sobrescrita na próxima execução dos scripts geradores.
+* **`wealthcommand.xlsx`:** Apenas a aba **`CALC`** é a fonte da verdade. Todas as métricas do `bloomberg-terminal.html` derivam exclusivamente dela.
+* **`command-center.xlsx`:** Todas as **11 abas de entrada** são fontes da verdade (mapeamento 1:1 com as páginas do `command-center.html`).
 
-1. Find `bloomberg-terminal.html` or `command-center.html` in the project
-   folder.
-2. Double-click either one. It opens in your web browser (Safari, Chrome,
-   whatever).
-3. That's it — no login, no internet needed, no app to install.
+---
 
-**Which one to open?**
-- **`bloomberg-terminal.html`** — the main wealth view (12 tabs). Start
-  here for the weekly money check.
-- **`command-center.html`** — the iMac-focused ops view (13 tabs). Same
-  dark Bloomberg style, but mirrors `command-center.xlsx` sheet-for-sheet
-  and adds REPOS, PROJECTS, CONFIG, and SYSTEM tabs.
+## 2. Ritual Semanal de Atualização (Passo a Passo com Exemplos)
 
-## 3. What all the buttons do
-
-- **Tabs across the top** — click one to switch pages. Each tab is a
-  different topic (bank balances, subscriptions, FX operations, alerts,
-  and so on). Tab names differ slightly between the two dashboards; see
-  section 5.
-- **`A−` / `A+` buttons, top right** — makes everything on the page
-  bigger or smaller. There's a `100%` number between them that shows the
-  current size.
-- **Search boxes** (on transaction tabs — `09 TX LOG` in Bloomberg,
-  `03 TRANSACTIONS` in Command Center) — type a word (like a store name)
-  and the table below filters to just matching rows.
-- **Scrolling** — if a page has more stuff than fits on your screen, just
-  scroll down like any normal webpage.
-- **Ticker tape** (orange bar at the very bottom) — scrolls key numbers
-  (net worth, liquidity, card spend, etc.).
-
-Nothing you click can break anything or delete any data. It's just a
-screen for looking — feel free to click around.
-
-## 4. How to update it (the weekly job)
-
-Every week, new numbers need to go in. The project has **two notebooks**
-that do **not** sync automatically. If you use both dashboards, update
-**both** when balances, card transactions, or subscriptions change.
-
-**Recommended order each week:**
-
-1. Collect raw statements → save under `raw/` (unchanged originals).
-2. **Wealth pass** — edit `wealthcommand.xlsx`, run `make open`.
-3. **Command center pass** — edit `command-center.xlsx`, run the ops
-   generator (checklist below).
-4. Open both posters and review. If the same concept (e.g. net worth)
-   differs between dashboards, **investigate** — do not pick one number
-   and force the other to match (see section 6, rule 5).
-
-### Step 0 — Collect source files (both dashboards)
-
-Download current bank, card, BCB, and subscription statements. Save
-exports under `raw/` by institution (`raw/mercado_pago/`,
-`raw/banco_inter/`, etc.). Keep raw files private and unchanged.
-
-### Wealth dashboard pass
-
-1. **Open the notebook.** Double-click `data/wealthcommand.xlsx`.
-2. **Find the sheet (tab) called `CALC`.** That's the ONE sheet that
-   matters for the wealth dashboard — it's the "real" numbers.
-3. **Type in the new numbers** — balances, card flows (`02 CAPITAL
-   FLOWS`), subscriptions (Section 4D), whatever changed. Save (Cmd+S)
-   and close.
-4. **Print the wealth poster.** In Terminal:
-   ```
-   cd ~/Documents/GitHub/Personal_Finance && make open
-   ```
-   Confirm the last line says `[ok] all N spot-checks passed` (not
-   `[WARNING]`). Your browser opens with the updated wealth dashboard.
-   Optional safety: `make check` verifies both workbooks still have the
-   expected sheets.
-
-### Command center pass (detailed checklist)
-
-Open `data/command-center.xlsx`. Edit **blue/input cells only** — never
-overwrite formula cells for age, risk, or counts.
-
-1. **Update balances** — confirmed balances, dates, notes
-   (`BALANCES!A4:G17`). Verify liquidity and estimated net worth
-   recalculate.
-2. **Record FX operations** — append each operation with direction:
-   `Outbound`, `Inbound`, `IB Deposit`, `IB Withdraw`, or
-   `Fund Deposit`. Check the direction summary (`FX_OPS!A4:I45`).
-3. **Import card transactions** — append entries; **negative values for
-   spending**. Reuse categories; flag international purchases
-   (`TRANSACTIONS!A4:G67`).
-4. **Update PIX activity** — separate PIX, FX, and IOF into their columns;
-   verify flow totals (`PIX!A4:F41`).
-5. **Review subscriptions** — renewal dates, statuses; classify each as
-   `KEEP`, `CANCEL`, or `REVIEW`. Confirm projected savings and monthly
-   stack (`SUBSCRIPTIONS!A4:J27`).
-6. **Refresh operational tracking** — repo status and project actions
-   (`REPOS!A4:J12`, `PROJECTS!A4:G15`).
-7. **Check alert parameters** — compare against liquidity, spending,
-   subscription, FX, and staleness thresholds. Change limits in CONFIG
-   only when your preferences genuinely change (`CONFIG!A4:D16`).
-8. **Verify derived sheets** — `MONTHLY`, `CATEGORIES`, and `ALERTS` are
-   usually formula-driven from the sheets above. Spot-check them after
-   updating transactions and FX; edit only if your workbook uses manual
-   rows there.
-9. **Quality checks** — missing dates, duplicate transactions, unknown
-   currencies, outdated statuses, wrong signs, formula errors.
-10. **Regenerate the ops poster** — never type figures into
-    `command-center.html`. In Terminal:
-    ```
-    cd ~/Documents/GitHub/Personal_Finance && python3 scripts/generate_command_center.py
-    ```
-    Confirm `[ok] all N ops spot-checks passed` and `[ok] wrote command-center.html`
-    with matching tag counts (no MISMATCH). Open with `open command-center.html`
-    if the browser did not open automatically.
-
-There is no `make` shortcut for the command center — use the Python command
-above. **`make open` is for the wealth dashboard only.**
-
-### Dual-workbook overlap (keep both in sync)
-
-These concepts exist in **both** notebooks. Update both when they change:
-
-| Concept | Wealth (`wealthcommand.xlsx`) | Command center (`command-center.xlsx`) |
-|---|---|---|
-| Subscriptions | `CALC` Section 4D | `SUBSCRIPTIONS` sheet |
-| Card transactions | `CALC` → `02 CAPITAL FLOWS` | `TRANSACTIONS` sheet |
-| Balances / net worth | `CALC` (+ portfolio sheets) | `BALANCES` sheet |
-
-Updating only one notebook leaves the other dashboard stale.
-
-### Reconciliation checklist (cross-dashboard gaps)
-
-The two dashboards intentionally do **not** sync automatically. Before treating a
-difference as an error, run through this checklist for each overlapping concept:
-
-| Check | What to verify | Why it matters |
-|---|---|---|
-| **Source ownership** | Which workbook owns the field? | `wealthcommand.xlsx`/`CALC` owns wealth KPIs; `command-center.xlsx`/`BALANCES` owns the ops view. Fix the owner, never the generated HTML. |
-| **As-of date** | When was each value last refreshed? | A balance updated yesterday in one book and last week in the other is a timing gap, not a bug. |
-| **Currency** | Is the number BRL, USD, or a mixed total? | `BALANCES` may show USD accounts separately; `CALC` may combine or convert them differently. |
-| **Expected differences** | Are there known formula differences? | Net worth and IB Deployed differ by design until the IB→Wise withdrawal treatment is reconciled — see `AI_GUIDE.md` "Known open items" and Bloomberg tab `10 DATA MAP`. |
-| **Disposition of unexplained gaps** | If the gap remains after the above, what action is required? | Investigate the **owning** workbook using the relevant `raw/` statements, then regenerate only that dashboard. Do not force the other dashboard to match. |
-
-Use this checklist for **balances**, **subscriptions**, **card spending**, and
-**net worth** every week. Document any gap that cannot be resolved on the spot
-and feed it back into the next weekly pass.
-
-### Using AI help (optional)
-
-After regenerating both dashboards, you can ask an AI to review alerts
-and suggest actions. See **`AI_GUIDE.md` → "Weekly workflows"** for the
-prompt template and guardrails (read `AI_GUIDE.md` first; do not paste
-real figures into public chats).
-
-If any Terminal step looks scary or throws an error, copy the message and
-ask for help.
-
-## 5. What each folder is (in plain words)
+O ritual de manutenção semanal é recomendado para os **domingos às 20h** e segue 4 fases sequenciais:
 
 ```
-Personal_Finance/
-├── bloomberg-terminal.html   wealth poster — double-click to look at it
-├── command-center.html       ops poster — double-click to look at it
-├── data/
-│   ├── wealthcommand.xlsx    wealth notebook — CALC sheet is the boss
-│   └── command-center.xlsx   ops notebook — 11 sheets, one per tab topic
-├── raw/                      filing cabinet of original bank statements/receipts
-├── reports/                  old printed summaries (one per date)
-├── nfce/                     grocery inflation tracker (feeds Bloomberg tab 11)
-├── scripts/
-│   ├── regenerate_dashboard.py   "printer" for bloomberg-terminal.html
-│   └── generate_command_center.py   "printer" for command-center.html
-└── Makefile                  cheat-sheet of short commands (make open, etc.)
+┌──────────────┐     ┌──────────────────┐     ┌────────────────┐     ┌──────────────────────┐
+│  1. COLETA   │ ──► │  2. WEALTH PASS  │ ──► │  3. OPS PASS   │ ──► │ 4. RECONCILIAÇÃO     │
+│ (pasta raw/) │     │ (wealthcommand)  │     │ (command-ctr)  │     │ (Revisão nos Painéis)│
+└──────────────┘     └──────────────────┘     └────────────────┘     └──────────────────────┘
 ```
 
-You will mostly touch:
-- **`data/wealthcommand.xlsx`** + **`make open`** — weekly wealth ritual
-- **`data/command-center.xlsx`** + **`generate_command_center.py`** — when
-  updating the ops board
+### Fase 1: Coleta de Extratos (`Collect`)
+1. Baixe os extratos bancários brutos em PDF/CSV, faturas de cartão de crédito e comprovantes de câmbio das instituições (Mercado Pago, Banco Inter, Banco do Brasil, Wise, etc.).
+2. Salve os arquivos originais sem alteração na pasta `raw/` organizada por instituição (ex: `raw/mercado_pago/`, `raw/banco_inter/`).
 
-Everything else runs itself or is reference material.
+### Fase 2: Passo do Patrimônio (`Wealth Pass`)
+1. Abra a planilha `data/wealthcommand.xlsx` no Microsoft Excel.
+2. Navegue até a aba **`CALC`**.
+3. Atualize os saldos bancários, totais de capital investido e a seção de assinaturas (Seção 4D).
+4. No terminal, execute:
+   ```bash
+   make open
+   ```
+5. **Confirmação:** Garanta que a mensagem final exiba `[ok] all N spot-checks passed`. O dashboard será aberto automaticamente no navegador.
 
-## 6. The golden rules
+### Fase 3: Passo Operacional (`Ops Pass`)
+1. Abra a planilha `data/command-center.xlsx` no Microsoft Excel.
+2. Preencha **apenas as células de input coloridas em azul**:
+   * **`BALANCES` (A4:G17):** Atualize saldos confirmados e datas de checagem.
+   * **`FX_OPS` (A4:I45):** Registre operações de câmbio com a direção correta (`Outbound`, `Inbound`, `IB Deposit`, `IB Withdraw`, `Fund Deposit`).
+   * **`TRANSACTIONS` (A4:G67):** Lance as novas despesas do cartão. **Atenção:** gastos devem ser inseridos com valores negativos (ex: `-111.58`).
+   * **`PIX` (A4:F41):** Lance movimentações via PIX e tarifas de IOF.
+   * **`SUBSCRIPTIONS` (A4:J27):** Atualize status e classificação (`KEEP`, `CANCEL`, `REVIEW`).
+   * **`REPOS` & `PROJECTS`:** Atualize o status dos repositórios locais e prioridades de projetos.
+   * **`CONFIG` (A4:D16):** Ajuste limites de alerta (piso de liquidez, teto de cartão) apenas quando houver alteração de preferências.
+3. No terminal, execute a reconstrução do painel:
+   ```bash
+   python3 scripts/generate_command_center.py
+   ```
+4. **Confirmação:** Verifique se o gerador retorna a mensagem `no MISMATCH` no balanço de tags HTML.
 
-1. **Never delete either workbook in `data/`.** They are the only copies
-   of the real numbers. The HTML posters can always be rebuilt from them;
-   the workbooks cannot be rebuilt from the posters.
-2. **Never type numbers directly into either HTML file.** They get
-   overwritten every time someone runs the generator — anything you typed
-   there by hand would just vanish. Numbers only go in the spreadsheets.
-3. **Wealth dashboard source of truth:** sheet **`CALC`** in
-   `wealthcommand.xlsx`. If a number on `bloomberg-terminal.html` looks
-   wrong, check `CALC` first — `CALC` wins.
-4. **Command center source of truth:** **`data/command-center.xlsx`**
-   (all 11 sheets). Every tab on `command-center.html` mirrors one sheet.
-5. **The two dashboards can show different numbers for the same concept**
-   (e.g. net worth) because they read from different workbooks with
-   different formulas. That's documented on Bloomberg's `10 DATA MAP`
-   tab — don't panic, but do investigate if the gap grows.
+### Fase 4: Revisão e Reconciliação (`Review & Reconcile`)
+1. Com ambos os dashboards abertos no navegador, faça uma inspeção visual comparando saldos, alertas e gastos mensais.
+2. **Regra de Reconciliação:** Se houver divergências de valores entre os dois painéis (como a diferença no cálculo do Net Worth decorrente do tratamento do saque na Interactive Brokers), **não force a igualdade manual dos números**. Investigue os comprovantes na pasta `raw/` e ajuste a planilha proprietária daquela métrica específica antes de rodar os geradores novamente.
 
-## 7. If something looks broken
+---
 
-- **Dashboard shows old numbers** → someone edited the notebook but forgot
-  to run the generator. Run `make open` (wealth) or
-  `python3 scripts/generate_command_center.py` (ops).
-- **A tab looks weird or numbers are cut off** → try clicking `A−` once or
-  twice to shrink things back down.
-- **Terminal says something you don't understand** → that's fine, copy the
-  message and ask an adult or Claude what it means.
+## 3. Guia de Comandos do Terminal (`Makefile` & Scripts)
 
-See `README.md` for the more technical version of all this,
-`LEIA-ME.md` for the Portuguese weekly-ritual checklist, and
-`AI_GUIDE.md` → Weekly workflows for AI-assisted reviews.
+| Comando | O que faz | Quando usar |
+| :--- | :--- | :--- |
+| `make check` | Valida a quantidade de abas das planilhas e a integridade de arquivos críticos. | Antes de iniciar a atualização semanal ou abrir o workspace. |
+| `make regen` | Executa o patcher do dashboard de patrimônio (`bloomberg-terminal.html`). | Após atualizar a aba `CALC` no `wealthcommand.xlsx`. |
+| `make open` | Roda o `make regen` e abre o dashboard de patrimônio no navegador. | Para gerar e visualizar o patrimônio rapidamente. |
+| `python3 scripts/generate_command_center.py` | Reconstrói do zero o `command-center.html` lendo todas as abas operacionais. | Após atualizar a planilha `command-center.xlsx`. |
+| `make regen-all` | Regenera ambos os dashboards estáticos em uma única chamada. | Para atualizar os dois painéis de forma rápida. |
+| `make workspace` | Executa o `make check`, regenera ambos os painéis e posiciona as janelas no Spencer (3 monitores). | Ao sentar no computador para trabalhar no projeto. |
+| `make clean` | Remove arquivos temporários `.DS_Store` e caches `__pycache__`. | Para manutenção e limpeza do repositório. |
+
+---
+
+## 4. Prompts Práticos para Assistentes de IA
+
+Ao utilizar assistentes virtuais (Claude, Cursor, ChatGPT, Gemini) para auxiliar no ritual semanal, utilize os modelos de prompts testados e padronizados:
+
+### Prompt 1: Revisão Semanal com Atualização de Planilhas
+> *"Leia o arquivo AI_GUIDE.md. Em seguida, realize minha revisão semanal utilizando os extratos recentes armazenados na pasta raw/. Atualize ambas as planilhas (wealthcommand.xlsx na aba CALC e as abas de input do command-center.xlsx) onde houver dados sobrepostos. Reconcilie as operações de câmbio em FX_OPS contra os comprovantes sem criar planilhas paralelas. Identifique alertas ativos, sugira classificações KEEP/CANCEL/REVIEW para assinaturas e sinalize divergências entre os dashboards para reconciliação (sem forçar igualdade manual). Execute os geradores e confirme que as validações retornaram sucesso."*
+
+### Prompt 2: Análise Somente de Leitura (Pós-Geração)
+> *"Leia o arquivo AI_GUIDE.md. Analise os dashboards gerados bloomberg-terminal.html e command-center.html. Resuma os alertas prioritários, as ações de maior impacto financeiro e eventuais divergências entre os painéis. Não edite arquivos diretamente: liste exatamente quais células de qual planilha devem ser ajustadas e o motivo."*
+
+---
+
+## 5. Dicas de Ouro (`Tips & Best Practices`)
+
+### 💡 Dica 1: Convenção de Sinais no Cartão de Crédito
+Nas abas de transações (como `TRANSACTIONS` no `command-center.xlsx`), lançamentos de compras e despesas **devem sempre ser registrados como valores negativos** (ex: `-111.58`). Valores positivos são reservados para estornos ou pagamentos.
+
+### 💡 Dica 2: Preservação de Fórmulas Automáticas
+Na planilha `command-center.xlsx`, edite apenas as células de entrada (destacadas com fundo azul). Nunca digite valores por cima de células com fórmulas de cálculo (como totais de liquidez, idades de repositórios ou contadores de status).
+
+### 💡 Dica 3: Gestão Inteligente de Assinaturas
+Classifique seus serviços recorrentes em três filas bem definidas:
+* **`KEEP`:** Serviços essenciais para sua produtividade e rotina.
+* **`CANCEL`:** Serviços duplicados ou sem uso (ex: contas duplicadas de IA ou rádios online) para corte imediato de custos.
+* **`REVIEW`:** Serviços sob avaliação com gastos variáveis (ex: créditos de IA) que exigem reavaliação mensal.
+
+### 💡 Dica 4: Atualização da Inflação Pessoal (NFC-e)
+Para atualizar o gráfico de inflação pessoal na aba **11 NFC-E** do *Bloomberg Terminal*:
+1. Baixe novas notas fiscais eletrônicas em formato XML para `nfce/notas/NFCE_XML_*/`.
+2. No terminal, execute: `cd nfce && python3 personal_inflation.py --verify-ground-truth`.
+3. Volte à raiz do projeto e execute `make regen`.
+
+### 💡 Dica 5: Segurança e Backups Fora do iCloud
+Mantenha o repositório principal e seus backups locais fora do iCloud para evitar conflitos de sincronização e perda de fórmulas em reparos automáticos do Excel. Execute periodicamente o script de backup do sistema:
+```bash
+zsh scripts/backup.sh
+```
+
+---
+
+## 6. Resolução de Problemas (`Troubleshooting`)
+
+* **O dashboard exibe dados antigos após editar o Excel:**
+  * *Causa:* As planilhas foram salvas, mas o script gerador não foi executado.
+  * *Solução:* Execute `make open` (para patrimônio) ou `python3 scripts/generate_command_center.py` (para operacional).
+* **Mensagem `KeyError` ou erro ao gerar o Command Center:**
+  * *Causa:* Uma aba obrigatória da planilha foi renomeada ou removida.
+  * *Solução:* Execute `make check` para identificar qual aba está ausente e restaure a estrutura original de 11 abas.
+* **Divergência no valor do Net Worth entre os painéis:**
+  * *Causa:* Trata-se de um item aberto conhecido (ex: tratamento de saques da Interactive Brokers via Wise).
+  * *Solução:* Não force a igualdade manual dos números nos arquivos HTML ou Excel. Verifique o extrato original em `raw/` e ajuste apenas a planilha proprietária daquele dado.
+
+
+## Fontes por seção e projeto de inflação
+
+| Dashboard section | Source actually read |
+|---|---|
+| Wealth controls and subscription decisions | `data/wealthcommand.xlsx` → `CALC` |
+| Transaction log and weekly rollup | `data/wealthcommand.xlsx` → `02 CAPITAL FLOWS` |
+| Lifestyle table | `data/wealthcommand.xlsx` → `05 LIFESTYLE` |
+| NFC-e tab | `nfce/personal_inflation_data.json` — frozen snapshot |
+| Spending tab | Newest `reports/*_spending_by_month.csv` |
+| Separate command-center dashboard | `data/command-center.xlsx` through its own generator |
+
+`make regen` apenas renderiza as fontes salvas. Para novos extratos, execute o importador de gastos antes; para classificações de produtos, use o arquivo v3 em `../edu_price_analysis/02_Models/personal_inflation_tracker-v3_classificacao.xlsx` e depois `make refresh-categories` naquele projeto. As regras de produtos e de pagamentos são independentes; não some os dois totais.

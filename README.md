@@ -8,20 +8,23 @@ server, no build step.
 
 **Each dashboard has its own workbook — don't cross them.**
 
-| Dashboard | Workbook | Source of truth |
-|---|---|---|
-| `bloomberg-terminal.html` | `data/wealthcommand.xlsx` | Sheet **`CALC`** only |
-| `command-center.html` | `data/command-center.xlsx` | **All 11 sheets** (1:1 with tabs) |
+| Dashboard section | Source actually read |
+|---|---|
+| Wealth controls and subscription decisions | `data/wealthcommand.xlsx` → `CALC` |
+| Transaction log and weekly rollup | `data/wealthcommand.xlsx` → `02 CAPITAL FLOWS` |
+| Lifestyle table | `data/wealthcommand.xlsx` → `05 LIFESTYLE` |
+| NFC-e tab | `nfce/personal_inflation_data.json` — frozen snapshot |
+| Spending tab | Newest `reports/*_spending_by_month.csv` |
+| Separate command-center dashboard | `data/command-center.xlsx` through its own generator |
 
-For the wealth dashboard, `CALC` declares itself "Single Source of Truth".
-Every patched figure on `bloomberg-terminal.html` traces to `CALC` — not
-other sheets in the same workbook, not `raw/`, not hand-typed HTML.
+Each section follows its own source above. `make regen` renders these saved sources; it does not run the spending importer or recompute inflation.
 
 Two things that are *not* the source of truth, on purpose:
 - **`raw/`** is upstream — original bank/receipt exports. Ground truth for
-  any single transaction, but nothing reads it automatically.
+  any single transaction. `scripts/import_spending.py` reads supported raw statements when explicitly run; dashboard regeneration does not run that importer.
 - **Net worth disagreements** between dashboards and within the wealth
-  workbook (CALC vs `01 NET WORTH` tile) are documented open items — see
+  workbook (CALC vs the old `01 NET WORTH` tile — both removed in the
+  2026-09-14 scope cut) are documented open items — see
   `AI_GUIDE.md` → "Known open items". Reconcile against `raw/` statements;
   don't force one number to match another.
 
@@ -159,3 +162,8 @@ into this repo on 2026-08-31:
 
 Handing this to an AI assistant? Point it at **`AI_GUIDE.md`** — picked up
 automatically via `CLAUDE.md` / `AGENTS.md` / `GEMINI.md` / `.cursorrules`.
+
+
+## Relationship with the active IIP tracker
+
+Product classification belongs to `../edu_price_analysis/02_Models/personal_inflation_tracker-v3_classificacao.xlsx`. Bank/card classification belongs to this repository’s `data/spending_rules.csv` and dated spending ledger. There is no automatic cross-repository rule synchronization. Do not add receipt totals to bank-payment totals; their economic activity can overlap. The IIP launcher/backup use v3 and its category refresh is `make refresh-categories` in edu_price_analysis.

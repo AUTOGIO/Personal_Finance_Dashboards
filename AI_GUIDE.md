@@ -18,7 +18,8 @@ A personal finance workspace for one person: **two Excel workbooks** and
 no build step, no external services. Everything runs locally with Python 3.
 
 - **`wealthcommand.xlsx` → `bloomberg-terminal.html`** — primary wealth
-  dashboard (12 tabs). Patched by `regenerate_dashboard.py` (uses `openpyxl`).
+  dashboard (**10 tabs** since the 2026-09-14 scope cut). Patched by
+  `regenerate_dashboard.py` (uses `openpyxl`).
 - **`command-center.xlsx` → `command-center.html`** — iMac ops dashboard
   (13 tabs). Fully rebuilt by `generate_command_center.py` (dependency-free
   xlsx-as-zip reader — no `openpyxl`).
@@ -66,15 +67,16 @@ regeneration. Do not recursively `chmod` the repo or change ownership.
 
 **Each dashboard has its own source of truth — don't cross them.**
 
-| Dashboard | Workbook | Source of truth |
-|---|---|---|
-| `bloomberg-terminal.html` | `data/wealthcommand.xlsx` | Sheet **`CALC`** only |
-| `command-center.html` | `data/command-center.xlsx` | **All 11 sheets** (1:1 with tabs) |
+| Dashboard section | Source actually read |
+|---|---|
+| Wealth controls and subscription decisions | `data/wealthcommand.xlsx` → `CALC` |
+| Transaction log and weekly rollup | `data/wealthcommand.xlsx` → `02 CAPITAL FLOWS` |
+| Lifestyle table | `data/wealthcommand.xlsx` → `05 LIFESTYLE` |
+| NFC-e tab | `nfce/personal_inflation_data.json` — frozen snapshot |
+| Spending tab | Newest `reports/*_spending_by_month.csv` |
+| Separate command-center dashboard | `data/command-center.xlsx` through its own generator |
 
-For the wealth dashboard, `CALC` says so in its own header cell. Every
-number on `bloomberg-terminal.html` should trace back to `CALC` — not other
-sheets in the same workbook, not `raw/`, not hand-typed HTML, not
-`command-center.xlsx`.
+`CALC` owns the wealth controls described above; it does not own every dashboard section. Update each section at its listed source. Do not force independent views to agree.
 
 For the command center, every number on `command-center.html` should trace
 back to `command-center.xlsx` — the generator reads every sheet live.
@@ -365,8 +367,11 @@ patcher model — the full-rebuild pattern is intentional for a new workbook.
 ## Known open items — do not silently resolve
 
 - **Net Worth**: CALC says R$377,473.49 (`CALC!E137`). The workbook's own
-  `01 NET WORTH` sheet, and the CMD CTR tile, say R$358,277. Traced to how
-  the June IB→Wise withdrawal (R$19,195.81) is treated on `04 PORTFOLIO`.
+  `01 NET WORTH` sheet, and the CMD CTR tile, said R$358,277. Traced to how
+  the June IB→Wise withdrawal (R$19,195.81) was treated on `04 PORTFOLIO`.
+  **All three of those are gone** — sheets deleted in `474ab36`, tiles removed
+  in the 2026-09-14 scope cut. The question is still open; it is now a
+  historical reconciliation against `raw/`, not a live dashboard discrepancy.
   CALC is the declared source of truth, but the CMD CTR tile is still a
   Tier 2 hand-typed value — the discrepancy is real and unresolved.
 - **IB Deployed**: same root cause. The tile shows the gross deposit figure
@@ -469,6 +474,50 @@ visible here only through the archive remote. Risk **R7 is closed — there was 
 divergence.** Always name the remote explicitly (`git log origin/main`), never
 just `main`.
 
+## Scope cut 2026-09-14 — `bloomberg-terminal.html` aligned to the domestic-outflow workbook
+
+Workbook commit `474ab36` made `wealthcommand.xlsx` a **domestic outflow tracker** — net
+worth, inflows and all câmbio removed, 12 sheets → 9. The dashboard's matching panels were
+hand-authored static HTML, so they kept rendering data the source of truth no longer holds.
+This cut removed them. **Deletion and retitling only — no new tiles, no redesign.**
+
+Removed: tabs `01 NET WORTH`, `03 INTERNATIONAL`, `04 PORTFOLIO` (pages + nav buttons);
+JS `drawAllocPie` / `drawFXRate` / `drawPort` / `drawFlowPie` and their `initCharts()` calls;
+7 CMD CTR KPI tiles (Est. Net Worth, IB Deployed, Fundos BRL, FX Outbound H1, Inbound H1,
+Avg FX Rate, PIX Net Flow); the WEALTH ALLOCATION and FLOW COMPOSITION panels; the PIX In
+series in `drawFlows`; PIX IN / FX IN / NET FLOW columns on `02`; FX and IOF columns plus
+all PIX In / IOF / câmbio / Wise rows on `07`; 5 alert rows and 2 PRIORITY ACTIONS rows
+(FX Reconciliation, IB Withdrawal), both renumbered; 7 ticker fields; 7 stale DATA MAP
+tile-audit rows. 137,678 → ~97,000 bytes.
+
+**Tabs are deliberately NOT renumbered.** They keep the gaps `00 · 02 · 05 · 06 · 07 · 08 ·
+09 · 10 · 11 · 12`, mirroring the workbook, which kept the same gaps after deleting its
+sheets. This is not cosmetic debt: `regenerate_dashboard.py` matches the literal strings
+`11 NFC-E` and `12 SPENDING` when inserting those tabs. Renumbering makes it insert a
+duplicate NFC-E tab and fail two spot-checks.
+
+**Verification:** `make regen` 21/21, byte-identical on re-run; tag balance OK across
+table/tr/td/th/div/svg/span; `make check` passed; headless browser — 10 tabs, exactly one
+page visible each, 3 charts rendering, **zero console errors**.
+
+**Rollback:** `bloomberg-terminal.html.bak` (pre-cut, 137,678 B) or `git checkout HEAD -- bloomberg-terminal.html`.
+
+**Two tiles cut without an explicit instruction** (Eduardo approved the plan without
+answering the question): `Avg FX Rate` — pure câmbio; `PIX Net Flow` — In minus Out, and
+PIX In no longer exists. Restore from the `.bak` if that was wrong.
+
+**Deliberately NOT changed — stale figures remain, and they are a separate task.** The cut
+removed out-of-scope *fields*; it did not restate *values*. These static figures predate
+`474ab36` and are now wrong:
+
+| Where | Shows | Workbook now says |
+|---|---|---|
+| `02` tile + table, `07` tile | PIX Out H1 **R$ 92,162** | **R$ 45,862.41** (−SBCT 45,000, −Wise 1,299.97) |
+
+Updating them means entering values, not deleting fields — out of scope for this cut, and
+it needs Eduardo's numbers. This is the Tier 2 problem the `10 DATA MAP` tab exists to
+track; do not "fix" it silently.
+
 ## Guardrails
 
 Follow these unless the user explicitly asks otherwise in the moment:
@@ -569,3 +618,8 @@ Don't declare a change done without checking it:
 1. Run `make check` after any workbook edit and before trusting `make workspace`.
 2. Run `zsh scripts/backup.sh` after material data changes (writes under
    `~/Backups/Personal_Finance/`).
+
+
+## Relationship with the active IIP tracker
+
+Product classification belongs to `../edu_price_analysis/02_Models/personal_inflation_tracker-v3_classificacao.xlsx`. Bank/card classification belongs to this repository’s `data/spending_rules.csv` and dated spending ledger. There is no automatic cross-repository rule synchronization. Do not add receipt totals to bank-payment totals; their economic activity can overlap. The IIP launcher/backup use v3 and its category refresh is `make refresh-categories` in edu_price_analysis.

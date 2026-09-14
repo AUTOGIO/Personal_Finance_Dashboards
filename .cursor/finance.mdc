@@ -1,0 +1,45 @@
+---
+description: Regras de Execução e Guardrails do Ecossistema de Finanças Pessoais
+globs: data/*.xlsx, scripts/*.py, Makefile, *.html, raw/**, reports/**
+alwaysApply: true
+---
+
+# Regras do Ecossistema Financeiro (Personal_Finance)
+
+> **Instrução Canônica:** LEIA O ARQUIVO `AI_GUIDE.md` ANTES DE REALIZAR QUALQUER ALTERAÇÃO. Ele é a fonte primária e única da verdade para regras, estrutura de dados e comandos deste repositório.
+
+## 1. Regra de Ouro (Fontes da Verdade)
+- **Cada dashboard possui sua própria planilha de origem — não cruze os dados:**
+  - `data/wealthcommand.xlsx` (aba `CALC`) → `bloomberg-terminal.html` (Dashboard de Patrimônio) [11, 329].
+  - `data/command-center.xlsx` (todas as 11 abas de entrada) → `command-center.html` (Dashboard Operacional) [11, 317].
+- **PROIBIDO editar arquivos HTML diretamente:** `bloomberg-terminal.html` e `command-center.html` são artefatos gerados automaticamente. Qualquer alteração manual no HTML será sobrescrita na próxima execução dos scripts [317].
+- **PROIBIDO deletar ou sobrescrever planilhas em `data/`** sem confirmação explícita e direta do usuário na conversa atual. Elas contêm o registro financeiro real e insubstituível [35].
+- **NÃO force a igualdade de valores entre dashboards:** Em caso de divergências de cálculo (como o tratamento de saques da Interactive Brokers/Wise), investigue os comprovantes na pasta `raw/` e atualize a planilha proprietária daquele indicador [11, 260, 321].
+
+## 2. Privacidade e Sensibilidade dos Dados
+- Todos os arquivos nas pastas `data/`, `raw/`, `reports/` e os painéis `.html` contêm dados reais e sensíveis (saldos bancários, histórico de transações e CPF) [8].
+- **Nunca insira valores financeiros reais ou dados pessoais** em mensagens de commit do Git, títulos de Pull Requests ou contextos públicos [8, 19, 35].
+- Ao gerar relatórios para ferramentas externas de análise (como o NotebookLM), utilize exclusivamente o comando `make notebooklm`, que aplica a máscara em endereços de e-mail na saída [14, 263].
+
+## 3. Comandos de Geração e Validação de Integridade
+Após qualquer alteração em planilhas ou scripts geradores, você deve obrigatoriamente executar a recompilação e validar a saída do terminal:
+- **Dashboard de Patrimônio (Wealth Pass):**
+  - Executar: `make regen` (ou `make open`) [13, 320].
+  - Validação: Verificar se a linha final exibe obrigatoriamente `[ok] all N spot-checks passed` [17, 37].
+- **Dashboard Operacional (Ops Pass):**
+  - Executar: `python3 scripts/generate_command_center.py` [14, 321].
+  - Validação: Confirmar a mensagem `[ok] all N ops spot-checks passed` e garantir que não há erro de `MISMATCH` no balanço de tags HTML [26, 321].
+- **Preflight Check:**
+  - Executar: `make check` para validar a quantidade de abas das planilhas e arquivos insubstituíveis antes de rodar o workspace [15, 322].
+
+## 4. Convenções de Entrada de Dados (Ops Pass)
+- Na planilha `data/command-center.xlsx`, edite **apenas as células de input coloridas em azul** [18, 320, 325].
+- **Cartão de Crédito (`TRANSACTIONS`):** Lançamentos de despesas devem ser inseridos obrigatoriamente como **valores negativos** (ex: `-111.58`) [18, 320, 325].
+- **Operações de Câmbio (`FX_OPS`):** Registre entradas e saídas diretamente na aba `FX_OPS` sem criar ledgers ou planilhas paralelas [18, 320].
+- **Assinaturas (`SUBSCRIPTIONS`):** Mantenha as classificações e o status de ação atualizados (`KEEP`, `CANCEL`, `REVIEW`) [18, 320, 326].
+
+## 5. Infraestrutura e Restrições do Sistema
+- **Não adicione nova infraestrutura:** O projeto não utiliza banco de dados externo, servidor web, tarefas agendadas (cron), venv ou pipelines de CI/CD. Tudo roda localmente via Python 3 [15, 35].
+- **Dependências:** O projeto requer apenas Python 3 com a biblioteca `openpyxl` instalada no ambiente do sistema [15, 264].
+- **Patcher do Bloomberg:** O script `scripts/regenerate_dashboard.py` realiza *patching* direcionado por regex/âncoras; nunca reescreva a estrutura HTML do Bloomberg do zero [21, 35].
+- **Git:** Não faça `git push` para remotos não autorizados. O único remoto de código é o repositório privado `origin` (`AUTOGIO/Personal_Finance_Dashboards`) [8, 35].

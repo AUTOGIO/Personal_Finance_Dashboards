@@ -16,3 +16,10 @@ docs/
 # real figures; regenerate with `make notebooklm` instead of committing them
 *_html_code.txt
 notebooklm/
+
+# Added 2026-09-14 to clean generated/temp files
+logs/
+backups/
+data/finances.db
+reports/
+*.png

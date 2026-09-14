@@ -1,5 +1,11 @@
 # NFC-e Personal Inflation
 
+> **Frozen snapshot — not the canonical index (decided 2026-09-11).** The maintained personal
+> inflation index is the IIP in `~/Documents/GitHub/edu_price_analysis`
+> (`02_Models/personal_inflation_tracker-v3_classificacao.xlsx`). This folder keeps the 2026-08-19 snapshot
+> (499 receipts) that Bloomberg tab 11 renders. Don't reconcile or merge the two — different
+> receipt sets and methods (see `edu_price_analysis/AGENTS.md`, boundary section).
+
 Two parallel analyses from Brazilian NFC-e XMLs. **Do not mix their inputs.**
 
 | Track | Input | Script | Meaning |

@@ -18,9 +18,10 @@ ROOT = Path(__file__).resolve().parent.parent
 NS = "{http://schemas.openxmlformats.org/spreadsheetml/2006/main}"
 
 EXPECTED = {
+    # 01 NET WORTH / 03 INTERNATIONAL / 04 PORTFOLIO removed on purpose in
+    # 474ab36 (2026-09-10 scope cut: domestic outflows only).
     "data/wealthcommand.xlsx": [
-        "00 COMMAND CENTER", "CALC", "01 NET WORTH", "02 CAPITAL FLOWS",
-        "03 INTERNATIONAL", "04 PORTFOLIO", "05 LIFESTYLE",
+        "00 COMMAND CENTER", "CALC", "02 CAPITAL FLOWS", "05 LIFESTYLE",
         "06 SUBSCRIPTION MGR", "07 CASH BRIDGE", "08 ALERTS", "_DATA",
         "09 CHARTS",
     ],
@@ -83,7 +84,7 @@ def main():
         for x in problems:
             print("  - %s" % x)
         print("\n  A workbook that lost sheets was probably repaired by Excel.")
-        print("  Recover with:  git checkout -- data/command-center.xlsx")
+        print("  Recover with:  git checkout -- <the workbook named above>")
         return 1
 
     print("\n[ok] integrity check passed")
