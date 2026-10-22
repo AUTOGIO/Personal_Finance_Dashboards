@@ -432,12 +432,11 @@ Moved, not deleted:
   (input to the spending ledger; it belongs beside the method file, not at the repo root)
 - `Claude outputs/` -> `docs/` - still gitignored; the Claude Project holds the canonical copies
 
-**`command-center` is FROZEN as of 2026-09-08.** Workbook, generator and HTML all still
-work and are all still here - they are simply no longer part of the weekly ritual, and
-the dashboard carries a FROZEN banner. `command-center.xlsx` remains the only structured
-record of FX_OPS and PIX, so **do not delete it**. The wealth pipeline
-(`CALC` -> `bloomberg-terminal.html`) is the live system. To un-freeze, remove the banner
-line in `generate_command_center.py` and resume its input-sheet updates.
+**`command-center` was frozen 2026-09-08 and un-frozen 2026-09-14.** The FROZEN banner
+line in `generate_command_center.py` was removed and the weekly ops pass resumed. Both
+pipelines are live: `CALC` -> `bloomberg-terminal.html` (wealth) and `command-center.xlsx`
+-> `command-center.html` (ops). `command-center.xlsx` remains the only structured record
+of FX_OPS and PIX, so **do not delete it**.
 
 Deliberately kept, do not "tidy" these away:
 - `bloomberg-terminal.html.bak` - the wealth dashboard cannot be rebuilt from scratch;

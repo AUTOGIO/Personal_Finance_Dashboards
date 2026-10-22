@@ -39,7 +39,7 @@ Personal_Finance/
 ├── Makefile                      make regen / check / workspace / open / clean
 ├── WORKSPACE_LAYOUT.md           Spencer 3-display layout
 ├── bloomberg-terminal.html       wealth dashboard — GENERATED
-├── command-center.html           ops dashboard — GENERATED, FROZEN 2026-09-08
+├── command-center.html           ops dashboard — GENERATED
 ├── data/
 │   ├── wealthcommand.xlsx        wealth workbook (CALC = source of truth)
 │   └── command-center.xlsx       ops workbook (11 sheets)
