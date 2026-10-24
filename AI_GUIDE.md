@@ -112,7 +112,7 @@ Personal_Finance/
 │   ├── generate_command_center.py    full rebuild of command-center.html from command-center.xlsx
 │   ├── check_integrity.py            sheet-count + irreplaceable-file preflight (make check)
 │   ├── backup.sh                     timestamped bundle + tarball outside iCloud
-│   └── restore-personal-finance-layout.zsh   Spencer "Personal Finance" 3-display restore
+│   └── restore-personal-finance-layout.zsh   Spencer "FINANCE WORKSPACE" 3-display restore
 ├── reports/                          dated point-in-time snapshots (docx/csv/md/json), not auto-updated
 ├── docs/                             gitignored session audit / plan / execution history
 ├── notebooklm/                       gitignored Markdown export (make notebooklm)

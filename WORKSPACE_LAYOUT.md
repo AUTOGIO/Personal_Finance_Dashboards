@@ -1,6 +1,6 @@
 # Personal Finance — Spencer workspace layout
 
-Three-monitor Spencer layout **Personal Finance** for weekly finance work. The reference screenshots were removed in the 2026-09-08 cleanup (4.8 MB, recoverable with `git checkout HEAD -- screenshots/`); the table below is the authoritative layout.
+Three-monitor Spencer layout **FINANCE WORKSPACE** for weekly finance work. That is the live profile name in `scripts/lib/personal-finance-layout.env` (`LAYOUT_NAME`). The old Spencer profile `Personal Finance` was removed; do not recreate it. The Apple Shortcut is still named `Personal Finance` — that name is the shortcut, not the Spencer profile. The reference screenshots were removed in the 2026-09-08 cleanup (4.8 MB, recoverable with `git checkout HEAD -- screenshots/`); the table below is the authoritative layout.
 
 ## One-liner
 
@@ -14,10 +14,10 @@ This regenerates both dashboards, opens the correct documents, and restores Spen
 
 ## First-time layout capture
 
-If `spencer --list` does not show **Personal Finance**:
+If `spencer --list` does not show **FINANCE WORKSPACE**:
 
 1. Arrange the four apps as in the table below (close extra Comet windows).
-2. Run `spencer --create` and name the layout **`Personal Finance`** exactly (that is what `LAYOUT_NAME` expects).
+2. Run `spencer --create` and name the layout **`FINANCE WORKSPACE`** exactly (that is what `LAYOUT_NAME` expects).
 3. Then `make workspace` should exit 0.
 
 ## Target layout
@@ -100,7 +100,7 @@ If you resize or move windows and want Spencer to remember the new geometry:
 2. Run:
 
 ```bash
-spencer --update "Personal Finance"
+spencer --update "FINANCE WORKSPACE"
 ```
 
 (or use Spencer → Layout Manager → update the layout)
@@ -110,7 +110,7 @@ spencer --update "Personal Finance"
 | Symptom | Fix |
 |---------|-----|
 | `expected 3 displays, found N` | Plug in all monitors; check Arrangement |
-| `Spencer layout not found` | Open Spencer → Layout Manager → confirm **Personal Finance** exists |
+| `Spencer layout not found` | Open Spencer → Layout Manager → confirm **FINANCE WORKSPACE** exists |
 | Comet shows wrong page | Script opens `command-center.html`; close extra Comet tabs |
 | Excel wrong workbook | Layout expects `data/command-center.xlsx` (not `wealthcommand.xlsx`) |
 | Obsidian window not detected | Title check only needs the substring `Obsidian`; Graph is opened via URI but not required as the active tab |

@@ -1,5 +1,5 @@
 #!/bin/zsh
-# Restore Spencer "Personal Finance" layout: regen dashboards, open documents, position windows.
+# Restore Spencer "FINANCE WORKSPACE" layout: regen dashboards, open documents, position windows.
 set -euo pipefail
 
 SCRIPT_DIR="${0:A:h}"
