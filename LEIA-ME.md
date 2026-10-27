@@ -1,6 +1,6 @@
 # Personal_Finance · Fase 1 — Concluída
 
-**Status:** ✅ Operacional · Congelado para manutenção semanal  
+**Status:** ✅ Operacional · Manutenção semanal (command center ativo desde 2026-09-14)  
 **Dashboards:** `bloomberg-terminal.html` (patrimônio) · `command-center.html` (ops iMac)
 
 ---

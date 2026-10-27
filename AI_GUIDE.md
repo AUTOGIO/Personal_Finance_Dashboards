@@ -439,8 +439,7 @@ pipelines are live: `CALC` -> `bloomberg-terminal.html` (wealth) and `command-ce
 of FX_OPS and PIX, so **do not delete it**.
 
 Deliberately kept, do not "tidy" these away:
-- `bloomberg-terminal.html.bak` - the wealth dashboard cannot be rebuilt from scratch;
-  this is its only rollback.
+- `bloomberg-terminal.html.bak` — `make regen` overwrites this with the pre-run HTML before it writes. It is the previous run, not a permanent archive. The pre-cut dashboard is commit `c55774c` (`git show c55774c:bloomberg-terminal.html`, 137,669 bytes, still contains `drawAllocPie`).
 - `AGENTS.md` / `CLAUDE.md` / `GEMINI.md` / `.cursorrules` - the user runs several
   assistants; each is a ~350-byte pointer to this file.
 - `raw/` - upstream truth, never auto-ingested, never deleted without asking.
@@ -499,11 +498,11 @@ duplicate NFC-E tab and fail two spot-checks.
 table/tr/td/th/div/svg/span; `make check` passed; headless browser — 10 tabs, exactly one
 page visible each, 3 charts rendering, **zero console errors**.
 
-**Rollback:** `bloomberg-terminal.html.bak` (pre-cut, 137,678 B) or `git checkout HEAD -- bloomberg-terminal.html`.
+**Rollback:** the pre-cut dashboard is commit `c55774c` (137,669 bytes), not `bloomberg-terminal.html.bak`. `make regen` copies the current HTML onto that `.bak` before writing, so the `.bak` cannot hold the pre-cut file across a regen. `git checkout c55774c -- bloomberg-terminal.html` is how to restore the pre-cut file, and it still contains `drawAllocPie`. `git checkout HEAD -- bloomberg-terminal.html` restores the current dashboard. The 137,678-byte figure below is the size measured at the cut; the committed blob is 9 bytes smaller.
 
 **Two tiles cut without an explicit instruction** (Eduardo approved the plan without
 answering the question): `Avg FX Rate` — pure câmbio; `PIX Net Flow` — In minus Out, and
-PIX In no longer exists. Restore from the `.bak` if that was wrong.
+PIX In no longer exists. Restore those two tiles from commit `c55774c` if that was wrong. Do not restore them from `.bak`; `make regen` overwrites `.bak` with the current file.
 
 **Deliberately NOT changed — stale figures remain, and they are a separate task.** The cut
 removed out-of-scope *fields*; it did not restate *values*. These static figures predate
