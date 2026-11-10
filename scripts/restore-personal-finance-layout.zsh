@@ -11,7 +11,11 @@ source "${SCRIPT_DIR}/lib/spencer-common.zsh"
 log() { print -u2 -- "$*"; }
 
 open_cursor_workspace() {
-  if command -v cursor >/dev/null 2>&1; then
+  # 2026-11-09: prefer Cursor MaxMem (4 GB heap) over stock Cursor.app / cursor CLI.
+  local maxmem="/Users/giovannini.eduardogmail.com/Applications/Cursor MaxMem.app"
+  if [[ -d "$maxmem" ]]; then
+    open -a "Cursor MaxMem" "$CURSOR_WS"
+  elif command -v cursor >/dev/null 2>&1; then
     cursor "$CURSOR_WS"
   else
     open -a Cursor "$CURSOR_WS"
