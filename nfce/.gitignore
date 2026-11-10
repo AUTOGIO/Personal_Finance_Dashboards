@@ -14,3 +14,6 @@ nfce_all.json
 inflation_data.json
 nfce_items.csv
 nfce_transactions.csv
+
+# Local NFC-e exports (added 2026-11-07); kept on disk, not tracked.
+notas/
