@@ -27,6 +27,8 @@ Two things that are *not* the source of truth, on purpose:
   2026-09-14 scope cut) are documented open items — see
   `AI_GUIDE.md` → "Known open items". Reconcile against `raw/` statements;
   don't force one number to match another.
+  **Status 2026-11-10: won't fix** — not relevant to the analysis; see the
+  note at the top of that section.
 
 ## Layout
 

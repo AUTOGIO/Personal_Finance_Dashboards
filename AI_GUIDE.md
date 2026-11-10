@@ -366,6 +366,10 @@ patcher model — the full-rebuild pattern is intentional for a new workbook.
 
 ## Known open items — do not silently resolve
 
+> **Status 2026-11-10: won't fix.** Eduardo decided these discrepancies are
+> not relevant to his analysis. Do not investigate, reconcile, or flag them,
+> and do not harmonize the numbers. The text below is historical context only.
+
 - **Net Worth**: CALC says R$377,473.49 (`CALC!E137`). The workbook's own
   `01 NET WORTH` sheet, and the CMD CTR tile, said R$358,277. Traced to how
   the June IB→Wise withdrawal (R$19,195.81) was treated on `04 PORTFOLIO`.
